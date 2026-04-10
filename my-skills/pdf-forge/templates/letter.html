@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title | default('Letter') }}</title>
+
+    <style>
+        /* ========================================
+           Halbert Letter Style
+           Typewriter aesthetic, warm & readable
+           ======================================== */
+
+        @page {
+            size: letter;
+            margin: 30mm 30mm 25mm 30mm;
+
+            @bottom-center {
+                content: counter(page);
+                font-family: 'Courier New', Courier, monospace;
+                font-size: 10pt;
+                color: #666;
+            }
+        }
+
+        @page :first {
+            @bottom-center {
+                content: none;
+            }
+        }
+
+        /* Base */
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 12pt;
+            line-height: 1.7;
+            color: #1a1a1a;
+            background: #FFFDE7;
+        }
+
+        /* Headings - suppress the H1 title since we handle it in the letter header */
+        h1 {
+            display: none;
+        }
+
+        /* Section headers - bold, centered, with breathing room */
+        h2, strong:only-child {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 13pt;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 2em;
+            margin-bottom: 1.2em;
+            letter-spacing: 0.5px;
+            page-break-after: avoid;
+        }
+
+        h3 {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 12pt;
+            font-weight: bold;
+            margin-top: 1.8em;
+            margin-bottom: 0.8em;
+            page-break-after: avoid;
+        }
+
+        /* Paragraphs */
+        p {
+            margin: 0 0 1.1em 0;
+            orphans: 3;
+            widows: 3;
+        }
+
+        /* Bold text stands out */
+        strong {
+            font-weight: bold;
+        }
+
+        /* Italic */
+        em {
+            font-style: italic;
+        }
+
+        /* Horizontal rules become page breaks */
+        hr {
+            page-break-after: always;
+            border: none;
+            height: 0;
+            margin: 0;
+            padding: 0;
+            visibility: hidden;
+        }
+
+        /* But don't page-break if it's the very first hr (after the header) */
+        .main-content > hr:first-child {
+            page-break-after: avoid;
+        }
+
+        /* The letter header block */
+        .letter-header {
+            margin-bottom: 2.5em;
+            line-height: 1.8;
+        }
+
+        .letter-header .from-line {
+            font-style: italic;
+            font-size: 11pt;
+            color: #444;
+            margin-bottom: 0.8em;
+        }
+
+        .letter-header .date-line {
+            font-size: 11pt;
+            color: #444;
+            margin-bottom: 2em;
+        }
+
+        .letter-header .salutation {
+            font-size: 12pt;
+            margin-bottom: 1.5em;
+        }
+
+        /* Sign-off block */
+        .sign-off {
+            margin-top: 2.5em;
+            line-height: 1.8;
+        }
+
+        .sign-off .sincerely {
+            margin-bottom: 1.5em;
+        }
+
+        .sign-off .name {
+            font-weight: bold;
+            font-size: 13pt;
+        }
+
+        /* P.S. section */
+        .ps-section {
+            margin-top: 2.5em;
+            padding-top: 1.5em;
+        }
+
+        .ps-section p:first-child {
+            font-weight: bold;
+        }
+
+        /* Contact block at bottom */
+        .contact-block {
+            margin-top: 2em;
+            padding-top: 1.5em;
+            border-top: 1px solid #ccc;
+            font-size: 10pt;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        /* Links */
+        a {
+            color: #1a1a1a;
+            text-decoration: underline;
+        }
+
+        /* Lists */
+        ul, ol {
+            margin: 1em 0;
+            padding-left: 2em;
+        }
+
+        li {
+            margin-bottom: 0.4em;
+        }
+
+        /* Blockquotes */
+        blockquote {
+            margin: 1.5em 0;
+            padding: 0 0 0 1.5em;
+            border-left: 3px solid #999;
+            color: #444;
+            font-style: italic;
+        }
+
+        /* Tables - keep simple typewriter feel */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5em 0;
+            font-size: 10pt;
+            page-break-inside: avoid;
+        }
+
+        th, td {
+            padding: 8px 12px;
+            border-bottom: 1px solid #ccc;
+            text-align: left;
+        }
+
+        th {
+            font-weight: bold;
+            border-bottom: 2px solid #666;
+        }
+
+        /* Code blocks */
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 11pt;
+        }
+
+        pre {
+            margin: 1.5em 0;
+            padding: 1em;
+            background: #f5f5f5;
+            border: 1px solid #ddd;
+            overflow-x: auto;
+            page-break-inside: avoid;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-content">
+        {{ raw_html | safe }}
+    </div>
+</body>
+</html>

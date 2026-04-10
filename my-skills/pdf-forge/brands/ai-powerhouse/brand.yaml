@@ -1,0 +1,53 @@
+# Neon Marillion Brand Configuration
+# Ed Dale's personal brand - used for AI Powerhouse, The Little Blue Report
+
+name: Neon Marillion
+
+colors:
+  primary: "#E85D04"           # Burnt Orange - the signature color
+  primary_light: "#FFF4ED"     # Light orange tint for backgrounds
+  primary_dark: "#C44D03"      # Darker orange for hover states
+  text: "#1C1917"              # Charcoal - main body text
+  text_secondary: "#78716C"    # Stone - secondary text, captions
+  text_light: "#A8A29E"        # Light stone - subtle text
+  background: "#FFFFFF"        # White
+  background_alt: "#FAFAF9"    # Off-white for alternating sections
+  success: "#059669"           # Green - "Act now" verdicts
+  warning: "#D97706"           # Amber - "Bookmark" verdicts
+  muted: "#9CA3AF"             # Grey - "Ignore" verdicts
+
+typography:
+  heading_family: "Clash Display"
+  heading_weight: 600          # Semibold for headings
+  heading_weight_bold: 700     # Bold for titles
+  body_family: "Satoshi"
+  body_weight: 400             # Regular for body
+  body_weight_medium: 500      # Medium for emphasis
+  code_family: "JetBrains Mono, Consolas, monospace"
+
+  # Font sizes (base 16px)
+  size_h1: "32px"
+  size_h2: "24px"
+  size_h3: "20px"
+  size_h4: "18px"
+  size_body: "11pt"
+  size_small: "10pt"
+  size_caption: "9pt"
+
+logo:
+  file: "ai-powerhouse-logo.png"
+  width: "200px"
+  position: "cover-only"       # header | footer | cover-only | none
+
+spacing:
+  section_margin: "2em"
+  paragraph_margin: "1em"
+  list_indent: "1.5em"
+
+# PDF-specific settings
+pdf:
+  page_size: "A4"
+  margin_top: "25mm"
+  margin_bottom: "25mm"
+  margin_left: "25mm"
+  margin_right: "25mm"

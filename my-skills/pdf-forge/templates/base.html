@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title | default('Document') }}</title>
+
+    <!-- Print styles (page breaks, pagination) -->
+    <link rel="stylesheet" href="{{ print_styles_path }}">
+
+    <!-- Brand-specific styles -->
+    <link rel="stylesheet" href="{{ brand_styles_path }}">
+
+    {% block extra_styles %}{% endblock %}
+</head>
+<body>
+    {% if logo_path and logo_position == 'header' %}
+    <header class="page-header">
+        <img src="{{ logo_path }}" alt="{{ brand_name }}" class="logo" style="width: {{ logo_width }};">
+    </header>
+    {% endif %}
+
+    {% block content %}{% endblock %}
+
+    {% if logo_path and logo_position == 'footer' %}
+    <footer class="page-footer">
+        <img src="{{ logo_path }}" alt="{{ brand_name }}" class="logo" style="width: {{ logo_width }};">
+    </footer>
+    {% endif %}
+</body>
+</html>

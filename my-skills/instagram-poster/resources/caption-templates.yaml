@@ -1,0 +1,100 @@
+# Instagram Caption Templates
+# ============================
+# Named templates for consistent, high-performing captions.
+#
+# Variables:
+#   {title}  - Main headline or topic title
+#   {topic}  - Subject matter / niche area
+#   {cta}    - Call to action (custom or template default)
+#
+# Usage:
+#   python3 post_carousel.py --folder ~/Downloads/carousel --template carousel --title "Build Your First SaaS"
+
+templates:
+  # Default carousel template - educational with soft sell
+  carousel:
+    description: "Standard carousel template - hook, expand, save prompt"
+    hashtag_count: 5
+    emoji_usage: "minimal"  # none, minimal, moderate
+    structure: |
+      {title}
+
+      Swipe through to learn the key insights.
+
+      {cta}
+
+      #coaching #businesstips #entrepreneurship #onlinebusiness #{topic}
+    default_cta: "Save this for later."
+
+  # Educational/teaching content
+  educational:
+    description: "Deep teaching content - positions as expert, invites engagement"
+    hashtag_count: 6
+    emoji_usage: "none"
+    structure: |
+      {title}
+
+      Most people get this wrong. Here's what actually works.
+
+      Drop a comment if you want me to go deeper on any of these.
+
+      {cta}
+
+      #businesscoach #entrepreneurtips #onlinebusiness #growthmindset #{topic} #strategy
+    default_cta: "Follow for more insights like this."
+
+  # Promotional/launch content
+  promotional:
+    description: "Promotional template - clear value prop with direct CTA"
+    hashtag_count: 4
+    emoji_usage: "minimal"
+    structure: |
+      {title}
+
+      This is exactly what we cover inside the program.
+
+      {cta}
+
+      #businesscoaching #{topic} #results #transformation
+    default_cta: "Link in bio to learn more."
+
+  # Story-driven content
+  story:
+    description: "Personal story template - connection before teaching"
+    hashtag_count: 5
+    emoji_usage: "minimal"
+    structure: |
+      {title}
+
+      I learned this the hard way so you don't have to.
+
+      {cta}
+
+      #entrepreneurlife #businesslessons #{topic} #founder #realstory
+    default_cta: "Save this and share with someone who needs to hear it."
+
+  # Quick tip / actionable
+  quicktip:
+    description: "Bite-sized actionable tip - high save rate"
+    hashtag_count: 5
+    emoji_usage: "moderate"
+    structure: |
+      {title}
+
+      Try this today. Report back.
+
+      {cta}
+
+      #businesstip #actionable #{topic} #trythis #entrepreneur
+    default_cta: "Save this for when you need it."
+
+# Emoji guidelines by level:
+# - none: Zero emojis, professional/clean look
+# - minimal: 1-2 emojis max, only for emphasis (start of line or key point)
+# - moderate: 3-5 emojis, can use as bullet points or section markers
+
+# Hashtag guidelines:
+# - Always include {topic} variable as a hashtag
+# - Mix broad reach (#entrepreneur) with niche (#businesscoach)
+# - Keep total under 7 for cleaner look
+# - First hashtag should be most relevant to content

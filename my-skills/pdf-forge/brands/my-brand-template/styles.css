@@ -1,0 +1,36 @@
+/* ============================================================
+   YOUR BRAND STYLES
+   ============================================================
+   This CSS controls the look of your PDFs.
+   Most of the styling comes from brand.yaml above.
+   Only edit this file if you want fine-grained control.
+
+   For most people: just edit brand.yaml and leave this as-is.
+   ============================================================ */
+
+/* Page setup — loaded from brand.yaml automatically */
+@page {
+    size: A4;
+    margin: 25mm;
+}
+
+/* Cover page — no margins for edge-to-edge design */
+@page :first {
+    margin: 0;
+}
+
+/* If you add custom fonts, register them here.
+   Example:
+
+   @font-face {
+       font-family: 'My Custom Font';
+       src: url('fonts/MyCustomFont-Regular.ttf');
+       font-weight: 400;
+   }
+
+   @font-face {
+       font-family: 'My Custom Font';
+       src: url('fonts/MyCustomFont-Bold.ttf');
+       font-weight: 700;
+   }
+*/

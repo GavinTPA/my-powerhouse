@@ -1,0 +1,242 @@
+/* ========================================
+   PDF Forge - Print Styles
+   Smart page break rules for WeasyPrint
+   ======================================== */
+
+/* --------------------------------------
+   Page Setup
+   -------------------------------------- */
+/* Source elements for page headers/footers - hidden but set strings via string-set */
+.doc-title-source {
+    string-set: doc-title content();
+    display: none;
+    visibility: hidden;
+    height: 0;
+    overflow: hidden;
+}
+
+.doc-brand-source {
+    string-set: doc-brand content();
+    display: none;
+    visibility: hidden;
+    height: 0;
+    overflow: hidden;
+}
+
+@page {
+    size: A4;
+    margin: 25mm 25mm 25mm 25mm;
+
+    /* Header: title left, page number right */
+    @top-left {
+        content: string(doc-title);
+        font-family: var(--body-font, "Satoshi", sans-serif);
+        font-size: 9pt;
+        color: var(--text-secondary, #78716C);
+    }
+
+    @top-right {
+        content: counter(page);
+        font-family: var(--body-font, "Satoshi", sans-serif);
+        font-size: 9pt;
+        color: var(--text-secondary, #78716C);
+    }
+
+    /* Footer: brand name centered */
+    @bottom-center {
+        content: string(doc-brand);
+        font-family: var(--body-font, "Satoshi", sans-serif);
+        font-size: 8pt;
+        color: var(--text-light, #A8A29E);
+    }
+}
+
+@page :first {
+    /* No header or footer on cover page */
+    @top-left {
+        content: none;
+    }
+    @top-right {
+        content: none;
+    }
+    @bottom-center {
+        content: none;
+    }
+}
+
+/* --------------------------------------
+   Smart Page Breaks - Critical Rules
+   -------------------------------------- */
+
+/* Prevent orphans and widows */
+p {
+    orphans: 3;   /* Min 3 lines at bottom of page */
+    widows: 3;    /* Min 3 lines at top of next page */
+}
+
+/* Force breaks before major sections */
+.section,
+.major-section {
+    page-break-before: always;
+}
+
+/* Never break after headings - keep with content */
+h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+    page-break-inside: avoid;
+}
+
+/* Never break inside these elements */
+.section-header,
+.callout,
+.verdict-box,
+.key-insight,
+.warning-box,
+.info-box,
+blockquote {
+    page-break-inside: avoid;
+}
+
+/* Tables - critical for research reports */
+table {
+    page-break-inside: avoid;
+    break-inside: avoid;
+}
+
+/* Table wrapper provides stronger page break control */
+.table-wrapper {
+    page-break-inside: avoid;
+    break-inside: avoid;
+    display: block;
+    overflow: visible;
+}
+
+/* If table is too large, at least keep header visible */
+thead {
+    display: table-header-group;
+}
+
+tfoot {
+    display: table-footer-group;
+}
+
+/* Prevent table rows from breaking */
+tr {
+    page-break-inside: avoid;
+    break-inside: avoid;
+}
+
+/* Code blocks - never split */
+pre,
+code,
+.code-block {
+    page-break-inside: avoid;
+}
+
+/* Lists - try to keep together */
+ul, ol {
+    page-break-inside: avoid;
+}
+
+/* If list is too long, at least don't break mid-item */
+li {
+    page-break-inside: avoid;
+}
+
+/* --------------------------------------
+   Cover Page
+   -------------------------------------- */
+.cover-page {
+    page-break-after: always;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+}
+
+/* --------------------------------------
+   Table of Contents (with page numbers)
+   Uses CSS target-counter() for actual rendered page numbers
+   and leader() for dot leaders between title and page number.
+   -------------------------------------- */
+.toc {
+    page-break-after: always;
+}
+
+.toc-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.5em 0;
+    page-break-inside: auto;  /* Override generic ul rule — TOC can span pages */
+}
+
+.toc-entry {
+    page-break-inside: avoid;
+    margin: 0;
+    padding: 0.3em 0;
+}
+
+/* TOC links: clickable with dot leaders and actual page numbers */
+.toc-link {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Dot leaders filling space, then target page number */
+.toc-link::after {
+    content: leader(". ") target-counter(attr(href url), page);
+}
+
+/* --------------------------------------
+   Executive Summary
+   -------------------------------------- */
+.executive-summary {
+    page-break-after: always;
+}
+
+/* --------------------------------------
+   Verdict Boxes - Never Break
+   -------------------------------------- */
+.verdict {
+    page-break-inside: avoid;
+    margin: 1.5em 0;
+    padding: 1em 1.5em;
+    border-left: 4px solid;
+    background: var(--background-alt, #FAFAF9);
+}
+
+.verdict-act {
+    border-color: var(--success, #059669);
+}
+
+.verdict-bookmark {
+    border-color: var(--warning, #D97706);
+}
+
+.verdict-ignore {
+    border-color: var(--muted, #9CA3AF);
+}
+
+/* --------------------------------------
+   Images
+   -------------------------------------- */
+figure {
+    page-break-inside: avoid;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* --------------------------------------
+   Footnotes
+   -------------------------------------- */
+.footnotes {
+    page-break-before: always;
+    border-top: 1px solid var(--text-light, #A8A29E);
+    padding-top: 1em;
+    font-size: 9pt;
+}

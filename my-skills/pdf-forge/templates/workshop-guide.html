@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title | default('Workshop Guide') }}</title>
+
+    <!-- Print styles (page breaks, pagination) -->
+    <link rel="stylesheet" href="{{ print_styles_path }}">
+
+    <!-- Brand-specific styles -->
+    <link rel="stylesheet" href="{{ brand_styles_path }}">
+
+    <style>
+        /* ========================================
+           Workshop Guide — Template Overrides
+           Editorial textbook aesthetic
+           ======================================== */
+
+        /* --- Page Setup Overrides --- */
+        @page {
+            margin: 20mm 22mm 22mm 22mm;
+
+            @top-left {
+                content: string(doc-title);
+                font-family: var(--body-font, "Satoshi", sans-serif);
+                font-size: 8pt;
+                color: var(--text-light, #A8A29E);
+                letter-spacing: 0.5px;
+                text-transform: uppercase;
+            }
+
+            @top-right {
+                content: counter(page);
+                font-family: var(--heading-font, "Clash Display", sans-serif);
+                font-size: 9pt;
+                color: var(--primary, #E85D04);
+                font-weight: 600;
+            }
+
+            @bottom-center {
+                content: string(doc-brand);
+                font-family: var(--body-font, "Satoshi", sans-serif);
+                font-size: 7pt;
+                color: var(--text-light, #A8A29E);
+                letter-spacing: 1px;
+                text-transform: uppercase;
+            }
+        }
+
+        @page :first {
+            margin: 0;
+            @top-left { content: none; }
+            @top-right { content: none; }
+            @bottom-center { content: none; }
+        }
+
+        /* Also suppress header/footer on TOC page */
+        .toc {
+            page: toc-page;
+        }
+        @page toc-page {
+            @top-left { content: none; }
+            @top-right { content: none; }
+        }
+
+        /* --- Cover Page --- */
+        .cover-page {
+            background: #1C1917;
+            height: 297mm;
+            width: 210mm;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            text-align: center;
+            padding: 0;
+            margin: 0;
+            page-break-after: always;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cover-page .logo {
+            margin-top: 35mm;
+            margin-bottom: 12mm;
+        }
+
+        .cover-page .logo img {
+            opacity: 0.95;
+        }
+
+        .cover-page h1 {
+            font-family: var(--heading-font);
+            font-size: 52px;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin: 0 25mm 4mm 25mm;
+            line-height: 1.1;
+            letter-spacing: -0.5px;
+        }
+
+        .cover-page .subtitle {
+            font-family: var(--body-font);
+            font-size: 16px;
+            color: #A8A29E;
+            margin: 0 25mm 8mm 25mm;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .cover-accent {
+            width: 60px;
+            height: 4px;
+            background: var(--primary);
+            margin: 0 auto 20mm auto;
+            border-radius: 2px;
+        }
+
+        .cover-hero-image {
+            width: 160mm;
+            border-radius: 8px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+        }
+
+        .cover-page .date {
+            font-family: var(--body-font);
+            font-size: 13px;
+            color: #78716C;
+            position: absolute;
+            bottom: 25mm;
+            left: 0;
+            right: 0;
+        }
+
+        /* --- Typography Upgrades --- */
+        body {
+            font-size: 12pt;
+            line-height: 1.7;
+        }
+
+        /* Hide H1 in body content (it's on the cover) */
+        .main-content > h1:first-child {
+            display: none;
+        }
+
+        /* Chapter headings — every H2 starts a new page */
+        .main-content h2 {
+            page-break-before: always;
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--text);
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-top: 0;
+            padding-top: 8mm;
+            margin-bottom: 6mm;
+            position: relative;
+        }
+
+        /* Orange accent bar above chapter title */
+        .main-content h2::before {
+            content: "";
+            display: block;
+            width: 40px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+            margin-bottom: 12px;
+        }
+
+        /* Sub-headings (Key Points) */
+        .main-content h3 {
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--primary);
+            margin-top: 1.8em;
+            margin-bottom: 0.6em;
+            padding-left: 16px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .main-content h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* --- Slide Images --- */
+        .main-content img {
+            display: block;
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08), 0 1px 3px rgba(0,0,0,0.06);
+            margin: 1.2em 0;
+            background: #FAFAF9;
+            padding: 2px;
+        }
+
+        /* Images inside paragraphs — remove paragraph margin to tighten */
+        .main-content p:has(img) {
+            margin-bottom: 0.4em;
+        }
+
+        /* --- Pull Quotes (Blockquotes) --- */
+        .main-content blockquote {
+            border-left: none;
+            background: var(--primary-light);
+            margin: 1.8em 0;
+            padding: 1.6em 1.8em 1.4em 1.8em;
+            border-radius: 8px;
+            position: relative;
+            page-break-inside: avoid;
+            font-style: normal;
+            color: var(--text);
+        }
+
+        /* Large decorative open-quote */
+        .main-content blockquote::before {
+            content: "\201C";
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 72px;
+            font-weight: 700;
+            color: var(--primary);
+            opacity: 0.3;
+            position: absolute;
+            top: -8px;
+            left: 14px;
+            line-height: 1;
+        }
+
+        .main-content blockquote p {
+            font-family: var(--body-font);
+            font-size: 13pt;
+            font-weight: 500;
+            line-height: 1.6;
+            color: var(--text);
+            margin: 0;
+            padding-left: 6px;
+        }
+
+        .main-content blockquote p:first-child {
+            margin-top: 8px;
+        }
+
+        /* --- Table of Contents --- */
+        .toc {
+            page-break-after: always;
+            padding: 15mm 8mm 0 8mm;
+        }
+
+        .toc h2 {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--text);
+            text-align: left;
+            border-bottom: none;
+            margin-bottom: 1.2em;
+            padding-bottom: 0;
+        }
+
+        .toc h2::after {
+            content: "";
+            display: block;
+            width: 40px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+            margin-top: 12px;
+        }
+
+        .toc-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .toc-entry {
+            margin: 0;
+            padding: 0;
+        }
+
+        .toc-entry.level-1 {
+            padding: 10px 0;
+            border-bottom: 1px solid #F0EFEE;
+        }
+
+        .toc-entry.level-1:last-child {
+            border-bottom: none;
+        }
+
+        .toc-entry.level-1 .toc-link {
+            font-family: var(--heading-font);
+            font-size: 15pt;
+            font-weight: 600;
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .toc-entry.level-1 .toc-link::after {
+            color: var(--primary);
+            font-family: var(--heading-font);
+            font-weight: 600;
+        }
+
+        .toc-entry.level-2 {
+            padding: 4px 0 4px 1.5em;
+        }
+
+        .toc-entry.level-2 .toc-link {
+            font-size: 11pt;
+            color: var(--text-secondary);
+        }
+
+        .toc-entry.level-2 .toc-link::after {
+            color: var(--text-secondary);
+        }
+
+        /* --- Tables (Key Concepts) --- */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5em 0;
+            font-size: 10.5pt;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        thead {
+            background: var(--text);
+            color: #FFFFFF;
+        }
+
+        th {
+            font-family: var(--heading-font);
+            font-weight: 600;
+            text-align: left;
+            padding: 12px 16px;
+            font-size: 11pt;
+            letter-spacing: 0.3px;
+        }
+
+        td {
+            padding: 11px 16px;
+            border-bottom: 1px solid #EFEDEB;
+            line-height: 1.5;
+        }
+
+        tbody tr:nth-child(even) {
+            background: #FAFAF9;
+        }
+
+        /* First column (concept names) bold + orange */
+        td:first-child {
+            font-weight: 600;
+            color: var(--primary-dark);
+            white-space: nowrap;
+        }
+
+        /* --- Horizontal Rules → Decorative Dividers --- */
+        .main-content hr {
+            border: none;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--primary-light), var(--primary), var(--primary-light), transparent);
+            margin: 2em 0;
+            opacity: 0.6;
+        }
+
+        /* --- Strong text accent --- */
+        .main-content strong {
+            color: var(--text);
+            font-weight: 700;
+        }
+
+        /* --- Lists --- */
+        .main-content ul, .main-content ol {
+            margin: 0.8em 0;
+            padding-left: 1.8em;
+        }
+
+        .main-content li {
+            margin-bottom: 0.4em;
+            line-height: 1.6;
+        }
+
+        /* Bullet color */
+        .main-content ul li::marker {
+            color: var(--primary);
+        }
+
+        /* --- Back Matter --- */
+        .page-footer {
+            display: none; /* Using @page footer instead */
+        }
+
+        /* --- Prevent awkward breaks --- */
+        .main-content h2 + p:has(img) {
+            page-break-before: avoid;
+        }
+
+        .main-content blockquote + h3 {
+            page-break-before: avoid;
+        }
+
+        /* Keep image + following paragraph together */
+        .main-content p:has(img) + p {
+            page-break-before: avoid;
+        }
+    </style>
+</head>
+<body>
+    <!-- Document title and brand for CSS string-set -->
+    <span class="doc-title-source">{{ title }}</span>
+    <span class="doc-brand-source">{{ brand_name }}</span>
+
+    <!-- Cover Page -->
+    <div class="cover-page">
+        {% if logo_path %}
+        <div class="logo">
+            <img src="{{ logo_path }}" alt="{{ brand_name }}" style="width: {{ logo_width | default('180px') }};">
+        </div>
+        {% endif %}
+
+        <h1>{{ title }}</h1>
+
+        {% if subtitle %}
+        <p class="subtitle">{{ subtitle }}</p>
+        {% endif %}
+
+        <div class="cover-accent"></div>
+
+        {% if cover_image %}
+        <img class="cover-hero-image" src="{{ cover_image }}" alt="Workshop cover">
+        {% endif %}
+
+        {% if date %}
+        <p class="date">{{ date }}</p>
+        {% endif %}
+    </div>
+
+    <!-- Table of Contents -->
+    {% if toc and show_toc %}
+    <div class="toc">
+        <h2>Contents</h2>
+        <ul class="toc-list">
+            {% for item in toc %}
+            <li class="toc-entry level-{{ item.level }}">
+                <a href="#{{ item.slug }}" class="toc-link">{{ item.title }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+
+    <!-- Main Content -->
+    <div class="main-content">
+        {{ raw_html | safe }}
+    </div>
+</body>
+</html>

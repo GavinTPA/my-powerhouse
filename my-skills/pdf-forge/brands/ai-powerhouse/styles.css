@@ -1,0 +1,402 @@
+/* ========================================
+   Neon Marillion Brand Styles
+   Ed Dale's personal brand for PDF Forge
+   ======================================== */
+
+/* --------------------------------------
+   Font Faces
+   -------------------------------------- */
+@font-face {
+    font-family: 'Clash Display';
+    src: url('fonts/ClashDisplay-Semibold.otf') format('opentype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Clash Display';
+    src: url('fonts/ClashDisplay-Bold.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Satoshi';
+    src: url('fonts/Satoshi-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Satoshi';
+    src: url('fonts/Satoshi-Medium.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Satoshi';
+    src: url('fonts/Satoshi-Bold.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* --------------------------------------
+   CSS Variables (Brand Tokens)
+   -------------------------------------- */
+:root {
+    /* Colors */
+    --primary: #E85D04;
+    --primary-light: #FFF4ED;
+    --primary-dark: #C44D03;
+    --text: #1C1917;
+    --text-secondary: #78716C;
+    --text-light: #A8A29E;
+    --background: #FFFFFF;
+    --background-alt: #FAFAF9;
+    --success: #059669;
+    --warning: #D97706;
+    --muted: #9CA3AF;
+
+    /* Typography */
+    --heading-font: 'Clash Display', 'Trebuchet MS', sans-serif;
+    --body-font: 'Satoshi', 'Calibri', sans-serif;
+    --code-font: 'JetBrains Mono', 'Consolas', monospace;
+}
+
+/* --------------------------------------
+   Base Styles
+   -------------------------------------- */
+body {
+    font-family: var(--body-font);
+    font-size: 11pt;
+    line-height: 1.6;
+    color: var(--text);
+    background: var(--background);
+}
+
+/* --------------------------------------
+   Typography
+   -------------------------------------- */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--heading-font);
+    color: var(--text);
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 32px;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--primary);
+    border-bottom: 2px solid var(--primary-light);
+    padding-bottom: 0.3em;
+}
+
+h3 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+h4 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+p {
+    margin: 0 0 1em 0;
+}
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* --------------------------------------
+   Cover Page
+   -------------------------------------- */
+.cover-page {
+    text-align: center;
+    padding-top: 30%;
+}
+
+.cover-page h1 {
+    font-size: 42px;
+    color: var(--primary);
+    margin-bottom: 0.5em;
+}
+
+.cover-page .subtitle {
+    font-size: 18px;
+    color: var(--text-secondary);
+    margin-bottom: 2em;
+}
+
+.cover-page .date {
+    font-size: 14px;
+    color: var(--text-light);
+}
+
+.cover-page .logo {
+    margin-bottom: 3em;
+}
+
+/* --------------------------------------
+   Table of Contents
+   -------------------------------------- */
+.toc h2 {
+    text-align: center;
+    border-bottom: none;
+}
+
+.toc-entry.level-1 {
+    font-weight: 600;
+    font-family: var(--heading-font);
+}
+
+.toc-entry.level-2 {
+    padding-left: 1.5em;
+}
+
+.toc-entry.level-3 {
+    padding-left: 3em;
+    font-size: 10pt;
+}
+
+.toc-link {
+    color: var(--text);
+}
+
+.toc-link::after {
+    color: var(--text-secondary);
+}
+
+/* --------------------------------------
+   Executive Summary
+   -------------------------------------- */
+.executive-summary {
+    background: var(--primary-light);
+    padding: 2em;
+    border-radius: 8px;
+    margin: 2em 0;
+}
+
+.executive-summary h2 {
+    color: var(--primary);
+    border-bottom: none;
+    margin-top: 0;
+}
+
+/* --------------------------------------
+   Tables
+   -------------------------------------- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5em 0;
+    font-size: 10pt;
+}
+
+thead {
+    background: var(--primary);
+    color: white;
+}
+
+th {
+    font-family: var(--heading-font);
+    font-weight: 600;
+    text-align: left;
+    padding: 12px 16px;
+}
+
+td {
+    padding: 10px 16px;
+    border-bottom: 1px solid #E5E5E5;
+}
+
+tbody tr:nth-child(even) {
+    background: var(--background-alt);
+}
+
+/* Comparison tables */
+table.comparison thead {
+    background: var(--primary);
+}
+
+/* --------------------------------------
+   Verdict Boxes
+   -------------------------------------- */
+.verdict {
+    padding: 1.5em;
+    margin: 1.5em 0;
+    border-radius: 6px;
+    border-left: 5px solid;
+}
+
+.verdict-title {
+    font-family: var(--heading-font);
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.5em;
+}
+
+.verdict-act {
+    background: #ECFDF5;
+    border-color: var(--success);
+}
+
+.verdict-act .verdict-title {
+    color: var(--success);
+}
+
+.verdict-bookmark {
+    background: #FFFBEB;
+    border-color: var(--warning);
+}
+
+.verdict-bookmark .verdict-title {
+    color: var(--warning);
+}
+
+.verdict-ignore {
+    background: #F9FAFB;
+    border-color: var(--muted);
+}
+
+.verdict-ignore .verdict-title {
+    color: var(--muted);
+}
+
+/* --------------------------------------
+   Callouts and Info Boxes
+   -------------------------------------- */
+.callout {
+    padding: 1.5em;
+    margin: 1.5em 0;
+    background: var(--primary-light);
+    border-radius: 6px;
+    border-left: 4px solid var(--primary);
+}
+
+.callout-title {
+    font-family: var(--heading-font);
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 0.5em;
+}
+
+blockquote {
+    border-left: 4px solid var(--primary);
+    margin: 1.5em 0;
+    padding: 0.5em 0 0.5em 1.5em;
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+/* --------------------------------------
+   Code
+   -------------------------------------- */
+code {
+    font-family: var(--code-font);
+    font-size: 9pt;
+    background: var(--background-alt);
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+}
+
+pre {
+    font-family: var(--code-font);
+    font-size: 9pt;
+    background: #1C1917;
+    color: #F5F5F4;
+    padding: 1.5em;
+    border-radius: 6px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    line-height: 1.5;
+}
+
+pre code {
+    background: none;
+    padding: 0;
+    color: inherit;
+}
+
+/* --------------------------------------
+   Lists
+   -------------------------------------- */
+ul, ol {
+    margin: 1em 0;
+    padding-left: 1.5em;
+}
+
+li {
+    margin-bottom: 0.5em;
+}
+
+/* Checklists */
+.checklist {
+    list-style: none;
+    padding-left: 0;
+}
+
+.checklist li {
+    position: relative;
+    padding-left: 1.5em;
+}
+
+.checklist li::before {
+    content: "☐";
+    position: absolute;
+    left: 0;
+}
+
+.checklist li.checked::before {
+    content: "☑";
+    color: var(--success);
+}
+
+/* --------------------------------------
+   Sources Section
+   -------------------------------------- */
+.sources {
+    margin-top: 3em;
+    padding-top: 1em;
+    border-top: 2px solid var(--primary-light);
+}
+
+.sources h2 {
+    color: var(--text-secondary);
+}
+
+.sources ul {
+    font-size: 10pt;
+}
+
+.sources a {
+    word-break: break-all;
+}
+
+/* --------------------------------------
+   Footer
+   -------------------------------------- */
+.page-footer {
+    font-size: 9pt;
+    color: var(--text-secondary);
+    text-align: center;
+    margin-top: 3em;
+    padding-top: 1em;
+    border-top: 1px solid var(--text-light);
+}

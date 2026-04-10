@@ -1,0 +1,73 @@
+# ============================================================
+# YOUR BRAND CONFIGURATION
+# ============================================================
+# This file tells PDF Forge how to style your documents.
+# Fill in your details below and every PDF will match your brand.
+#
+# HOW TO USE:
+# 1. Copy this entire folder: cp -r my-brand-template my-brand
+# 2. Edit this file with your colours, fonts, and logo
+# 3. Test: ask your Powerhouse to "create a test PDF using my-brand"
+#
+# FINDING YOUR BRAND COLOURS:
+# - Go to your website
+# - Right-click on a coloured element → Inspect
+# - Look for hex codes like #E85D04
+# - Or just write the colour name (e.g., "blue") and ask your
+#   Powerhouse to find the exact hex code from your website
+# ============================================================
+
+name: My Brand
+
+colors:
+  # Your main brand colour (the one people associate with you)
+  primary: "#4A90D9"           # Replace with your brand colour
+
+  # A lighter version of your primary (for subtle backgrounds)
+  primary_light: "#EBF3FC"     # Replace or remove
+
+  # Your main text colour (dark grey or black usually works)
+  text: "#1C1917"              # Dark charcoal — works for most brands
+
+  # Secondary text (for captions, footnotes, less important text)
+  text_secondary: "#78716C"    # Stone grey — works for most brands
+
+  # Page background
+  background: "#FFFFFF"        # White — keep this unless you have a reason to change
+
+typography:
+  # Your heading font — the one that makes your brand recognisable
+  # If you have custom font files, drop them in the fonts/ folder
+  # If not, use a system font: Arial, Georgia, Trebuchet MS, Verdana, Tahoma
+  heading_family: "Georgia"
+  heading_weight: 700          # Bold
+
+  # Your body text font — should be easy to read
+  body_family: "Arial"
+  body_weight: 400             # Regular
+
+  # Code/monospace font (for technical content)
+  code_family: "Consolas, monospace"
+
+  # Font sizes (these defaults work well — adjust if needed)
+  size_h1: "32px"
+  size_h2: "24px"
+  size_h3: "20px"
+  size_body: "11pt"
+  size_small: "10pt"
+
+logo:
+  # Your logo file — drop it in this brand folder
+  # Supported formats: PNG, JPG, SVG
+  # Set to "none" if you don't have a logo yet (that's fine!)
+  file: "none"                 # Replace with your logo filename
+  width: "200px"               # How wide the logo appears
+  position: "cover-only"       # Options: header | footer | cover-only | none
+
+# PDF page settings (these defaults work for most documents)
+pdf:
+  page_size: "A4"              # Options: A4, Letter
+  margin_top: "25mm"
+  margin_bottom: "25mm"
+  margin_left: "25mm"
+  margin_right: "25mm"

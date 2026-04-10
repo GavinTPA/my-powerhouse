@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title | default('Research Report') }}</title>
+
+    <!-- Print styles (page breaks, pagination) -->
+    <link rel="stylesheet" href="{{ print_styles_path }}">
+
+    <!-- Brand-specific styles -->
+    <link rel="stylesheet" href="{{ brand_styles_path }}">
+
+    <style>
+        /* Research Report specific overrides */
+        .cover-page {
+            min-height: calc(100vh - 50mm);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .toc {
+            page-break-before: always;
+        }
+
+        .toc h2 {
+            margin-top: 0;
+            margin-bottom: 0.3em;
+        }
+
+        .toc-list {
+            margin-top: 0.3em;
+            columns: 1;  /* Single column TOC */
+        }
+
+        /* Prefer page breaks before major (level-1) TOC entries, not mid-group */
+        .toc-entry.level-1 {
+            page-break-before: auto;
+        }
+
+        .toc-entry.level-2 {
+            page-break-before: avoid;
+        }
+
+        /* First content section after executive summary - no forced break */
+        .section.first-section {
+            page-break-before: avoid;
+        }
+
+        /* Major sections (H2 level) get page breaks */
+        .section.major-section {
+            page-break-before: always;
+            margin-top: 0;
+            padding-top: 0;
+        }
+
+        /* Subsections flow naturally, only break when page is full */
+        .subsection {
+            page-break-before: auto;
+            page-break-inside: avoid;
+            margin-top: 1.5em;
+            padding-top: 0;
+        }
+
+        /* Keep H3 with following content */
+        .subsection h3 {
+            page-break-after: avoid;
+            margin-bottom: 0.5em;
+        }
+    </style>
+</head>
+<body>
+    <!-- Document title and brand for CSS string-set (used in page headers/footers) -->
+    <span class="doc-title-source">{{ title }}</span>
+    <span class="doc-brand-source">{{ brand_name }}</span>
+
+    <!-- Cover Page -->
+    <div class="cover-page">
+        {% if logo_path %}
+        <div class="logo">
+            <img src="{{ logo_path }}" alt="{{ brand_name }}" style="width: {{ logo_width | default('150px') }};">
+        </div>
+        {% endif %}
+
+        <h1>{{ title }}</h1>
+
+        {% if subtitle %}
+        <p class="subtitle">{{ subtitle }}</p>
+        {% endif %}
+
+        <p class="date">{{ date | default('') }}</p>
+    </div>
+
+    <!-- Table of Contents - auto-generated when 3+ H2 sections -->
+    {% if toc and show_toc %}
+    <div class="toc">
+        <h2>Contents</h2>
+        <ul class="toc-list">
+            {% for item in toc %}
+            <li class="toc-entry level-{{ item.level }}">
+                <a href="#{{ item.slug }}" class="toc-link">{{ item.title }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+
+    <!-- Executive Summary -->
+    {% if executive_summary %}
+    <div class="executive-summary section">
+        <h2>Executive Summary</h2>
+        {{ executive_summary | safe }}
+
+        {% if verdict %}
+        <div class="verdict verdict-{{ verdict.type | lower }}">
+            <div class="verdict-title">{{ verdict.label }}</div>
+            <p>{{ verdict.text }}</p>
+        </div>
+        {% endif %}
+    </div>
+    {% endif %}
+
+    <!-- Main Content Sections -->
+    {% for section in sections %}
+    <div class="section major-section{% if loop.first %} first-section{% endif %}">
+        <h2 id="{{ section.slug }}">{{ section.title }}</h2>
+
+        {{ section.content | safe }}
+
+        {% if section.subsections %}
+        {% for subsection in section.subsections %}
+        <div class="subsection">
+            <h3 id="{{ subsection.slug }}">{{ subsection.title }}</h3>
+            {{ subsection.html | safe }}
+        </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+    {% endfor %}
+
+    <!-- Sources -->
+    {% if sources %}
+    <div class="sources section">
+        <h2>Sources</h2>
+        <ul>
+            {% for source in sources %}
+            <li>
+                {% if source.url %}
+                <a href="{{ source.url }}">{{ source.title | default(source.url) }}</a>
+                {% else %}
+                {{ source.title }}
+                {% endif %}
+                {% if source.note %} - {{ source.note }}{% endif %}
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+
+    <!-- Open Questions -->
+    {% if open_questions %}
+    <div class="open-questions section">
+        <h2>Open Questions</h2>
+        <ul>
+            {% for question in open_questions %}
+            <li>{{ question }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+
+    <!-- Footer -->
+    <div class="page-footer">
+        <p>Generated by PDF Forge • {{ brand_name }}</p>
+    </div>
+</body>
+</html>

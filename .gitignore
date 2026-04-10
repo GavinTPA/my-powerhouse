@@ -1,0 +1,12 @@
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Claude Code
+.claude/settings.local.json
+
+# Python virtual environments
+**/.venv/
+
+# Reference photos (member-specific)
+my-skills/instagram-carousel/assets/my-reference.jpeg

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title | default('Guide') }}</title>
+
+    <!-- Print styles (page breaks, pagination) -->
+    <link rel="stylesheet" href="{{ print_styles_path }}">
+
+    <!-- Brand-specific styles -->
+    <link rel="stylesheet" href="{{ brand_styles_path }}">
+</head>
+<body>
+    <!-- Document title and brand for CSS string-set (used in page headers/footers) -->
+    <span class="doc-title-source">{{ title }}</span>
+    <span class="doc-brand-source">{{ brand_name }}</span>
+
+    <!-- Cover Page -->
+    <div class="cover-page">
+        {% if logo_path %}
+        <div class="logo">
+            <img src="{{ logo_path }}" alt="{{ brand_name }}" style="width: {{ logo_width | default('150px') }};">
+        </div>
+        {% endif %}
+
+        <h1>{{ title }}</h1>
+
+        {% if subtitle %}
+        <p class="subtitle">{{ subtitle }}</p>
+        {% endif %}
+
+        {% if author %}
+        <p class="author">{{ author }}</p>
+        {% endif %}
+
+        {% if date %}
+        <p class="date">{{ date }}</p>
+        {% endif %}
+    </div>
+
+    <!-- Table of Contents - auto-generated when 3+ H2 sections -->
+    {% if toc and show_toc %}
+    <div class="toc">
+        <h2>Contents</h2>
+        <ul class="toc-list">
+            {% for item in toc %}
+            <li class="toc-entry level-{{ item.level }}">
+                <a href="#{{ item.slug }}" class="toc-link">{{ item.title }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+
+    <!-- Main Content -->
+    <div class="main-content">
+        {{ raw_html | safe }}
+    </div>
+
+    <!-- Footer -->
+    <div class="page-footer">
+        <p>{{ brand_name }}</p>
+    </div>
+</body>
+</html>
