@@ -13,7 +13,15 @@ Next: [What ships after this]
 <!-- BUILDER:START:WHO_I_AM -->
 ## WHO I AM
 
-*Run "build my mission context" to populate this section.*
+I'm Gavin Smith, a **profit and cash flow educator who gives business owners the tools and confidence to run their own numbers — without relying on an accountant.**
+
+**My niche:** $1M–$5M businesses across any industry, at the "readiness moment" — when they finally decide to stop outsourcing their financial understanding and take ownership themselves.
+
+**What clients get:** The Profit and Cash Flow Accelerator — a 90-day program with 9 modules, coaching calls, and four done-for-you tools (Weekly Cash Flow Forecaster, Monthly Clarity Report, Profit Calculator, Five Year Forecast). Followed by a monthly retainer for tool maintenance and ongoing coaching.
+
+**My superpower:** In under 30 minutes I can look at any business's numbers and identify exactly what their next right move is, what to focus on to improve profit, and precisely what's driving cash flow. Everything I can do in 30 minutes, my methodology teaches clients to do for themselves.
+
+**My mental models come from:** Lord Chadlington ("make shit happen, not fucking stop it") and Taki Moore. If you can frame something as a decision a business owner needs to make today, do it.
 <!-- BUILDER:END:WHO_I_AM -->
 
 ---
@@ -21,7 +29,15 @@ Next: [What ships after this]
 <!-- BUILDER:START:MY_CLIENTS -->
 ## MY CLIENTS
 
-*Run "build my mission context" to populate this section.*
+**Who I serve:** Business owners doing $1M–$5M who are running their business without understanding their numbers — and have finally hit the moment where they need to change that.
+
+**Their surface problem:** Cash flow rollercoaster, not knowing why profit doesn't show up in the bank, waiting for the accountant at year-end to tell them how they went.
+
+**What's really going on:** Usually 1-2 specific things they should be focusing on. They don't need more information — they need a simple framework that shows them what matters. Once they have it, the cash flow stress disappears.
+
+**Their words:** "The business has grown but profit hasn't, and I'm not sure why." "My accountant says I made a profit but it's not in my bank account." "We never seem to have the money we should have."
+
+When writing for my audience, use their language — not marketing copy. They say "I had cash but the tax bill wiped it out" not "experiencing cash flow management challenges."
 <!-- BUILDER:END:MY_CLIENTS -->
 
 ---
@@ -29,9 +45,20 @@ Next: [What ships after this]
 <!-- BUILDER:START:MY_TERMINOLOGY -->
 ## MY TERMINOLOGY
 
-*Run "build my mission context" to populate this section.*
+| Term | Meaning |
+|------|---------|
+| **Clarity, Confidence and Growth** | The three phases: Simplify → Clarity. Know → Confidence. Use → Growth. |
+| **The Profit Analyst Method** | The full methodology. Decision-making for business owners, not accounting/reporting. Named for the business: The Profit Analyst. |
+| **The Profit Formula** | Signature move: current vs. target profit formula comparison reveals exactly what to focus on. |
+| **The Six Strategic Questions** | Two from cash flow, two from P&L, two from balance sheet — run on repeat. |
+| **Weekly Cash Flow Forecaster** | Tool 1: see the next low point in advance. |
+| **Monthly Clarity Report** | Tool 2: P&L and balance sheet in plain English. |
+| **Profit Calculator** | Tool 3: identifies next right move for profitability. |
+| **Five Year Forecast** | Tool 4: long-term impact of today's decisions. |
+| **Owe and Own** | Plain English for liabilities and assets. |
+| **The Readiness Moment** | When an owner decides to stop outsourcing financial understanding and take ownership. |
 
-For tech-to-coaching translations, see `my-skills/mission-context/resources/terminology.md`.
+For the full terminology reference, see `my-skills/mission-context/resources/terminology.md`.
 <!-- BUILDER:END:MY_TERMINOLOGY -->
 
 ---
@@ -52,7 +79,11 @@ For tech-to-coaching translations, see `my-skills/mission-context/resources/term
 
 2. **MAKE FIXES AS SIMPLE AS POSSIBLE.** Impact as little code as possible. Zero new bugs.
 
-*Run "build my mission context" to add your personal iron rules.*
+3. **NEVER USE THE AVOID LIST.** Em-dashes, "Most businesses...", "And here's the kicker...", "Profit First", "Fractional CFO" — banned in all content, no exceptions.
+
+4. **DECISION-MAKING FRAMING ONLY.** Never frame numbers as reporting or compliance. Always frame as: what does this tell me, and what should I do next?
+
+5. **LEAD WITH PROFIT OR CASH FLOW IN OFFER NAMES AND HEADLINES.** Never lead with "Clarity", "Understanding", or outcome-delivery language. Experience shows "Profit" and "Cash Flow" sell. "Clarity" doesn't.
 
 **Iron Rules** = Known failure modes. Use sparingly.
 **Guidelines** = Default style. Trust Claude's judgment. Upgrade to Iron Rule only after something fails.
@@ -63,7 +94,29 @@ For tech-to-coaching translations, see `my-skills/mission-context/resources/term
 <!-- BUILDER:START:WRITING_RULES -->
 ## WRITING RULES
 
-*Run "build my mission context" to populate this section with your voice, signature phrases, and words to avoid.*
+When writing ANY content for me (emails, newsletters, coaching responses, articles):
+
+**My style:** Clear, direct, grounded
+
+**How I communicate:**
+- Plain English always — no accounting jargon
+- Decision-making framing, not reporting framing
+- Empowerment-focused: the goal is always owner independence, not expert dependency
+- 80% is good enough — don't over-analyse, just act
+
+**Signature phrases (use these):**
+- "80% is good enough"
+- "Insights and actions, not reporting and over-analysis"
+- "Focus on what matters"
+- "Financial clarity first"
+- "Clarity, confidence and growth"
+
+**Words I avoid (never use these):**
+- Sentences starting with "Most businesses..." — AI tell
+- Em-dashes in writing — AI tell
+- "And here's the kicker..." — ChatGPT fingerprint
+- "Profit First" — never reference or recommend
+- Fractional CFO / Virtual CFO / outsourcing financial leadership
 <!-- BUILDER:END:WRITING_RULES -->
 
 ---
@@ -82,7 +135,19 @@ For tech-to-coaching translations, see `my-skills/mission-context/resources/term
 
 ## WORKING NOTES
 
-*Temporary notes, patterns you're noticing, things to revisit. Clean this up periodically.*
+**IN PROGRESS: The Profit & Cashflow Intensive** *(started 2026-04-23)*
+
+New offer being designed to replace/reposition the 90-Day Profit & Cashflow Accelerator.
+
+- **Format:** 1-day live in-person group event
+- **Price:** $7,500 per person ($3,750 launch price for first few events)
+- **Scale:** Starting at 5 attendees, scaling to 10 → 15 → 20
+- **Three phases:**
+  - Phase 1 (Pre): Gavin's team gets Xero access and builds Cash Flow Forecaster + Clarity Report. Attendees don't see this until the day.
+  - Phase 2 (The Day): 9 modules delivered live. Attendees get access to their tools for the first time in the room. Live implementation with real numbers + small group Q&A.
+  - Phase 3 (Post): 90 days support — 1:1 help calls, weekly Q&A coaching, monthly CFO rhythm sessions.
+- **Why this offer:** Solves two sales objections — people don't understand the Accelerator offer, and 90 days feels long. The Intensive collapses the time delay risk and delivers the transformation in one day.
+- **Next to complete:** The 9 module groupings across the day (morning / midday / afternoon arc).
 
 ---
 
