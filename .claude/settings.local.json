@@ -54,6 +54,9 @@
       "Bash(lsof *)"
     ]
   },
+  "enabledMcpjsonServers": [
+    "smart-connections"
+  ],
   "spinnerVerbs": {
     "mode": "replace",
     "verbs": [
@@ -65,5 +68,6 @@
       "Externalizing",
       "Shipping"
     ]
-  }
+  },
+  "enableAllProjectMcpServers": true
 }
