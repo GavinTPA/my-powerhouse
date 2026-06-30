@@ -51,9 +51,13 @@
       "Bash(source *)",
       "Bash(cp *)",
       "Bash(test *)",
-      "Bash(lsof *)"
+      "Bash(lsof *)",
+      "Bash(cd /tmp && npm install docx 2>&1 | tail -3)",
+      "Bash(cp /tmp/Profit-Analyst-Coach-Partnership.docx ~/Desktop/Profit-Analyst-Coach-Partnership.docx && echo \"Copied to Desktop\")",
+      "WebFetch(domain:theprofitanalyst.com)"
     ]
   },
+  "enableAllProjectMcpServers": true,
   "enabledMcpjsonServers": [
     "smart-connections"
   ],
@@ -68,6 +72,5 @@
       "Externalizing",
       "Shipping"
     ]
-  },
-  "enableAllProjectMcpServers": true
+  }
 }
