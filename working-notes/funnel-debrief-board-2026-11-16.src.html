@@ -1,0 +1,240 @@
+<meta charset="utf-8">
+<title>3 Sales a Week Funnel</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+__FONTS__
+<style>
+/* Layout: one A4 landscape page. Logo and title, then four chevrons flowing left to right (each stage's two headline numbers), with that stage's supporting numbers and levers stacked underneath. Focus rule and debrief at the foot. */
+@page{size:A4 landscape;margin:8mm}
+:root{
+  --navy:#002B4E; --blue:#02A3FF; --green:#12C870;
+  --bg:#FFFFFF; --card:#FFFFFF; --ink:#0D2236; --muted:#5A6C7D; --line:#DCE5EC; --head:#002B4E; --badge:#EEF3F7;
+  --c1:#E3F4FF; --c2:#D6EEFF; --c3:#D9F5E8; --c4:#C9F0DC;
+  --display:"Poppins",system-ui,sans-serif; --body:"Lato",system-ui,sans-serif;
+}
+@media screen and (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#06141F; --card:#0C2233; --ink:#E6EEF4; --muted:#93A8B9; --line:#1C3A52; --head:#9AD6FF; --badge:#14324A;
+  --c1:#0E2C44; --c2:#103552; --c3:#0F3A33; --c4:#11442F; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#06141F; --card:#0C2233; --ink:#E6EEF4; --muted:#93A8B9; --line:#1C3A52; --head:#9AD6FF; --badge:#14324A;
+  --c1:#0E2C44; --c2:#103552; --c3:#0F3A33; --c4:#11442F; color-scheme:dark}
+html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:10px;line-height:1.38;margin:0}
+.page{display:grid;gap:12px}
+h1,h2,h3{font-family:var(--display);margin:0;color:var(--head)}
+.lbl{font-family:var(--display);font-size:8px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.num{font-variant-numeric:tabular-nums}
+
+/* Header */
+.top{display:flex;gap:16px;align-items:center;padding-bottom:8px;border-bottom:2px solid var(--blue)}
+.top img{height:40px;width:auto}
+.top h1{font-size:22px;font-weight:700}
+
+/* Flow */
+.flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));column-gap:22px}
+.col{display:flex;flex-direction:column;gap:8px;min-width:0}
+.chev{position:relative;height:76px;box-sizing:border-box;padding:7px 10px 7px 12px;border-radius:8px 0 0 8px;display:flex;flex-direction:column;justify-content:center;gap:2px}
+.chev::after{content:"";position:absolute;top:0;right:-18px;width:0;height:0;border-top:38px solid transparent;border-bottom:38px solid transparent;border-left:18px solid var(--cc)}
+.s1 .chev{--cc:var(--c1);background:var(--c1)} .s2 .chev{--cc:var(--c2);background:var(--c2)}
+.s3 .chev{--cc:var(--c3);background:var(--c3)} .s4 .chev{--cc:var(--c4);background:var(--c4)}
+.chev h2{font-size:13px;font-weight:600}
+.chev h2 .n{color:var(--blue);margin-right:4px}
+.s3 h2 .n,.s4 h2 .n{color:#0E9F5A}
+.chev .job{font-size:9.2px;color:var(--muted)}
+.chev .big{font-family:var(--display);font-weight:700;line-height:1.05;color:var(--head);font-size:22px;white-space:nowrap}
+.chev .big .sep{color:var(--muted);font-weight:500;margin:0 4px}
+.chev .big .unit{font-size:17px}
+
+.card{border:1px solid var(--line);border-radius:7px;padding:6px 9px;background:var(--card)}
+table{width:100%;border-collapse:collapse;font-size:9.3px}
+td{padding:2px 0;border-top:1px dashed var(--line);vertical-align:top}
+tr:first-child td{border-top:0}
+td:last-child{text-align:right;font-weight:700;white-space:nowrap;padding-left:6px}
+
+.levers{display:grid;gap:4px}
+.levers ol{margin:0;padding:0;list-style:none;counter-reset:l;display:grid;gap:4.5px}
+.levers li{counter-increment:l;display:grid;grid-template-columns:15px 1fr;gap:5px;font-size:9.5px;line-height:1.32}
+.levers li::before{content:counter(l);font-family:var(--display);font-weight:600;font-size:7.5px;width:13px;height:13px;line-height:13px;text-align:center;border-radius:50%;background:var(--badge);color:var(--head);align-self:start;margin-top:1px}
+.levers li b{color:var(--head)}
+
+/* Foot */
+.foot{display:grid;grid-template-columns:1fr 2fr;gap:10px}
+.box{border:1px solid var(--line);border-radius:7px;padding:7px 10px;min-width:0}
+.box h3{font-size:11.5px;margin-bottom:4px}
+.rule{display:grid;gap:3px;font-size:9.6px}
+.qs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.qs div{border-left:2px solid var(--blue);padding-left:7px;font-size:9.6px}
+.qs b{display:block;font-family:var(--display);font-size:10.3px;color:var(--head)}
+
+@media screen{
+  .page{max-width:1123px;margin:0 auto;padding-block:20px 28px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+}
+@media screen and (min-width:1280px){body{zoom:1.2}}
+@media screen and (max-width:860px){
+  body{font-size:11px}
+  .flow{grid-template-columns:1fr;row-gap:16px}
+  .chev{border-radius:8px}.chev::after{display:none}
+  .foot{grid-template-columns:1fr}.qs{grid-template-columns:1fr 1fr}
+  .levers li,table,.rule,.qs div{font-size:11px}
+}
+</style>
+
+<div class="page">
+  <header class="top">
+    <img src="__LOGO__" alt="The Profit Analyst">
+    <h1>3 Sales a Week Funnel Board</h1>
+  </header>
+
+  <section class="flow">
+    <!-- STAGE 1 -->
+    <div class="col s1">
+      <div class="chev">
+        <h2><span class="n">1</span>The Ads</h2>
+        <div class="job">Get the right people off Meta and onto the VSL page</div>
+        <div class="big num">1.5%<span class="sep">/</span><span class="unit">200 clicks</span></div>
+      </div>
+      <div class="card">
+        <table>
+          <tr><td>Daily / weekly ad spend</td><td class="num">A$315 / A$2,200</td></tr>
+          <tr><td>Click-through rate</td><td class="num">1.5%+</td></tr>
+          <tr><td>Cost per click</td><td class="num">under A$7</td></tr>
+          <tr><td>CPM (cost per 1,000 views)</td><td class="num">under A$90</td></tr>
+          <tr><td>Frequency (times seen)</td><td class="num">under 2.5</td></tr>
+        </table>
+      </div>
+      <div class="levers">
+        <span class="lbl">Levers, in priority order</span>
+        <ol>
+          <li><span><b>Refresh creative on a schedule.</b> Retire ads once frequency passes 3.</span></li>
+          <li><span><b>Kill and scale weekly.</b> Turn off ads over your cost per booked call limit. Move budget to the winners.</span></li>
+          <li><span><b>Hooks in your buyer's own words,</b> taken from sales calls and applications.</span></li>
+          <li><span><b>Test 3 new hooks a week</b> on a proven ad body.</span></li>
+          <li><span><b>Call out the buyer in the first line:</b> who it's for, what size of business.</span></li>
+          <li><span><b>Match the ad to the page.</b> Same promise as the VSL headline.</span></li>
+          <li><span><b>Mix formats:</b> talking head, client story, static, text on screen.</span></li>
+          <li><span><b>Test audiences:</b> broad against lookalikes of buyers. Exclude current clients.</span></li>
+          <li><span><b>Make sure clicks land.</b> A slow page loses people between the click and the page view.</span></li>
+          <li><span><b>Hold through expensive seasons.</b> Judge on cost per booked call, not CPM.</span></li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- STAGE 2 -->
+    <div class="col s2">
+      <div class="chev">
+        <h2><span class="n">2</span>The VSL</h2>
+        <div class="job">Turn page visitors into booked calls</div>
+        <div class="big num">4.5%<span class="sep">/</span><span class="unit">9 booked</span></div>
+      </div>
+      <div class="card">
+        <table>
+          <tr><td>Page views</td><td class="num">200 a week</td></tr>
+          <tr><td>Applications</td><td class="num">11 a week</td></tr>
+          <tr><td>Calls booked</td><td class="num">9 a week</td></tr>
+          <tr><td>Booked call rate</td><td class="num">4.5%+</td></tr>
+          <tr><td>Cost per booked call</td><td class="num">under A$300</td></tr>
+        </table>
+      </div>
+      <div class="levers">
+        <span class="lbl">Levers, in priority order</span>
+        <ol>
+          <li><span><b>Sharpen the headline and first 30 seconds.</b> That's where most people leave.</span></li>
+          <li><span><b>Chase applications that don't book.</b> Text or call within the hour.</span></li>
+          <li><span><b>Retarget visitors who didn't book</b> with short clips and client stories.</span></li>
+          <li><span><b>Proof near the button.</b> Real client results with numbers.</span></li>
+          <li><span><b>Answer the top 3 objections</b> on the page.</span></li>
+          <li><span><b>Say what happens next.</b> A clear call to action, repeated down the page.</span></li>
+          <li><span><b>Shorter application form.</b> Only ask what the call needs.</span></li>
+          <li><span><b>Slots in the next 48 hours</b> showing on the calendar.</span></li>
+          <li><span><b>Check it on a phone:</b> fast load, captions on, easy button.</span></li>
+          <li><span><b>Test one change at a time,</b> once traffic is steady, so you know what moved.</span></li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- STAGE 3 -->
+    <div class="col s3">
+      <div class="chev">
+        <h2><span class="n">3</span>Appointment Engine</h2>
+        <div class="job">Get booked people to turn up ready</div>
+        <div class="big num">70%<span class="sep">/</span><span class="unit">6 showed</span></div>
+      </div>
+      <div class="card">
+        <table>
+          <tr><td>Calls due</td><td class="num">9 a week</td></tr>
+          <tr><td>Calls showed</td><td class="num">6 a week</td></tr>
+          <tr><td>Cancelled or rescheduled</td><td class="num">under 2</td></tr>
+          <tr><td>No shows</td><td class="num">under 2</td></tr>
+          <tr><td>Show rate</td><td class="num">70%+</td></tr>
+        </table>
+      </div>
+      <div class="levers">
+        <span class="lbl">Levers, in priority order</span>
+        <ol>
+          <li><span><b>Personal touch within 5 minutes</b> of booking. A text or voice memo from the person taking the call.</span></li>
+          <li><span><b>Book calls inside 48 hours.</b> The longer the wait, the more they cancel.</span></li>
+          <li><span><b>Reminder run</b> 24 hours, 2 hours and 15 minutes out, by SMS and email. Ask them to reply "YES".</span></li>
+          <li><span><b>Call anyone unconfirmed</b> on the morning of the call.</span></li>
+          <li><span><b>Pre-call video:</b> what happens on the call plus one client story.</span></li>
+          <li><span><b>Pre-call homework,</b> like bringing last month's numbers. Invested people turn up.</span></li>
+          <li><span><b>Rebook no-shows within 10 minutes</b> with a direct link.</span></li>
+          <li><span><b>A clear calendar invite</b> from a real person, with the link and what to expect.</span></li>
+          <li><span><b>Find who shows least</b> (by business size, ad, time slot) and give them extra care.</span></li>
+          <li><span><b>Log every cancellation reason</b> and fix the pattern.</span></li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- STAGE 4 -->
+    <div class="col s4">
+      <div class="chev">
+        <h2><span class="n">4</span>The Sales Call</h2>
+        <div class="job">Turn calls sat into paying clients</div>
+        <div class="big num">50%<span class="sep">/</span><span class="unit">3 converted</span></div>
+      </div>
+      <div class="card">
+        <table>
+          <tr><td>Calls sat</td><td class="num">6 a week</td></tr>
+          <tr><td>Sales</td><td class="num">3 a week</td></tr>
+          <tr><td>Close rate</td><td class="num">50%</td></tr>
+          <tr><td>Work in progress: BAMFAM</td><td class="num">all</td></tr>
+          <tr><td>Not closed: nurture piece sent</td><td class="num">all</td></tr>
+        </table>
+      </div>
+      <div class="levers">
+        <span class="lbl">Levers, in priority order</span>
+        <ol>
+          <li><span><b>Review one recorded call per closer each week.</b> What worked, where it stalled.</span></li>
+          <li><span><b>Read the application before every call:</b> their numbers, their words, their pain.</span></li>
+          <li><span><b>Work their real situation on the call.</b> Show them their next right move.</span></li>
+          <li><span><b>BAMFAM every work in progress:</b> book a meeting from a meeting before the call ends.</span></li>
+          <li><span><b>Objection log</b> with your best answers to price, timing and "I need to ask my partner".</span></li>
+          <li><span><b>Get the decision maker on the call.</b> Ask at booking.</span></li>
+          <li><span><b>One call structure</b> every closer follows.</span></li>
+          <li><span><b>Role-play the hardest objection</b> once a week.</span></li>
+          <li><span><b>Nurture every "not now"</b> with a useful piece of advice or a clear next step.</span></li>
+          <li><span><b>Track close rate by closer and by lead source</b> to see where the wins come from.</span></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="foot">
+    <div class="box">
+      <h3>How we pick the week's focus</h3>
+      <div class="rule">
+        <span>1. One thing at a time. Judge rates on a rolling 4-week average.</span>
+        <span>2. Work right to left. Start closest to the sale. The first stage under target is the focus.</span>
+        <span>3. Pick one or two levers from that stage. One owner, a due date, a clear finish line.</span>
+      </div>
+    </div>
+    <div class="box">
+      <h3>The weekly debrief</h3>
+      <div class="qs">
+        <div><b>Objective</b>What was the target? 3 sales, plus each stage's number.</div>
+        <div><b>Result</b>What did we actually achieve? This week and the 4-week average.</div>
+        <div><b>Reasons</b>Why? Use the stage numbers above to find where it leaked.</div>
+        <div><b>Response</b>Which one do we tackle first? Lever, owner, due date.</div>
+      </div>
+    </div>
+  </section>
+</div>

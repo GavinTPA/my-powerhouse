@@ -1,0 +1,724 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<title>The Profit Analyst: 90-Day Profit &amp; Cash Flow Accelerator</title>
+<style>
+  @font-face { font-family: "Poppins"; font-weight: 400; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Poppins-Regular.ttf"); }
+  @font-face { font-family: "Poppins"; font-weight: 500; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Poppins-Medium.ttf"); }
+  @font-face { font-family: "Poppins"; font-weight: 600; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Poppins-SemiBold.ttf"); }
+  @font-face { font-family: "Poppins"; font-weight: 700; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Poppins-Bold.ttf"); }
+  @font-face { font-family: "Lato"; font-weight: 400; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Lato-Regular.ttf"); }
+  @font-face { font-family: "Lato"; font-style: italic; font-weight: 400; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Lato-Italic.ttf"); }
+  @font-face { font-family: "Lato"; font-weight: 700; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Lato-Bold.ttf"); }
+
+  :root {
+    --navy: #002B4E; --blue: #02A3FF; --green: #12C870; --red: #DC2626;
+    --green-ink: #0A9A55; --blue-ink: #0280CC;
+    --green-light: #E6F9EF; --blue-light: #E5F5FF; --grey-light: #F3F6F9; --red-light: #FDECEC;
+    --text: #1A2433; --text-2: #4A5563; --rule: #DDE3EA;
+  }
+
+  @page {
+    size: A4 portrait; margin: 16mm 17mm 17mm 17mm;
+    @bottom-left { content: "90-Day Profit & Cash Flow Accelerator"; font-family: "Poppins"; font-size: 7.5pt; color: #8A94A3; }
+    @bottom-right { content: counter(page); font-family: "Poppins"; font-size: 7.5pt; font-weight: 600; color: var(--green-ink); }
+  }
+  @page cover { margin: 0; @bottom-left { content: none; } @bottom-right { content: none; } }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Lato", sans-serif; font-size: 10.4pt; line-height: 1.5; color: var(--text); }
+  .page { page-break-before: always; }
+  p { margin-bottom: 2.6mm; }
+  b, strong { font-weight: 700; color: var(--navy); }
+
+  .kicker { font-family: "Poppins"; font-size: 8pt; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--green-ink); margin-bottom: 1.5mm; }
+  h1 { font-family: "Poppins"; font-size: 23pt; font-weight: 700; color: var(--navy); line-height: 1.13; margin-bottom: 3.5mm; }
+  h1 span { color: var(--green); }
+  h2 { font-family: "Poppins"; font-size: 13.5pt; font-weight: 700; color: var(--navy); line-height: 1.2; margin: 6mm 0 2.5mm; }
+  h3 { font-family: "Poppins"; font-size: 11pt; font-weight: 700; color: var(--navy); line-height: 1.25; margin-bottom: 1.2mm; }
+  .lead { font-size: 12pt; color: var(--text-2); line-height: 1.5; margin-bottom: 4mm; }
+  .small { font-size: 8.8pt; color: var(--text-2); }
+  .pull { font-family: "Poppins"; font-size: 13pt; font-weight: 600; color: var(--navy); line-height: 1.35; border-left: 3pt solid var(--green); padding-left: 5mm; margin: 5mm 0; }
+
+  ul.dots { list-style: none; margin-bottom: 2mm; }
+  ul.dots li { position: relative; padding-left: 4.5mm; margin-bottom: 1.1mm; }
+  ul.dots li::before { content: ""; position: absolute; left: 0; top: 2mm; width: 1.7mm; height: 1.7mm; border-radius: 50%; background: var(--green); }
+
+  .row { display: flex; gap: 4mm; }
+  .col { flex: 1; }
+  .card { border: 1pt solid var(--rule); border-radius: 3mm; padding: 4.5mm 5mm; background: #fff; }
+  .card.grey { background: var(--grey-light); border-color: var(--grey-light); }
+  .card.green { background: var(--green-light); border-color: #BDEFD4; }
+  .card.blue { background: var(--blue-light); border-color: #BFE6FF; }
+  .card.red { background: var(--red-light); border-color: #F7CACA; }
+  .card p:last-child, .card ul:last-child { margin-bottom: 0; }
+  .accent-g { border-left: 3pt solid var(--green); }
+  .accent-b { border-left: 3pt solid var(--blue); }
+  .accent-n { border-left: 3pt solid var(--navy); }
+  .figure { margin: 4mm 0; }
+  .figure img, .figure svg { display: block; width: 100%; }
+
+  /* Cover */
+  .cover { page: cover; width: 210mm; height: 297mm; background: #F5F7FA; position: relative; padding: 24mm 22mm 20mm 28mm; border-left: 6mm solid var(--green); }
+  .cover .logo { height: 17mm; }
+  .cover .tag { font-family: "Poppins"; font-size: 9pt; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--green-ink); margin-top: 60mm; }
+  .cover h1 { font-size: 40pt; line-height: 1.05; margin-top: 4mm; }
+  .cover .promise { font-family: "Poppins"; font-size: 15pt; font-weight: 500; color: var(--blue-ink); margin-top: 6mm; line-height: 1.35; }
+  .cover .for { margin-top: 24mm; font-size: 12.5pt; line-height: 1.55; color: var(--text-2); max-width: 140mm; }
+  .cover .for b { color: var(--navy); }
+  .cover .foot { position: absolute; left: 28mm; right: 22mm; bottom: 18mm; display: flex; justify-content: space-between; font-family: "Poppins"; font-size: 8.5pt; color: #8A94A3; border-top: 0.8pt solid var(--rule); padding-top: 4mm; }
+
+  /* Then vs now */
+  .vs { display: flex; gap: 4mm; align-items: stretch; margin: 3mm 0; }
+  .vs .card { flex: 1; }
+  .vs .arrow { align-self: center; font-family: "Poppins"; font-size: 18pt; font-weight: 700; color: var(--green); }
+  .mini { font-family: "Poppins"; font-size: 7.6pt; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-2); margin-bottom: 1mm; }
+
+  /* Seats */
+  .seats { display: flex; gap: 3mm; margin: 3mm 0 4mm; }
+  .seat { flex: 1; border: 1pt solid var(--rule); border-radius: 3mm; padding: 4.5mm 4mm; text-align: center; background: #fff; }
+  .seat .icon { width: 10mm; height: 10mm; margin: 0 auto 2mm; display: block; }
+  .seat .who { font-family: "Poppins"; font-size: 7.5pt; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-2); }
+  .seat .is { font-family: "Poppins"; font-size: 13pt; font-weight: 700; color: var(--navy); margin: 0.8mm 0 1.5mm; }
+  .seat p { font-size: 9pt; color: var(--text-2); line-height: 1.4; margin: 0; }
+  .seat.you { background: var(--green-light); border: 1.6pt solid var(--green); }
+  .seat.you .who { color: var(--green-ink); }
+
+  /* Ecosystem */
+  .eco { display: flex; gap: 5mm; align-items: center; }
+  .eco img { width: 72mm; }
+  .lens { margin-bottom: 3mm; }
+  .lens h3 { font-size: 10.6pt; margin-bottom: 0.5mm; }
+  .lens .tag { font-family: "Poppins"; font-size: 8.4pt; font-weight: 600; margin-bottom: 0.8mm; }
+  .lens p { font-size: 9.4pt; line-height: 1.45; margin: 0; color: var(--text-2); }
+  .qs { display: flex; flex-wrap: wrap; gap: 2mm 4mm; margin-top: 2mm; }
+  .qs .q { width: calc(50% - 2mm); display: flex; align-items: center; gap: 2.5mm; font-family: "Poppins"; font-size: 9.4pt; font-weight: 600; color: var(--navy); }
+  .qs .n { width: 6.5mm; height: 6.5mm; border-radius: 50%; color: #fff; font-size: 8.5pt; text-align: center; line-height: 6.5mm; flex: none; }
+  .n.c { background: var(--navy); } .n.p { background: var(--green); } .n.f { background: var(--blue); }
+
+  /* Game rules */
+  .rules { display: flex; gap: 3mm; margin: 3mm 0; }
+  .rule { flex: 1; background: var(--grey-light); border-radius: 3mm; padding: 3.5mm; }
+  .rule .num { font-family: "Poppins"; font-size: 15pt; font-weight: 700; color: var(--green); line-height: 1; }
+  .rule p { font-family: "Poppins"; font-size: 9.2pt; font-weight: 600; color: var(--navy); line-height: 1.3; margin: 1.5mm 0 0; }
+
+  /* Rhythm */
+  .rhythm { display: flex; gap: 4mm; align-items: center; }
+  .rhythm img { width: 82mm; }
+  .rcard { background: var(--grey-light); border-radius: 2.5mm; padding: 2.8mm 4mm; margin-bottom: 2mm; }
+  .rcard .t { font-family: "Poppins"; font-size: 7.6pt; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-2); }
+  .rcard h3 { font-size: 10.5pt; margin: 0.3mm 0 0.3mm; }
+  .rcard p { font-size: 9pt; margin: 0; color: var(--text-2); }
+
+  /* Results */
+  .stats { display: flex; gap: 3mm; margin-top: 3mm; }
+  .stat { flex: 1; border-radius: 3mm; padding: 3.5mm 4mm; }
+  .stat .y { font-family: "Poppins"; font-size: 7.6pt; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; }
+  .stat .v { font-family: "Poppins"; font-size: 14pt; font-weight: 700; color: var(--navy); line-height: 1.2; }
+  .stat .d { font-size: 9pt; color: var(--text-2); }
+  .result { display: flex; gap: 3mm; align-items: stretch; margin-bottom: 2.5mm; }
+  .result .who { width: 34mm; padding-top: 2mm; }
+  .result .who .n { font-family: "Poppins"; font-size: 12pt; font-weight: 700; color: var(--navy); }
+  .result .who .b { font-size: 8.8pt; color: var(--text-2); }
+  .result .box { flex: 1; border-radius: 3mm; padding: 2.8mm 4mm; border: 1pt solid var(--rule); }
+  .result .box.after { background: var(--green-light); border-color: #BDEFD4; }
+  .result .lbl { font-family: "Poppins"; font-size: 7.2pt; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-2); }
+  .result .v { font-family: "Poppins"; font-size: 10.5pt; font-weight: 700; color: var(--navy); line-height: 1.3; }
+  .result .after .v { color: var(--green-ink); }
+  .result .arrow { align-self: center; font-family: "Poppins"; font-size: 15pt; font-weight: 700; color: var(--green); }
+
+  /* 90 days */
+  .flow { display: flex; margin: 3mm 0 5mm; }
+  .stage { flex: 1; padding: 4mm 4.5mm; background: var(--grey-light); margin-right: 1.5mm; }
+  .stage:first-child { border-radius: 3mm 0 0 3mm; }
+  .stage:last-child { border-radius: 0 3mm 3mm 0; background: var(--green-light); margin-right: 0; }
+  .stage .when { font-family: "Poppins"; font-size: 7.6pt; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--blue-ink); }
+  .stage:last-child .when { color: var(--green-ink); }
+  .stage h3 { margin: 0.5mm 0 1mm; }
+  .stage p { font-size: 9.2pt; color: var(--text-2); margin: 0; line-height: 1.4; }
+  .strands { display: flex; gap: 3mm; }
+  .strand { flex: 1; border: 1pt solid var(--rule); border-radius: 3mm; padding: 4mm; border-top: 3pt solid var(--blue); }
+  .strand.g { border-top-color: var(--green); }
+  .strand.n { border-top-color: var(--navy); }
+  .strand h3 { font-size: 10.6pt; }
+  .strand .sub { font-size: 8.8pt; color: var(--text-2); margin-bottom: 2mm; }
+  .strand ul.dots li { font-size: 9.1pt; line-height: 1.38; }
+
+  /* Guarantee */
+  .game { display: flex; gap: 3mm; align-items: center; margin: 4mm 0 5mm; }
+  .game .g { flex: 1; text-align: center; background: var(--grey-light); border-radius: 3mm; padding: 4mm 3mm; }
+  .game .g .num { font-family: "Poppins"; font-size: 8pt; font-weight: 600; color: var(--blue-ink); letter-spacing: 0.12em; text-transform: uppercase; }
+  .game .g p { font-family: "Poppins"; font-size: 10pt; font-weight: 700; color: var(--navy); line-height: 1.3; margin: 1mm 0 0; }
+  .game .g.win { background: var(--green); }
+  .game .g.win .num, .game .g.win p { color: #fff; }
+  .game .arr { font-family: "Poppins"; font-size: 14pt; font-weight: 700; color: var(--green); }
+  .guarantee { border: 2pt solid var(--green); border-radius: 4mm; padding: 6mm 7mm; background: var(--green-light); display: flex; gap: 6mm; align-items: flex-start; }
+  .seal { width: 24mm; height: 24mm; flex: none; }
+  .guarantee h2 { margin-top: 0; }
+  .guarantee p { font-size: 10.5pt; }
+
+  /* Investment */
+  .cost { display: flex; flex-wrap: wrap; gap: 2.5mm; margin: 3mm 0 3mm; }
+  .cost .c { width: calc(50% - 1.25mm); background: var(--red-light); border-radius: 2.5mm; padding: 3mm 4mm; font-family: "Poppins"; font-size: 9.6pt; font-weight: 600; color: var(--navy); line-height: 1.35; }
+  .invest { display: flex; gap: 4mm; align-items: stretch; margin: 5mm 0 2mm; }
+  .opt { flex: 1; border: 1pt solid var(--rule); border-radius: 3mm; padding: 5.5mm 4.5mm 4mm; position: relative; }
+  .opt.total { background: var(--blue-light); border-color: #BFE6FF; }
+  .opt.featured { border: 1.6pt solid var(--green); background: var(--green-light); }
+  .badge { position: absolute; top: -3mm; left: 4.5mm; background: var(--green); color: #fff; font-family: "Poppins"; font-size: 7pt; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.9mm 2.6mm; border-radius: 1.5mm; }
+  .opt h3 { font-size: 11pt; }
+  .opt .amt { font-family: "Poppins"; font-size: 21pt; font-weight: 700; color: var(--navy); line-height: 1; margin-top: 2.5mm; }
+  .opt .per { font-family: "Poppins"; font-size: 8.5pt; font-weight: 500; color: var(--text-2); margin-top: 0.8mm; }
+  .opt p { font-size: 9pt; color: var(--text-2); margin: 2mm 0 0; }
+  .opt p b { color: var(--green-ink); }
+  .tiers { display: flex; gap: 3mm; margin-top: 2mm; }
+  .tier { flex: 1; border: 1pt solid var(--rule); border-radius: 3mm; padding: 3mm 4mm; }
+  .tier.feat { border-color: var(--green); background: var(--green-light); }
+  .tier .tn { font-family: "Poppins"; font-size: 10pt; font-weight: 700; color: var(--navy); }
+  .tier .tp { font-family: "Poppins"; font-size: 8.8pt; font-weight: 600; color: var(--blue-ink); margin: 0.3mm 0 0.8mm; }
+  .tier p { font-size: 8.6pt; color: var(--text-2); margin: 0; line-height: 1.38; }
+
+  /* Fit + close */
+  .fit { display: flex; gap: 3mm; margin: 3mm 0; }
+  .fit .f { flex: 1; border: 1pt solid var(--rule); border-radius: 3mm; padding: 4mm; }
+  .fit .f .v { font-family: "Poppins"; font-size: 12pt; font-weight: 700; color: var(--navy); line-height: 1.2; }
+  .fit .f p { font-size: 8.8pt; color: var(--text-2); margin: 1mm 0 0; }
+  .fit .f.ready { background: var(--green); border-color: var(--green); }
+  .fit .f.ready .v, .fit .f.ready p { color: #fff; }
+  .options { display: flex; gap: 3mm; }
+  .option { flex: 1; border-radius: 3mm; padding: 4.5mm; border: 1pt solid var(--rule); }
+  .option.yes { background: var(--green-light); border: 1.6pt solid var(--green); }
+  .option p { font-size: 9.2pt; margin: 0; color: var(--text-2); }
+  .option .k { font-family: "Poppins"; font-size: 7.5pt; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--green-ink); margin-bottom: 1mm; }
+  /* Software */
+  .feed { display: flex; align-items: stretch; gap: 2mm; margin: 2mm 0 3.5mm; }
+  .feed .node { flex: 1; border-radius: 2.5mm; padding: 2mm 3mm; text-align: center; }
+  .feed .node .t { font-family: "Poppins"; font-size: 7.6pt; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; }
+  .feed .node .v { font-family: "Poppins"; font-size: 9.6pt; font-weight: 700; color: var(--navy); line-height: 1.2; margin-top: 0.3mm; }
+  .feed .arr { align-self: center; font-family: "Poppins"; font-size: 15pt; font-weight: 700; color: var(--green); }
+  .shot { border: 1pt solid var(--rule); border-radius: 2mm; display: block; width: 100%; }
+  .shots { display: flex; flex-wrap: wrap; gap: 4mm 4mm; }
+  .shots .s { width: calc(50% - 2mm); }
+  .shots .s .num { font-family: "Poppins"; font-size: 7.4pt; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--blue-ink); margin-top: 2mm; }
+  .shots .s h3 { font-size: 10.4pt; margin: 0.3mm 0 0.6mm; }
+  .shots .s p { font-size: 8.9pt; color: var(--text-2); line-height: 1.42; margin: 0; }
+  .note { font-size: 8pt; color: #8A94A3; margin-top: 2mm; }
+  .calc, .five { margin-top: 4mm; }
+  .calc .num, .five .num { font-family: "Poppins"; font-size: 7.4pt; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--blue-ink); }
+  .calc h3, .five h3 { font-size: 10.4pt; margin: 0.3mm 0 0.6mm; }
+  .calc p, .five p { font-size: 8.9pt; color: var(--text-2); line-height: 1.42; margin: 0; }
+  .calc-row { display: flex; gap: 3mm; align-items: center; margin-top: 2mm; }
+  .calc-row img { width: 50%; }
+  .five { display: flex; gap: 4mm; align-items: center; }
+  .five img { width: 50%; flex: none; }
+</style>
+</head>
+<body>
+
+<!-- ============ COVER ============ -->
+<section class="cover">
+  <img class="logo" src="../my-skills/pdf-forge/brands/the-profit-analyst/logo.svg" alt="The Profit Analyst">
+  <div class="tag">90-Day Profit &amp; Cash Flow Accelerator</div>
+  <h1>Your profit and<br><span>cash flow,</span> made simple.</h1>
+  <div class="promise">We install your financial operating system,<br>then teach you how to run it.</div>
+  <div class="for">For owners of $1M to $5M businesses who have outgrown the bank balance and gut feel. <b>See what's coming, know where the money's going, and make the right call when it matters.</b></div>
+  <div class="foot"><span>The Profit Analyst</span><span>theprofitanalyst.com</span></div>
+</section>
+
+<!-- ============ 1. THE PROBLEM ============ -->
+<section class="page">
+  <div class="kicker">The problem</div>
+  <h1>Your business has grown.<br><span>The way you run the numbers hasn't.</span></h1>
+  <p class="lead">When you started, the bank balance and your gut were enough. You had a bookkeeper keeping the books, an accountant at tax time, and the occasional conversation in between. It got you here.</p>
+
+  <div class="vs">
+    <div class="card grey">
+      <div class="mini">What got you here</div>
+      <ul class="dots">
+        <li>Check the bank balance</li>
+        <li>Trust your gut</li>
+        <li>Bookkeeper records what happened</li>
+        <li>Accountant tells you how you went, months later</li>
+      </ul>
+    </div>
+    <div class="arrow">→</div>
+    <div class="card blue">
+      <div class="mini">Where you are now</div>
+      <ul class="dots">
+        <li>More staff, more customers, more costs</li>
+        <li>More cash moving every week</li>
+        <li>Bigger decisions, with more riding on them</li>
+        <li>Less room for getting it wrong</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>At seven figures, the old way starts costing you</h2>
+  <p>The mistakes don't go away as you grow. They just get more expensive. And they show up in two ways.</p>
+  <div class="row">
+    <div class="col card red">
+      <h3>Shocks that arrive too late</h3>
+      <p class="small" style="margin-bottom:2mm">Things you could have fixed, if you'd seen them coming.</p>
+      <ul class="dots">
+        <li>The tax bill that wipes out the cash you thought you had</li>
+        <li>The five-week pay month that drains the account</li>
+        <li>Profit on paper that never shows up in the bank</li>
+        <li>The hire or the purchase you couldn't really afford</li>
+      </ul>
+    </div>
+    <div class="col card green">
+      <h3>Wins you never got</h3>
+      <p class="small" style="margin-bottom:2mm">Upside you should have had along the way.</p>
+      <ul class="dots">
+        <li>The price rise you held off on for two years</li>
+        <li>The investment you were too nervous to make</li>
+        <li>Margin quietly leaking out of a cost you weren't watching</li>
+        <li>The growth you could have funded, if you'd known it was safe</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="pull">At this level, you can't keep playing like that. That's why you need a financial operating system installed.</div>
+</section>
+
+<!-- ============ 2. THE DECISION SEAT ============ -->
+<section class="page">
+  <div class="kicker">Who's in the decision seat?</div>
+  <h1>You have a scorekeeper and a referee.<br><span>Someone has to make the calls.</span></h1>
+  <p class="lead">Once you're over seven figures, every seat in your finance team needs to be filled. Most owners have two of the three.</p>
+
+  <div class="seats">
+    <div class="seat">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#02A3FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h4"/></svg>
+      <div class="who">Your bookkeeper</div><div class="is">The scorekeeper</div>
+      <p>Writes down what happened. Keeps the books accurate.</p>
+    </div>
+    <div class="seat">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#02A3FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg>
+      <div class="who">Your accountant</div><div class="is">The referee</div>
+      <p>Knows the rules you play by. Keeps you compliant with the tax office.</p>
+    </div>
+    <div class="seat you">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#12C870" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></svg>
+      <div class="who">You</div><div class="is">The decision maker</div>
+      <p>Reads the numbers, looks ahead and makes the calls that grow the business.</p>
+    </div>
+  </div>
+
+  <p>The decision seat isn't about looking backwards at financials. Yes, you look back to understand what happened. But the real job is looking forward: having forecasts and a clear plan for where you're going, so you can make the right decisions on the way there.</p>
+
+  <p>You could pay someone senior to sit in that seat for you. But then you're renting the one capability you most need to own. Every time a big decision comes up, you're back on the phone, waiting.</p>
+
+  <div class="card green" style="margin-top:4mm">
+    <h3>This isn't about turning you into an accountant</h3>
+    <p>It's about turning you into a business owner who can read the language of business, which is numbers, and use it to make great decisions. That's what this program does.</p>
+  </div>
+</section>
+
+<!-- ============ 3. THE SYSTEM ============ -->
+<section class="page">
+  <div class="kicker">The answer · The Profit Analyst Method™</div>
+  <h1>A financial operating system,<br><span>built by a CFO who became an owner</span></h1>
+  <p class="lead">I spent years as a CFO. Then I bought small businesses of my own, and quickly learned that big-company finance doesn't fit a busy owner. So I built my own simple system.</p>
+  <p>It keeps my time in finance world to a minimum, and puts the critical information in front of me exactly when I need it to make the key decisions. That's what drives the results. And it works the same way in every business.</p>
+
+  <div class="figure"><img src="profit-analyst-pyramid.png" alt="The Profit Analyst pyramid: Visibility, Decisions, Results"></div>
+
+  <div class="row">
+    <div class="col card grey accent-n">
+      <h3>Visibility</h3>
+      <p class="small">Four simple tools on your real numbers, so you can see what's happening and what's coming.</p>
+    </div>
+    <div class="col card grey accent-b">
+      <h3>Decisions</h3>
+      <p class="small">A short set of questions you ask on repeat. The answers tell you your next right move.</p>
+    </div>
+    <div class="col card grey accent-g">
+      <h3>Results</h3>
+      <p class="small">Better decisions, made earlier, compound. More profit, more cash.</p>
+    </div>
+  </div>
+  <p style="margin-top:4mm">You can't get to results without decisions, and you can't make good decisions without visibility. <b>So we build it from the ground up.</b></p>
+</section>
+
+<!-- ============ 4. THE ECOSYSTEM ============ -->
+<section class="page">
+  <div class="kicker">The method · The Finance Ecosystem™</div>
+  <h1>Three sets of numbers.<br><span>Six questions that matter.</span></h1>
+  <p class="lead">In the middle sits accounting world: your P&amp;L, balance sheet and cash flow. You don't need to master it. You need a simple view of each, and the right questions to ask.</p>
+
+  <div class="eco">
+    <img src="assets/offer/ecosystem-venn.png" alt="The Finance Ecosystem: profitability, financial position and cash flow">
+    <div class="col">
+      <div class="lens">
+        <h3>Profitability <span style="font-weight:500; color:var(--text-2); font-size:9pt">· your P&amp;L</span></h3>
+        <div class="tag" style="color:var(--green-ink)">What's the recipe behind your result?</div>
+        <p>Viewed through a few key drivers, it shows where you're winning, where you're losing and, most importantly, what to do about it. Your energy goes into the things that actually grow the business.</p>
+      </div>
+      <div class="lens">
+        <h3>Financial position <span style="font-weight:500; color:var(--text-2); font-size:9pt">· your balance sheet</span></h3>
+        <div class="tag" style="color:var(--blue-ink)">What do you own and owe, and where's the money going?</div>
+        <p>If you're making a profit, where is it? Caught up in the cash cycle, paid out to you, paying down debt, reinvested, or leaking? One simple view explains it.</p>
+      </div>
+      <div class="lens">
+        <h3>Cash flow <span style="font-weight:500; color:var(--text-2); font-size:9pt">· looking forward</span></h3>
+        <div class="tag" style="color:var(--navy)">Are you going to be okay, and can you afford it?</div>
+        <p>Cash is the oil in the engine. It doesn't decide how big the engine is, but without enough of it nothing runs.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card grey" style="margin-top:3mm">
+    <h3>Why cash flow has to look forward</h3>
+    <p class="small">Cash is always a rollercoaster, because of the cycles running through it: things you pay weekly, monthly and quarterly. When you can see your cash flow ahead of time, two things change. It's far less stressful, because you see the low points coming and plan your way through them. And you make better business decisions, because you know when it's safe to pull the trigger and when you're over-stretching and need to pull back.</p>
+  </div>
+
+  <h2 style="margin-top:5mm">The Six Strategic Questions</h2>
+  <div class="qs">
+    <div class="q"><span class="n c">1</span>When's my next cash low point?</div>
+    <div class="q"><span class="n p">4</span>What's my target profit formula?</div>
+    <div class="q"><span class="n c">2</span>How much cash is free to use?</div>
+    <div class="q"><span class="n f">5</span>What's our financial position?</div>
+    <div class="q"><span class="n p">3</span>What's my current profit formula?</div>
+    <div class="q"><span class="n f">6</span>Where is the profit going?</div>
+  </div>
+</section>
+
+<!-- ============ 5. WHAT WE DO ============ -->
+<section class="page">
+  <div class="kicker">What we do</div>
+  <h1>We install it, teach it<br><span>and make it run on repeat</span></h1>
+  <p class="lead">We're CFOs who became small business owners and built our own simple system to make running a business easier. We've been doing this for years, and we've coached hundreds of businesses across dozens of industries.</p>
+
+  <p style="margin-bottom:1mm">Whatever your industry, everyone's playing the same game:</p>
+  <div class="rules">
+    <div class="rule"><div class="num">1</div><p>Maximise your profitability</p></div>
+    <div class="rule"><div class="num">2</div><p>Play it safe within your cash flow</p></div>
+    <div class="rule"><div class="num">3</div><p>Know where the money's going</p></div>
+    <div class="rule"><div class="num">4</div><p>Make better decisions</p></div>
+  </div>
+
+  <div class="row" style="align-items:center; margin-top:4mm">
+    <div style="width:84mm">
+      <svg viewBox="0 0 400 370" xmlns="http://www.w3.org/2000/svg" font-family="Poppins">
+        <circle cx="200" cy="120" r="112" fill="#002B4E" fill-opacity="0.07" stroke="#002B4E" stroke-width="2.5"/>
+        <circle cx="128" cy="240" r="112" fill="#02A3FF" fill-opacity="0.12" stroke="#02A3FF" stroke-width="2.5"/>
+        <circle cx="272" cy="240" r="112" fill="#12C870" fill-opacity="0.12" stroke="#12C870" stroke-width="2.5"/>
+        <text x="200" y="62" font-size="17" font-weight="700" fill="#002B4E" text-anchor="middle">EMBED</text>
+        <text x="200" y="82" font-size="17" font-weight="700" fill="#002B4E" text-anchor="middle">THE RHYTHM</text>
+        <text x="200" y="101" font-size="11.5" fill="#4A5563" text-anchor="middle">System + cadence</text>
+        <text x="103" y="264" font-size="17" font-weight="700" fill="#0280CC" text-anchor="middle">INSTALL</text>
+        <text x="103" y="284" font-size="17" font-weight="700" fill="#0280CC" text-anchor="middle">THE SYSTEM</text>
+        <text x="103" y="305" font-size="11.5" fill="#4A5563" text-anchor="middle">Tools + software</text>
+        <text x="297" y="264" font-size="17" font-weight="700" fill="#0A9A55" text-anchor="middle">TEACH YOU</text>
+        <text x="297" y="284" font-size="17" font-weight="700" fill="#0A9A55" text-anchor="middle">TO USE IT</text>
+        <text x="297" y="305" font-size="11.5" fill="#4A5563" text-anchor="middle">Coaching + education</text>
+        <circle cx="200" cy="200" r="7" fill="#12C870"/>
+      </svg>
+    </div>
+    <div class="col">
+      <div class="card blue accent-b" style="margin-bottom:2.5mm; padding:3.5mm 4.5mm">
+        <h3>Install the system</h3>
+        <p class="small">Our finance team connects your numbers and installs your four tools. Your forecast is kept up to date every week.</p>
+      </div>
+      <div class="card green accent-g" style="margin-bottom:2.5mm; padding:3.5mm 4.5mm">
+        <h3>Teach you to use it</h3>
+        <p class="small">Coaching and short training so you can read your numbers, ask the right questions and make the call.</p>
+      </div>
+      <div class="card grey accent-n" style="padding:3.5mm 4.5mm">
+        <h3>Embed the rhythm</h3>
+        <p class="small">Simple weekly, monthly and quarterly routines, so it keeps running long after the 90 days.</p>
+      </div>
+    </div>
+  </div>
+
+  <h2>Your profit and cash flow rhythm</h2>
+  <div class="rhythm">
+    <img src="assets/offer/rhythm-chart.png" alt="Weekly, monthly and quarterly rhythm">
+    <div class="col">
+      <div class="rcard" style="border-left:3pt solid var(--navy)"><div class="t">Weekly · 10 mins</div><h3>Know your cash</h3><p>Your cash, your next low point, any cash risks.</p></div>
+      <div class="rcard" style="border-left:3pt solid var(--blue)"><div class="t">Monthly · 1 hour</div><h3>Know how you're going</h3><p>How you're performing, why, and where profit went.</p></div>
+      <div class="rcard" style="border-left:3pt solid var(--green); margin-bottom:0"><div class="t">Quarterly · 2 hours</div><h3>Set the strategy</h3><p>Let your numbers guide where you're heading.</p></div>
+    </div>
+  </div>
+  <p style="margin-top:4mm">Once it's running, it takes <b>about two hours a month</b> to stay completely on top of your numbers. Few things you do in your business will give you more leverage than that.</p>
+</section>
+
+<!-- ============ 5b. THE SOFTWARE ============ -->
+<section class="page">
+  <div class="kicker">The Profit Analyst software</div>
+  <h1>The software we wanted<br><span>didn't exist. So we built it.</span></h1>
+  <p class="lead">Everything out there was made for accountants. Too complex, all backwards looking, or built for over-analysis. None of it gave a business owner what they actually need to make a decision.</p>
+  <p>So we built our own. It pulls your numbers straight out of your accounting software and turns them into something simple enough for any owner to read and use.</p>
+
+  <div class="feed">
+    <div class="node" style="background:var(--grey-light)"><div class="t" style="color:var(--text-2)">Your numbers</div><div class="v">Xero, MYOB or QuickBooks</div></div>
+    <div class="arr">→</div>
+    <div class="node" style="background:var(--blue-light)"><div class="t" style="color:var(--blue-ink)">Made simple</div><div class="v">The Profit Analyst software</div></div>
+    <div class="arr">→</div>
+    <div class="node" style="background:var(--green-light)"><div class="t" style="color:var(--green-ink)">You decide</div><div class="v">Your next right move</div></div>
+  </div>
+
+  <img class="shot" src="assets/offer/dash-profit.png" alt="Dashboard: profit and where the revenue goes">
+  <img class="shot" src="assets/offer/dash-balance.png" alt="Dashboard: balance sheet and cash flow cycle" style="margin-top:2.5mm">
+  <p class="small" style="margin-top:1.5mm">From your dashboard: your profit, where every dollar of revenue goes, and where your profit has gone.</p>
+
+  <h2 style="margin-top:3mm; margin-bottom:1.5mm">Everything in one place, on your live numbers</h2>
+  <ul class="dots">
+    <li><b>Your cash flow forecast,</b> updated weekly.</li>
+    <li><b>Your Clarity Reports,</b> with your financial statements as simple, colour-coded charts.</li>
+    <li><b>All our profit tools,</b> working off your real numbers, so you can test a decision before you make it.</li>
+    <li><b>Your Five Year Forecast,</b> built on the same simple numbers and carried forward into the future.</li>
+    <li><b>One login.</b> No spreadsheets to maintain. We keep it up to date for you.</li>
+  </ul>
+</section>
+
+<section class="page">
+  <div class="kicker">Inside the software</div>
+  <h1>Four tools.<br><span>One simple set of numbers.</span></h1>
+  <p class="lead" style="margin-bottom:3mm">Each tool answers one question an owner actually asks.</p>
+
+  <div class="shots">
+    <div class="s">
+      <img class="shot" src="visibility-assets/cashflow.png" alt="Weekly Cash Flow Forecaster">
+      <div class="num">Am I going to be okay?</div>
+      <h3>Weekly Cash Flow Forecaster™</h3>
+      <p>Cash in, cash out and your closing balance, week by week. See the next low point coming and what's driving it, so you can plan your way through it.</p>
+    </div>
+    <div class="s">
+      <img class="shot" src="visibility-assets/clarity.png" alt="Monthly Clarity Report">
+      <div class="num">How did we go, and where did the profit go?</div>
+      <h3>Monthly Clarity Report™</h3>
+      <p>Your P&amp;L and balance sheet as colour-coded charts. Income against each cost, month by month, so you can see where you're winning and where you're losing.</p>
+    </div>
+  </div>
+
+  <div class="calc">
+    <div class="num">What's my next right move?</div>
+    <h3>Profit Calculator™</h3>
+    <p>Move price, volume or any cost and see the impact on profit straight away. Test the price rise, the new hire or the marketing spend before you commit to it.</p>
+    <div class="calc-row">
+      <img class="shot" src="assets/offer/profit-calculator.png" alt="Profit Calculator sliders">
+      <img class="shot" src="assets/offer/profit-waterfall.svg" alt="Profit impact waterfall">
+    </div>
+    <p class="small" style="margin-top:1.5mm">The scenario: prices up 5%, volume up 17%, with more spent on team and marketing to deliver it. The waterfall shows what each move does, from $480K profit to $870K.</p>
+  </div>
+
+  <div class="five">
+    <img class="shot" src="visibility-assets/fiveyear.png" alt="Five Year Forecast">
+    <div>
+      <div class="num">Are we on track for our big goals?</div>
+      <h3>Five Year Forecast™</h3>
+      <p>Your numbers carried five years forward. See if you're on track, and work backwards from the goal to the targets you need to hit this year.</p>
+    </div>
+  </div>
+  <p class="note">Example business. Example numbers.</p>
+</section>
+
+<!-- ============ 6. RESULTS ============ -->
+<section class="page">
+  <div class="kicker">The results</div>
+  <h1>From one loss-making bar<br><span>to $1M+ profit</span></h1>
+  <p class="lead">This is my own business. Same system, same rhythm, every quarter for seven years: find the constraint, model the move, check the cash flow can handle it, make the decision.</p>
+
+  <div class="figure" style="margin:2mm 0">
+    <img src="assets/offer/beach-bars-chart.png" alt="Beach bars revenue and operating profit FY20 to FY27 forecast">
+  </div>
+  <div class="stats">
+    <div class="stat" style="background:var(--grey-light)"><div class="y" style="color:var(--text-2)">FY19 · Year one</div><div class="v">$1.1M revenue</div><div class="d">Losing $150K a year</div></div>
+    <div class="stat" style="background:var(--green-light)"><div class="y" style="color:var(--green-ink)">FY26</div><div class="v">$10.3M revenue</div><div class="d">$1.1M operating profit</div></div>
+    <div class="stat" style="background:var(--blue-light)"><div class="y" style="color:var(--blue-ink)">FY27 forecast</div><div class="v">$11M revenue</div><div class="d">$1.5M operating profit</div></div>
+  </div>
+
+  <h2>And for the owners we coach</h2>
+  <p>We meet owners where they are, install the system and teach them to make better decisions. The results follow.</p>
+  <div class="result">
+    <div class="who"><div class="n">Isaac</div><div class="b">Plumber</div></div>
+    <div class="box"><div class="lbl">Before</div><div class="v">$3M revenue · $90K profit</div></div>
+    <div class="arrow">→</div>
+    <div class="box after"><div class="lbl">Now</div><div class="v">$6M revenue · 20% margin</div></div>
+  </div>
+  <div class="result">
+    <div class="who"><div class="n">Angus</div><div class="b">Consultancy</div></div>
+    <div class="box"><div class="lbl">Before</div><div class="v">$3M revenue · $150K profit</div></div>
+    <div class="arrow">→</div>
+    <div class="box after"><div class="lbl">12 months later</div><div class="v">$4M revenue · $500K profit</div></div>
+  </div>
+  <div class="result">
+    <div class="who"><div class="n">Mick</div><div class="b">Pub owner</div></div>
+    <div class="box"><div class="lbl">Before</div><div class="v">$1.5M revenue · breaking even</div></div>
+    <div class="arrow">→</div>
+    <div class="box after"><div class="lbl">Within 90 days</div><div class="v">On track for six-figure profit</div></div>
+  </div>
+  <p style="margin-top:3mm"><b>We've done it in our own businesses and in hundreds of others. We know we can do it for you.</b></p>
+</section>
+
+<!-- ============ 7. YOUR 90 DAYS ============ -->
+<section class="page">
+  <div class="kicker">Your first 90 days</div>
+  <h1>Training wheels on.<br><span>Then you ride it yourself.</span></h1>
+  <p class="lead">We install it. We hold your hand. We show you how to use it, so that by day 90 you're running it on your own.</p>
+
+  <div class="flow">
+    <div class="stage"><div class="when">Weeks 1 to 2</div><h3>We install it</h3><p>Your numbers connected and your four tools live within 14 days. Your Profit Strategy Session with Gavin sets your plan.</p></div>
+    <div class="stage"><div class="when">Weeks 3 to 12</div><h3>You learn to use it</h3><p>Coaching, training and the rhythm, with your real numbers every week.</p></div>
+    <div class="stage"><div class="when">Day 90 and beyond</div><h3>You run it</h3><p>You make the decisions. We keep your tools running in the background.</p></div>
+  </div>
+
+  <div class="strands">
+    <div class="strand">
+      <h3>Your system and numbers</h3>
+      <div class="sub">Installed and kept up to date for you.</div>
+      <ul class="dots">
+        <li>Weekly Cash Flow Forecaster™, updated every Monday</li>
+        <li>Monthly Clarity Report™, your P&amp;L and balance sheet in plain English</li>
+        <li>Profit Calculator™</li>
+        <li>Five Year Forecast™</li>
+        <li>Your own dashboard, one login</li>
+      </ul>
+    </div>
+    <div class="strand g">
+      <h3>Your 1:1 coaching</h3>
+      <div class="sub">Private calls on your business.</div>
+      <ul class="dots">
+        <li>Onboarding Call</li>
+        <li><b>Profit Strategy Session with Gavin</b></li>
+        <li>Cash Flow Coaching Call with your coach</li>
+        <li>Two Momentum Calls with your coach</li>
+        <li>Support by email and messenger</li>
+      </ul>
+    </div>
+    <div class="strand n">
+      <h3>Your rhythm</h3>
+      <div class="sub">Plugged into how we run our numbers.</div>
+      <ul class="dots">
+        <li>Weekly Q&amp;A coaching with Gavin</li>
+        <li>Weekly cash flow coaching</li>
+        <li>Profit Workshops and Monthly Financial Reviews</li>
+        <li>Quarterly Strategic Session</li>
+        <li>Short training modules, anytime</li>
+      </ul>
+    </div>
+  </div>
+
+  <p style="margin-top:5mm">During the 90 days, plan on about <b>ten minutes a week</b> for your forecast and <b>around an hour a week</b> on a coaching call or working on your numbers. Every group call is recorded.</p>
+</section>
+
+<!-- ============ 8. GUARANTEE ============ -->
+<section class="page">
+  <div class="kicker">The game we play</div>
+  <h1>Find your next<br><span>$100,000 in profit</span></h1>
+  <p class="lead">Every month inside The Profit Analyst, we play the same game. We start it together at your Profit Strategy Session with Gavin.</p>
+
+  <div class="game">
+    <div class="g"><div class="num">Step 1</div><p>Understand your numbers</p></div>
+    <div class="arr">→</div>
+    <div class="g"><div class="num">Step 2</div><p>Find your next right move</p></div>
+    <div class="arr">→</div>
+    <div class="g win"><div class="num">The result</div><p>Add $100,000 in annual profit</p></div>
+  </div>
+
+  <p>We back ourselves on it. We'll make sure your cash flow can pay for the program, and more importantly, we'll show you how to get a 10x return on your investment.</p>
+
+  <div class="guarantee" style="margin-top:4mm">
+    <svg class="seal" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="50" cy="50" r="47" fill="#12C870"/>
+      <circle cx="50" cy="50" r="39" fill="none" stroke="#fff" stroke-width="2" stroke-dasharray="3 4"/>
+      <path d="M33 51 L45 63 L68 38" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <div>
+      <h2>The Profit &amp; Cash Flow Guarantee</h2>
+      <p>We only keep going if this is a win for you. At your Profit Strategy Session with Gavin, we'll map out a clear plan to add <b>$100,000 in annual profit</b>, more than 10 times your investment. We'll also check your Weekly Cash Flow Forecaster™ to make sure your business can pay for the rest of the program.</p>
+      <p>If either answer is no, or we don't believe we can help you win, we stop there. <b>You won't pay another cent, and you keep your roadmap and your forecast.</b></p>
+      <p class="small" style="margin:0">To qualify, give us access to your accounting software within 7 days of signing, and attend your Onboarding Call and your Profit Strategy Session.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 9. INVESTMENT ============ -->
+<section class="page">
+  <div class="kicker">The investment</div>
+  <h1>What is it costing you<br><span>not to have this already?</span></h1>
+  <p style="margin-bottom:1mm">Before you look at the price, ask yourself:</p>
+  <div class="cost">
+    <div class="c">How much profit is leaking out right now that you can't see?</div>
+    <div class="c">How much better would your results be if you'd made the big calls faster and with more confidence?</div>
+    <div class="c">What did the last cash shock or tax surprise really cost you?</div>
+    <div class="c">How far ahead would your business be by now?</div>
+  </div>
+  <p>That gap is what not knowing your numbers is costing you. On a $1M business, this program is <b>less than 1% of revenue</b>. The upside of getting even one or two decisions right is many times that.</p>
+
+  <div class="invest">
+    <div class="opt total">
+      <h3>The 90-day program</h3>
+      <div class="amt">$9,000</div>
+      <div class="per">+ GST</div>
+      <p>Everything we install and teach you, for the full 90 days.</p>
+    </div>
+    <div class="opt featured">
+      <div class="badge">Most popular</div>
+      <h3>3 monthly payments</h3>
+      <div class="amt">$3,000</div>
+      <div class="per">per month + GST</div>
+      <p>Spread across your 90 days, so it fits your cash flow.</p>
+    </div>
+    <div class="opt">
+      <h3>Pay in full</h3>
+      <div class="amt">$8,100</div>
+      <div class="per">one payment + GST</div>
+      <p><b>Save 10% ($900)</b> when you pay upfront.</p>
+    </div>
+  </div>
+
+  <h2>After your 90 days</h2>
+  <p style="margin-bottom:1mm">You continue on Profit Coaching from day 91, so there's no gap. Switch options or cancel any time with 30 days' notice.</p>
+  <div class="tiers">
+    <div class="tier"><div class="tn">Profit Tools</div><div class="tp">$300 + GST / month</div><p>Your tools kept running, with email support.</p></div>
+    <div class="tier feat"><div class="tn">Profit Coaching</div><div class="tp">$900 + GST / month</div><p>Tools plus weekly coaching, workshops and a monthly 1:1 with a coach.</p></div>
+    <div class="tier"><div class="tn">Profit Partner</div><div class="tp">$1,500 + GST / month</div><p>Everything, plus a quarterly strategic session with Gavin. 10 places.</p></div>
+  </div>
+  <p class="small" style="margin-top:2.5mm">All prices in AUD. Each extra company with its own books gets its own Profit Tools at $300 + GST a month.</p>
+</section>
+
+<!-- ============ 10. FIT + NEXT STEP ============ -->
+<section class="page">
+  <div class="kicker">Who this is for</div>
+  <h1>Built for seven-figure<br><span>business owners</span></h1>
+
+  <div class="fit">
+    <div class="f"><div class="v">$1M to $5M</div><p>annual revenue</p></div>
+    <div class="f"><div class="v">Xero, MYOB or QuickBooks</div><p>for your accounting</p></div>
+    <div class="f ready"><div class="v">Ready</div><p>to own your numbers</p></div>
+  </div>
+
+  <div class="card grey" style="margin-top:4mm">
+    <h3>If you'd rather hand this to someone else</h3>
+    <p>That's fine. Go and do that. This program is for owners who want to understand their own numbers and make their own calls. If you try outsourcing it and find you're still waiting on someone else every time a decision comes up, we'll be here.</p>
+  </div>
+
+  <h2 style="margin-top:9mm">Your next step</h2>
+  <p>The choice is yours.</p>
+  <div class="options">
+    <div class="option yes">
+      <div class="k">Option 1</div>
+      <h3>"I'm in."</h3>
+      <p>Reply and tell us you're ready. We'll send your agreement and book your Onboarding Call.</p>
+    </div>
+    <div class="option">
+      <div class="k">Option 2</div>
+      <h3>"I have questions."</h3>
+      <p>Reply and we'll book a quick 15-minute call to answer them.</p>
+    </div>
+    <div class="option">
+      <div class="k">Option 3</div>
+      <h3>"Not right now."</h3>
+      <p>All good. We'd rather you start when you're ready to take ownership of your numbers.</p>
+    </div>
+  </div>
+
+  <div class="pull" style="margin-top:10mm">Visibility, then decisions, then results. 80% is good enough. Let's find your next right move.</div>
+  <p class="small">The Profit Analyst · theprofitanalyst.com</p>
+</section>
+
+</body>
+</html>

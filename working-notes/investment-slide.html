@@ -1,0 +1,81 @@
+<title>Investment Slide</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Lato:wght@400;700&display=swap">
+<style>
+/* Deck style: light grey slide, white cards. Three stacked stages: investment, return, guarantee */
+:root { --bg: #F5F7FA; --card: #FFFFFF; --line: #DDE4EA; --navy: #002B4E; --muted: #4A5B6C; --soft: #EEF3F8; --blue: #02A3FF; --blue-ink: #0077BD; --green: #12C870; --green-ink: #0A8A4C;
+  --display: "Poppins", "Segoe UI", sans-serif; --body: "Lato", "Helvetica Neue", Arial, sans-serif; }
+html, body { margin: 0; padding: 0; width: 1920px; height: 1080px; overflow: hidden; background: var(--bg); }
+.slide { box-sizing: border-box; width: 1920px; height: 1080px; padding: 64px 128px 60px; color: var(--navy); font-family: var(--body); display: flex; flex-direction: column; }
+.eyebrow { font: 700 22px var(--body); letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin: 0 0 12px; }
+h1 { font: 700 62px/1.1 var(--display); margin: 0; letter-spacing: -.01em; }
+.stages { flex: 1; display: grid; grid-template-rows: 1fr 1.32fr .82fr; gap: 18px; margin-top: 34px; min-height: 0; }
+.stage { min-height: 0; overflow: hidden; display: grid; grid-template-columns: 340px 1fr; align-items: center; border-radius: 20px; background: var(--card); border: 1px solid var(--line); padding: 0 40px; gap: 36px; }
+.stage.guarantee { background: var(--green); border-color: var(--green); }
+.step { display: flex; align-items: center; gap: 20px; }
+.num { flex: none; width: 58px; height: 58px; border-radius: 50%; display: grid; place-items: center; font: 700 28px var(--display); background: var(--navy); color: #fff; }
+.step h2 { font: 700 32px/1.15 var(--display); margin: 0; }
+.step p { font: 400 21px var(--body); color: var(--muted); margin: 4px 0 0; }
+.guarantee .step p { color: #0A4A30; }
+.content { display: flex; align-items: center; gap: 26px; height: 100%; padding: 22px 0; box-sizing: border-box; }
+.opt { flex: 1; height: 100%; box-sizing: border-box; border-radius: 16px; border: 2px solid var(--line); background: var(--soft); padding: 0 32px; display: flex; flex-direction: column; justify-content: center; position: relative; }
+.opt .k { font: 700 18px var(--body); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.opt .v { font: 700 58px/1.05 var(--display); margin: 6px 0 4px; letter-spacing: -.01em; }
+.opt .v small { font: 600 26px var(--display); color: var(--muted); letter-spacing: 0; margin-left: 4px; }
+.opt .n { font: 400 21px var(--body); color: var(--muted); }
+.opt.best { background: var(--navy); border-color: var(--navy); color: #fff; }
+.opt.best .k, .opt.best .n { color: #B7C6D6; }
+.badge { position: absolute; top: 50%; right: 28px; transform: translateY(-50%); background: var(--green); color: var(--navy); font: 700 22px var(--display); padding: 10px 20px; border-radius: 999px; }
+.or { font: 700 22px var(--display); color: var(--muted); }
+table { width: 100%; border-collapse: separate; border-spacing: 0 8px; }
+th { font: 700 18px var(--body); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); text-align: left; padding: 0 24px 2px; }
+th span { display: block; font: 400 19px var(--body); letter-spacing: 0; text-transform: none; margin-top: 2px; }
+td { background: var(--soft); padding: 12px 24px; font-variant-numeric: tabular-nums; }
+td:first-child { border-radius: 14px 0 0 14px; font: 700 28px var(--display); width: 26%; }
+td:last-child { border-radius: 0 14px 14px 0; }
+td.y { font: 700 40px var(--display); color: var(--blue-ink); }
+td.t { font: 700 40px var(--display); color: var(--green-ink); }
+.arrow { color: var(--muted); font: 700 30px var(--display); width: 40px; text-align: center; padding-left: 0; padding-right: 0; }
+.g-text { display: flex; align-items: center; gap: 24px; }
+.g-text svg { flex: none; width: 58px; height: 58px; }
+.g-text h3 { font: 700 30px var(--display); margin: 0 0 4px; }
+.g-text p { font: 400 22px/1.35 var(--body); margin: 0; }
+</style>
+
+<div class="slide">
+  <p class="eyebrow">90-Day Profit &amp; Cash Flow Accelerator</p>
+  <h1>Your investment and return.</h1>
+
+  <div class="stages">
+    <section class="stage">
+      <div class="step"><span class="num">1</span><div><h2>The investment</h2><p>Two ways to pay</p></div></div>
+      <div class="content">
+        <div class="opt"><span class="k">Weekly</span><span class="v">$880<small>/ week</small></span><span class="n">13 weeks &middot; $11,440 total</span></div>
+        <span class="or">or</span>
+        <div class="opt best"><span class="k">Paid in full</span><span class="v">$8,800</span><span class="n">one payment upfront</span><span class="badge">Save $2,640</span></div>
+      </div>
+    </section>
+
+    <section class="stage">
+      <div class="step"><span class="num">2</span><div><h2>The return</h2><p>What 1% to 10% more margin is worth</p></div></div>
+      <div class="content">
+        <table>
+          <thead><tr><th></th><th>Per year<span>1% to 10% more margin</span></th><th></th><th>Over 10 years<span>The compounding effect</span></th></tr></thead>
+          <tbody>
+            <tr><td>$1M business</td><td class="y">$10K&ndash;$100K</td><td class="arrow">&rarr;</td><td class="t">$100K&ndash;$1M</td></tr>
+            <tr><td>$5M business</td><td class="y">$50K&ndash;$500K</td><td class="arrow">&rarr;</td><td class="t">$500K&ndash;$5M</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="stage guarantee">
+      <div class="step"><span class="num">3</span><div><h2>The guarantee</h2><p>Your risk is covered</p></div></div>
+      <div class="content">
+        <div class="g-text">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#002B4E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+          <div><h3>Financial Clarity Guarantee</h3><p>Once we see your cash flow, if you can't afford the program, we refund you and point you to the help you need.</p></div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>

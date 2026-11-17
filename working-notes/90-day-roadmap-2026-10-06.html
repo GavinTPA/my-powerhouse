@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Your 90-Day Profit and Cash Flow Roadmap</title>
+<style>
+  @font-face { font-family: "Poppins"; font-weight: 400; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Poppins-Regular.ttf"); }
+  @font-face { font-family: "Poppins"; font-weight: 500; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Poppins-Medium.ttf"); }
+  @font-face { font-family: "Poppins"; font-weight: 600; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Poppins-SemiBold.ttf"); }
+  @font-face { font-family: "Poppins"; font-weight: 700; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Poppins-Bold.ttf"); }
+  @font-face { font-family: "Lato"; font-weight: 400; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Lato-Regular.ttf"); }
+  @font-face { font-family: "Lato"; font-weight: 700; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Lato-Bold.ttf"); }
+  @font-face { font-family: "Lato"; font-style: italic; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Lato-Italic.ttf"); }
+
+  :root {
+    --navy: #002B4E;
+    --green: #12C870;
+    --green-dark: #0E9F59;
+    --green-light: #E3F9EE;
+    --blue: #02A3FF;
+    --blue-dark: #0283CC;
+    --blue-light: #E1F2FF;
+    --navy-light: #E6EBF0;
+    --amber: #D97706;
+    --amber-light: #FDF1E3;
+    --text: #111111;
+    --text-2: #4A5563;
+    --rule: #DDE3EA;
+    --alt: #F4F7FA;
+  }
+
+  @page { size: A4 landscape; margin: 9mm 10mm 8mm 10mm; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Lato", sans-serif; font-size: 8.4pt; line-height: 1.25; color: var(--text); }
+
+  /* Header */
+  .header { display: flex; align-items: flex-end; justify-content: space-between; padding-bottom: 2mm; border-bottom: 2.2pt solid var(--navy); }
+  .kicker { font-family: "Poppins"; font-size: 7.6pt; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--green); margin-bottom: 0.6mm; }
+  .header h1 { font-family: "Poppins"; font-size: 24pt; font-weight: 700; color: var(--navy); line-height: 1.05; }
+  .header h1 em { font-style: normal; color: var(--green); }
+  .header .sub { font-family: "Poppins"; font-size: 9.2pt; font-weight: 500; color: var(--text-2); margin-top: 1.2mm; }
+  .header img { height: 12mm; }
+
+  /* Roadmap grid: label column + 13-week track */
+  .map { margin-top: 3.4mm; }
+  .row { display: flex; }
+  .label { flex: none; width: 45mm; padding: 1.6mm 3mm 1.6mm 0; }
+  .label h3 { font-family: "Poppins"; font-size: 8.6pt; font-weight: 700; color: var(--navy); line-height: 1.15; }
+  .label p { font-size: 7.2pt; color: var(--text-2); margin-top: 0.4mm; line-height: 1.25; }
+  .track { position: relative; flex: 1; }
+
+  /* week columns drawn behind every lane */
+  .cols { position: absolute; inset: 0; display: flex; }
+  .cols div { flex: 1; border-left: 0.5pt solid var(--rule); }
+  .cols div:last-child { border-right: 0.5pt solid var(--rule); }
+  .cols div.m { border-left: 0.9pt solid #B7C3CF; }
+
+  /* Month / phase band */
+  .phases .track { display: flex; height: 10mm; }
+  .phase { position: relative; border-radius: 1.6mm 1.6mm 0 0; padding: 1.2mm 2.4mm; color: #fff; margin-right: 0.8mm; }
+  .phase:last-child { margin-right: 0; }
+  .phase b { font-family: "Poppins"; font-size: 8.6pt; font-weight: 700; letter-spacing: 0.04em; display: block; line-height: 1.1; }
+  .phase span { font-size: 7pt; opacity: 0.9; }
+  .phase.p1 { width: 33.3%; background: var(--navy); }
+  .phase.p2 { width: 33.3%; background: var(--blue); }
+  .phase.p3 { flex: 1; background: var(--green); }
+  .weeks .track { display: flex; height: 5mm; background: var(--navy-light); }
+  .weeks .track div { flex: 1; text-align: center; font-family: "Poppins"; font-size: 6.8pt; font-weight: 600; color: var(--navy); line-height: 5mm; border-left: 0.5pt solid #fff; }
+  .weeks .label { padding: 0; font-family: "Poppins"; font-size: 6.8pt; font-weight: 600; color: var(--text-2); line-height: 5mm; letter-spacing: 0.1em; text-transform: uppercase; }
+
+  .lane { border-bottom: 0.6pt solid var(--rule); }
+  .lane:nth-of-type(odd) .track { background: var(--alt); }
+
+  /* 1:1 call cards */
+  .calls .track { height: 50mm; }
+  .pin { position: absolute; top: 0; bottom: 0; width: 0; border-left: 0.9pt dashed var(--green); }
+  .pin::before { content: ""; position: absolute; left: -1.5mm; top: 1.2mm; width: 2.4mm; height: 2.4mm; border-radius: 50%; background: var(--green); border: 0.6mm solid #fff; }
+  .card { position: absolute; width: 35mm; background: #fff; border: 0.7pt solid var(--green); border-left: 1.2mm solid var(--green); border-radius: 1.6mm; padding: 1.2mm 1.8mm 1.3mm; }
+  .card .when { font-family: "Poppins"; font-size: 6.6pt; font-weight: 600; color: var(--green-dark); letter-spacing: 0.08em; text-transform: uppercase; }
+  .card h4 { font-family: "Poppins"; font-size: 8.4pt; font-weight: 700; color: var(--navy); line-height: 1.12; margin: 0.2mm 0 0.4mm; }
+  .card p { font-size: 7pt; color: var(--text-2); line-height: 1.22; }
+
+  /* bars */
+  .bar { position: absolute; border-radius: 1.4mm; padding: 1mm 2.2mm; font-size: 7.4pt; line-height: 1.2; }
+  .bar b { font-family: "Poppins"; font-weight: 700; font-size: 7.8pt; }
+    .bar.build { top: 7.2mm; height: 13mm; display: flex; align-items: center; font-size: 7.2pt; line-height: 1.22; padding: 1mm 2mm; background: var(--navy); color: #fff; }
+  .bar.build b { color: var(--green); }
+
+  /* split lanes: a group title plus two aligned sub-rows */
+  .split .label { padding: 0; }
+  .split .label h3 { height: 6.6mm; padding-top: 1.6mm; }
+  .split .sub { display: flex; align-items: center; height: 7.4mm; font-family: "Poppins"; font-size: 7.4pt; white-space: nowrap; font-weight: 600; color: var(--navy); line-height: 1.1; }
+  .split .sub small { display: block; font-family: "Lato"; font-weight: 400; font-size: 6.6pt; color: var(--text-2); }
+  .split .track { height: 22mm; }
+  .chip { position: absolute; width: 8.4mm; margin-left: -4.2mm; height: 4.4mm; border-radius: 2.2mm; font-family: "Poppins"; font-weight: 700; font-size: 5.8pt; text-align: center; line-height: 4.4mm; color: #fff; }
+  .r1 { top: 8.1mm; }
+  .r2 { top: 15.5mm; }
+  .chip.cff { background: var(--blue); border-radius: 1mm; }
+  .chip.cr { background: var(--navy); border-radius: 1mm; }
+  .chip.tue { background: var(--blue); }
+  .chip.wed { background: var(--green); }
+
+  /* monthly coaching */
+  .monthly .track { height: 21mm; }
+  .sess { position: absolute; top: 1.8mm; width: 14.6%; height: 17.4mm; border-radius: 1.4mm; padding: 1mm 1.6mm; }
+  .sess b { display: block; font-family: "Poppins"; font-size: 7.4pt; font-weight: 700; line-height: 1.12; }
+  .sess span { display: block; margin-top: 0.4mm; font-size: 6.9pt; line-height: 1.22; color: var(--text-2); }
+  .sess.review { background: var(--blue-light); border-left: 1mm solid var(--blue); }
+  .sess.review b { color: var(--blue-dark); }
+  .sess.qss { background: var(--navy); border-left: 1mm solid var(--green); }
+  .sess.qss b { color: #fff; }
+  .sess.qss span { color: #C9D4DF; }
+  .sess.workshop { background: var(--green-light); border-left: 1mm solid var(--green); }
+  .sess.workshop b { color: var(--green-dark); }
+
+  /* always on */
+  .always .track { height: 12mm; }
+  .bar.on { top: 2mm; height: 8mm; left: 0; right: 0; height: 6.8mm; background: var(--amber-light); border: 0.6pt solid var(--amber); color: var(--text); display: flex; align-items: center; gap: 6mm; }
+  .bar.on b { color: var(--amber); }
+
+  /* Footer strip */
+  .foot { margin-top: 3.4mm; display: flex; gap: 2.4mm; }
+  .stat { flex: 1; display: flex; gap: 2.4mm; align-items: center; background: var(--alt); border-radius: 2mm; padding: 2.6mm 3mm; border-left: 1.2mm solid var(--green); }
+  .stat b { flex: none; font-family: "Poppins"; font-weight: 700; font-size: 18pt; color: var(--green); line-height: 1; }
+  .stat p { font-size: 8.2pt; color: var(--text-2); line-height: 1.22; }
+  .stat p strong { color: var(--navy); font-family: "Poppins"; font-weight: 600; }
+  .stat.dark { background: var(--navy); border-left-color: var(--green); }
+  .stat.dark p { color: #C9D4DF; font-size: 8pt; }
+  .stat.dark p strong { color: #fff; }
+  .fine { margin-top: 2.4mm; font-size: 6.8pt; color: var(--text-2); font-style: italic; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div>
+    <div class="kicker">What happens when you join</div>
+    <h1>Your 90-Day <em>Profit and Cash Flow</em> Roadmap</h1>
+    <div class="sub">What we build for you, the calls you have with us and the coaching you can join, week by week.</div>
+  </div>
+  <img src="../my-skills/pdf-forge/brands/the-profit-analyst/logo.svg" alt="The Profit Analyst">
+</div>
+
+<div class="map">
+
+  <!-- Phase band -->
+  <div class="row phases">
+    <div class="label"></div>
+    <div class="track">
+      <div class="phase p1"><b>MONTH 1 · CLARITY</b><span>Visibility: see what's happening and what's coming</span></div>
+      <div class="phase p2"><b>MONTH 2 · CONFIDENCE</b><span>Understand your numbers and make better decisions</span></div>
+      <div class="phase p3"><b>MONTH 3 · GROWTH</b><span>Use your numbers to decide what's next and grow</span></div>
+    </div>
+  </div>
+  <div class="row weeks">
+    <div class="label">Week</div>
+    <div class="track">
+      <div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div><div>10</div><div>11</div><div>12</div><div>13</div>
+    </div>
+  </div>
+
+  <!-- Lane 1: 1:1 calls -->
+  <div class="row lane calls">
+    <div class="label">
+      <h3>Your 1:1 calls</h3>
+      <p>Five private calls on your numbers, your business and your next right move.</p>
+    </div>
+    <div class="track">
+      <div class="cols"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+
+      <div class="card" style="left:0.4%; top:1.6mm;">
+        <div class="when">Day 1</div>
+        <h4>Onboarding Session</h4>
+        <p>We set you up for everything and connect your numbers.</p>
+      </div>
+      <div class="card" style="left:11%; top:25.5mm;">
+        <div class="when">Around day 10</div>
+        <h4>Profit Game Plan Call</h4>
+        <p>We take you through your numbers and what to focus on first.</p>
+      </div>
+      <div class="card" style="left:18.7%; top:1.6mm;">
+        <div class="when">Around day 17</div>
+        <h4>Cash Flow Coaching Call</h4>
+        <p>Learn to read your forecast and see your next low point coming.</p>
+      </div>
+      <div class="card" style="left:46.2%; top:13mm;">
+        <div class="when">Halfway · week 7</div>
+        <h4>Momentum Call</h4>
+        <p>Check progress and keep moving, on the business or on your numbers.</p>
+      </div>
+      <div class="card" style="left:76.9%; top:13mm;">
+        <div class="when">Week 11</div>
+        <h4>Momentum Call</h4>
+        <p>Lock in what's working and set up for what comes next.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lane 2: Done for you (build, then deliverables) -->
+  <div class="row lane split">
+    <div class="label">
+      <h3>Done for you</h3>
+      <div class="sub"><div>Weekly Cash Flow Forecast<small>Every Monday</small></div></div>
+      <div class="sub"><div>Monthly Clarity Report<small>Once your numbers are reconciled</small></div></div>
+    </div>
+    <div class="track">
+      <div class="cols"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div class="bar build" style="left:0.4%; width:14.6%;"><div><b>Days 1–14</b><br>Connect your numbers, build your tools</div></div>
+      <div class="chip cff r1" style="left:19.2%">CFF</div><div class="chip cff r1" style="left:26.9%">CFF</div><div class="chip cff r1" style="left:34.6%">CFF</div><div class="chip cff r1" style="left:42.3%">CFF</div><div class="chip cff r1" style="left:50.0%">CFF</div><div class="chip cff r1" style="left:57.7%">CFF</div><div class="chip cff r1" style="left:65.4%">CFF</div><div class="chip cff r1" style="left:73.1%">CFF</div><div class="chip cff r1" style="left:80.8%">CFF</div><div class="chip cff r1" style="left:88.5%">CFF</div><div class="chip cff r1" style="left:96.2%">CFF</div>
+      <div class="chip cr r2" style="left:19.2%">CR</div><div class="chip cr r2" style="left:50.0%">CR</div><div class="chip cr r2" style="left:80.8%">CR</div>
+    </div>
+  </div>
+
+  <!-- Lane 4: Weekly coaching -->
+  <div class="row lane split">
+    <div class="label">
+      <h3>Weekly coaching</h3>
+      <div class="sub">Tuesday: Cash Flow Coaching</div>
+      <div class="sub">Wednesday: Finance Coaching</div>
+    </div>
+    <div class="track">
+      <div class="cols"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div class="chip tue r1" style="left:3.8%">TUE</div><div class="chip tue r1" style="left:11.5%">TUE</div><div class="chip tue r1" style="left:19.2%">TUE</div><div class="chip tue r1" style="left:26.9%">TUE</div><div class="chip tue r1" style="left:34.6%">TUE</div><div class="chip tue r1" style="left:42.3%">TUE</div><div class="chip tue r1" style="left:50.0%">TUE</div><div class="chip tue r1" style="left:57.7%">TUE</div><div class="chip tue r1" style="left:65.4%">TUE</div><div class="chip tue r1" style="left:73.1%">TUE</div><div class="chip tue r1" style="left:80.8%">TUE</div><div class="chip tue r1" style="left:88.5%">TUE</div><div class="chip tue r1" style="left:96.2%">TUE</div>
+      <div class="chip wed r2" style="left:3.8%">WED</div><div class="chip wed r2" style="left:11.5%">WED</div><div class="chip wed r2" style="left:19.2%">WED</div><div class="chip wed r2" style="left:26.9%">WED</div><div class="chip wed r2" style="left:34.6%">WED</div><div class="chip wed r2" style="left:42.3%">WED</div><div class="chip wed r2" style="left:50.0%">WED</div><div class="chip wed r2" style="left:57.7%">WED</div><div class="chip wed r2" style="left:65.4%">WED</div><div class="chip wed r2" style="left:73.1%">WED</div><div class="chip wed r2" style="left:80.8%">WED</div><div class="chip wed r2" style="left:88.5%">WED</div><div class="chip wed r2" style="left:96.2%">WED</div>
+    </div>
+  </div>
+
+  <!-- Lane 5: Monthly coaching -->
+  <div class="row lane monthly">
+    <div class="label">
+      <h3>Monthly coaching</h3>
+      <p>Review, strategy and profit workshops, alternating every fortnight.</p>
+    </div>
+    <div class="track">
+      <div class="cols"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <div class="sess review" style="left:7.9%"><b>Monthly Financial Review (1 hr)</b><span>Where are we winning, where are we losing, where did the profit go?</span></div>
+      <div class="sess workshop" style="left:23.2%"><b>Profit Workshop (1 hr)</b><span>Your Profit Formula and your next right move</span></div>
+      <div class="sess review" style="left:38.6%"><b>Monthly Financial Review (1 hr)</b><span>Where are we winning, where are we losing, where did the profit go?</span></div>
+      <div class="sess workshop" style="left:53.9%"><b>Profit Workshop (1 hr)</b><span>Your Profit Formula and your next right move</span></div>
+      <div class="sess qss" style="left:69.3%"><b>Quarterly Strategic Session (2 hrs)</b><span>Link your numbers and decisions to your big goals</span></div>
+      <div class="sess workshop" style="left:84.7%"><b>Profit Workshop (1 hr)</b><span>Your Profit Formula and your next right move</span></div>
+    </div>
+  </div>
+
+  <!-- Lane 6: Always on -->
+  <div class="row lane always">
+    <div class="label">
+      <h3>Learning and support</h3>
+      <p>Anytime, the whole way through.</p>
+    </div>
+    <div class="track">
+      <div class="bar on"><span><b>Online learning portal (Skool)</b> 24/7 access to every module and resource</span><span><b>Support</b> email and messenger, anytime you're stuck</span></div>
+    </div>
+  </div>
+
+</div>
+
+<p class="fine">Timings are a guide. Group coaching runs on a set calendar, so exact dates depend on when you start. Your Monthly Clarity Report is sent once your numbers are reconciled, covering the month prior.</p>
+
+</body>
+</html>

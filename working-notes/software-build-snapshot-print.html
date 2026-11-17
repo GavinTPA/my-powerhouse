@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Software Build Snapshot</title>
+<style>
+@font-face { font-family: 'Poppins'; src: url('../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Poppins-SemiBold.ttf'); font-weight: 600; }
+@font-face { font-family: 'Poppins'; src: url('../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Poppins-Bold.ttf'); font-weight: 700; }
+@font-face { font-family: 'Poppins'; src: url('../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Poppins-Medium.ttf'); font-weight: 500; }
+@font-face { font-family: 'Lato'; src: url('../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Lato-Regular.ttf'); font-weight: 400; }
+@font-face { font-family: 'Lato'; src: url('../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Lato-Bold.ttf'); font-weight: 700; }
+
+@page { size: A4; margin: 14mm 14mm 12mm; }
+:root {
+  --navy: #002B4E; --blue: #02A3FF; --green: #12C870;
+  --muted: #4F6478; --line: #DCE5EE;
+  --blue-tint: #E6F5FF; --green-tint: #E5F8EE; --grey-tint: #F4F7FA;
+  --amber: #B86E00; --amber-tint: #FFF3E0;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body { font-family: 'Lato', Arial, sans-serif; font-size: 9.9pt; line-height: 1.45; color: var(--navy); }
+h1, h2, h3, h4, .chip, .count { font-family: 'Poppins', Arial, sans-serif; }
+
+header { display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 1.5pt solid var(--line); padding-bottom: 8pt; }
+.eyebrow { font-family: 'Poppins', Arial, sans-serif; font-weight: 600; font-size: 7.5pt; letter-spacing: .1em; text-transform: uppercase; color: var(--blue); }
+h1 { font-size: 22pt; font-weight: 700; margin: 2pt 0 1pt; line-height: 1.1; }
+.date { color: var(--muted); font-size: 9pt; }
+.logo { height: 34pt; }
+
+.tally { display: flex; align-items: center; gap: 10pt; margin: 12pt 0 13pt; }
+.count { font-weight: 600; font-size: 9.5pt; padding: 5pt 10pt; border-radius: 6pt; white-space: nowrap; }
+.count b { font-size: 16pt; font-weight: 700; margin-right: 3pt; }
+.count.built { background: var(--green-tint); color: #0B8A4D; }
+.count.todo { background: var(--blue-tint); color: #0277BD; }
+.tally p { margin: 0; color: var(--muted); font-size: 9.2pt; }
+
+.cols { display: flex; gap: 12pt; align-items: flex-start; }
+.col-done { width: 38%; }
+.col-next { width: 62%; }
+.col-head { display: flex; align-items: center; gap: 6pt; margin-bottom: 6pt; }
+.col-head h2 { font-size: 13pt; font-weight: 700; margin: 0; }
+.dot { width: 8pt; height: 8pt; border-radius: 50%; }
+.col-done .dot { background: var(--green); }
+.col-next .dot { background: var(--blue); }
+
+.built-list { list-style: none; margin: 0; padding: 0; border: 1pt solid var(--line); border-radius: 7pt; background: var(--green-tint); }
+.built-list li { display: flex; gap: 7pt; padding: 10pt 10pt; border-top: 1pt solid #CDEFDC; }
+.built-list li:first-child { border-top: 0; }
+.tick { flex: none; width: 13pt; height: 13pt; border-radius: 50%; background: var(--green); color: #fff; font-weight: 700; font-size: 8pt; text-align: center; line-height: 13pt; margin-top: 1pt; }
+.built-list strong { display: block; font-family: 'Poppins', Arial, sans-serif; font-weight: 600; font-size: 9.6pt; }
+.built-list .note { color: var(--muted); font-size: 8.4pt; }
+
+.item { border: 1pt solid var(--line); border-radius: 7pt; padding: 9pt 11pt; margin-bottom: 8pt; background: #fff; }
+.item:last-child { margin-bottom: 0; }
+.item-top { display: flex; justify-content: space-between; align-items: center; gap: 6pt; margin-bottom: 3pt; }
+.item h3 { font-size: 11.5pt; font-weight: 600; margin: 0; }
+.chip { flex: none; font-size: 6.5pt; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; padding: 2pt 6pt; border-radius: 10pt; }
+.chip.big { background: var(--blue-tint); color: #0277BD; }
+.chip.fix, .chip.open { background: var(--amber-tint); color: var(--amber); }
+.item p { margin: 0 0 3pt; color: var(--muted); font-size: 9.4pt; }
+.item ul { margin: 0; padding-left: 11pt; font-size: 9.4pt; }
+.item li { margin-bottom: 1pt; }
+.item li::marker { color: var(--blue); }
+.split { display: flex; gap: 10pt; }
+.split > div { width: 50%; }
+.split h4 { font-size: 7pt; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 2pt 0 2pt; font-weight: 600; }
+.scope { font-size: 8.4pt; color: var(--muted); border-top: 1pt dashed var(--line); padding-top: 4pt; margin-top: 5pt; }
+.scope b { color: var(--navy); }
+.pills { display: flex; gap: 5pt; }
+.pill { font-size: 8.4pt; padding: 1.5pt 8pt; border: 1pt solid var(--line); border-radius: 10pt; background: var(--grey-tint); }
+
+footer { margin-top: 12pt; padding-top: 6pt; border-top: 1pt solid var(--line); font-size: 7.5pt; color: var(--muted); display: flex; justify-content: space-between; }
+</style>
+</head>
+<body>
+  <header>
+    <div>
+      <div class="eyebrow">The Profit Analyst software</div>
+      <h1>Software Build Snapshot</h1>
+      <div class="date">Where the build stands as of 17 November 2026</div>
+    </div>
+    <img class="logo" src="../my-skills/pdf-forge/brands/the-profit-analyst/logo.svg" alt="The Profit Analyst">
+  </header>
+
+  <div class="tally">
+    <div class="count built"><b>7</b>built</div>
+    <div class="count todo"><b>4</b>still to come</div>
+    <p>The core numbers engine is done. What's left: connect the accounting software, one Profit Calculator fix, then the people side (Skool, community, GavBot).</p>
+  </div>
+
+  <div class="cols">
+    <section class="col-done">
+      <div class="col-head"><span class="dot"></span><h2>Built</h2></div>
+      <ul class="built-list">
+        <li><span class="tick">✓</span><div><strong>Dashboard</strong><span class="note">The home view when an owner logs in</span></div></li>
+        <li><span class="tick">✓</span><div><strong>Cash Flow module</strong><span class="note">See the next low point in advance</span></div></li>
+        <li><span class="tick">✓</span><div><strong>Clarity Report</strong><span class="note">P&amp;L and balance sheet in plain English</span></div></li>
+        <li><span class="tick">✓</span><div><strong>Profit Calculator</strong><span class="note">Next right move for profit (merge fix pending)</span></div></li>
+        <li><span class="tick">✓</span><div><strong>Forecasting drivers</strong><span class="note">The inputs that move the forecast</span></div></li>
+        <li><span class="tick">✓</span><div><strong>Forecast model</strong><span class="note">Long-term impact of today's decisions</span></div></li>
+        <li><span class="tick">✓</span><div><strong>Portfolio view</strong><span class="note">All businesses in one place</span></div></li>
+      </ul>
+    </section>
+
+    <section class="col-next">
+      <div class="col-head"><span class="dot"></span><h2>Still to come</h2></div>
+
+      <div class="item">
+        <div class="item-top"><h3>Accounting software connections</h3><span class="chip open">Work in progress</span></div>
+        <p>Pull numbers straight in rather than loading them by hand.</p>
+        <div class="pills"><span class="pill">Xero</span><span class="pill">MYOB</span><span class="pill">QuickBooks</span></div>
+      </div>
+
+      <div class="item">
+        <div class="item-top"><h3>Profit Calculator: merge Simulator and Scenario</h3><span class="chip fix">Fix</span></div>
+        <p>Two pages split one job across two screens. Combine them into a single page.</p>
+      </div>
+
+      <div class="item">
+        <div class="item-top"><h3>Education platform (Skool, moved in)</h3><span class="chip big">Big build</span></div>
+        <p>Bring everything in Skool inside the same login as the tools, so members never leave the software.</p>
+        <div class="split">
+          <div>
+            <h4>Learning</h4>
+            <ul>
+              <li>Video lessons organised into modules</li>
+              <li>Coaching call recordings linked in</li>
+              <li>Search and navigate all content</li>
+              <li>Open or lock sections per member</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Community</h4>
+            <ul>
+              <li>Calendar with Zoom links for upcoming calls</li>
+              <li>Member directory</li>
+              <li>Community board for posts and wins</li>
+            </ul>
+          </div>
+        </div>
+        <div class="scope"><b>Decision to make:</b> build it all at once, or learning first and community second.</div>
+      </div>
+
+      <div class="item">
+        <div class="item-top"><h3>GavBot (AI assistant)</h3><span class="chip big">Big build</span></div>
+        <p>An AI version of Gavin, trained on the trainings, call recordings and The Profit Analyst Method™.</p>
+        <ul>
+          <li>Answers questions and explains concepts in Gavin's words</li>
+          <li>Reads a member's own figures and interprets what they mean</li>
+          <li>Produces simple write-ups from those figures</li>
+        </ul>
+        <div class="scope"><b>Out of scope:</b> building models. GavBot explains; the tools calculate.</div>
+      </div>
+    </section>
+  </div>
+
+  <footer><span>The Profit Analyst</span><span>Software Build Snapshot · November 2026</span></footer>
+</body>
+</html>

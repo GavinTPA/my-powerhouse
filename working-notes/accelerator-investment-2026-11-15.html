@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The Profit Analyst: 90-Day Accelerator Investment</title>
+<style>
+  @font-face { font-family: "Poppins"; font-weight: 400; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Poppins-Regular.ttf"); }
+  @font-face { font-family: "Poppins"; font-weight: 500; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Poppins-Medium.ttf"); }
+  @font-face { font-family: "Poppins"; font-weight: 600; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Poppins-SemiBold.ttf"); }
+  @font-face { font-family: "Poppins"; font-weight: 700; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Poppins-Bold.ttf"); }
+  @font-face { font-family: "Lato"; font-weight: 400; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Lato-Regular.ttf"); }
+  @font-face { font-family: "Lato"; font-weight: 700; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Lato-Bold.ttf"); }
+
+  :root {
+    --navy: #002B4E;
+    --blue: #02A3FF;
+    --green: #12C870;
+    --green-light: #E6F9EF;
+    --blue-light: #E5F5FF;
+    --navy-light: #E6EBF0;
+    --text: #111111;
+    --text-2: #4A5563;
+    --rule: #DDE3EA;
+  }
+
+  @page { size: A4 portrait; margin: 11mm 14mm 9mm 14mm; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Lato", sans-serif; font-size: 10pt; line-height: 1.35; color: var(--text); }
+
+  .kicker { font-family: "Poppins"; font-size: 8pt; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--green); }
+
+  /* Header */
+  .header { display: flex; align-items: center; justify-content: space-between; padding-bottom: 3mm; border-bottom: 2.2pt solid var(--navy); }
+  .header img { height: 13mm; }
+  .header .right { text-align: right; }
+  .header .right .kicker { margin-bottom: 0.6mm; }
+  .header .right .corner { font-family: "Poppins"; font-size: 11pt; font-weight: 600; color: var(--navy); }
+  .hero { margin-top: 5mm; }
+  .hero h1 { font-family: "Poppins"; font-size: 22pt; font-weight: 700; color: var(--navy); line-height: 1.12; }
+  .hero h1 span { color: var(--green); }
+  .hero p { font-size: 10.5pt; color: var(--text-2); margin-top: 1.2mm; }
+  .hero p.sub { font-family: "Poppins"; font-size: 11.5pt; font-weight: 600; color: var(--blue); margin-top: 2.5mm; }
+  h2.sec { font-family: "Poppins"; font-size: 8pt; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--green); margin: 4.2mm 0 2mm; }
+  .invest { display: flex; gap: 4mm; align-items: stretch; }
+  .total { flex: 0.9; background: var(--navy); color: #fff; border-radius: 3mm; padding: 5mm; }
+  .total .lbl { font-family: "Poppins"; font-size: 8.5pt; color: #C9D4DF; }
+  .total .amt { font-family: "Poppins"; font-size: 28pt; font-weight: 700; line-height: 1.05; margin-top: 1.5mm; }
+  .total .amt small { font-size: 10pt; font-weight: 500; color: #C9D4DF; }
+  .total .gst { font-family: "Poppins"; font-size: 9pt; font-weight: 500; color: #C9D4DF; margin-top: 0.8mm; }
+  .total p { font-size: 9pt; color: #C9D4DF; margin-top: 2mm; }
+  .opt { flex: 1; border: 1pt solid var(--rule); border-radius: 3mm; padding: 5mm 4.5mm 4mm; position: relative; }
+  .opt.featured { border: 1.6pt solid var(--green); background: var(--green-light); }
+  .badge { position: absolute; top: -3mm; left: 4.5mm; background: var(--green); color: #fff; font-family: "Poppins"; font-size: 7pt; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.9mm 2.6mm; border-radius: 1.5mm; }
+  .opt h3 { font-family: "Poppins"; font-size: 12pt; font-weight: 700; color: var(--navy); }
+  .opt .amt { font-family: "Poppins"; font-size: 20pt; font-weight: 700; color: var(--navy); line-height: 1; margin-top: 2.5mm; }
+  .opt .per { font-family: "Poppins"; font-size: 8.5pt; font-weight: 500; color: var(--text-2); margin-top: 0.8mm; }
+  .opt p { font-size: 9pt; color: var(--text-2); margin-top: 2mm; }
+  .opt p b { color: var(--green); }
+  .inc { display: flex; flex-wrap: wrap; gap: 3mm; }
+  .box { width: 49%; width: calc(50% - 1.5mm); border: 1pt solid var(--rule); border-radius: 2.5mm; padding: 3mm 4mm; }
+  .box h4 { font-family: "Poppins"; font-size: 10pt; font-weight: 700; color: var(--navy); margin-bottom: 1.2mm; }
+  .box h4 span { font-size: 8pt; font-weight: 500; color: var(--blue); margin-left: 1mm; }
+  .box ul { list-style: none; }
+  .box li { position: relative; padding-left: 3.4mm; font-size: 9.2pt; line-height: 1.4; }
+  .box li::before { content: ""; position: absolute; left: 0; top: 1.7mm; width: 1.6mm; height: 1.6mm; border-radius: 50%; background: var(--green); }
+  .box li small { color: var(--text-2); font-size: 8.4pt; }
+  table { width: 100%; border-collapse: collapse; }
+  th, td { padding: 1.8mm 2.5mm; border-bottom: 0.6pt solid var(--rule); font-size: 9.6pt; }
+  th { font-family: "Poppins"; font-size: 8.6pt; font-weight: 600; color: var(--navy); text-align: left; border-bottom: 1.4pt solid var(--navy); }
+  td.n { font-family: "Poppins"; font-weight: 600; color: var(--green); }
+  .guar { margin-top: 4.5mm; background: var(--navy); color: #fff; border-radius: 3mm; padding: 4mm 6mm; display: flex; gap: 5mm; align-items: center; }
+  .guar .seal { flex: none; width: 15mm; height: 15mm; border-radius: 50%; border: 1.6pt solid var(--green); color: var(--green); font-family: "Poppins"; font-weight: 700; font-size: 16pt; text-align: center; line-height: 14mm; }
+  .guar h3 { font-family: "Poppins"; font-size: 11pt; font-weight: 700; color: var(--green); }
+  .guar p { font-size: 9.6pt; color: #E3E9EF; margin-top: 0.8mm; }
+  .foot { margin-top: 4mm; display: flex; justify-content: space-between; font-size: 8.4pt; color: var(--text-2); border-top: 0.6pt solid var(--rule); padding-top: 2.5mm; }
+  .foot b { color: var(--navy); }
+
+  .guar { background: var(--green-light); border: 1.4pt solid var(--green); color: var(--text); }
+  .guar .seal { border-color: var(--green); color: var(--green); }
+  .guar h3 { color: var(--navy); }
+  .guar p { color: var(--text); }
+  .total { background: var(--blue-light); border: 1.4pt solid var(--blue); color: var(--navy); }
+  .total .lbl, .total .gst, .total p { color: var(--text-2); }
+  .total .amt { color: var(--navy); }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <img src="../my-skills/pdf-forge/brands/the-profit-analyst/logo.svg" alt="The Profit Analyst">
+  <div class="right"><div class="kicker">Your investment</div><div class="corner">90-Day Profit &amp; Cash Flow Accelerator</div></div>
+</div>
+
+<div class="hero">
+  <h1>Take control of your profit and cash flow <span style="white-space:nowrap">in 90 days</span></h1>
+  <p class="sub">We install your financial operating system, then teach you how to run it.</p>
+  <p>You'll know what's driving your cash flow and exactly what your next right move is.</p>
+</div>
+
+<h2 class="sec">The investment</h2>
+<div class="invest">
+  <div class="total">
+    <div class="lbl">The 90-day program</div>
+    <div class="amt">$9,000</div><div class="gst">+ GST</div>
+    <p>Everything below, for the full 90 days. Two simple ways to pay.</p>
+  </div>
+  <div class="opt featured">
+    <div class="badge">Most popular</div>
+    <h3>3 monthly payments</h3>
+    <div class="amt">$3,000</div>
+    <div class="per">per month + GST</div>
+    <p>Spread across your 90 days, so it fits your cash flow.</p>
+  </div>
+  <div class="opt">
+    <h3>Pay in full</h3>
+    <div class="amt">$8,100</div>
+    <div class="per">one payment + GST</div>
+    <p><b>Save 10% ($900)</b> when you pay upfront.</p>
+  </div>
+</div>
+
+<h2 class="sec">What's included</h2>
+<div class="inc">
+  <div class="box">
+    <h4>Done for you <span>built in your first 14 days</span></h4>
+    <ul>
+      <li>Weekly Cash Flow Forecaster™ <small>updated every Monday</small></li>
+      <li>Monthly Clarity Report™ <small>your financials in plain English</small></li>
+      <li>Profit Calculator™</li>
+      <li>Five Year Forecast™</li>
+    </ul>
+  </div>
+  <div class="box">
+    <h4>Your 1:1 calls <span>5 private calls</span></h4>
+    <ul>
+      <li>Onboarding Call <small>day 1</small></li>
+      <li>90-Day Roadmap Call <small>around day 14</small></li>
+      <li>Cash Flow Coaching Call <small>around day 21</small></li>
+      <li>Two Momentum Calls <small>weeks 7 and 11</small></li>
+    </ul>
+  </div>
+  <div class="box">
+    <h4>Group coaching <span>every week</span></h4>
+    <ul>
+      <li>Cash Flow Coaching <small>Tuesdays, 30 min</small></li>
+      <li>Finance Coaching Q&amp;A <small>Wednesdays, 60 min</small></li>
+      <li>Profit Workshops and Monthly Financial Reviews</li>
+      <li>Quarterly Strategic Session</li>
+    </ul>
+  </div>
+  <div class="box">
+    <h4>Learning and support <span>anytime</span></h4>
+    <ul>
+      <li>Training library <small>every module, 24/7</small></li>
+      <li>Support by email and messenger</li>
+      <li>Your own financial dashboard</li>
+    </ul>
+  </div>
+</div>
+
+<h2 class="sec">The return</h2>
+<table>
+  <tr><th>Your business</th><th>1% more margin, per year</th><th>10% more margin, per year</th><th>Over 10 years</th></tr>
+  <tr><td>$1M revenue</td><td class="n">$10,000</td><td class="n">$100,000</td><td class="n">$100K to $1M</td></tr>
+  <tr><td>$5M revenue</td><td class="n">$50,000</td><td class="n">$500,000</td><td class="n">$500K to $5M</td></tr>
+</table>
+
+<div class="guar">
+  <div class="seal">✓</div>
+  <div>
+    <h3>The Profit &amp; Cash Flow Guarantee</h3>
+    <p>We only keep going if this is a win for you. At your 90-Day Roadmap Call, we'll map out a clear plan to add $100,000 in annual profit, more than 10 times your investment. We'll also check your Weekly Cash Flow Forecaster™ to make sure your business can pay for the rest of the program. If either answer is no, or we don't believe we can help you win, we stop there. You won't pay another cent, and you keep your roadmap and your forecast.</p>
+  </div>
+</div>
+
+<div class="foot">
+  <div>All prices in AUD. Each extra company with its own books is on Profit Tools at $300 + GST a month. After 90 days you continue on Profit Coaching at $900 + GST a month. Change or cancel any time.</div>
+  <div><b>theprofitanalyst.com</b></div>
+</div>
+
+</body>
+</html>

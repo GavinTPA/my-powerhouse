@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Gavin Smith Speaker Sheet</title>
+<style>
+  @font-face { font-family: "Poppins"; font-weight: 400; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Poppins-Regular.ttf"); }
+  @font-face { font-family: "Poppins"; font-weight: 500; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Poppins-Medium.ttf"); }
+  @font-face { font-family: "Poppins"; font-weight: 600; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Poppins-SemiBold.ttf"); }
+  @font-face { font-family: "Poppins"; font-weight: 700; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Poppins-Bold.ttf"); }
+  @font-face { font-family: "Lato"; font-weight: 400; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Lato-Regular.ttf"); }
+  @font-face { font-family: "Lato"; font-weight: 700; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Lato-Bold.ttf"); }
+  @font-face { font-family: "Lato"; font-style: italic; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Lato-Italic.ttf"); }
+
+  :root {
+    --navy: #002B4E;
+    --blue: #02A3FF;
+    --green: #12C870;
+    --navy-light: #EEF2F6;
+    --green-light: #E7F9F0;
+    --text: #111111;
+    --text-2: #4A5563;
+    --rule: #DDE3EA;
+  }
+
+  @page { size: A4 portrait; margin: 11mm 13mm 11mm 13mm; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Lato", sans-serif; font-size: 9.1pt; line-height: 1.38; color: var(--text); }
+  b { color: var(--navy); }
+  a { color: var(--blue); text-decoration: none; }
+
+  .kicker { font-family: "Poppins"; font-size: 7.6pt; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--green); margin-bottom: 1mm; }
+
+  /* Header */
+  .header { display: flex; align-items: center; justify-content: space-between; padding-bottom: 2.4mm; border-bottom: 2.2pt solid var(--navy); }
+  .header h1 { font-family: "Poppins"; font-size: 26pt; font-weight: 700; color: var(--navy); line-height: 1.05; }
+  .header .role { font-family: "Poppins"; font-size: 10pt; font-weight: 500; color: var(--text-2); margin-top: 0.8mm; }
+  .header img { height: 15mm; }
+
+  /* Credentials strip */
+  .stats { display: flex; gap: 2.5mm; margin-top: 3.4mm; }
+  .stat { flex: 1; background: var(--navy-light); border-radius: 2mm; padding: 2.2mm 2.6mm; }
+  .stat .big { font-family: "Poppins"; font-size: 11pt; font-weight: 700; color: var(--navy); line-height: 1.15; }
+  .stat .small { font-size: 7.7pt; color: var(--text-2); line-height: 1.3; margin-top: 0.8mm; }
+
+  .section { margin-top: 4.4mm; }
+
+  .bio p { color: var(--text-2); }
+  .bio p + p { margin-top: 1.6mm; }
+  .bio p.lead { font-family: "Poppins"; font-size: 10pt; font-weight: 500; color: var(--navy); line-height: 1.38; }
+
+  .known { margin-top: 3mm; background: var(--navy-light); border-left: 2.4pt solid var(--navy); border-radius: 0 2mm 2mm 0; padding: 2mm 3mm; }
+  .known p { font-size: 8.7pt; color: var(--text-2); }
+
+  /* Talks */
+  .talk { display: flex; gap: 3mm; padding: 2.8mm 0; border-bottom: 0.6pt solid var(--rule); }
+  .talk:last-child { border-bottom: none; padding-bottom: 0; }
+  .talk .n { flex: none; width: 6.4mm; height: 6.4mm; border-radius: 50%; background: var(--navy); color: #fff; font-family: "Poppins"; font-weight: 700; font-size: 9pt; text-align: center; line-height: 6.4mm; margin-top: 0.4mm; }
+  .talk h3 { font-family: "Poppins"; font-size: 11.5pt; font-weight: 700; color: var(--navy); line-height: 1.2; }
+  .talk .subhead { font-family: "Poppins"; font-size: 9.2pt; font-weight: 500; color: var(--text-2); margin-top: 0.2mm; }
+  .talk p { font-size: 8.7pt; color: var(--text-2); margin-top: 1mm; line-height: 1.38; }
+  .talk .take { margin-top: 1mm; font-size: 8.5pt; color: var(--text-2); }
+
+  /* Footer */
+  .foot { margin-top: 4.4mm; background: var(--navy-light); border-top: 2.2pt solid var(--navy); border-radius: 0 0 2mm 2mm; padding: 2.4mm 3.2mm; display: flex; gap: 6mm; }
+  .foot div { font-size: 8.4pt; color: var(--text); line-height: 1.45; }
+  .foot .label { font-family: "Poppins"; font-size: 7pt; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--navy); }
+  .foot .contact { width: 40%; }
+  .foot .photos { width: 60%; }
+  .foot .url { font-size: 7.4pt; word-break: break-all; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div>
+    <div class="kicker">Speaker Bio &amp; Talk Topics</div>
+    <h1>Gavin Smith</h1>
+    <div class="role">Founder, The Profit Analyst</div>
+  </div>
+  <img src="../my-skills/pdf-forge/brands/the-profit-analyst/logo.svg" alt="The Profit Analyst">
+</div>
+
+<div class="stats">
+  <div class="stat"><div class="big">Qualified Accountant</div><div class="small">Ex-KPMG, Chartered Accountant, 20+ years finance experience</div></div>
+  <div class="stat"><div class="big">Global CFO</div><div class="small">Oversaw finances across 60 countries for a $500M international agency</div></div>
+  <div class="stat"><div class="big">Business Owner</div><div class="small">Built and scaled three of his own businesses to seven and eight figures</div></div>
+  <div class="stat"><div class="big">1,000+ Businesses Coached</div><div class="small">Across 40+ industries, using their numbers the way he does in his own business</div></div>
+</div>
+
+<div class="section bio">
+  <div class="kicker">Speaker bio</div>
+  <p class="lead">Gavin Smith gives business owners the tools and confidence to run their own numbers, without relying on an accountant.</p>
+  <p>He knows this world from both sides. Gavin is a qualified accountant who started at KPMG and rose to Global CFO of a $500M international marketing agency, overseeing finances across 60 countries. Then he walked away from the boardroom, moved back to the Sunshine Coast and became a business owner himself. Qualifications and all, running his own business humbled him fast.</p>
+  <p>He bought a bar turning over $1.1M and losing $150K a year, and grew it into a three-venue hospitality group now turning over more than $10M. He built and sold a chain of Pilates studios, and grew The Profit Analyst from startup to seven figures. Along the way he created his own simple financial operating system, built for business owners, not accountants, and has since coached more than 1,000 businesses across 40+ industries to use it in their own businesses.</p>
+  <div class="known">
+    <p><b>Known for</b> making numbers simple, practical and genuinely useful. No jargon. No theory. Audiences leave knowing what their numbers are telling them and exactly what to do next.</p>
+  </div>
+</div>
+
+<div class="section">
+  <div class="kicker">Talk topics</div>
+
+  <div class="talk"><span class="n">1</span><div>
+    <h3>Profit and Cash Flow, Made Simple</h3>
+    <div class="subhead">How to understand and use your numbers</div>
+    <p>For owners who look at their reports and still don't know if the business is okay. Gavin cuts through the jargon to show what the P&amp;L, balance sheet and cash flow are actually telling you, why profit doesn't always show up in the bank, and the simple weekly and monthly rhythm that keeps you in control at any size.</p>
+    <div class="take"><b>Walk away with</b> the confidence to read your own numbers and act on them.</div>
+  </div></div>
+
+  <div class="talk"><span class="n">2</span><div>
+    <h3>Boost Your Profit</h3>
+    <div class="subhead">The seven numbers that decide what you keep</div>
+    <p>The business has grown but profit hasn't. Gavin shows how The Profit Formula™ breaks any business into seven numbers, reveals where profit is leaking, and points to the one or two moves that will lift it fastest.</p>
+    <div class="take"><b>Walk away with</b> your own profit formula and your next right move.</div>
+  </div></div>
+
+  <div class="talk"><span class="n">3</span><div>
+    <h3>Maximise Your Exit</h3>
+    <div class="subhead">How to build a business worth selling, and get paid what it's worth</div>
+    <p>As a CFO, Gavin bought and sold businesses regularly. As an owner, he has exited businesses himself and is growing a hospitality group with a clear exit plan. This talk shows owners what buyers really pay for, and how to start building that value today, whether the exit is two years away or ten.</p>
+    <div class="take"><b>Walk away with</b> the numbers that drive your sale price, and how to move them now.</div>
+  </div></div>
+</div>
+
+<div class="foot">
+  <div class="contact">
+    <div class="label">Speaking enquiries</div>
+    <a href="mailto:gavin@theprofitanalyst.com">gavin@theprofitanalyst.com</a><br>
+    <a href="https://theprofitanalyst.com">theprofitanalyst.com</a><br>
+    @theprofitanalyst
+  </div>
+  <div class="photos">
+    <div class="label">Speaker photos</div>
+    Download high-res photos of the speaker here:<br>
+    <a class="url" href="https://drive.google.com/drive/folders/10_VvIvwo7zhwmNeZUR5Ifszdj0EDpHdd?usp=sharing">Speaker photos on Google Drive</a>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,216 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>TPA Growth Engine - Process Map</title>
+<style>
+  @page { size: 210mm 745mm; margin: 0; }
+  html, body { margin: 0; padding: 0; background: #fff; }
+  svg { display: block; width: 210mm; height: 745mm; }
+</style>
+</head>
+<body>
+<svg viewBox="0 0 595 2110" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <style>
+    text { font-family: Helvetica, Arial, sans-serif; }
+    .h1 { font-size: 26px; font-weight: 700; fill: #002B4E; }
+    .sub { font-size: 10px; fill: #4A6178; }
+    .kl { font-size: 8.5px; font-weight: 700; fill: #002B4E; }
+    .k { font-size: 8.5px; fill: #33475B; }
+    .t { font-size: 10px; font-weight: 700; fill: #002B4E; text-anchor: middle; dominant-baseline: central; }
+    .s { font-size: 7.5px; fill: #4A6178; text-anchor: middle; dominant-baseline: central; }
+    .tw { font-size: 10px; font-weight: 700; fill: #fff; text-anchor: middle; dominant-baseline: central; }
+    .sw { font-size: 7.5px; fill: #DCEBF7; text-anchor: middle; dominant-baseline: central; }
+    .td { font-size: 10px; font-weight: 700; fill: #4B5563; text-anchor: middle; dominant-baseline: central; }
+    .tr { font-size: 10px; font-weight: 700; fill: #9B1C1C; text-anchor: middle; dominant-baseline: central; }
+    .lab { font-size: 7.5px; font-weight: 700; fill: #33475B; }
+    .kt { font-size: 9px; font-weight: 700; fill: #002B4E; text-anchor: middle; dominant-baseline: central; }
+    .ks { font-size: 7px; fill: #7A5B00; text-anchor: middle; dominant-baseline: central; }
+    .foot { font-size: 7.5px; fill: #4A6178; }
+    .main { fill: #E8F5FF; stroke: #02A3FF; stroke-width: 0.9; }
+    .rec { fill: #E9F9F0; stroke: #12C870; stroke-width: 0.9; }
+    .navy { fill: #002B4E; }
+    .win { fill: #12C870; stroke: #0EA85D; stroke-width: 0.9; }
+    .drop { fill: #F3F4F6; stroke: #C5CAD3; stroke-width: 0.9; }
+    .red { fill: #FDECEC; stroke: #E5484D; stroke-width: 0.9; }
+    .kpi { fill: #FFF8DB; stroke: #F5B700; stroke-width: 0.9; }
+    .ln { fill: none; stroke: #33475B; stroke-width: 1; }
+    .loop { fill: none; stroke: #12C870; stroke-width: 1; stroke-dasharray: 4 3; }
+    .kc { fill: none; stroke: #F5B700; stroke-width: 1; stroke-dasharray: 2 2; }
+    .star { fill: #F5B700; stroke: #B7791F; stroke-width: 0.5; }
+  </style>
+  <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 1L9 5L0 9z" fill="#33475B"/></marker>
+  <marker id="g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 1L9 5L0 9z" fill="#12C870"/></marker>
+  <polygon id="star" class="star" points="0,-6 1.55,-2.12 5.71,-1.85 2.5,0.81 3.53,4.85 0,2.63 -3.53,4.85 -2.5,0.81 -5.71,-1.85 -1.55,-2.12"/>
+</defs>
+
+<!-- Header -->
+<text class="h1" x="34" y="86">Growth Engine</text>
+<text class="sub" x="34" y="108">Business process map · Meta ad to new client · November 2026</text>
+<image href="../my-skills/pdf-forge/brands/the-profit-analyst/logo.svg" x="497" y="44" width="64" height="61"/>
+<line x1="34" y1="124" x2="561" y2="124" stroke="#12C870" stroke-width="2"/>
+
+<!-- Key -->
+<rect x="34" y="138" width="527" height="86" rx="6" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="0.8"/>
+<text class="kl" x="46" y="160">Shapes</text>
+<rect x="96" y="153" width="24" height="12" rx="6" class="main"/><text class="k" x="125" y="162">Start / end</text>
+<rect x="180" y="153" width="20" height="12" rx="1.5" class="main"/><text class="k" x="205" y="162">Task</text>
+<polygon points="242,152 254,159 242,166 230,159" class="main"/><text class="k" x="259" y="162">Decision</text>
+<polygon points="304,153 324,153 320,165 300,165" class="main"/><text class="k" x="329" y="162">Data / input</text>
+<line x1="388" y1="159" x2="410" y2="159" class="ln" marker-end="url(#a)"/><text class="k" x="415" y="162">Flow</text>
+<use href="#star" x="458" y="159"/><text class="k" x="469" y="162">Power stage</text>
+
+<text class="kl" x="46" y="184">Colours</text>
+<rect x="96" y="177" width="12" height="12" rx="2" class="main"/><text class="k" x="113" y="186">Main path</text>
+<rect x="166" y="177" width="12" height="12" rx="2" class="rec"/><text class="k" x="183" y="186">Recovery / follow-up</text>
+<rect x="276" y="177" width="12" height="12" rx="2" class="navy"/><text class="k" x="293" y="186">Start / nurture list</text>
+<rect x="376" y="177" width="12" height="12" rx="2" class="win"/><text class="k" x="393" y="186">New client</text>
+<rect x="450" y="177" width="12" height="12" rx="2" class="drop"/><text class="k" x="467" y="186">Drop-off</text>
+<rect x="96" y="199" width="12" height="12" rx="2" class="red"/><text class="k" x="113" y="208">Cancelled / not proceeding</text>
+<line x1="236" y1="205" x2="258" y2="205" class="loop" marker-end="url(#g)"/><text class="k" x="263" y="208">Loops back</text>
+<rect x="320" y="199" width="12" height="12" rx="2" class="kpi"/><text class="k" x="337" y="208">KPI to track at a power stage</text>
+
+<!-- Start -->
+<rect x="220" y="262" width="155" height="34" rx="17" class="navy"/><text class="tw" x="297" y="279">Prospect on Meta</text>
+<line x1="297" y1="296" x2="297" y2="316" class="ln" marker-end="url(#a)"/>
+
+<!-- Ad sets + sees ad -->
+<polygon points="80,318 195,318 180,361 65,361" class="main"/><text class="t" x="130" y="334">Industry ad sets</text><text class="s" x="130" y="348">4 industries + general</text>
+<line x1="195" y1="340" x2="218" y2="340" class="ln" marker-end="url(#a)"/>
+<rect x="220" y="318" width="155" height="43" rx="3" class="main"/><text class="t" x="297" y="334">Sees pain-point ad</text><text class="s" x="297" y="348">Hooks on money worries</text>
+<line x1="297" y1="361" x2="297" y2="381" class="ln" marker-end="url(#a)"/>
+
+<!-- Clicks ad -->
+<polygon points="297,383 374,415 297,447 220,415" class="main"/><text class="t" x="297" y="415">Clicks ad?</text>
+<line x1="374" y1="415" x2="411" y2="415" class="ln" marker-end="url(#a)"/><text class="lab" x="386" y="410">No</text>
+<rect x="413" y="398" width="117" height="34" rx="17" class="drop"/><text class="td" x="471" y="415">Scrolls past</text>
+<line x1="297" y1="447" x2="297" y2="468" class="ln" marker-end="url(#a)"/><text class="lab" x="304" y="461">Yes</text>
+
+<!-- VSL page (power stage) -->
+<rect x="220" y="470" width="155" height="43" rx="3" class="main" stroke-width="1.6"/><use href="#star" x="233" y="491"/><text class="t" x="301" y="485">Lands on VSL page</text><text class="s" x="301" y="499">~10 min video</text>
+<line x1="200" y1="491" x2="220" y2="491" class="kc"/>
+<rect x="40" y="474" width="160" height="34" rx="4" class="kpi"/><text class="kt" x="120" y="486">Cost per VSL visit</text><text class="ks" x="120" y="499">KPI · plus visit volume</text>
+<line x1="297" y1="513" x2="297" y2="533" class="ln" marker-end="url(#a)"/>
+
+<!-- Watches VSL -->
+<polygon points="297,535 374,567 297,599 220,567" class="main"/><text class="t" x="297" y="567">Watches VSL?</text>
+<line x1="374" y1="567" x2="411" y2="567" class="ln" marker-end="url(#a)"/><text class="lab" x="386" y="562">No</text>
+<rect x="413" y="550" width="117" height="34" rx="17" class="drop"/><text class="td" x="471" y="567">Leaves page</text>
+<line x1="297" y1="599" x2="297" y2="619" class="ln" marker-end="url(#a)"/><text class="lab" x="304" y="612">Yes</text>
+
+<!-- Books a call (power stage) -->
+<polygon points="297,621 374,653 297,685 220,653" class="main" stroke-width="1.6"/><use href="#star" x="249" y="653"/><text class="t" x="302" y="653">Books a call?</text>
+<line x1="200" y1="653" x2="220" y2="653" class="kc"/>
+<rect x="40" y="636" width="160" height="34" rx="4" class="kpi"/><text class="kt" x="120" y="648">VSL booking rate</text><text class="ks" x="120" y="661">KPI · visit to booked call</text>
+<line x1="374" y1="653" x2="411" y2="653" class="ln" marker-end="url(#a)"/><text class="lab" x="386" y="648">No</text>
+<rect x="413" y="636" width="117" height="34" rx="17" class="drop"/><text class="td" x="471" y="653">Doesn't book</text>
+<line x1="297" y1="685" x2="297" y2="704" class="ln" marker-end="url(#a)"/><text class="lab" x="304" y="698">Yes</text>
+
+<!-- Form step 1 -->
+<polygon points="235,706 375,706 360,749 220,749" class="main"/><text class="t" x="297" y="722">Form step 1</text><text class="s" x="297" y="736">Details + revenue Qs</text>
+<line x1="297" y1="749" x2="297" y2="771" class="ln" marker-end="url(#a)"/>
+
+<!-- Revenue fits -->
+<polygon points="297,773 374,805 297,837 220,805" class="main"/><text class="t" x="297" y="805">Revenue fits?</text>
+<line x1="374" y1="805" x2="411" y2="805" class="ln" marker-end="url(#a)"/><text class="lab" x="386" y="800">No</text>
+<polygon points="425,783 530,783 515,826 410,826" class="navy"/><text class="tw" x="470" y="799">Nurture list</text><text class="sw" x="470" y="813">Long-term nurture</text>
+<line x1="297" y1="837" x2="297" y2="856" class="ln" marker-end="url(#a)"/><text class="lab" x="304" y="850">Yes</text>
+
+<!-- Form step 2 -->
+<polygon points="235,858 375,858 360,901 220,901" class="main"/><text class="t" x="297" y="874">Form step 2</text><text class="s" x="297" y="888">Calendar picker</text>
+<line x1="297" y1="901" x2="297" y2="923" class="ln" marker-end="url(#a)"/>
+
+<!-- Picks a time -->
+<polygon points="297,925 374,957 297,989 220,957" class="main"/><text class="t" x="297" y="957">Picks a time?</text>
+<line x1="220" y1="957" x2="199" y2="957" class="ln" marker-end="url(#a)"/><text class="lab" x="203" y="951">No</text>
+<rect x="65" y="935" width="132" height="43" rx="3" class="rec"/><text class="t" x="131" y="951">Setter outreach</text><text class="s" x="131" y="965">Calls to find a time</text>
+<line x1="131" y1="978" x2="131" y2="998" class="ln" marker-end="url(#a)"/>
+<polygon points="131,1000 197,1030 131,1060 65,1030" class="rec"/><text class="t" x="131" y="1030">Time found?</text>
+<line x1="197" y1="1030" x2="218" y2="1030" class="ln" marker-end="url(#a)"/><text class="lab" x="200" y="1024">Yes</text>
+<line x1="131" y1="1060" x2="131" y2="1076" class="ln" marker-end="url(#a)"/><text class="lab" x="138" y="1071">No</text>
+<polygon points="80,1078 197,1078 182,1121 65,1121" class="navy"/><text class="tw" x="131" y="1094">Nurture list</text><text class="sw" x="131" y="1108">Long-term nurture</text>
+<line x1="297" y1="989" x2="297" y2="1009" class="ln" marker-end="url(#a)"/><text class="lab" x="304" y="1002">Yes</text>
+
+<!-- Call booked -->
+<rect x="220" y="1011" width="155" height="43" rx="3" class="main"/><text class="t" x="297" y="1027">Call booked</text><text class="s" x="297" y="1041">In the calendar</text>
+<path d="M297 1054 L297 1070 L283 1070 L283 1089" class="ln" marker-end="url(#a)"/>
+<path d="M297 1070 L432 1070 L432 1089" class="ln" marker-end="url(#a)"/>
+<rect x="220" y="1091" width="126" height="43" rx="3" class="main"/><text class="t" x="283" y="1107">SMS confirmation</text><text class="s" x="283" y="1121">Asks them to confirm</text>
+<rect x="368" y="1091" width="130" height="43" rx="3" class="main"/><text class="t" x="433" y="1107">Setter pre-call</text><text class="s" x="433" y="1121">Pre-warn + qualify</text>
+<path d="M283 1134 L283 1150 L432 1150 L432 1134" class="ln"/>
+<line x1="297" y1="1150" x2="297" y2="1169" class="ln" marker-end="url(#a)"/>
+
+<!-- Right fit -->
+<polygon points="297,1171 374,1203 297,1235 220,1203" class="main"/><text class="t" x="297" y="1203">Right fit?</text>
+<line x1="374" y1="1203" x2="411" y2="1203" class="ln" marker-end="url(#a)"/><text class="lab" x="386" y="1198">No</text>
+<rect x="413" y="1186" width="117" height="34" rx="17" class="red"/><text class="tr" x="471" y="1203">Call cancelled</text>
+<line x1="470" y1="1220" x2="470" y2="1240" class="ln" marker-end="url(#a)"/>
+<polygon points="425,1242 530,1242 515,1285 410,1285" class="navy"/><text class="tw" x="470" y="1258">Nurture list</text><text class="sw" x="470" y="1272">Long-term nurture</text>
+<line x1="297" y1="1235" x2="297" y2="1255" class="ln" marker-end="url(#a)"/><text class="lab" x="304" y="1248">Yes</text>
+
+<!-- Morning-of SMS -->
+<rect x="220" y="1257" width="155" height="43" rx="3" class="main"/><text class="t" x="297" y="1273">Morning-of SMS</text><text class="s" x="297" y="1287">Reminder: call is today</text>
+<line x1="297" y1="1300" x2="297" y2="1322" class="ln" marker-end="url(#a)"/>
+
+<!-- Shows up (power stage) -->
+<polygon points="297,1324 374,1356 297,1388 220,1356" class="main" stroke-width="1.6"/><use href="#star" x="253" y="1356"/><text class="t" x="303" y="1356">Shows up?</text>
+<line x1="374" y1="1356" x2="410" y2="1356" class="kc"/>
+<rect x="410" y="1339" width="145" height="34" rx="4" class="kpi"/><text class="kt" x="482" y="1351">Show rate</text><text class="ks" x="482" y="1364">KPI · booked to showed up</text>
+<line x1="220" y1="1356" x2="199" y2="1356" class="ln" marker-end="url(#a)"/><text class="lab" x="203" y="1350">No</text>
+<rect x="65" y="1334" width="132" height="43" rx="3" class="rec"/><text class="t" x="131" y="1350">No-show follow-up</text><text class="s" x="131" y="1364">Find out why, rebook</text>
+<path d="M131 1334 L131 1158 L206 1158 L206 1048 L218 1048" class="loop" marker-end="url(#g)"/>
+<line x1="297" y1="1388" x2="297" y2="1407" class="ln" marker-end="url(#a)"/><text class="lab" x="304" y="1401">Yes</text>
+
+<!-- Sales call (power stage) -->
+<rect x="220" y="1409" width="155" height="43" rx="3" class="main" stroke-width="1.6"/><use href="#star" x="233" y="1430"/><text class="t" x="301" y="1425">Sales call</text><text class="s" x="301" y="1439">45 min Profit Game Plan</text>
+<line x1="200" y1="1430" x2="220" y2="1430" class="kc"/>
+<rect x="40" y="1413" width="160" height="34" rx="4" class="kpi"/><text class="kt" x="120" y="1425">Close rate</text><text class="ks" x="120" y="1438">KPI · incl. follow-ups</text>
+<line x1="297" y1="1452" x2="297" y2="1474" class="ln" marker-end="url(#a)"/>
+
+<!-- Call outcome -->
+<polygon points="297,1476 374,1508 297,1540 220,1508" class="main"/><text class="t" x="297" y="1508">Call outcome?</text>
+<line x1="220" y1="1508" x2="190" y2="1508" class="ln" marker-end="url(#a)"/><text class="lab" x="200" y="1502">No</text>
+<rect x="73" y="1491" width="115" height="34" rx="17" class="red"/><text class="tr" x="130" y="1508">Not proceeding</text>
+<line x1="131" y1="1525" x2="131" y2="1544" class="ln" marker-end="url(#a)"/>
+<polygon points="80,1546 197,1546 182,1589 65,1589" class="navy"/><text class="tw" x="131" y="1562">Nurture list</text><text class="sw" x="131" y="1576">Long-term nurture</text>
+<path d="M374 1508 L515 1508 L515 2012 L385 2012" class="ln" marker-end="url(#a)"/><text class="lab" x="386" y="1502">Buys</text>
+<line x1="297" y1="1540" x2="297" y2="1629" class="ln" marker-end="url(#a)"/><text class="lab" x="304" y="1588">Maybe</text>
+
+<!-- Follow-up booked -->
+<rect x="220" y="1631" width="155" height="43" rx="3" class="rec"/><text class="t" x="297" y="1647">Follow-up booked</text><text class="s" x="297" y="1661">Separate 30 min meeting</text>
+<line x1="297" y1="1674" x2="297" y2="1695" class="ln" marker-end="url(#a)"/>
+
+<!-- Follow-up shows up -->
+<polygon points="297,1697 374,1729 297,1761 220,1729" class="rec"/><text class="t" x="297" y="1729">Shows up?</text>
+<line x1="220" y1="1729" x2="199" y2="1729" class="ln" marker-end="url(#a)"/><text class="lab" x="203" y="1723">No</text>
+<rect x="65" y="1707" width="132" height="43" rx="3" class="rec"/><text class="t" x="131" y="1723">Chase + rebook</text><text class="s" x="131" y="1737">Find out why</text>
+<path d="M131 1707 L131 1662 L218 1662" class="loop" marker-end="url(#g)"/>
+<line x1="297" y1="1761" x2="297" y2="1781" class="ln" marker-end="url(#a)"/><text class="lab" x="304" y="1774">Yes</text>
+
+<!-- Follow-up meeting -->
+<rect x="220" y="1783" width="155" height="43" rx="3" class="rec"/><text class="t" x="297" y="1799">Follow-up meeting</text><text class="s" x="297" y="1813">30 min decision call</text>
+<line x1="297" y1="1826" x2="297" y2="1846" class="ln" marker-end="url(#a)"/>
+
+<!-- Follow-up outcome -->
+<polygon points="297,1848 374,1880 297,1912 220,1880" class="rec"/><text class="t" x="297" y="1880">Outcome?</text>
+<line x1="220" y1="1880" x2="199" y2="1880" class="ln" marker-end="url(#a)"/><text class="lab" x="200" y="1874">Again</text>
+<rect x="65" y="1859" width="132" height="43" rx="3" class="rec"/><text class="t" x="131" y="1875">Next follow-up</text><text class="s" x="131" y="1889">Book another one</text>
+<path d="M65 1880 L55 1880 L55 1645 L218 1645" class="loop" marker-end="url(#g)"/>
+<line x1="374" y1="1880" x2="388" y2="1880" class="ln" marker-end="url(#a)"/><text class="lab" x="376" y="1874">No</text>
+<rect x="390" y="1864" width="108" height="34" rx="17" class="red"/><text class="tr" x="444" y="1881">Not proceeding</text>
+<line x1="444" y1="1898" x2="444" y2="1917" class="ln" marker-end="url(#a)"/>
+<polygon points="407,1919 500,1919 485,1962 392,1962" class="navy"/><text class="tw" x="446" y="1935">Nurture list</text><text class="sw" x="446" y="1949">Long-term nurture</text>
+<line x1="297" y1="1912" x2="297" y2="1989" class="ln" marker-end="url(#a)"/><text class="lab" x="304" y="1952">Buys</text>
+
+<!-- New client (end) -->
+<rect x="213" y="1991" width="170" height="43" rx="21.5" class="win" stroke-width="1.6"/><use href="#star" x="232" y="2012"/><text class="tw" x="302" y="2006">New client</text><text class="sw" x="302" y="2020" style="fill:#F0FFF6">Hand-off to delivery engine</text>
+<line x1="193" y1="2012" x2="213" y2="2012" class="kc"/>
+<rect x="33" y="1995" width="160" height="34" rx="4" class="kpi"/><text class="kt" x="113" y="2007">Cost per new client</text><text class="ks" x="113" y="2020">KPI · whole engine score</text>
+
+<!-- Footer -->
+<line x1="34" y1="2068" x2="561" y2="2068" stroke="#E2E8F0" stroke-width="0.8"/>
+<text class="foot" x="34" y="2086">The Profit Analyst · Value engine maps · Growth engine hands off to the client delivery engine.</text>
+</svg>
+</body>
+</html>

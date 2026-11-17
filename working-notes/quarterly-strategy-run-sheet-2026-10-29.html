@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Quarterly Strategy Session Run Sheet</title>
+<style>
+  @font-face { font-family: "Poppins"; font-weight: 400; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Poppins-Regular.ttf"); }
+  @font-face { font-family: "Poppins"; font-weight: 500; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Poppins-Medium.ttf"); }
+  @font-face { font-family: "Poppins"; font-weight: 600; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Poppins-SemiBold.ttf"); }
+  @font-face { font-family: "Poppins"; font-weight: 700; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Poppins-Bold.ttf"); }
+  @font-face { font-family: "Lato"; font-weight: 400; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Lato-Regular.ttf"); }
+  @font-face { font-family: "Lato"; font-weight: 700; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Lato-Bold.ttf"); }
+  @font-face { font-family: "Lato"; font-style: italic; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Lato-Italic.ttf"); }
+
+  :root {
+    --navy: #002B4E; --blue: #02A3FF; --green: #12C870;
+    --navy-light: #E6EBF0; --blue-light: #E3F4FF; --green-light: #E4F8EE;
+    --text: #111111; --text-2: #4A5563; --rule: #DDE3EA;
+  }
+  @page { size: A4 portrait; margin: 9mm 11mm 8mm 11mm; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Lato", sans-serif; font-size: 8.8pt; line-height: 1.27; color: var(--text); }
+
+  .header { display: flex; align-items: center; justify-content: space-between; gap: 5mm; padding-bottom: 2.6mm; border-bottom: 2.2pt solid var(--navy); }
+  .header h1 { font-family: "Poppins"; font-size: 20pt; font-weight: 700; color: var(--navy); line-height: 1.05; }
+  .header .sub { font-family: "Poppins"; font-size: 9.6pt; font-weight: 500; color: var(--text-2); margin-top: 1.2mm; }
+  .header img { height: 13mm; flex: none; }
+
+  .strip { display: flex; gap: 3mm; margin-top: 3mm; }
+  .box { flex: 1; border-radius: 1.8mm; padding: 2.4mm 3.4mm; }
+  .box h4 { font-family: "Poppins"; font-size: 7.6pt; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--navy); margin-bottom: 1mm; }
+  .box.goal { flex: 1.4; background: var(--navy); color: #fff; }
+  .box.goal h4 { color: var(--green); }
+  .box.goal p { font-size: 9.2pt; color: #DCE4EC; margin-bottom: 0.5mm; }
+  .box.goal b { color: var(--green); font-family: "Poppins"; margin-right: 1mm; }
+  .box.roles { background: var(--navy-light); }
+  .roles-row { display: flex; gap: 2mm; align-items: baseline; margin-bottom: 0.8mm; font-size: 8.8pt; color: var(--text-2); }
+
+  .pill { display: inline-block; font-family: "Poppins"; font-size: 7.8pt; font-weight: 700; color: #fff; border-radius: 1.2mm; padding: 0.3mm 1.8mm; text-align: center; }
+  .pill.gavin { background: var(--navy); }
+  .pill.min { background: var(--green); }
+  .pill.both { background: var(--blue); }
+
+  table { width: 100%; border-collapse: collapse; margin-top: 3mm; }
+  thead th { font-family: "Poppins"; font-size: 7.4pt; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-2); text-align: left; padding: 0 1.8mm 1.2mm; border-bottom: 1pt solid var(--navy); }
+  td { vertical-align: top; padding: 1.9mm 1.8mm; border-bottom: 0.6pt solid var(--rule); }
+  tr.half td { background: var(--green-light); padding: 1.4mm 1.8mm; border-bottom: none; }
+  tr.half td span { font-family: "Poppins"; font-size: 8pt; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--navy); }
+  tr.half td em { font-style: normal; font-size: 8.6pt; color: var(--text-2); margin-left: 2mm; }
+  tr.key td { background: #F4FBFF; }
+  td.owner { width: 18mm; }
+  td.owner .pill { width: 15mm; }
+  td.time { width: 23mm; font-family: "Poppins"; font-size: 8.8pt; font-weight: 600; color: var(--navy); white-space: nowrap; }
+  td.mins { width: 12mm; text-align: center; }
+  td.mins b { font-family: "Poppins"; font-size: 11pt; font-weight: 700; color: var(--blue); display: block; line-height: 1; }
+  td.mins span { font-size: 7pt; color: var(--text-2); }
+  td.what h3 { font-family: "Poppins"; font-size: 10.2pt; font-weight: 700; color: var(--navy); line-height: 1.15; }
+  td.what p { color: var(--text-2); margin-top: 0.4mm; }
+  ul { list-style: none; margin-top: 0.7mm; }
+  li { position: relative; padding-left: 3.2mm; color: var(--text-2); margin-bottom: 0.4mm; }
+  li::before { content: ""; position: absolute; left: 0.4mm; top: 1.6mm; width: 1.3mm; height: 1.3mm; border-radius: 50%; background: var(--blue); }
+  li b { color: var(--navy); }
+  .out { display: inline-block; margin-top: 0.8mm; font-size: 8.4pt; color: var(--navy); }
+  .out b { font-family: "Poppins"; font-weight: 600; color: var(--green); }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div>
+    <h1>Quarterly Strategy Session</h1>
+    <div class="sub">Thursday 29 October 2026 · 10:00am to 12:00pm</div>
+  </div>
+  <img src="../my-skills/pdf-forge/brands/the-profit-analyst/logo.svg" alt="The Profit Analyst">
+</div>
+
+<div class="strip">
+  <div class="box goal">
+    <h4>Everyone leaves with</h4>
+    <p><b>1.</b>A monthly target Profit Formula for the quarter ahead</p>
+    <p><b>2.</b>Top 1 to 3 projects that drive it</p>
+    <p><b>3.</b>A first step with a date in the diary</p>
+  </div>
+  <div class="box roles">
+    <h4>Roles</h4>
+    <div class="roles-row"><span class="pill gavin">Gavin</span> Leads the numbers, screen share, demo file</div>
+    <div class="roles-row"><span class="pill min">Min</span> Leads momentum, vision, priorities</div>
+  </div>
+</div>
+
+<table>
+  <thead>
+    <tr><th>Owner</th><th>Time</th><th>Mins</th><th>Section</th></tr>
+  </thead>
+  <tbody>
+    <tr class="half"><td colspan="4"><span>Half 1 · Look Back</span><em>How did the business perform, and where did the money go?</em></td></tr>
+
+    <tr>
+      <td class="owner"><span class="pill both">Both</span></td>
+      <td class="time">10:00 – 10:10</td>
+      <td class="mins"><b>10</b><span>min</span></td>
+      <td class="what"><h3>Welcome and Set the Scene</h3>
+        <ul>
+          <li>Welcome, cameras on, worksheet link in chat</li>
+          <li>Two halves: look back, then look forward. Sailing to LA, the weekly, monthly and quarterly rhythms, the pyramid, the four principles</li>
+        </ul></td>
+    </tr>
+    <tr>
+      <td class="owner"><span class="pill gavin">Gavin</span></td>
+      <td class="time">10:10 – 10:30</td>
+      <td class="mins"><b>20</b><span>min</span></td>
+      <td class="what"><h3>Look Back: Financial Performance</h3>
+        <ul>
+          <li><b>Profit Formula:</b> fill in last quarter's figures from the Clarity Report (income, growth, five expenses, operating and net profit, ratios)</li>
+          <li>Pick ATV <b>or</b> volume, a round-number guess is fine, divide to get the other. Tick what you're happy with, cross what you're not</li>
+          <li><b>Where did the money go?</b> Ten balance sheet numbers, end of June vs end of September. Movement ties back to net profit</li>
+          <li>Everyone types one sentence in chat: profit good or bad, why, and where it went</li>
+        </ul></td>
+    </tr>
+    <tr>
+      <td class="owner"><span class="pill min">Min</span></td>
+      <td class="time">10:30 – 10:45</td>
+      <td class="mins"><b>15</b><span>min</span></td>
+      <td class="what"><h3>Momentum Snapshot</h3>
+        <p>Deep breath, change of state. Share in chat as you go.</p>
+        <ul>
+          <li><b>Wins:</b> what you're most proud of, and why it matters</li>
+          <li><b>Lessons:</b> what the quarter taught you, and what you'll change</li>
+          <li><b>Confidence:</b> what's solid now, and what strengths you'll build on</li>
+        </ul></td>
+    </tr>
+    <tr>
+      <td class="owner"><span class="pill both">Both</span></td>
+      <td class="time">10:45 – 10:50</td>
+      <td class="mins"><b>5</b><span>min</span></td>
+      <td class="what"><h3>Break</h3><p>Timer on screen, music on. Back at 10:50 sharp.</p></td>
+    </tr>
+
+    <tr class="half"><td colspan="4"><span>Half 2 · Look Forward</span><em>Five years, back to 12 months, back to this quarter's numbers and projects</em></td></tr>
+
+    <tr>
+      <td class="owner"><span class="pill min">Min</span></td>
+      <td class="time">10:50 – 11:05</td>
+      <td class="mins"><b>15</b><span>min</span></td>
+      <td class="what"><h3>Look Forward: 5 Years, 12 Months, 90 Days</h3>
+        <ul>
+          <li>Revenue and profit for each, plus why it matters, the biggest milestone, and what success looks like</li>
+          <li>Growth-rate slide: 15% a year doubles you, 38% a year is 5x, 56% a year is 10x</li>
+          <li>Feelings check in chat. If a target feels unreal, dial it back to a stretch you believe</li>
+        </ul></td>
+    </tr>
+    <tr class="key">
+      <td class="owner"><span class="pill gavin">Gavin</span></td>
+      <td class="time">11:05 – 11:35</td>
+      <td class="mins"><b>30</b><span>min</span></td>
+      <td class="what"><h3>Next Quarter Financial Targets</h3>
+        <ul>
+          <li>"Now" row: last quarter divided by three. Ratios stay the same, only dollars and volume change</li>
+          <li>Target profit and revenue: the 90-day numbers divided by three</li>
+          <li>Build the target formula in the Profit Calculator simulator (set to <b>monthly</b>)</li>
+          <li>Write in: which lever creates the biggest improvement this quarter? Post it in chat</li>
+        </ul>
+        <span class="out"><b>Output:</b> seven numbers you know by heart, for the monthly reviews</span></td>
+    </tr>
+    <tr class="key">
+      <td class="owner"><span class="pill min">Min</span></td>
+      <td class="time">11:35 – 11:55</td>
+      <td class="mins"><b>20</b><span>min</span></td>
+      <td class="what"><h3>Top 1 to 3 Quarterly Priorities</h3>
+        <ul>
+          <li><b>Brain dump:</b> everything on your plate right now</li>
+          <li><b>Prioritise:</b> score each one 1 to 5 against the quarterly target</li>
+          <li><b>Choose:</b> top 1 to 3 projects. Test: a verb, a deliverable, a date. Stuck? Ask AI to break it into monthly chunks</li>
+          <li><b>First step:</b> what you'll do and when, booked in the diary</li>
+        </ul></td>
+    </tr>
+    <tr>
+      <td class="owner"><span class="pill both">Both</span></td>
+      <td class="time">11:55 – 12:00</td>
+      <td class="mins"><b>5</b><span>min</span></td>
+      <td class="what"><h3>Commit and Close</h3>
+        <ul>
+          <li>Everyone posts their #1 project and first step in chat</li>
+          <li>What did you love, what did you learn? Link to the next two monthly reviews against these targets</li>
+          <li>Group photo, finish on time</li>
+        </ul></td>
+    </tr>
+  </tbody>
+</table>
+
+</body>
+</html>

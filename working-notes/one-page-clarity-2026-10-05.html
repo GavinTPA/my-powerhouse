@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The Profit Analyst: One-Page Clarity</title>
+<style>
+  @font-face { font-family: "Poppins"; font-weight: 400; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Poppins-Regular.ttf"); }
+  @font-face { font-family: "Poppins"; font-weight: 500; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Poppins-Medium.ttf"); }
+  @font-face { font-family: "Poppins"; font-weight: 600; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Poppins-SemiBold.ttf"); }
+  @font-face { font-family: "Poppins"; font-weight: 700; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Poppins-Bold.ttf"); }
+  @font-face { font-family: "Lato"; font-weight: 400; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Lato-Regular.ttf"); }
+  @font-face { font-family: "Lato"; font-weight: 700; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Lato-Bold.ttf"); }
+  @font-face { font-family: "Lato"; font-style: italic; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Lato-Italic.ttf"); }
+
+  :root {
+    --navy: #002B4E;
+    --green: #10BB6F;
+    --green-dark: #0C8F55;
+    --green-light: #E4F8EE;
+    --blue: #0BA6DB;
+    --blue-dark: #0786B2;
+    --blue-light: #E2F4FB;
+    --navy-light: #E6EBF0;
+    --text: #111111;
+    --text-2: #4A5563;
+    --rule: #DDE3EA;
+  }
+
+  @page { size: A4 portrait; margin: 10mm 12mm 10mm 12mm; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Lato", sans-serif; font-size: 9.1pt; line-height: 1.26; color: var(--text); }
+
+  .kicker { font-family: "Poppins"; font-size: 7.6pt; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--green); margin-bottom: 0.8mm; }
+  .lead { font-family: "Poppins"; font-weight: 600; color: var(--navy); font-size: 10.2pt; line-height: 1.24; }
+  .body { color: var(--text-2); margin-top: 0.5mm; }
+
+  /* Header */
+  .header { display: flex; align-items: center; justify-content: space-between; padding-bottom: 1.6mm; border-bottom: 2.2pt solid var(--navy); }
+  .header h1 { font-family: "Poppins"; font-size: 23pt; font-weight: 700; color: var(--navy); letter-spacing: 0.05em; line-height: 1; }
+  .header .tag { font-family: "Poppins"; font-size: 9.4pt; font-weight: 500; color: var(--text-2); margin-top: 0.8mm; }
+  .header .tag b { color: var(--green); font-weight: 600; }
+  .header img { height: 11mm; }
+
+  .section { margin-top: 2mm; }
+
+  /* Values */
+  .values { margin-top: 2mm; padding: 1.6mm 0 1.8mm; border-top: 0.6pt solid var(--rule); border-bottom: 0.6pt solid var(--rule); }
+  .values .kicker { margin-bottom: 1.4mm; }
+  .values .row { display: flex; gap: 2mm; }
+  .value { flex: 1; display: flex; gap: 1.4mm; align-items: flex-start; }
+  .value svg { flex: none; width: 7mm; height: 7mm; }
+  .value h3 { white-space: nowrap; font-family: "Poppins"; font-size: 9.2pt; font-weight: 700; color: var(--navy); line-height: 1.15; margin: 0.4mm 0 0.4mm; }
+  .value p { font-size: 7.8pt; color: var(--text-2); line-height: 1.28; }
+
+  /* Who we help */
+  .who ul { list-style: none; margin-top: 1mm; }
+  .who li { position: relative; padding-left: 3.6mm; margin-bottom: 0.4mm; color: var(--text-2); }
+  .who li::before { content: ""; position: absolute; left: 0; top: 1.6mm; width: 1.6mm; height: 1.6mm; border-radius: 50%; background: var(--green); }
+
+  /* What we do */
+  .what { margin-top: 2.4mm; background: var(--navy); color: #fff; border-radius: 2.5mm; padding: 2.2mm 5mm 2.4mm; }
+  .what .statement { font-family: "Poppins"; font-weight: 600; font-size: 12pt; line-height: 1.26; }
+  .what .statement em { font-style: normal; color: var(--green); }
+  .what .sub { font-size: 8.6pt; color: #C9D4DF; margin-top: 1mm; }
+  .what .sub b { color: #fff; }
+
+  /* Venn with callouts */
+  .venn { position: relative; height: 75.5mm; margin-top: 2mm; }
+  .venn svg.diagram { position: absolute; left: 0; top: 0; width: 186mm; height: 78mm; }
+  .call { position: absolute; border-radius: 2mm; padding: 1.8mm 2.8mm; }
+  .call h3 { font-family: "Poppins"; font-size: 10pt; font-weight: 700; line-height: 1.15; }
+  .call .mech { font-family: "Poppins"; font-size: 7.6pt; font-weight: 500; color: var(--text-2); margin-bottom: 0.6mm; }
+  .call ul { list-style: none; }
+  .call li { font-size: 8.5pt; color: var(--text-2); line-height: 1.3; padding-left: 2.6mm; position: relative; }
+  .call li::before { content: "•"; position: absolute; left: 0; }
+  .call .out { font-style: italic; font-size: 8.4pt; color: var(--navy); margin-top: 0.8mm; line-height: 1.3; }
+  .call.rhy { background: var(--navy-light); border-left: 1.4mm solid var(--navy); }
+  .call.rhy h3 { color: var(--navy); }
+  .call.vis { background: var(--blue-light); border-left: 1.4mm solid var(--blue); }
+  .call.vis h3 { color: var(--blue-dark); }
+  .call.con { background: var(--green-light); border-left: 1.4mm solid var(--green); }
+  .call.con h3 { color: var(--green-dark); }
+  .intro { position: absolute; left: 0; top: 0; width: 62mm; }
+  .intro .lead { font-size: 13pt; line-height: 1.22; }
+
+  /* 90 day */
+  .impl { margin-top: 2mm; border: 1pt solid var(--navy); border-radius: 2.5mm; overflow: hidden; }
+  .impl .top { background: var(--navy); color: #fff; padding: 1.4mm 5mm; display: flex; align-items: baseline; justify-content: space-between; }
+  .impl .top h2 { font-family: "Poppins"; font-size: 11pt; font-weight: 700; letter-spacing: 0.04em; }
+  .impl .top h2 span { color: var(--green); }
+  .impl .top p { font-size: 8.6pt; color: #C9D4DF; }
+  .stages { display: flex; align-items: stretch; padding: 2mm 3mm 2mm 4.4mm; gap: 2mm; }
+  .stage.one { flex: 1.5; }
+  .stage.two { flex: 1; background: var(--green-light); border-radius: 2mm; padding: 1.8mm 3mm 1.8mm; }
+  .stage .kicker { margin-bottom: 1mm; }
+  .arrow-col { flex: none; align-self: center; font-family: "Poppins"; font-weight: 700; font-size: 18pt; color: var(--green); }
+  .steps { display: flex; flex-wrap: wrap; }
+  .step { width: 50%; display: flex; gap: 1.8mm; padding-right: 2.5mm; margin-bottom: 0.9mm; align-items: center; }
+  .step .n { flex: none; width: 5.2mm; height: 5.2mm; border-radius: 50%; background: var(--green); color: #fff; font-family: "Poppins"; font-weight: 700; font-size: 7.8pt; text-align: center; line-height: 5.2mm; }
+  .step p { font-size: 8.8pt; line-height: 1.2; }
+  .optk { color: var(--green-dark); letter-spacing: 0.08em; }
+  .stage .opt { font-style: italic; font-size: 8.4pt; color: var(--green-dark); margin-bottom: 1.2mm; line-height: 1.25; }
+  .stage.two ul { list-style: none; }
+  .stage.two li { position: relative; padding-left: 3.2mm; font-size: 8.8pt; line-height: 1.26; margin-bottom: 0.6mm; }
+  .stage.two li::before { content: ""; position: absolute; left: 0; top: 1.4mm; width: 1.5mm; height: 1.5mm; border-radius: 50%; background: var(--green); }
+  .stage-out { margin-top: 0.8mm; padding-top: 1.2mm; border-top: 0.6pt solid var(--rule); font-family: "Poppins"; font-weight: 600; font-size: 8.8pt; color: var(--navy); line-height: 1.3; }
+  .stage-out span { color: var(--green-dark); }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div>
+    <h1>THE PROFIT ANALYST</h1>
+    <div class="tag">This is who we are. <b>This is who we help.</b> This is what we do.</div>
+  </div>
+  <img src="../my-skills/pdf-forge/brands/the-profit-analyst/logo.svg" alt="The Profit Analyst">
+</div>
+
+<div class="section">
+  <div class="kicker">Purpose</div>
+  <p class="lead">We help business owners build financially healthy, successful businesses by making their numbers simple, accessible and useful.</p>
+  <p class="body">Successful businesses create jobs, support families and strengthen communities. And the owners who carry the risk, stress and responsibility deserve a just reward for it.</p>
+</div>
+
+<div class="section">
+  <div class="kicker">Vision</div>
+  <p class="lead">To improve the success rate of businesses by helping thousands of owners become financially confident and build stronger businesses.</p>
+  <p class="body">Businesses failing because of poor financial decisions is a curable problem. We want to solve it at scale, helping 1,000+ businesses at any one time.</p>
+</div>
+
+<div class="values">
+  <div class="kicker">Our Values</div>
+  <div class="row">
+    <div class="value">
+      <svg viewBox="0 0 30 30"><circle cx="15" cy="15" r="15" fill="#E4F8EE"/><path d="M8 20 L13 15 L16 18 L22 11" fill="none" stroke="#10BB6F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M18 11 H22 V15" fill="none" stroke="#10BB6F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div>
+        <h3>Growth</h3>
+        <p>Always learning, improving and experimenting.</p>
+      </div>
+    </div>
+    <div class="value">
+      <svg viewBox="0 0 30 30"><circle cx="15" cy="15" r="15" fill="#E2F4FB"/><path d="M15 22 C9 17.5 7.5 15 7.5 12.6 A3.6 3.6 0 0 1 15 11 A3.6 3.6 0 0 1 22.5 12.6 C22.5 15 21 17.5 15 22 Z" fill="#0BA6DB"/></svg>
+      <div>
+        <h3>Contribution</h3>
+        <p>A real difference to owners and their people.</p>
+      </div>
+    </div>
+    <div class="value">
+      <svg viewBox="0 0 30 30"><circle cx="15" cy="15" r="15" fill="#E6EBF0"/><path d="M9 12 H21 M9 15 H18 M9 18 H15" stroke="#002B4E" stroke-width="2.2" stroke-linecap="round"/></svg>
+      <div>
+        <h3>Simplicity</h3>
+        <p>Numbers made simple, accessible and useful.</p>
+      </div>
+    </div>
+    <div class="value">
+      <svg viewBox="0 0 30 30"><circle cx="15" cy="15" r="15" fill="#E4F8EE"/><circle cx="15" cy="15" r="7" fill="none" stroke="#10BB6F" stroke-width="1.8"/><path d="M18.2 11.8 L16.3 16.3 L11.8 18.2 L13.7 13.7 Z" fill="#10BB6F"/></svg>
+      <div>
+        <h3>Fun &amp; Adventure</h3>
+        <p>Humour, energy and enjoyment in what we do.</p>
+      </div>
+    </div>
+    <div class="value">
+      <svg viewBox="0 0 30 30"><circle cx="15" cy="15" r="15" fill="#E2F4FB"/><circle cx="11.5" cy="11.5" r="2.6" fill="#0BA6DB"/><circle cx="18.5" cy="11.5" r="2.6" fill="#0BA6DB"/><path d="M6.8 21 C6.8 17.2 9 15.6 11.5 15.6 C14 15.6 16.2 17.2 16.2 21 Z M13.8 21 C13.8 17.2 16 15.6 18.5 15.6 C21 15.6 23.2 17.2 23.2 21 Z" fill="#0BA6DB"/></svg>
+      <div>
+        <h3>People Matter</h3>
+        <p>Family, health and life matter beyond profit.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section who">
+  <div class="kicker">Who We Help</div>
+  <p class="lead">Owners of $1m–$5m businesses who have outgrown running on gut feel but don't yet have a simple financial operating system.</p>
+  <ul>
+    <li>They've built a real business and know their financial decisions now matter.</li>
+    <li>They aren't "bad at numbers". They lack the visibility, confidence and system to make decisions easily.</li>
+    <li>They don't need to become accountants. They need finance made simple, useful and actionable.</li>
+  </ul>
+</div>
+
+<div class="what">
+  <div class="kicker">What We Do</div>
+  <p class="statement">We install a simple <em>Financial Operating System</em> into $1m–$5m businesses so owners can understand what's happening, see what's coming and make better financial decisions.</p>
+</div>
+
+<!-- Venn diagram with callouts. SVG units are mm (186 x 104). -->
+<div class="venn">
+  <svg class="diagram" viewBox="0 0 186 78" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="93" cy="26" r="24" fill="#002B4E" fill-opacity="0.10" stroke="#002B4E" stroke-width="0.4"/>
+    <circle cx="78.5" cy="51.1" r="24" fill="#0BA6DB" fill-opacity="0.14" stroke="#0BA6DB" stroke-width="0.4"/>
+    <circle cx="107.5" cy="51.1" r="24" fill="#10BB6F" fill-opacity="0.14" stroke="#10BB6F" stroke-width="0.4"/>
+
+    <!-- connectors -->
+    <line x1="114.8" y1="16" x2="124" y2="16" stroke="#002B4E" stroke-width="0.3"/>
+    <circle cx="114.8" cy="16" r="0.8" fill="#002B4E"/>
+    <line x1="55.5" y1="58" x2="52" y2="58" stroke="#0BA6DB" stroke-width="0.3"/>
+    <circle cx="55.5" cy="58" r="0.8" fill="#0BA6DB"/>
+    <line x1="130.5" y1="58" x2="134" y2="58" stroke="#10BB6F" stroke-width="0.3"/>
+    <circle cx="130.5" cy="58" r="0.8" fill="#10BB6F"/>
+
+    <!-- circle labels -->
+    <text x="93" y="12.5" text-anchor="middle" font-family="Poppins" font-weight="700" font-size="3.4" fill="#002B4E">FINANCIAL</text>
+    <text x="93" y="16.6" text-anchor="middle" font-family="Poppins" font-weight="700" font-size="3.4" fill="#002B4E">RHYTHM</text>
+    <text x="93" y="20.6" text-anchor="middle" font-family="Poppins" font-weight="500" font-size="2.3" fill="#4A5563">System + Cadence</text>
+
+    <text x="70" y="53" text-anchor="middle" font-family="Poppins" font-weight="700" font-size="3.4" fill="#0786B2">FINANCIAL</text>
+    <text x="70" y="57.1" text-anchor="middle" font-family="Poppins" font-weight="700" font-size="3.4" fill="#0786B2">VISIBILITY</text>
+    <text x="70" y="61.1" text-anchor="middle" font-family="Poppins" font-weight="500" font-size="2.3" fill="#4A5563">Tools + Software</text>
+
+    <text x="116" y="53" text-anchor="middle" font-family="Poppins" font-weight="700" font-size="3.4" fill="#0C8F55">FINANCIAL</text>
+    <text x="116" y="57.1" text-anchor="middle" font-family="Poppins" font-weight="700" font-size="3.4" fill="#0C8F55">CONFIDENCE</text>
+    <text x="116" y="61.1" text-anchor="middle" font-family="Poppins" font-weight="500" font-size="2.3" fill="#4A5563">Coaching + Education</text>
+
+    <!-- centre outcome -->
+    <circle cx="93" cy="42.7" r="11" fill="#002B4E" stroke="#FFFFFF" stroke-width="0.7"/>
+    <text x="93" y="39.2" text-anchor="middle" font-family="Poppins" font-weight="700" font-size="2.75" fill="#10BB6F">PROFIT &amp;</text>
+    <text x="93" y="43.1" text-anchor="middle" font-family="Poppins" font-weight="700" font-size="2.75" fill="#10BB6F">CASH FLOW</text>
+    <text x="93" y="47" text-anchor="middle" font-family="Poppins" font-weight="700" font-size="2.75" fill="#FFFFFF">MASTERY</text>
+  </svg>
+
+  <div class="intro">
+    <div class="kicker">How It Fits Together</div>
+    <p class="lead">Three parts. One Financial Operating System.</p>
+    <p class="body">Where visibility, confidence and rhythm overlap, owners get the outcome they came for.</p>
+  </div>
+
+  <div class="call rhy" style="left:124mm; top:0; width:62mm;">
+    <h3>Financial Rhythm</h3>
+    <div class="mech">System + Cadence</div>
+    <ul>
+      <li>Weekly, monthly, quarterly reviews</li>
+      <li>Reporting and forecasting rhythms</li>
+      <li>Repeatable decision routines</li>
+    </ul>
+    <p class="out">"Finance runs on repeat and guides the business."</p>
+  </div>
+
+  <div class="call vis" style="left:0; top:37mm; width:52mm;">
+    <h3>Financial Visibility</h3>
+    <div class="mech">Tools + Software</div>
+    <ul>
+      <li>Cash Flow Forecaster</li>
+      <li>Clarity Report</li>
+      <li>Profit Calculator</li>
+      <li>Colour-coded charts</li>
+      <li>Forecasts and key drivers</li>
+    </ul>
+    <p class="out">"I can clearly see what's happening and what's coming."</p>
+  </div>
+
+  <div class="call con" style="left:134mm; top:37mm; width:52mm;">
+    <h3>Financial Confidence</h3>
+    <div class="mech">Coaching + Education</div>
+    <ul>
+      <li>Understanding the numbers and what drives them</li>
+      <li>Knowing what questions to ask</li>
+      <li>Spotting opportunities and risks</li>
+      <li>Confident decision-making</li>
+    </ul>
+    <p class="out">"I understand what I'm looking at and know what to do with it."</p>
+  </div>
+</div>
+
+<div class="impl">
+  <div class="top">
+    <h2>HOW WE DO IT: <span>IMPLEMENT, THEN SUSTAIN</span></h2>
+    <p>Done-for-you + done-with-you</p>
+  </div>
+  <div class="stages">
+    <div class="stage one">
+      <div class="kicker">Step 1 · 90-Day Implementation</div>
+      <div class="steps">
+        <div class="step"><div class="n">1</div><p><b>Set up</b> the tools and forecasts.</p></div>
+        <div class="step"><div class="n">2</div><p><b>Organise</b> the numbers simply.</p></div>
+        <div class="step"><div class="n">3</div><p><b>Show</b> what's happening and what's coming.</p></div>
+        <div class="step"><div class="n">4</div><p><b>Teach</b> the owner to use it.</p></div>
+        <div class="step"><div class="n">5</div><p><b>Find</b> the decisions, risks and opportunities.</p></div>
+        <div class="step"><div class="n">6</div><p><b>Install</b> the rhythms on repeat.</p></div>
+      </div>
+      <p class="stage-out">Outcome: <span>a Financial Operating System installed</span>, and an owner who knows how to use it.</p>
+    </div>
+    <div class="arrow-col">›</div>
+    <div class="stage two">
+      <div class="kicker">Step 2 · Ongoing Support <span class="optk">(optional)</span></div>
+      <p class="opt">Where most owners see the biggest impact.</p>
+      <ul>
+        <li><b>We maintain</b> the system and numbers.</li>
+        <li><b>Ongoing coaching</b> on the rhythms.</li>
+        <li><b>Numbers guide</b> every big decision.</li>
+        <li><b>Accountability</b> and support in the numbers.</li>
+      </ul>
+      <p class="stage-out">Outcome: <span>the system keeps running</span> and keeps guiding the business.</p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,176 @@
+<title>Software Build Snapshot</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap">
+<style>
+/* Layout: one sheet, brand header, two columns (built | still to come) that stack on phones */
+:root {
+  --bg: #F6F9FC;
+  --surface: #FFFFFF;
+  --ink: #002B4E;
+  --muted: #4F6478;
+  --line: #DCE5EE;
+  --blue: #02A3FF;
+  --blue-tint: #E6F5FF;
+  --green: #12C870;
+  --green-ink: #0B8A4D;
+  --green-tint: #E5F8EE;
+  --amber: #B86E00;
+  --amber-tint: #FFF3E0;
+  --display: "Space Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --body: "Inter", -apple-system, "Segoe UI", Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0C1621; --surface: #13202D; --ink: #E8F0F7; --muted: #9FB2C4; --line: #24364A;
+    --blue: #3DB7FF; --blue-tint: #10293D; --green: #2BD887; --green-ink: #4BE29A; --green-tint: #11301F;
+    --amber: #FFB547; --amber-tint: #33260F; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0C1621; --surface: #13202D; --ink: #E8F0F7; --muted: #9FB2C4; --line: #24364A;
+  --blue: #3DB7FF; --blue-tint: #10293D; --green: #2BD887; --green-ink: #4BE29A; --green-tint: #11301F;
+  --amber: #FFB547; --amber-tint: #33260F; color-scheme: dark;
+}
+body { background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 15px; line-height: 1.5; }
+.page {
+  max-width: 1080px; margin: 0 auto;
+  padding-block: 32px 48px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: grid; gap: 24px;
+}
+header { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px; border-bottom: 2px solid var(--line); padding-bottom: 20px; }
+.logo { height: 44px; width: auto; }
+.head-text { display: grid; gap: 4px; }
+.eyebrow { font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--blue); }
+h1 { font-family: var(--display); font-size: 32px; line-height: 1.1; margin: 0; text-wrap: balance; }
+.date { color: var(--muted); font-size: 14px; }
+
+.tally { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.tally .count { display: flex; align-items: baseline; gap: 8px; padding: 10px 16px; border-radius: 10px; font-weight: 600; }
+.tally .count b { font-family: var(--display); font-size: 26px; font-variant-numeric: tabular-nums; }
+.count.built { background: var(--green-tint); color: var(--green-ink); }
+.count.todo { background: var(--blue-tint); color: var(--blue); }
+.tally p { margin: 0; color: var(--muted); max-width: 52ch; }
+
+.cols { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 24px; align-items: start; }
+@media (max-width: 760px) { .cols { grid-template-columns: minmax(0, 1fr); } }
+.col { display: grid; gap: 12px; min-width: 0; }
+.col-head { display: flex; align-items: center; gap: 10px; }
+.col-head h2 { font-family: var(--display); font-size: 20px; margin: 0; }
+.dot { width: 12px; height: 12px; border-radius: 50%; flex: none; }
+.col.done .dot { background: var(--green); }
+.col.next .dot { background: var(--blue); }
+.col-sub { margin: 0; color: var(--muted); font-size: 14px; }
+
+.built-list { list-style: none; margin: 0; padding: 0; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; }
+.built-list li { display: grid; grid-template-columns: 24px minmax(0, 1fr); gap: 10px; padding: 12px 16px; border-top: 1px solid var(--line); }
+.built-list li:first-child { border-top: 0; }
+.tick { width: 22px; height: 22px; border-radius: 50%; background: var(--green-tint); color: var(--green-ink); display: grid; place-items: center; font-size: 13px; font-weight: 700; }
+.built-list strong { display: block; font-weight: 600; }
+.built-list span.note { color: var(--muted); font-size: 13px; }
+
+.item { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; display: grid; gap: 8px; }
+.item-top { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; }
+.item h3 { font-family: var(--display); font-size: 17px; margin: 0; }
+.chip { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; padding: 3px 9px; border-radius: 999px; white-space: nowrap; }
+.chip.big { background: var(--blue-tint); color: var(--blue); }
+.chip.fix { background: var(--amber-tint); color: var(--amber); }
+.chip.open { background: var(--amber-tint); color: var(--amber); }
+.item p { margin: 0; color: var(--muted); font-size: 14px; }
+.item ul { margin: 0; padding-left: 18px; display: grid; gap: 3px; font-size: 14px; }
+.item ul li::marker { color: var(--blue); }
+.pills { display: flex; flex-wrap: wrap; gap: 6px; }
+.pill { font-size: 13px; padding: 3px 10px; border: 1px solid var(--line); border-radius: 999px; }
+.split { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+@media (max-width: 520px) { .split { grid-template-columns: minmax(0, 1fr); } }
+.split h4 { margin: 0 0 4px; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.scope { font-size: 13px; color: var(--muted); border-top: 1px dashed var(--line); padding-top: 8px; }
+.scope b { color: var(--ink); font-weight: 600; }
+</style>
+
+<main class="page">
+  <header>
+    <div class="head-text">
+      <span class="eyebrow">The Profit Analyst software</span>
+      <h1>Software Build Snapshot</h1>
+      <span class="date">Where the build stands as of 17 November 2026</span>
+    </div>
+    <img class="logo" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAxMDAwIDk0OCI+CiAgPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDI5LjUuMSwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDIuMS4wIEJ1aWxkIDE0MSkgIC0tPgogIDxkZWZzPgogICAgPHN0eWxlPgogICAgICAuc3QwIHsKICAgICAgICBmaWxsOiAjMDI4ZWNjOwogICAgICB9CgogICAgICAuc3QxIHsKICAgICAgICBmaWxsOiAjMGJhNmRiOwogICAgICB9CgogICAgICAuc3QyIHsKICAgICAgICBmaWxsOiAjMTBiYjZmOwogICAgICB9CiAgICA8L3N0eWxlPgogIDwvZGVmcz4KICA8cGF0aCBjbGFzcz0ic3QyIiBkPSJNNjE4LjIsNTIuNnYxNDNoLTQ0LjZWNTIuNmgtNTlWMTMuNGgxNjIuNnYzOS4yaC01OVoiLz4KICA8cGF0aCBjbGFzcz0ic3QyIiBkPSJNODE1LjUsNzAuN2M5LjcsMTAuNCwxNC41LDI0LjIsMTQuNSw0MS4ydjgzLjhoLTQzLjJ2LTc0LjVjMC04LTIuMi0xNC41LTYuNS0xOS41cy0xMC4xLTcuNS0xNy4xLTcuNWMtOC43LDAtMTUuNSwzLjItMjAuNSw5LjVzLTcuNSwxNS45LTcuNSwyOC42djYzLjRoLTQzLjVWLS4yaDQzLjV2NzIuM2MxMS4xLTExLjQsMjUuMS0xNy4xLDQyLjItMTcuMSwxNS44LDAsMjguNSw1LjIsMzguMiwxNS42WiIvPgogIDxwYXRoIGNsYXNzPSJzdDIiIGQ9Ik05ODYuOSwxMzguNWgtMTAwLjFjMS44LDguMiw1LjMsMTQuNiwxMC42LDE5LjMsNS4xLDQuNywxMS44LDcuMiwxOC44LDcuMSwxMy42LDAsMjMuMy01LjMsMjkuMS0xNS44bDM4LjYsNy45Yy01LjgsMTQuMS0xNC41LDI0LjgtMjYuMiwzMS45LTExLjcsNy4yLTI1LjUsMTAuOC00MS41LDEwLjhzLTM3LjItNi44LTUxLjEtMjAuM2MtMTQtMTMuNS0yMC45LTMwLjktMjAuOS01Mi4xczctMzguMywyMC45LTUxLjljMTQtMTMuNiwzMS4xLTIwLjQsNTEuNC0yMC40LDE5LjgsMCwzNi40LDYuNiw0OS44LDE5LjgsMTMuNCwxMy4yLDIwLjMsMzAuNywyMC43LDUyLjV2MTEuMlpNODk4LjgsOTYuMWMtNS40LDMuOC05LjQsOS40LTExLjIsMTUuOGg1Ni4zYy0yLTcuMS01LjQtMTIuNC0xMC4zLTE2LTUtMy42LTExLTUuNi0xNy4xLTUuNC02LjQsMC0xMi42LDItMTcuNyw1LjdaIi8+CiAgPHBhdGggY2xhc3M9InN0MiIgZD0iTTM2OS42LDMzMS4zYzIwLjUsMCwzNi44LDUuOCw0OC44LDE3LjMsMTIuMSwxMS41LDE4LjEsMjYuNywxOC4xLDQ1LjVzLTYuMiwzNC42LTE4LjYsNDYuMmMtMTIuNCwxMS42LTI5LjEsMTcuNC01MC4yLDE3LjRoLTQzdjU1LjdoLTQ0Ljh2LTE4Mi4yaDg5LjdaTTM2NC40LDQyMC4yYzguNywwLDE1LjUtMi4zLDIwLjUtNi45czcuNS0xMC44LDcuNS0xOC42LTIuNS0xMy41LTcuNi0xOC4xYy01LjEtNC42LTExLjktNi45LTIwLjQtNi45aC0zOS43djUwLjZoMzkuN1oiLz4KICA8cGF0aCBjbGFzcz0ic3QyIiBkPSJNNTU0LDM3Ni4ybC0xLjksNDMuNWgtNy45Yy0zMS40LDAtNDcsMTctNDcsNTEuMXY0Mi43aC00My42di0xMzYuNWg0My41djI2LjFjMTEuMi0xOC43LDI2LjktMjgsNDctMjgsMy4zLDAsNi42LjMsOS45LDEuMVoiLz4KICA8cGF0aCBjbGFzcz0ic3QyIiBkPSJNNjg0LjUsMzkzLjZjMTQuNSwxMy40LDIxLjgsMzAuNiwyMS44LDUxLjdzLTcuMiwzOC41LTIxLjgsNTEuOWMtMTQuNSwxMy40LTMyLjIsMjAuMS01MywyMC4xLTIxLjIsMC0zOS4xLTYuNy01My43LTIwLjEtMTQuNi0xMy40LTIxLjktMzAuNy0yMS45LTUxLjlzNy4zLTM4LjMsMjEuOS01MS43YzE0LjYtMTMuNCwzMi41LTIwLjEsNTMuNy0yMC4xLDIwLjgsMCwzOC41LDYuNyw1MywyMC4xWk02NTQuNiw0NzAuN2M2LjUtNi42LDkuOC0xNS4xLDkuOC0yNS40cy0zLjMtMTguOC05LjktMjUuNGMtNi42LTYuNi0xNC4zLTkuOS0yMy05LjktOC45LDAtMTcuNSwzLjUtMjMuNyw5LjktNi43LDYuNi0xMC4xLDE1LjEtMTAuMSwyNS40czMuMywxOC44LDkuOSwyNS40YzYuMiw2LjUsMTQuOCwxMCwyMy44LDkuOSw4LjksMCwxNi42LTMuMywyMy4xLTkuOVoiLz4KICA8cGF0aCBjbGFzcz0ic3QyIiBkPSJNODY0LjgsNTEzLjVoLTQzLjV2LTEwMmgtNTB2MTAyaC00My4zdi0xMDJoLTE5LjZ2LTM0LjVoMTkuNnYtMTAuNmMwLTE2LDUtMjguNywxNS4xLTM4LjIsMTAuMS05LjUsMjMuNS0xNC4zLDQwLjQtMTQuMyw4LjUsMCwxNi44LDEuNiwyNC43LDQuNmwtNy45LDM0LjNjLTMuNi0uOS03LjItMS40LTEwLjktMS42LTUuNCwwLTkuOCwxLjUtMTMuMiw0LjUtMy40LDMtNSw3LjItNSwxMi42djguN2g5My41djEzNi41Wk04MjQuOCwzNTQuMWMtNC43LTQuNS03LjEtMTAuMy03LjEtMTcuNC0uMS02LjYsMi41LTEzLDcuMy0xNy41LDQuOC00LjgsMTEuMy03LjQsMTguMS03LjIsMTMuNywwLDI0LjksMTEsMjUsMjQuNywwLDAsMCwwLDAsMCwuMiw2LjUtMi40LDEyLjgtNy4xLDE3LjMtNC43LDQuNi0xMC43LDYuOS0xOCw2LjktNy40LDAtMTMuNS0yLjMtMTguMi02LjhoMFoiLz4KICA8cGF0aCBjbGFzcz0ic3QyIiBkPSJNOTkyLjksNTA3LjVjLTEyLjUsNi43LTI0LjksMTAuMS0zNy4zLDEwLjEtMTcuMiwwLTMwLjYtNC42LTQwLjEtMTMuOS05LjUtOS4yLTE0LjMtMjIuNy0xNC4zLTQwLjV2LTUxLjdoLTI0Ljh2LTM0LjVoMjQuOHYtNDAuM2g0My41djQwLjNoNDAuMnYzNC41aC00MC4ydjQ3LjNjMCwxMy4yLDYuMSwxOS45LDE4LjIsMTkuOSw3LDAsMTMuOC0xLjksMTkuOC01LjRsMTAuMSwzNC4yWiIvPgogIDxwYXRoIGNsYXNzPSJzdDEiIGQ9Ik0xNTAuNCw4MzkuOGwtMTIuOC0zMy4ySDYwLjlsLTEyLjgsMzMuMkgwbDc2LjEtMTgyLjJoNDZsNzYuMSwxODIuMmgtNDcuOVpNOTkuMyw3MDguMmwtMjMuMSw1OS44aDQ2LjVsLTIzLjQtNTkuOFoiLz4KICA8cGF0aCBjbGFzcz0ic3QxIiBkPSJNMzMxLjEsNzE0LjljOS43LDEwLjQsMTQuNSwyNC4yLDE0LjUsNDEuMnY4My44aC00My4ydi03NC41YzAtOC0yLjItMTQuNS02LjUtMTkuNC00LjItNC45LTEwLjQtNy43LTE2LjktNy41LTguOSwwLTE1LjgsMy4xLTIwLjgsOS40LTUsNi4zLTcuNSwxNS44LTcuNSwyOC43djYzLjRoLTQzLjV2LTEzNi41aDQzLjV2MTNjMTAuOS0xMS40LDI0LjgtMTcuMSw0MS45LTE3LjEsMTUuOSwwLDI4LjgsNS4zLDM4LjUsMTUuN1oiLz4KICA8cGF0aCBjbGFzcz0ic3QxIiBkPSJNNTEyLjEsODM5LjhoLTQzLjV2LTEwLjhjLTExLjEsMTAtMjUuMiwxNS00Mi40LDE1LTE4LjUsMC0zNC4yLTYuOC00Ny4yLTIwLjMtMTMtMTMuNS0xOS41LTMwLjktMTkuNS01Mi4xczYuNS0zOC4zLDE5LjUtNTEuOWMxMy0xMy42LDI4LjctMjAuNCw0Ny4yLTIwLjQsMTcuMiwwLDMxLjQsNSw0Mi40LDE1di0xMWg0My41djEzNi41Wk00NTguNiw3OTdjNi42LTYuNiw5LjktMTUuMSw5LjktMjUuNCwwLTEwLjItMy4zLTE4LjYtOS45LTI1LjMtNi4xLTYuNS0xNC42LTEwLjEtMjMuNS0xMC4xLTkuNiwwLTE3LjUsMy4zLTIzLjcsOS45LTYuMiw2LjYtOS4yLDE1LjEtOS4yLDI1LjRzMy4xLDE5LDkuMiwyNS42YzYuMiw2LjUsMTQsOS44LDIzLjcsOS44LDguOSwwLDE3LjQtMy41LDIzLjUtOS45WiIvPgogIDxwYXRoIGNsYXNzPSJzdDEiIGQ9Ik01MzYuOCw4MzkuOHYtMTk1LjhoNDMuNXYxOTUuOGgtNDMuNVoiLz4KICA8cGF0aCBjbGFzcz0ic3QxIiBkPSJNNjcyLjgsODg2LjFoLTQ3bDIyLTUwLjgtNTYuNi0xMzIuMmg0Ni44bDMyLjQsNzkuNywzNC41LTc5LjdoNDYuOGwtNzguOSwxODNaIi8+CiAgPHBhdGggY2xhc3M9InN0MSIgZD0iTTc5MS43LDc5NS41YzEuOCwxMC43LDkuOSwxNiwyNC4yLDE2czkuNy0xLDEyLjktMy4xYzMuMi0yLjEsNC44LTQuNyw0LjgtNy44LDAtNS4xLTQuNS04LjQtMTMuNi0xMC4xbC0yNy43LTUuNGMtMjYuNS00LjktMzkuNy0xOC4xLTM5LjctMzkuNywwLTE0LDUuNC0yNS4yLDE2LjMtMzMuNiwxMC45LTguNCwyNS0xMi42LDQyLjQtMTIuNywxNi43LDAsMzAuNSwzLjUsNDEuNSwxMC42LDExLDcuMSwxNy44LDE2LjYsMjAuNSwyOC41bC0zOS43LDcuOWMtLjgtNC42LTMuNC04LjctNy4yLTExLjQtNC4xLTMuMS05LjMtNC42LTE1LjYtNC42LTUuNCwwLTkuNCwxLTExLjgsMy4xLTIuMywxLjgtMy43LDQuNi0zLjcsNy41LDAsNC45LDMuNCw4LjEsMTAuMyw5LjVsMzIuMSw2LjVjMTIuNSwyLjcsMjEuOSw3LjcsMjguMywxNC44LDYuMyw3LjIsOS41LDE1LjksOS41LDI2LjNzLTUuNywyNi0xNy4xLDM0Yy0xMS40LDgtMjYuNCwxMi00NC45LDEycy0zMS43LTMuMy00My40LTkuOWMtMTEuNy02LjYtMTguNi0xNi41LTIwLjgtMjkuOGw0Mi40LTguOFoiLz4KICA8cGF0aCBjbGFzcz0ic3QxIiBkPSJNOTkyLjksODMzLjljLTEyLjUsNi43LTI0LjksMTAuMS0zNy4zLDEwLjFzLTMwLjYtNC42LTQwLjEtMTMuOWMtOS41LTkuMi0xNC4zLTIyLjgtMTQuMy00MC41di01MS43aC0yNC44di0zNC41aDI0Ljh2LTQwLjJoNDMuNXY0MC4yaDQwLjJ2MzQuNWgtNDAuMnY0Ny4zYzAsMTMuMiw2LjEsMTkuOCwxOC4yLDE5LjgsNywwLDEzLjgtMS45LDE5LjgtNS40bDEwLjEsMzQuM1oiLz4KICA8cmVjdCBjbGFzcz0ic3QwIiB4PSI3LjEiIHk9IjU5NS41IiB3aWR0aD0iOTkyLjkiIGhlaWdodD0iMTIuOCIvPgogIDxyZWN0IGNsYXNzPSJzdDAiIHg9IjcuMSIgeT0iOTM1LjQiIHdpZHRoPSI5OTIuOSIgaGVpZ2h0PSIxMi44Ii8+Cjwvc3ZnPg==" alt="The Profit Analyst">
+  </header>
+
+  <section class="tally" aria-label="Summary">
+    <div class="count built"><b>7</b> built</div>
+    <div class="count todo"><b>4</b> still to come</div>
+    <p>The core numbers engine is done. What's left: connect the accounting software, one Profit Calculator fix, then the people side (Skool, community, GavBot).</p>
+  </section>
+
+  <div class="cols">
+    <section class="col done">
+      <div class="col-head"><span class="dot"></span><h2>Built</h2></div>
+      <p class="col-sub">Live in the software today.</p>
+      <ul class="built-list">
+        <li><span class="tick">✓</span><div><strong>Dashboard</strong><span class="note">The home view when an owner logs in</span></div></li>
+        <li><span class="tick">✓</span><div><strong>Cash Flow module</strong><span class="note">See the next low point in advance</span></div></li>
+        <li><span class="tick">✓</span><div><strong>Clarity Report</strong><span class="note">P&amp;L and balance sheet in plain English</span></div></li>
+        <li><span class="tick">✓</span><div><strong>Profit Calculator</strong><span class="note">Next right move for profit (merge fix pending)</span></div></li>
+        <li><span class="tick">✓</span><div><strong>Forecasting drivers</strong><span class="note">The inputs that move the forecast</span></div></li>
+        <li><span class="tick">✓</span><div><strong>Forecast model</strong><span class="note">Long-term impact of today's decisions</span></div></li>
+        <li><span class="tick">✓</span><div><strong>Portfolio view</strong><span class="note">All businesses in one place</span></div></li>
+      </ul>
+    </section>
+
+    <section class="col next">
+      <div class="col-head"><span class="dot"></span><h2>Still to come</h2></div>
+      <p class="col-sub">Gaps to close, in priority order.</p>
+
+      <article class="item">
+        <div class="item-top"><h3>Accounting software connections</h3><span class="chip open">Work in progress</span></div>
+        <p>Pull numbers straight in rather than loading them by hand.</p>
+        <div class="pills"><span class="pill">Xero</span><span class="pill">MYOB</span><span class="pill">QuickBooks</span></div>
+      </article>
+
+      <article class="item">
+        <div class="item-top"><h3>Profit Calculator: merge Simulator and Scenario</h3><span class="chip fix">Fix</span></div>
+        <p>The two pages split one job across two screens. Combine them into a single page so the calculator does what it's meant to do.</p>
+      </article>
+
+      <article class="item">
+        <div class="item-top"><h3>Education platform (Skool, moved in)</h3><span class="chip big">Big build</span></div>
+        <p>Bring everything currently in Skool inside the same login as the tools, so members never leave the software.</p>
+        <div class="split">
+          <div>
+            <h4>Learning</h4>
+            <ul>
+              <li>Video lessons organised into modules</li>
+              <li>Coaching call recordings linked in</li>
+              <li>Search and navigate across all content</li>
+              <li>Open or lock sections per member</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Community</h4>
+            <ul>
+              <li>Calendar with Zoom links for upcoming calls</li>
+              <li>Member directory: see who else is in</li>
+              <li>Community board for posts and wins</li>
+            </ul>
+          </div>
+        </div>
+        <div class="scope"><b>Decision to make:</b> build all of this natively, or start with the learning side and add community second.</div>
+      </article>
+
+      <article class="item">
+        <div class="item-top"><h3>GavBot (AI assistant)</h3><span class="chip big">Big build</span></div>
+        <p>An AI version of Gavin, trained on the trainings, call recordings and The Profit Analyst Method, similar to what people are building with Delphi.</p>
+        <ul>
+          <li>Answers questions and explains concepts in Gavin's words</li>
+          <li>Can read a member's own figures and interpret what they mean</li>
+          <li>Can produce simple write-ups from those figures</li>
+        </ul>
+        <div class="scope"><b>Out of scope:</b> building models or doing the tools' job. GavBot explains; the tools calculate.</div>
+      </article>
+    </section>
+  </div>
+</main>

@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Who Buys and Who Stalls: Handover for Min</title>
+<style>
+@font-face{font-family:"Poppins";font-weight:400;src:url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Poppins-Regular.ttf")}
+@font-face{font-family:"Poppins";font-weight:500;src:url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Poppins-Medium.ttf")}
+@font-face{font-family:"Poppins";font-weight:600;src:url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Poppins-SemiBold.ttf")}
+@font-face{font-family:"Poppins";font-weight:700;src:url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Poppins-Bold.ttf")}
+@font-face{font-family:"Lato";font-weight:400;src:url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Lato-Regular.ttf")}
+@font-face{font-family:"Lato";font-weight:700;src:url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Lato-Bold.ttf")}
+@font-face{font-family:"Lato";font-style:italic;src:url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Lato-Italic.ttf")}
+
+@page{size:A4;margin:18mm 17mm 18mm 17mm;
+  @bottom-left{content:"The Profit Analyst  |  Internal: contains client details, keep inside the team";font-family:"Lato";font-size:7.5pt;color:#7A8B99}
+  @bottom-right{content:"Page " counter(page) " of " counter(pages);font-family:"Lato";font-size:7.5pt;color:#7A8B99}}
+@page:first{@bottom-left{content:none}@bottom-right{content:none}}
+
+:root{--navy:#002B4E;--blue:#02A3FF;--green:#12C870;--red:#DC2626;--ink:#16263A;--muted:#5A6C7D;--line:#DCE5EC;--bluetint:#E8F6FF;--greentint:#E7F9F0;--redtint:#FDEEEE}
+html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{font-family:"Lato",sans-serif;font-size:9.6pt;line-height:1.45;color:var(--ink);margin:0}
+h1,h2,h3,h4{font-family:"Poppins",sans-serif;color:var(--navy);margin:0;page-break-after:avoid;break-after:avoid}
+h2{font-size:15pt;font-weight:700;margin:18px 0 8px;padding-bottom:4px;border-bottom:2px solid var(--blue)}
+h3{font-size:11pt;font-weight:600;margin:13px 0 4px}
+h4{font-size:9.8pt;font-weight:600;margin:9px 0 2px}
+p{margin:0 0 7px}
+ul{margin:0 0 8px;padding-left:16px}
+li{margin:0 0 3px}
+.q{font-style:italic;color:var(--muted)}
+.kicker{font-family:"Poppins";font-size:8pt;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--blue)}
+.newpage{page-break-before:always;break-before:page}
+.keep{page-break-inside:avoid;break-inside:avoid}
+
+/* Cover */
+.cover{height:257mm;display:flex;flex-direction:column}
+.cover img{width:120px;margin-bottom:60px}
+.cover h1{font-size:30pt;font-weight:700;line-height:1.15;margin:8px 0 12px}
+.cover .sub{font-size:12pt;color:var(--muted);max-width:140mm;margin-bottom:28px}
+.meta{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:10px 0;display:flex;gap:30px;font-size:9pt;margin-bottom:26px}
+.meta b{display:block;font-family:"Poppins";font-weight:600;font-size:7.5pt;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.big3{display:flex;gap:10px}
+.big3 div{flex:1;border-radius:8px;padding:12px 13px;font-size:9pt}
+.big3 b{display:block;font-family:"Poppins";font-size:11pt;color:var(--navy);margin-bottom:4px}
+.c1{background:var(--bluetint)}.c2{background:var(--greentint)}.c3{background:#EEF2F6}
+.cover .foot{margin-top:auto;font-size:8.5pt;color:var(--muted)}
+
+/* Boxes */
+.box{border-radius:8px;padding:10px 13px;margin:8px 0 10px;page-break-inside:avoid;break-inside:avoid}
+.box.blue{background:var(--bluetint);border-left:4px solid var(--blue)}
+.box.green{background:var(--greentint);border-left:4px solid var(--green)}
+.box.red{background:var(--redtint);border-left:4px solid var(--red)}
+.box h3,.box h4{margin-top:0}
+.twocol{display:flex;gap:10px}
+.twocol>div{flex:1}
+
+/* Tables */
+table{width:100%;border-collapse:collapse;font-size:8pt;line-height:1.35;margin:6px 0 10px;page-break-inside:avoid;break-inside:avoid}
+th{font-family:"Poppins";font-weight:600;font-size:8pt;color:#fff;background:var(--navy);text-align:left;padding:5px 6px;vertical-align:bottom}
+td{padding:4px 6px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:nth-child(even) td{background:#F7FAFC}
+td.rh{font-family:"Poppins";font-weight:600;color:var(--navy);white-space:nowrap}
+table.nb{font-size:7.6pt}
+table.nb td:first-child{font-family:"Poppins";font-weight:600;color:var(--navy);width:13%}
+.cmp td:first-child{width:24%;font-family:"Poppins";font-weight:600;color:var(--navy)}
+.tick{color:#0E9F5A;font-weight:700}
+.cross{color:var(--red);font-weight:700}
+
+.thread{page-break-inside:avoid;break-inside:avoid;margin-bottom:6px}
+.thread h4 .n{color:var(--blue);margin-right:5px}
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<section class="cover">
+  <img src="../my-skills/pdf-forge/brands/the-profit-analyst/logo.svg" alt="The Profit Analyst">
+  <div class="kicker">Handover for Min</div>
+  <h1>Who Buys and Who Stalls</h1>
+  <div class="sub">What 13 sales calls from October and November 2026 tell us about the people we should be putting our ads in front of, and what to do about it.</div>
+  <div class="meta">
+    <div><b>Prepared</b>17 November 2026</div>
+    <div><b>From</b>Gavin Smith</div>
+    <div><b>Source</b>4 calls that closed, 9 prospects who didn't</div>
+  </div>
+  <div class="big3">
+    <div class="c1"><b>The buyer</b>One owner holding the money alone, at break-even, with a tax bill that hurts, who has hit "enough is enough".</div>
+    <div class="c2"><b>The strongest signal</b>One person makes the money decision. All 4 buyers did. 6 of 8 non-buyers had someone else in the decision.</div>
+    <div class="c3"><b>The ads job</b>Speak to the pain they say out loud, and screen out the people who are comfortable, want it done for them, or want to cut tax.</div>
+  </div>
+  <div class="foot">Small sample. Treat the patterns as strong signals, not proof. Dollar figures are AUD.</div>
+</section>
+
+<!-- PAGE 2: HOW TO USE + BUYERS AT A GLANCE -->
+<section class="newpage">
+  <h2>How to use this</h2>
+  <p>We looked at every sales call from October (plus one in November) and asked one question: what was different about the people who said yes? This doc gives you the answer so the ads attract more of the people who buy and fewer of the people who stall.</p>
+  <ul>
+    <li><b>Pages 2 to 3:</b> who the four buyers are and the ten things they have in common.</li>
+    <li><b>Pages 4 to 5:</b> the nine who didn't buy, and what made them different.</li>
+    <li><b>Page 6:</b> the sharpened customer profile and what it means for ads, landing page and booking form.</li>
+  </ul>
+
+  <div class="box blue">
+    <h4>The one-line version</h4>
+    <p style="margin:0">The people who buy are hurting now, decide alone, and want to understand their own numbers. Revenue size mattered less than that. Two of the four buyers sat outside our $1M to $5M band and still closed easily.</p>
+  </div>
+
+  <h2>The four buyers at a glance</h2>
+  <p>All four closed on a 45-minute Profit Gameplan call. Offer: 90-day program, $8,800 paid in full or $880 a week for 13 weeks. <b>All four chose weekly.</b></p>
+  <table>
+    <tr><th></th><th>Adam</th><th>Suzie</th><th>Rachel</th><th>Xavier</th></tr>
+    <tr><td class="rh">Business</td><td>3rd-generation family freight and courier, Armidale NSW</td><td>Massage, allied health and recovery clinic, Cockburn WA</td><td>NDIS support provider, Dayboro area QLD</td><td>Boutique high-end AV install, Brisbane</td></tr>
+    <tr><td class="rh">Age / stage</td><td>43, running it 15 to 20 yrs</td><td>54, owned since 2019</td><td>Young mum (son 4), business 3 yrs</td><td>54, solo since 2011</td></tr>
+    <tr><td class="rh">Revenue</td><td>~$5.6M heading to $6M</td><td>~$1.8M ($150k/mo)</td><td>~$1.2M</td><td>~$600k (down from $750k)</td></tr>
+    <tr><td class="rh">Team</td><td>~45 staff, 52 vehicles</td><td>22 to 23</td><td>20 support staff, a manager, an offshore VA</td><td>2 (main one leaving)</td></tr>
+    <tr><td class="rh">Software</td><td>MYOB</td><td>Xero</td><td>Xero</td><td>Xero</td></tr>
+    <tr><td class="rh">Profit</td><td>Lost ~$20k last year</td><td>~$0, was $170k two years ago</td><td>$60k (5%), incl. her wage</td><td>Break-even</td></tr>
+    <tr><td class="rh">Debt / tax</td><td>~$400k ATO debt, 4 asset loans, owes Dad</td><td>$200k loan to silent partner. BAS "wipes us out"</td><td>$200k ATO debt, starting a payment plan</td><td>ATO plan after a $35k bill he couldn't reconcile</td></tr>
+    <tr><td class="rh">Cash</td><td>Bank balance and mental arithmetic. Stress around the 10th</td><td>$10k to $50k swings. Loses money in 5-week pay months</td><td>$40k to near zero</td><td>"Money comes in, it's gone"</td></tr>
+    <tr><td class="rh">How they arrived</td><td>Setter call + personal video from Gavin</td><td>Setter call (Melinda)</td><td>Ad, then Melinda</td><td>Ad (reports every ad as spam, not this one), then Melinda</td></tr>
+    <tr><td class="rh">Who decides</td><td>Him. Siblings are co-directors but he "steers the ship"</td><td>Her. Partner defers on finance</td><td>Her, solo</td><td>Him, solo</td></tr>
+    <tr><td class="rh">12-month goal</td><td>Cash comfort, replace ageing fleet</td><td>Back to $200k profit</td><td>Small hub, start SIL homes, clear ATO</td><td>Positive by 30 June, $60k in the bank</td></tr>
+    <tr><td class="rh">5-year goal</td><td>Afford a GM, step back, fix it before the kids inherit it</td><td>Sell for a strong multiple</td><td>30 SIL homes, big hub, step back as a mum</td><td>Buy a shed, add 2 to 4 people, keep quality</td></tr>
+  </table>
+</section>
+
+<!-- PAGE 3: COMMON THREAD -->
+<section class="newpage">
+  <h2>What the four buyers have in common</h2>
+
+  <div class="thread"><h4><span class="n">1</span>They carry the money in their head, alone</h4>
+  <p>Each one is the sole financial decision maker. Partners, siblings and managers defer to them, so nobody said "I need to talk to my partner". <span class="q">Adam: "at the end of the day, I'm the one that steers the ship." Rachel: "quite lonely."</span></p></div>
+
+  <div class="thread"><h4><span class="n">2</span>The tax bill is the wound</h4>
+  <p>Three of four carry ATO debt, and the fourth says BAS drains the account. It was the most emotional moment in every call. <span class="q">Adam: "We can't afford to pay the BAS... that's the keeping awake at night." Suzie: "a tax man took it all."</span></p></div>
+
+  <div class="thread"><h4><span class="n">3</span>Revenue is fine, profit has gone missing</h4>
+  <p>All four sit at or near break-even on a decent top line. Their words match our ad language almost exactly. <span class="q">Suzie: "how am I profitable, but I have no money in the bank?" Xavier: "Mr Taxman says I've made that much profit... it's not there."</span></p></div>
+
+  <div class="thread"><h4><span class="n">4</span>They pay an accountant and have hit the ceiling of that</h4>
+  <p>None want to fire the accountant. They've worked out it looks backwards. The gap is "someone to tell me what to do next". <span class="q">Rachel: with the accountant "you sort of feel like a bit of a dum-dum."</span></p></div>
+
+  <div class="thread"><h4><span class="n">5</span>People-heavy service businesses</h4>
+  <p>Wages are the biggest cost in all four. Adam and Suzie describe the same pattern: four-week months look profitable, five-week months lose money.</p></div>
+
+  <div class="thread"><h4><span class="n">6</span>Brilliant at their craft, never shown the numbers</h4>
+  <p><span class="q">Adam: "I never got any management schooling." Xavier: "I'm not a numbers person." Rachel: "I don't do technology very well."</span></p></div>
+
+  <div class="thread"><h4><span class="n">7</span>A personal pressure point tipped them over</h4>
+  <p>Two said "enough is enough" almost word for word. Suzie took the call from her dying father's nursing home. Adam's father had a stroke. Rachel: <span class="q">"it's definitely swallowed me whole."</span></p></div>
+
+  <div class="thread"><h4><span class="n">8</span>A concrete thing they want, and no map to get there</h4>
+  <p>New trucks and a GM, a saleable business, SIL homes, a commercial shed. Not vague "growth".</p></div>
+
+  <div class="thread"><h4><span class="n">9</span>They already spend money on help</h4>
+  <p>Price never came up as an objection. Cash timing did, which is why all four paid weekly and why the guarantee mattered.</p></div>
+
+  <div class="thread"><h4><span class="n">10</span>Warm before they arrived</h4>
+  <p>All four had a setter conversation first. They arrived already believing they had the problem. The call confirmed fit, it didn't create the need.</p></div>
+
+  <div class="twocol keep">
+    <div class="box green"><h4>What landed on the call</h4>
+      <ul style="margin:0">
+        <li>Gavin as a fellow owner, not just an accountant</li>
+        <li>The bars story (Xavier: "Wow." Suzie: "Can you do that for me?")</li>
+        <li>Proof from their industry</li>
+        <li>Coach, referee, scorekeeper analogy</li>
+        <li>Weekly payments plus the cash flow guarantee</li>
+      </ul></div>
+    <div class="box blue"><h4>Their questions (not objections)</h4>
+      <ul style="margin:0">
+        <li>"Will I be dealing with you, or a junior?"</li>
+        <li>"How do you actually implement this?"</li>
+        <li>"When do we start, I'm flat out until Christmas"</li>
+        <li>"As long as you feel I'm a correct person"</li>
+      </ul></div>
+  </div>
+</section>
+
+<!-- PAGE 4: NON-BUYERS -->
+<section class="newpage">
+  <h2>The nine who didn't buy</h2>
+  <p>Ten calls between 8 October and 11 November. All ended "not now, maybe January" except Ashita, a flat no (she hired a local hands-on CFO). Brad and Kaveh are still pending.</p>
+  <table class="nb">
+    <tr><th>Who</th><th>Business</th><th>Money</th><th>Who decides</th><th>What they really wanted</th><th>How it ended</th></tr>
+    <tr><td>Alex</td><td>Hospitality group, Canberra. Restaurant, pizza trailers, cafe, more sites coming</td><td>~$2.5M, ~10%. Bank loan, no ATO debt</td><td>Him alone</td><td>A mentor. Sees his problem as marketing, not numbers</td><td>Never heard the price. "Is there mentoring in there... or is it just figures?"</td></tr>
+    <tr><td>Raj</td><td>Caravan park, SE Victoria, expanding to ~100 sites</td><td>$1M to $1.8M, ~60%. ~$5M property debt. A $100k tax bill he can pay</td><td>Joint with partner (on call)</td><td>Pay less tax. Wanted Gavin to analyse it for them</td><td>"Can we take some time to talk about it." Rejected the cash rollercoaster framing twice</td></tr>
+    <tr><td>Ashita</td><td>Optometry practice, Canberra, two owners aged 56</td><td>~$1.2M, profit unknown. No super paid for 3 yrs</td><td>Joint with co-owner</td><td>Someone hands-on, face to face, to watch over it</td><td>Chose a local CFO</td></tr>
+    <tr><td>Michael</td><td>Short-stay accommodation, Margaret River, 3 sites + development</td><td>~$2M, ~20% ($400k). Property loans, no ATO issue</td><td>Him, but "check with my wife first"</td><td>An "independent review". Already runs a weekly AI cash forecast</td><td>"Definitely keen... I'll go check with my wife." Declined a joint call</td></tr>
+    <tr><td>Brad</td><td>Electrical and AV group, Sydney, 20+ yrs</td><td>~$8M, break-even or losses. ATO plans, DPNs, $130k BAS shock</td><td>With business partner (absent)</td><td>Peace of mind. Already has turnaround advisers</td><td>"We're good to go... I'll talk to my business partner." Nothing booked</td></tr>
+    <tr><td>Clayton</td><td>Plumbing franchise, Echuca VIC</td><td>~$3.5M, ~$180k. Purchase loan, $105k on Amex</td><td>Him alone</td><td>A "shoulder to lean on". Already has Fathom and franchise managers</td><td>Warm on call 1. Call 2: the upfront cost was "outside where I'm looking to play". January</td></tr>
+    <tr><td>Phillip</td><td>Fish and chips, 3 outlets, Coffs Harbour</td><td>~$3.4M, ~10%. Past ATO debt now cleared</td><td>Partner is sole director, absent</td><td>"I need somebody like yourself." Always had a business manager before</td><td>"I'm essentially sold... it's more me." Partner to watch the recording</td></tr>
+    <tr><td>Kaveh</td><td>Bakery, Wollongong, 2 sites</td><td>~$1.5M, 10 to 15%</td><td>Says he decides, then defers to his wife</td><td>Done for him. Trained accountant, wants the education for his wife</td><td>Wants to pay in full over 2 to 3 invoices. Pending</td></tr>
+    <tr><td>Ramy</td><td>Two roller rinks, Victoria, 7 renovation projects on</td><td>~$2M, ~$180k per rink. Tax up to date</td><td>Appears to be him alone</td><td>Work out what to charge. Tired of 60 to 80 hour weeks</td><td>Arrived cold. Booked a follow-up, no-showed, then "not until next year"</td></tr>
+  </table>
+
+  <div class="box red">
+    <h4>The pattern in one look</h4>
+    <p style="margin:0">Mostly profitable and comfortable. Most share the decision with someone who wasn't on the call. Most already have something filling the gap (a forecast, CFO, coach, franchise support). Five of nine are in hospitality, leisure or accommodation. None of the buyers are.</p>
+  </div>
+</section>
+
+<!-- PAGE 5: BUYERS VS NON-BUYERS -->
+<section class="newpage">
+  <h2>Buyers vs non-buyers: what's different</h2>
+  <table class="cmp">
+    <tr><th>Signal</th><th>Buyers (4)</th><th>Non-buyers (9)</th></tr>
+    <tr><td>Who makes the money decision</td><td><span class="tick">4 of 4</span> decided alone and said yes on the call</td><td>6 of 8 had a second person in the decision. 5 of those ended on "I'll talk to them"</td></tr>
+    <tr><td>How much it hurts now</td><td>Break-even or close. 3 of 4 have live ATO debt</td><td>Mostly profitable (10% to 60%). Only Brad has live ATO pain</td></tr>
+    <tr><td>What tipped them</td><td>"Enough is enough"</td><td>Curious or strategic: exit planning, a podcast, a tax bill they can pay</td></tr>
+    <tr><td>Other help in place</td><td>Only a backwards-looking accountant</td><td>Already had a substitute: AI forecast, Fathom, turnaround advisers, CFO, coach</td></tr>
+    <tr><td>Learn it or have it done</td><td>"I want to know my numbers"</td><td>Mostly "do it for me", or already doing it</td></tr>
+    <tr><td>Business shape</td><td>One simple business</td><td>Bigger, multi-site or multi-entity, property heavy, mid-expansion</td></tr>
+    <tr><td>Warm or cold</td><td>All 4 had a setter call first</td><td>Ramy arrived cold and no-showed his follow-up</td></tr>
+    <tr><td>Payment</td><td>All took $880/week without blinking</td><td>Price wasn't the objection. Payment shape was (back-load it, split into invoices)</td></tr>
+  </table>
+
+  <h3>Two things worth knowing</h3>
+  <h4>Deciding alone is necessary, not enough</h4>
+  <p>Three non-buyers also decided alone (Alex, Clayton, Ramy). They stalled for other reasons: never heard the offer, didn't like the upfront lump, or had no money pain.</p>
+  <h4>"Timing" was the excuse, not the cause</h4>
+  <p>Buyers had awful timing too. Suzie was in a palliative ward, Adam was heading into peak season, Xavier was flat out to Christmas. They bought anyway. <span class="q">Xavier: "At the time it happens, it's never the right time."</span> When the pain is high and one person decides, timing doesn't stop the sale.</p>
+
+  <h3>Sales process gaps (for Gavin and Melinda)</h3>
+  <ul>
+    <li>Partner absent and no joint call booked (Phillip, Michael, Brad, Kaveh).</li>
+    <li>Price came late, 48 to 70 minutes in. Alex never got it.</li>
+    <li>Calls ran long (95 and 77 minutes). Long software walk-throughs got "Yeah" in reply.</li>
+    <li>Calls ended with a link in the Zoom chat and nothing in the calendar.</li>
+    <li>Raj came to cut tax and didn't know what Gavin does. That should be screened out before the call.</li>
+  </ul>
+</section>
+
+<!-- PAGE 6: ICP + ADS IMPLICATIONS -->
+<section class="newpage">
+  <h2>The sharpened customer profile</h2>
+  <div class="twocol">
+    <div class="box green"><h4>Buys now</h4>
+      <ul style="margin:0">
+        <li>One owner who holds the money alone</li>
+        <li>Break-even or thin profit</li>
+        <li>Live tax pain: ATO debt or a BAS shock</li>
+        <li>People-heavy service business</li>
+        <li>Only help is a backwards-looking accountant</li>
+        <li>Wants to understand it themselves</li>
+        <li>Has hit "enough is enough"</li>
+      </ul></div>
+    <div class="box red"><h4>Stalls</h4>
+      <ul style="margin:0">
+        <li>Profitable and comfortable</li>
+        <li>Arrived cold</li>
+        <li>A partner shares the decision and isn't on the call</li>
+        <li>Already has a forecast, CFO, coach or franchise support</li>
+        <li>Wants it done for them</li>
+        <li>Mid-expansion or multi-entity</li>
+        <li>Came to cut tax</li>
+      </ul></div>
+  </div>
+
+  <h2>What this means for the ads</h2>
+  <p>Our job is to bring in more people who look like the left-hand box and fewer who look like the right. Here's how to use the study.</p>
+
+  <h4>1. Use their words, not ours</h4>
+  <p>Hooks straight from the buyers' mouths: "How am I profitable, but I have no money in the bank?" "The tax man took it all." "Money comes in, it's gone." "We can't afford to pay the BAS." And the five-week pay month that wipes out the profit from the four-week months.</p>
+
+  <h4>2. Lead with tax pain and missing profit</h4>
+  <p>The ATO bill was the most emotional moment on every buyer call. Profit on paper, nothing in the bank, then the tax bill lands. That's the story to tell.</p>
+
+  <h4>3. Show people-heavy service businesses</h4>
+  <p>Clinics, trades, freight, NDIS, installers: businesses where wages are the biggest cost. Be careful leaning on hospitality creative. It gets clicks (Kaveh: "that's the ad that got me") but 5 of the 9 non-buyers came from hospitality, leisure or accommodation, and none of the buyers did.</p>
+
+  <h4>4. Speak to the owner who wants to learn it</h4>
+  <p>"Know your own numbers" and "stop waiting for the accountant" pull in learners. Anything that sounds like "we'll do it for you" pulls in the delegators who stall.</p>
+
+  <h4>5. Screen on the landing page and booking form</h4>
+  <p>Ask who makes the money decisions, and if it's shared, ask them to bring that person to the call. Make clear this is about understanding your numbers, not cutting your tax. Don't filter hard on revenue: pain predicted the close better than size did.</p>
+
+  <h4>6. Warm them up before the call</h4>
+  <p>All four buyers had a setter conversation first. A cold booking from an ad needs that warm-up, or the call has to create the need from scratch, and it doesn't stick.</p>
+
+  <div class="box blue">
+    <h4>Pipeline right now</h4>
+    <p style="margin:0"><b>Brad</b> looks most like a buyer. Get his partner Luke on a call. <b>Kaveh</b> asked to pay in full over 2 to 3 invoices, and saying yes may be all it takes. <b>Phillip</b> says he's sold. His partner Penny decides, so she needs to be on a call, not just watching the recording.</p>
+  </div>
+</section>
+
+</body>
+</html>

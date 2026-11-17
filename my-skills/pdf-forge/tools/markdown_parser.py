@@ -95,6 +95,11 @@ def parse_markdown_file(filepath: str) -> dict:
         result['title'] = title_match.group(1).strip()
         if title_match.group(2):
             result['subtitle'] = title_match.group(2).strip()
+        # Drop the H1 line from the body content. The cover page renders
+        # the title and subtitle separately, so leaving it in place would
+        # duplicate it as a heading at the top of the main content.
+        content = content[:title_match.start()] + content[title_match.end():]
+        content = content.lstrip('\n')
 
     # Extract date from filename or content
     date_match = re.search(r'(\d{4}-\d{2}-\d{2})', str(filepath))

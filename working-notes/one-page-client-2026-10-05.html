@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The Profit Analyst: Profit and Cash Flow</title>
+<style>
+  @font-face { font-family: "Poppins"; font-weight: 400; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Poppins-Regular.ttf"); }
+  @font-face { font-family: "Poppins"; font-weight: 500; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Poppins-Medium.ttf"); }
+  @font-face { font-family: "Poppins"; font-weight: 600; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Poppins-SemiBold.ttf"); }
+  @font-face { font-family: "Poppins"; font-weight: 700; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Poppins-Bold.ttf"); }
+  @font-face { font-family: "Lato"; font-weight: 400; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Lato-Regular.ttf"); }
+  @font-face { font-family: "Lato"; font-weight: 700; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Lato-Bold.ttf"); }
+  @font-face { font-family: "Lato"; font-style: italic; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Lato-Italic.ttf"); }
+
+  :root {
+    --navy: #002B4E;
+    --green: #10BB6F;
+    --green-dark: #0C8F55;
+    --green-light: #E4F8EE;
+    --blue: #0BA6DB;
+    --blue-dark: #0786B2;
+    --blue-light: #E2F4FB;
+    --navy-light: #E6EBF0;
+    --text: #111111;
+    --text-2: #4A5563;
+    --rule: #DDE3EA;
+  }
+
+  @page { size: A4 portrait; margin: 10mm 12mm 10mm 12mm; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Lato", sans-serif; font-size: 9.3pt; line-height: 1.28; color: var(--text); }
+
+  .kicker { font-family: "Poppins"; font-size: 7.6pt; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--green); margin-bottom: 0.8mm; }
+  .lead { font-family: "Poppins"; font-weight: 600; color: var(--navy); font-size: 10.4pt; line-height: 1.26; }
+  .body { color: var(--text-2); margin-top: 0.5mm; }
+
+  /* Header */
+  .header { display: flex; align-items: center; justify-content: space-between; padding-bottom: 2mm; border-bottom: 2.2pt solid var(--navy); }
+  .header h1 { font-family: "Poppins"; font-size: 25pt; font-weight: 700; color: var(--navy); letter-spacing: 0.05em; line-height: 1; }
+  .header .tag { font-family: "Poppins"; font-size: 9.6pt; font-weight: 500; color: var(--text-2); margin-top: 1.2mm; }
+  .header .tag b { color: var(--green); font-weight: 600; }
+  .header img { height: 12mm; }
+
+  .section { margin-top: 2.4mm; }
+
+  /* Values */
+  .values { margin-top: 2.4mm; padding: 1.8mm 0 2mm; border-top: 0.6pt solid var(--rule); border-bottom: 0.6pt solid var(--rule); }
+  .values .kicker { margin-bottom: 1.4mm; }
+  .values .row { display: flex; gap: 2mm; }
+  .value { flex: 1; display: flex; gap: 1.4mm; align-items: flex-start; }
+  .value svg { flex: none; width: 7mm; height: 7mm; }
+  .value h3 { white-space: nowrap; font-family: "Poppins"; font-size: 9.2pt; font-weight: 700; color: var(--navy); line-height: 1.15; margin: 0.4mm 0 0.4mm; }
+  .value p { font-size: 7.8pt; color: var(--text-2); line-height: 1.28; }
+
+  /* Who we help */
+  .who ul { list-style: none; margin-top: 1mm; }
+  .who li { position: relative; padding-left: 3.6mm; margin-bottom: 0.4mm; color: var(--text-2); }
+  .who li::before { content: ""; position: absolute; left: 0; top: 1.6mm; width: 1.6mm; height: 1.6mm; border-radius: 50%; background: var(--green); }
+
+  /* What we do */
+  .what { margin-top: 2.8mm; background: var(--navy); color: #fff; border-radius: 2.5mm; padding: 2.6mm 5mm 3mm; }
+  .what .statement { font-family: "Poppins"; font-weight: 600; font-size: 12.4pt; line-height: 1.26; }
+  .what .statement em { font-style: normal; color: var(--green); }
+  .what .sub { font-size: 8.6pt; color: #C9D4DF; margin-top: 1mm; }
+  .what .sub b { color: #fff; }
+
+  /* Venn with callouts */
+  .venn { position: relative; height: 74mm; margin-top: 2.6mm; }
+  .venn svg.diagram { position: absolute; left: 0; top: 0; width: 186mm; height: 78mm; }
+  .call { position: absolute; border-radius: 2mm; padding: 1.8mm 2.8mm; }
+  .call h3 { font-family: "Poppins"; font-size: 10pt; font-weight: 700; line-height: 1.15; }
+  .call .mech { font-family: "Poppins"; font-size: 7.6pt; font-weight: 500; color: var(--text-2); margin-bottom: 0.6mm; }
+  .call ul { list-style: none; }
+  .call li { font-size: 8.5pt; color: var(--text-2); line-height: 1.3; padding-left: 2.6mm; position: relative; }
+  .call li::before { content: "•"; position: absolute; left: 0; }
+  .call .out { font-style: italic; font-size: 8.4pt; color: var(--navy); margin-top: 0.8mm; line-height: 1.3; }
+  .call.rhy { background: var(--navy-light); border-left: 1.4mm solid var(--navy); }
+  .call.rhy h3 { color: var(--navy); }
+  .call.vis { background: var(--blue-light); border-left: 1.4mm solid var(--blue); }
+  .call.vis h3 { color: var(--blue-dark); }
+  .call.con { background: var(--green-light); border-left: 1.4mm solid var(--green); }
+  .call.con h3 { color: var(--green-dark); }
+  .intro { position: absolute; left: 0; top: 0; width: 62mm; }
+  .intro .lead { font-size: 13pt; line-height: 1.22; }
+
+  /* 90 day */
+  .impl { margin-top: 2.4mm; border: 1pt solid var(--navy); border-radius: 2.5mm; overflow: hidden; }
+  .impl .top { background: var(--navy); color: #fff; padding: 1.8mm 5mm; display: flex; align-items: baseline; justify-content: space-between; }
+  .impl .top h2 { font-family: "Poppins"; font-size: 12pt; font-weight: 700; letter-spacing: 0.04em; }
+  .impl .top h2 span { color: var(--green); }
+  .impl .top p { font-size: 8.6pt; color: #C9D4DF; }
+  .steps { display: flex; flex-wrap: wrap; padding: 2.4mm 5mm 0.2mm; }
+  .step { width: 33.333%; display: flex; gap: 2mm; padding-right: 3mm; margin-bottom: 1.8mm; align-items: center; }
+  .step .n { flex: none; width: 5.4mm; height: 5.4mm; border-radius: 50%; background: var(--green); color: #fff; font-family: "Poppins"; font-weight: 700; font-size: 8pt; text-align: center; line-height: 5.4mm; }
+  .step p { font-size: 9.4pt; line-height: 1.3; }
+  .impl .result { margin: 0 5mm 2.4mm; padding-top: 1.8mm; border-top: 0.6pt solid var(--rule); font-family: "Poppins"; font-weight: 600; font-size: 10.2pt; color: var(--navy); text-align: center; }
+  .impl .result span { color: var(--green); }
+
+  /* client-facing additions */
+  .hero-kicker { font-family: "Poppins"; font-size: 8pt; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--green); margin-bottom: 1mm; }
+  .header h1.hero { font-size: 23pt; letter-spacing: 0; line-height: 1.08; }
+  .header h1.hero em { font-style: normal; color: var(--green); }
+  .header .tag.hero-sub { font-size: 9.8pt; margin-top: 1.6mm; max-width: 160mm; line-height: 1.3; }
+  .quotes { list-style: none; margin-top: 1.2mm; }
+  .quotes li { position: relative; padding-left: 6mm; margin-bottom: 0.9mm; font-family: "Lato"; font-style: italic; font-size: 10pt; color: var(--navy); }
+  .quotes li::before { content: "\201C"; position: absolute; left: 0; top: -1.6mm; font-family: "Poppins"; font-style: normal; font-weight: 700; font-size: 17pt; color: var(--green); }
+  .cred { margin-top: 2.8mm; display: flex; gap: 4mm; align-items: center; background: var(--background-alt, #F4F7FA); border-radius: 2.5mm; padding: 2.6mm 4mm; border-left: 1.4mm solid var(--green); }
+  .cred .stat { flex: none; text-align: center; padding-right: 4mm; border-right: 0.6pt solid var(--rule); }
+  .cred .stat b { display: block; font-family: "Poppins"; font-weight: 700; font-size: 15pt; color: var(--green); line-height: 1.05; }
+  .cred .stat span { font-size: 7.6pt; color: var(--text-2); }
+  .cred p { font-size: 9pt; color: var(--text-2); }
+  .cred p b { color: var(--navy); }
+  .imagine { margin-top: 2.8mm; }
+  .cta { margin-top: 2.6mm; background: var(--green); color: #fff; border-radius: 2.5mm; padding: 2.8mm 5mm; display: flex; align-items: center; justify-content: space-between; gap: 6mm; }
+  .cta > p { flex: none; }
+  .cta h2 { font-family: "Poppins"; font-size: 13pt; font-weight: 700; line-height: 1.15; }
+  .cta p { font-family: "Poppins"; font-size: 9.6pt; font-weight: 600; text-align: right; }
+  .cta .imagine-line { text-align: left; font-family: "Lato"; font-weight: 400; font-size: 9pt; color: #fff; margin-top: 0.8mm; max-width: 125mm; }
+  .cta p span { display: block; font-size: 12pt; font-weight: 700; color: var(--navy); }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div>
+    <div class="hero-kicker">For $1m–$5m business owners</div>
+    <h1 class="hero">Take control of your <em>profit</em> and <em>cash flow.</em></h1>
+    <div class="tag hero-sub">See what's happening, see what's coming and make big decisions with confidence.</div>
+  </div>
+  <img src="../my-skills/pdf-forge/brands/the-profit-analyst/logo.svg" alt="The Profit Analyst">
+</div>
+
+<div class="section">
+  <div class="kicker">Sound familiar?</div>
+  <ul class="quotes">
+    <li>The business has grown but profit hasn't, and I'm not sure why.</li>
+    <li>My accountant says I made a profit, but it's not in my bank account.</li>
+    <li>I had cash, but then the tax bill came and wiped it out.</li>
+    <li>I know we should invest in marketing, but how much can I actually afford?</li>
+  </ul>
+</div>
+
+<div class="section who">
+  <div class="kicker">It's not that you're bad at numbers</div>
+  <p class="lead">You've built a real business and your financial decisions now matter. You've outgrown gut feel, but you don't yet have a simple system that tells you what to do next.</p>
+  <p class="body">You don't need more reports or jargon, and you don't need to become an accountant. You need your numbers made simple, useful and actionable.</p>
+</div>
+
+<div class="what">
+  <div class="kicker">What we do</div>
+  <p class="statement">We install a simple <em>Financial Operating System</em> into your business so you can understand what's happening, see what's coming and make better financial decisions.</p>
+</div>
+
+<div class="venn">
+  <svg class="diagram" viewBox="0 0 186 78" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="93" cy="26" r="24" fill="#002B4E" fill-opacity="0.10" stroke="#002B4E" stroke-width="0.4"/>
+    <circle cx="78.5" cy="51.1" r="24" fill="#0BA6DB" fill-opacity="0.14" stroke="#0BA6DB" stroke-width="0.4"/>
+    <circle cx="107.5" cy="51.1" r="24" fill="#10BB6F" fill-opacity="0.14" stroke="#10BB6F" stroke-width="0.4"/>
+
+    <!-- connectors -->
+    <line x1="114.8" y1="16" x2="124" y2="16" stroke="#002B4E" stroke-width="0.3"/>
+    <circle cx="114.8" cy="16" r="0.8" fill="#002B4E"/>
+    <line x1="55.5" y1="58" x2="52" y2="58" stroke="#0BA6DB" stroke-width="0.3"/>
+    <circle cx="55.5" cy="58" r="0.8" fill="#0BA6DB"/>
+    <line x1="130.5" y1="58" x2="134" y2="58" stroke="#10BB6F" stroke-width="0.3"/>
+    <circle cx="130.5" cy="58" r="0.8" fill="#10BB6F"/>
+
+    <!-- circle labels -->
+    <text x="93" y="12.5" text-anchor="middle" font-family="Poppins" font-weight="700" font-size="3.4" fill="#002B4E">FINANCIAL</text>
+    <text x="93" y="16.6" text-anchor="middle" font-family="Poppins" font-weight="700" font-size="3.4" fill="#002B4E">RHYTHM</text>
+    <text x="93" y="20.6" text-anchor="middle" font-family="Poppins" font-weight="500" font-size="2.3" fill="#4A5563">Routine + Review</text>
+
+    <text x="70" y="53" text-anchor="middle" font-family="Poppins" font-weight="700" font-size="3.4" fill="#0786B2">FINANCIAL</text>
+    <text x="70" y="57.1" text-anchor="middle" font-family="Poppins" font-weight="700" font-size="3.4" fill="#0786B2">VISIBILITY</text>
+    <text x="70" y="61.1" text-anchor="middle" font-family="Poppins" font-weight="500" font-size="2.3" fill="#4A5563">Tools + Forecasts</text>
+
+    <text x="116" y="53" text-anchor="middle" font-family="Poppins" font-weight="700" font-size="3.4" fill="#0C8F55">FINANCIAL</text>
+    <text x="116" y="57.1" text-anchor="middle" font-family="Poppins" font-weight="700" font-size="3.4" fill="#0C8F55">CONFIDENCE</text>
+    <text x="116" y="61.1" text-anchor="middle" font-family="Poppins" font-weight="500" font-size="2.3" fill="#4A5563">Coaching + Support</text>
+
+    <!-- centre outcome -->
+    <circle cx="93" cy="42.7" r="11" fill="#002B4E" stroke="#FFFFFF" stroke-width="0.7"/>
+    <text x="93" y="39.2" text-anchor="middle" font-family="Poppins" font-weight="700" font-size="2.75" fill="#10BB6F">PROFIT &amp;</text>
+    <text x="93" y="43.1" text-anchor="middle" font-family="Poppins" font-weight="700" font-size="2.75" fill="#10BB6F">CASH FLOW</text>
+    <text x="93" y="47" text-anchor="middle" font-family="Poppins" font-weight="700" font-size="2.75" fill="#FFFFFF">MASTERY</text>
+  </svg>
+
+  <div class="intro">
+    <div class="kicker">How it works</div>
+    <p class="lead">Three parts. One system that puts you in control.</p>
+    <p class="body">Where visibility, confidence and rhythm overlap, you get profit and cash flow mastery.</p>
+  </div>
+
+  <div class="call rhy" style="left:124mm; top:0; width:62mm;">
+    <h3>Financial Rhythm</h3>
+    <div class="mech">A simple routine that runs on repeat</div>
+    <ul>
+      <li>10-minute weekly cash flow check</li>
+      <li>30-minute monthly profit review</li>
+      <li>Quarterly profit strategy session</li>
+    </ul>
+    <p class="out">"My numbers guide every decision I make."</p>
+  </div>
+
+  <div class="call vis" style="left:0; top:35mm; width:52mm;">
+    <h3>Financial Visibility</h3>
+    <div class="mech">Tools built for you</div>
+    <ul>
+      <li>Weekly Cash Flow Forecaster</li>
+      <li>Monthly Clarity Report</li>
+      <li>Profit Calculator</li>
+      <li>Five Year Forecast</li>
+    </ul>
+    <p class="out">"I can see my next cash low point before it hits."</p>
+  </div>
+
+  <div class="call con" style="left:134mm; top:35mm; width:52mm;">
+    <h3>Financial Confidence</h3>
+    <div class="mech">Coaching that sticks</div>
+    <ul>
+      <li>Know what your numbers are telling you</li>
+      <li>Ask the right questions</li>
+      <li>Spot opportunities and risks early</li>
+    </ul>
+    <p class="out">"I know exactly what to focus on to lift profit."</p>
+  </div>
+</div>
+
+<div class="impl">
+  <div class="top">
+    <h2>90 DAYS TO <span>PROFIT &amp; CASH FLOW MASTERY</span></h2>
+    <p>Done for you + done with you</p>
+  </div>
+  <div class="steps">
+    <div class="step"><div class="n">1</div><p><b>We set up</b> your tools and forecasts.</p></div>
+    <div class="step"><div class="n">2</div><p><b>We simplify</b> your numbers.</p></div>
+    <div class="step"><div class="n">3</div><p><b>You see</b> what's happening and what's coming.</p></div>
+    <div class="step"><div class="n">4</div><p><b>We teach</b> you how to use it.</p></div>
+    <div class="step"><div class="n">5</div><p><b>We find</b> your decisions, risks and opportunities.</p></div>
+    <div class="step"><div class="n">6</div><p><b>We install</b> the rhythms that keep it running.</p></div>
+  </div>
+  <p class="result">You walk away with <span>a Financial Operating System installed</span> and the confidence to run it.</p>
+</div>
+
+<div class="cred">
+  <div class="stat"><b>$11.5m</b><span>group built from a<br>loss-making $1.1m bar</span></div>
+  <p><b>Built by a business owner, not just an accountant.</b> Gavin Smith is a Chartered Accountant and former International CFO who grew his own businesses using this exact method.</p>
+</div>
+
+<div class="cta">
+  <div>
+    <h2>Ready to take control of your profit and cash flow?</h2>
+    <p class="imagine-line">Imagine deciding whether to hire, lift your marketing or sign a bigger lease, and knowing exactly what you can afford.</p>
+  </div>
+  <p>Book a call today<span>theprofitanalyst.com</span></p>
+</div>
+
+</body>
+</html>

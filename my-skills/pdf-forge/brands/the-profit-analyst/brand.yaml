@@ -1,0 +1,52 @@
+# The Profit Analyst brand configuration
+# Colors and fonts pulled directly from theprofitanalyst.com
+
+name: The Profit Analyst
+
+colors:
+  primary: "#10BB6F"           # Signature green - used on theprofitanalyst.com CTAs
+  primary_light: "#E4F8EE"     # Light green tint for backgrounds
+  primary_dark: "#0C8F55"      # Darker green for hover/borders
+  secondary: "#0BA6DB"         # Site's secondary blue accent
+  text: "#111111"              # Near-black body text, matches site
+  text_secondary: "#5B5B5B"    # Secondary text, captions
+  text_light: "#8A8A8A"        # Light grey, subtle text
+  background: "#FFFFFF"        # White
+  background_alt: "#FAFAFA"    # Off-white for alternating sections, matches site
+  success: "#10BB6F"           # Same as primary, this brand doesn't split verdict colors
+  warning: "#D97706"           # Amber, only used if a doc needs a caution callout
+  muted: "#9CA3AF"             # Grey
+
+typography:
+  heading_family: "Poppins"
+  heading_weight: 600           # Semibold for headings
+  heading_weight_bold: 700      # Bold for titles
+  body_family: "Lato"
+  body_weight: 400              # Regular for body
+  body_weight_medium: 700       # Lato has no true medium weight loaded, bold stands in
+  code_family: "Consolas, monospace"
+
+  size_h1: "32px"
+  size_h2: "22px"
+  size_h3: "18px"
+  size_h4: "16px"
+  size_body: "11pt"
+  size_small: "10pt"
+  size_caption: "9pt"
+
+logo:
+  file: "logo.svg"
+  width: "90px"
+  position: "cover-only"
+
+spacing:
+  section_margin: "2em"
+  paragraph_margin: "1em"
+  list_indent: "1.5em"
+
+pdf:
+  page_size: "A4"
+  margin_top: "22mm"
+  margin_bottom: "22mm"
+  margin_left: "20mm"
+  margin_right: "20mm"

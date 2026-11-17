@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Your 12-Month CFO System Rhythm</title>
+<style>
+  @font-face { font-family: "Poppins"; font-weight: 400; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Poppins-Regular.ttf"); }
+  @font-face { font-family: "Poppins"; font-weight: 500; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Poppins-Medium.ttf"); }
+  @font-face { font-family: "Poppins"; font-weight: 600; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Poppins-SemiBold.ttf"); }
+  @font-face { font-family: "Poppins"; font-weight: 700; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Poppins-Bold.ttf"); }
+  @font-face { font-family: "Lato"; font-weight: 400; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Lato-Regular.ttf"); }
+  @font-face { font-family: "Lato"; font-weight: 700; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Lato-Bold.ttf"); }
+  @font-face { font-family: "Lato"; font-style: italic; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Lato-Italic.ttf"); }
+
+  :root {
+    --navy: #002B4E; --green: #12C870; --green-dark: #0E9F59; --green-light: #E3F9EE;
+    --blue: #02A3FF; --blue-light: #E1F2FF; --navy-light: #E6EBF0;
+    --amber: #D97706; --amber-light: #FDF1E3;
+    --text: #111111; --text-2: #4A5563; --rule: #DDE3EA; --alt: #F4F7FA;
+  }
+  @page { size: A4 landscape; margin: 9mm 10mm 8mm 10mm; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Lato", sans-serif; font-size: 8.4pt; line-height: 1.25; color: var(--text); }
+
+  .header { display: flex; align-items: flex-end; justify-content: space-between; padding-bottom: 2mm; border-bottom: 2.2pt solid var(--navy); }
+  .kicker { font-family: "Poppins"; font-size: 7.6pt; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--green); margin-bottom: 0.6mm; }
+  .header h1 { font-family: "Poppins"; font-size: 24pt; font-weight: 700; color: var(--navy); line-height: 1.05; }
+  .header h1 em { font-style: normal; color: var(--green); }
+  .header .sub { font-family: "Poppins"; font-size: 9.2pt; font-weight: 500; color: var(--text-2); margin-top: 1.2mm; }
+  .header img { height: 12mm; }
+
+  .map { margin-top: 4mm; }
+  .row { display: flex; }
+  .label { flex: none; width: 47mm; padding: 1.8mm 3mm 1.8mm 0; }
+  .label h3 { font-family: "Poppins"; font-size: 9pt; font-weight: 700; color: var(--navy); line-height: 1.15; }
+  .label p { font-size: 7.4pt; color: var(--text-2); margin-top: 0.5mm; line-height: 1.25; }
+  .track { position: relative; flex: 1; }
+  .cols { position: absolute; inset: 0; display: flex; }
+  .cols div { flex: 1; border-left: 0.5pt solid var(--rule); }
+  .cols div.q { border-left: 1pt solid #9FB0C1; }
+  .cols div:last-child { border-right: 0.5pt solid var(--rule); }
+  .lane { border-bottom: 0.6pt solid var(--rule); }
+  .lane:nth-of-type(odd) .track { background: var(--alt); }
+
+  /* quarter band + months */
+  .quarters .track { display: flex; height: 18mm; }
+  .qtr { flex: 1; padding: 1.6mm 2.6mm; color: #fff; margin-right: 0.8mm; border-radius: 1.6mm 1.6mm 0 0; }
+  .qtr:last-child { margin-right: 0; }
+  .qtr b { font-family: "Poppins"; font-size: 8.4pt; font-weight: 700; letter-spacing: 0.03em; display: block; line-height: 1.12; }
+  .qtr span { display: block; font-size: 7.2pt; margin-top: 0.4mm; line-height: 1.22; opacity: 0.95; }
+  .qtr.install { background: var(--navy); }
+  .qtr.install b em { font-style: normal; color: var(--green); }
+  .qtr.repeat { background: var(--green); }
+  .quarters .label h3 { margin-top: 1mm; }
+  .months .track { display: flex; height: 5.4mm; background: var(--navy-light); }
+  .months .track div { flex: 1; text-align: center; font-family: "Poppins"; font-size: 6.8pt; font-weight: 600; color: var(--navy); line-height: 5.4mm; border-left: 0.5pt solid #fff; }
+
+  /* split lanes: group title + two aligned sub-rows */
+  .split .label { padding: 0; }
+  .split .label h3 { height: 8mm; padding-top: 2.2mm; }
+  .split .sub { display: flex; align-items: center; height: 9mm; font-family: "Poppins"; font-size: 7.6pt; font-weight: 600; color: var(--navy); line-height: 1.1; white-space: nowrap; }
+  .split .sub small { display: block; font-family: "Lato"; font-weight: 400; font-size: 6.8pt; color: var(--text-2); }
+  .split .track { height: 27mm; }
+  .r1 { top: 10mm; }
+  .r2 { top: 19mm; }
+  .tick { position: absolute; width: 0.9mm; margin-left: -0.45mm; height: 5mm; border-radius: 0.45mm; }
+  .tick.cff, .tick.tue { background: var(--blue); }
+  .tick.wed { background: var(--green); }
+  .chip { position: absolute; width: 8.4mm; margin-left: -4.2mm; height: 5mm; border-radius: 1mm; font-family: "Poppins"; font-weight: 700; font-size: 6pt; text-align: center; line-height: 5mm; color: #fff; }
+  .chip.cr { background: var(--navy); }
+
+  .cffbar { position: absolute; width: 2.8mm; margin-left: -1.4mm; height: 7mm; border-radius: 0.7mm; background: var(--blue); }
+  .cffbar span { position: absolute; left: 50%; top: 50%; width: 7mm; margin-left: -3.5mm; margin-top: -1.2mm; height: 2.4mm; line-height: 2.4mm; text-align: center; transform: rotate(-90deg); font-family: "Poppins"; font-weight: 700; font-size: 4.8pt; color: #fff; letter-spacing: 0.04em; }
+  .split .r1 { top: 9.2mm; }
+  .tight .label h3 { height: 6.4mm; }
+  .tight .sub { height: 6.6mm; }
+  .tight .track { height: 21mm; }
+  .t1 { top: 7.4mm; }
+  .t2 { top: 14mm; margin-left: 0.9mm; }
+  .tick { height: 4.8mm; }
+
+  .acc { position: absolute; left: 0.3%; top: 2mm; width: 24.4%; height: 27mm; background: var(--navy); border-radius: 1.4mm; padding: 1.6mm 2.6mm; color: #fff; }
+  .acc b { display: block; font-family: "Poppins"; font-size: 8.8pt; font-weight: 700; color: var(--green); line-height: 1.15; }
+  .acc p { font-size: 7.6pt; line-height: 1.24; margin-top: 0.6mm; color: #fff; }
+  .acc small { display: block; font-family: "Poppins"; font-size: 6.6pt; font-weight: 600; color: #C9D4DF; margin-top: 0.8mm; }
+
+  /* sessions */
+  .coach .track { height: 31mm; }
+  .sess { position: absolute; top: 2mm; width: 7.6%; height: 27mm; border-radius: 1.4mm; padding: 1.1mm 1.4mm; }
+  .sess b { display: block; font-family: "Poppins"; font-size: 6.8pt; font-weight: 700; line-height: 1.12; }
+  .sess span { display: block; font-size: 6.6pt; margin-top: 0.4mm; }
+  .sess em { display: block; font-style: normal; font-size: 6.6pt; line-height: 1.22; margin-top: 1mm; }
+  .sess.review em { color: var(--text-2); }
+  .sess.qss em { color: #fff; }
+  .sess.review { background: var(--blue-light); border-left: 0.9mm solid var(--blue); }
+  .sess.review b { color: var(--navy); }
+  .sess.review span { color: var(--text-2); }
+  .sess.qss { background: var(--green); }
+  .sess.qss b { color: #fff; }
+  .sess.qss span { color: var(--navy); font-weight: 700; }
+
+  .bar { position: absolute; top: 2.2mm; height: 9mm; border-radius: 1.4mm; padding: 0 2.6mm; display: flex; align-items: center; font-size: 7.6pt; line-height: 1.2; }
+  .bar b { font-family: "Poppins"; font-weight: 700; margin-right: 1.6mm; }
+  .q1only .track { height: 13.4mm; }
+  .bar.acc { left: 0.3%; width: 24.4%; background: var(--navy); color: #fff; }
+  .bar.acc b { color: var(--green); }
+  .q1only .after { position: absolute; left: 26%; top: 2.2mm; height: 9mm; display: flex; align-items: center; font-size: 7.6pt; font-style: italic; color: var(--text-2); }
+  .support .track { height: 13.4mm; }
+  .bar.on { left: 0; right: 0; background: var(--amber-light); border: 0.6pt solid var(--amber); gap: 6mm; }
+  .bar.on b { color: var(--amber); }
+
+  /* why the rhythm matters */
+  .why { margin-top: 5mm; display: flex; gap: 2.4mm; }
+  .why > div { flex: 1; border-radius: 2.2mm; padding: 3.4mm 4mm 3.6mm; }
+  .why .k { font-family: "Poppins"; font-size: 7.4pt; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 0.8mm; }
+  .why p { font-family: "Poppins"; font-size: 10pt; font-weight: 600; line-height: 1.28; }
+  .why .wk { background: var(--blue-light); border-left: 1.2mm solid var(--blue); }
+  .why .wk .k { color: var(--blue); }
+  .why .mo { background: var(--navy-light); border-left: 1.2mm solid var(--navy); }
+  .why .mo .k { color: var(--navy); }
+  .why .qu { background: var(--navy); border-left: 1.2mm solid var(--green); }
+  .why .qu .k { color: var(--green); }
+  .why .wk p, .why .mo p { color: var(--navy); }
+  .why .qu p { color: #fff; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div>
+    <div class="kicker">The bigger picture</div>
+    <h1>Your 12-Month <em>CFO System</em> Rhythm</h1>
+    <div class="sub">Install the system in your first 90 days. Then run it on repeat, and let your numbers guide every quarter.</div>
+  </div>
+  <img src="../my-skills/pdf-forge/brands/the-profit-analyst/logo.svg" alt="The Profit Analyst">
+</div>
+
+<div class="map">
+
+  <div class="row quarters">
+    <div class="label"><h3>Your year</h3></div>
+    <div class="track">
+      <div class="qtr install"><b>QUARTER 1 · <em>INSTALL</em></b><span>90-Day Profit &amp; Cash Flow Accelerator. Get visibility on your numbers and learn how the system works.</span></div>
+      <div class="qtr repeat"><b>QUARTER 2 · GROWTH RHYTHM</b><span>The system on repeat. Your numbers set the plan for the quarter.</span></div>
+      <div class="qtr repeat"><b>QUARTER 3 · GROWTH RHYTHM</b><span>The system on repeat. Your numbers set the plan for the quarter.</span></div>
+      <div class="qtr repeat"><b>QUARTER 4 · GROWTH RHYTHM</b><span>The system on repeat. Your numbers set the plan for the quarter.</span></div>
+    </div>
+  </div>
+  <div class="row months"><div class="label"></div><div class="track"><div>Month 1</div><div>Month 2</div><div>Month 3</div><div>Month 4</div><div>Month 5</div><div>Month 6</div><div>Month 7</div><div>Month 8</div><div>Month 9</div><div>Month 10</div><div>Month 11</div><div>Month 12</div></div></div>
+
+  <div class="row lane coach">
+    <div class="label"><h3>Your sessions</h3><p>Install the system first. Then set the plan each quarter and check in on it every month.</p></div>
+    <div class="track"><div class="cols"><div class=""></div><div class=""></div><div class=""></div><div class="q"></div><div class=""></div><div class=""></div><div class="q"></div><div class=""></div><div class=""></div><div class="q"></div><div class=""></div><div class=""></div></div><div class="acc"><b>90-Day Profit &amp; Cash Flow Accelerator</b><p>We install the system and take you through your numbers for the first time: visibility, clarity and your first Profit Game Plan.</p><small>Setup · 1:1 calls · Profit Workshops</small></div><div class="sess qss" style="left:25.40%"><b>Quarterly Strategic Session</b><span>2 hrs</span><em>Let your numbers set the plan for the quarter.</em></div><div class="sess review" style="left:33.73%"><b>Monthly Financial Review</b><span>1 hr</span><em>Check in on the plan. Where did the profit go?</em></div><div class="sess review" style="left:42.07%"><b>Monthly Financial Review</b><span>1 hr</span><em>Check in on the plan. Where did the profit go?</em></div><div class="sess qss" style="left:50.40%"><b>Quarterly Strategic Session</b><span>2 hrs</span><em>Let your numbers set the plan for the quarter.</em></div><div class="sess review" style="left:58.73%"><b>Monthly Financial Review</b><span>1 hr</span><em>Check in on the plan. Where did the profit go?</em></div><div class="sess review" style="left:67.07%"><b>Monthly Financial Review</b><span>1 hr</span><em>Check in on the plan. Where did the profit go?</em></div><div class="sess qss" style="left:75.40%"><b>Quarterly Strategic Session</b><span>2 hrs</span><em>Let your numbers set the plan for the quarter.</em></div><div class="sess review" style="left:83.73%"><b>Monthly Financial Review</b><span>1 hr</span><em>Check in on the plan. Where did the profit go?</em></div><div class="sess review" style="left:92.07%"><b>Monthly Financial Review</b><span>1 hr</span><em>Check in on the plan. Where did the profit go?</em></div></div>
+  </div>
+
+  <div class="row lane split">
+    <div class="label">
+      <h3>Done for you deliverables</h3>
+      <div class="sub"><div>Weekly Cash Flow Forecast<small>Every Monday</small></div></div>
+      <div class="sub"><div>Monthly Clarity Report<small>Once your month is reconciled</small></div></div>
+    </div>
+    <div class="track"><div class="cols"><div class=""></div><div class=""></div><div class=""></div><div class="q"></div><div class=""></div><div class=""></div><div class="q"></div><div class=""></div><div class=""></div><div class="q"></div><div class=""></div><div class=""></div></div><i class="cffbar r1" style="left:0.96%"><span>CFF</span></i><i class="cffbar r1" style="left:2.88%"><span>CFF</span></i><i class="cffbar r1" style="left:4.81%"><span>CFF</span></i><i class="cffbar r1" style="left:6.73%"><span>CFF</span></i><i class="cffbar r1" style="left:8.65%"><span>CFF</span></i><i class="cffbar r1" style="left:10.58%"><span>CFF</span></i><i class="cffbar r1" style="left:12.50%"><span>CFF</span></i><i class="cffbar r1" style="left:14.42%"><span>CFF</span></i><i class="cffbar r1" style="left:16.35%"><span>CFF</span></i><i class="cffbar r1" style="left:18.27%"><span>CFF</span></i><i class="cffbar r1" style="left:20.19%"><span>CFF</span></i><i class="cffbar r1" style="left:22.12%"><span>CFF</span></i><i class="cffbar r1" style="left:24.04%"><span>CFF</span></i><i class="cffbar r1" style="left:25.96%"><span>CFF</span></i><i class="cffbar r1" style="left:27.88%"><span>CFF</span></i><i class="cffbar r1" style="left:29.81%"><span>CFF</span></i><i class="cffbar r1" style="left:31.73%"><span>CFF</span></i><i class="cffbar r1" style="left:33.65%"><span>CFF</span></i><i class="cffbar r1" style="left:35.58%"><span>CFF</span></i><i class="cffbar r1" style="left:37.50%"><span>CFF</span></i><i class="cffbar r1" style="left:39.42%"><span>CFF</span></i><i class="cffbar r1" style="left:41.35%"><span>CFF</span></i><i class="cffbar r1" style="left:43.27%"><span>CFF</span></i><i class="cffbar r1" style="left:45.19%"><span>CFF</span></i><i class="cffbar r1" style="left:47.12%"><span>CFF</span></i><i class="cffbar r1" style="left:49.04%"><span>CFF</span></i><i class="cffbar r1" style="left:50.96%"><span>CFF</span></i><i class="cffbar r1" style="left:52.88%"><span>CFF</span></i><i class="cffbar r1" style="left:54.81%"><span>CFF</span></i><i class="cffbar r1" style="left:56.73%"><span>CFF</span></i><i class="cffbar r1" style="left:58.65%"><span>CFF</span></i><i class="cffbar r1" style="left:60.58%"><span>CFF</span></i><i class="cffbar r1" style="left:62.50%"><span>CFF</span></i><i class="cffbar r1" style="left:64.42%"><span>CFF</span></i><i class="cffbar r1" style="left:66.35%"><span>CFF</span></i><i class="cffbar r1" style="left:68.27%"><span>CFF</span></i><i class="cffbar r1" style="left:70.19%"><span>CFF</span></i><i class="cffbar r1" style="left:72.12%"><span>CFF</span></i><i class="cffbar r1" style="left:74.04%"><span>CFF</span></i><i class="cffbar r1" style="left:75.96%"><span>CFF</span></i><i class="cffbar r1" style="left:77.88%"><span>CFF</span></i><i class="cffbar r1" style="left:79.81%"><span>CFF</span></i><i class="cffbar r1" style="left:81.73%"><span>CFF</span></i><i class="cffbar r1" style="left:83.65%"><span>CFF</span></i><i class="cffbar r1" style="left:85.58%"><span>CFF</span></i><i class="cffbar r1" style="left:87.50%"><span>CFF</span></i><i class="cffbar r1" style="left:89.42%"><span>CFF</span></i><i class="cffbar r1" style="left:91.35%"><span>CFF</span></i><i class="cffbar r1" style="left:93.27%"><span>CFF</span></i><i class="cffbar r1" style="left:95.19%"><span>CFF</span></i><i class="cffbar r1" style="left:97.12%"><span>CFF</span></i><i class="cffbar r1" style="left:99.04%"><span>CFF</span></i><div class="chip cr r2" style="left:4.17%">CR</div><div class="chip cr r2" style="left:12.50%">CR</div><div class="chip cr r2" style="left:20.83%">CR</div><div class="chip cr r2" style="left:29.17%">CR</div><div class="chip cr r2" style="left:37.50%">CR</div><div class="chip cr r2" style="left:45.83%">CR</div><div class="chip cr r2" style="left:54.17%">CR</div><div class="chip cr r2" style="left:62.50%">CR</div><div class="chip cr r2" style="left:70.83%">CR</div><div class="chip cr r2" style="left:79.17%">CR</div><div class="chip cr r2" style="left:87.50%">CR</div><div class="chip cr r2" style="left:95.83%">CR</div></div>
+  </div>
+
+  <div class="row lane split tight">
+    <div class="label">
+      <h3>Weekly coaching</h3>
+      <div class="sub">Tuesday: Cash Flow Coaching</div>
+      <div class="sub">Wednesday: Finance Coaching</div>
+    </div>
+    <div class="track"><div class="cols"><div class=""></div><div class=""></div><div class=""></div><div class="q"></div><div class=""></div><div class=""></div><div class="q"></div><div class=""></div><div class=""></div><div class="q"></div><div class=""></div><div class=""></div></div><i class="tick tue t1" style="left:0.96%"></i><i class="tick tue t1" style="left:2.88%"></i><i class="tick tue t1" style="left:4.81%"></i><i class="tick tue t1" style="left:6.73%"></i><i class="tick tue t1" style="left:8.65%"></i><i class="tick tue t1" style="left:10.58%"></i><i class="tick tue t1" style="left:12.50%"></i><i class="tick tue t1" style="left:14.42%"></i><i class="tick tue t1" style="left:16.35%"></i><i class="tick tue t1" style="left:18.27%"></i><i class="tick tue t1" style="left:20.19%"></i><i class="tick tue t1" style="left:22.12%"></i><i class="tick tue t1" style="left:24.04%"></i><i class="tick tue t1" style="left:25.96%"></i><i class="tick tue t1" style="left:27.88%"></i><i class="tick tue t1" style="left:29.81%"></i><i class="tick tue t1" style="left:31.73%"></i><i class="tick tue t1" style="left:33.65%"></i><i class="tick tue t1" style="left:35.58%"></i><i class="tick tue t1" style="left:37.50%"></i><i class="tick tue t1" style="left:39.42%"></i><i class="tick tue t1" style="left:41.35%"></i><i class="tick tue t1" style="left:43.27%"></i><i class="tick tue t1" style="left:45.19%"></i><i class="tick tue t1" style="left:47.12%"></i><i class="tick tue t1" style="left:49.04%"></i><i class="tick tue t1" style="left:50.96%"></i><i class="tick tue t1" style="left:52.88%"></i><i class="tick tue t1" style="left:54.81%"></i><i class="tick tue t1" style="left:56.73%"></i><i class="tick tue t1" style="left:58.65%"></i><i class="tick tue t1" style="left:60.58%"></i><i class="tick tue t1" style="left:62.50%"></i><i class="tick tue t1" style="left:64.42%"></i><i class="tick tue t1" style="left:66.35%"></i><i class="tick tue t1" style="left:68.27%"></i><i class="tick tue t1" style="left:70.19%"></i><i class="tick tue t1" style="left:72.12%"></i><i class="tick tue t1" style="left:74.04%"></i><i class="tick tue t1" style="left:75.96%"></i><i class="tick tue t1" style="left:77.88%"></i><i class="tick tue t1" style="left:79.81%"></i><i class="tick tue t1" style="left:81.73%"></i><i class="tick tue t1" style="left:83.65%"></i><i class="tick tue t1" style="left:85.58%"></i><i class="tick tue t1" style="left:87.50%"></i><i class="tick tue t1" style="left:89.42%"></i><i class="tick tue t1" style="left:91.35%"></i><i class="tick tue t1" style="left:93.27%"></i><i class="tick tue t1" style="left:95.19%"></i><i class="tick tue t1" style="left:97.12%"></i><i class="tick tue t1" style="left:99.04%"></i><i class="tick wed t2" style="left:0.96%"></i><i class="tick wed t2" style="left:2.88%"></i><i class="tick wed t2" style="left:4.81%"></i><i class="tick wed t2" style="left:6.73%"></i><i class="tick wed t2" style="left:8.65%"></i><i class="tick wed t2" style="left:10.58%"></i><i class="tick wed t2" style="left:12.50%"></i><i class="tick wed t2" style="left:14.42%"></i><i class="tick wed t2" style="left:16.35%"></i><i class="tick wed t2" style="left:18.27%"></i><i class="tick wed t2" style="left:20.19%"></i><i class="tick wed t2" style="left:22.12%"></i><i class="tick wed t2" style="left:24.04%"></i><i class="tick wed t2" style="left:25.96%"></i><i class="tick wed t2" style="left:27.88%"></i><i class="tick wed t2" style="left:29.81%"></i><i class="tick wed t2" style="left:31.73%"></i><i class="tick wed t2" style="left:33.65%"></i><i class="tick wed t2" style="left:35.58%"></i><i class="tick wed t2" style="left:37.50%"></i><i class="tick wed t2" style="left:39.42%"></i><i class="tick wed t2" style="left:41.35%"></i><i class="tick wed t2" style="left:43.27%"></i><i class="tick wed t2" style="left:45.19%"></i><i class="tick wed t2" style="left:47.12%"></i><i class="tick wed t2" style="left:49.04%"></i><i class="tick wed t2" style="left:50.96%"></i><i class="tick wed t2" style="left:52.88%"></i><i class="tick wed t2" style="left:54.81%"></i><i class="tick wed t2" style="left:56.73%"></i><i class="tick wed t2" style="left:58.65%"></i><i class="tick wed t2" style="left:60.58%"></i><i class="tick wed t2" style="left:62.50%"></i><i class="tick wed t2" style="left:64.42%"></i><i class="tick wed t2" style="left:66.35%"></i><i class="tick wed t2" style="left:68.27%"></i><i class="tick wed t2" style="left:70.19%"></i><i class="tick wed t2" style="left:72.12%"></i><i class="tick wed t2" style="left:74.04%"></i><i class="tick wed t2" style="left:75.96%"></i><i class="tick wed t2" style="left:77.88%"></i><i class="tick wed t2" style="left:79.81%"></i><i class="tick wed t2" style="left:81.73%"></i><i class="tick wed t2" style="left:83.65%"></i><i class="tick wed t2" style="left:85.58%"></i><i class="tick wed t2" style="left:87.50%"></i><i class="tick wed t2" style="left:89.42%"></i><i class="tick wed t2" style="left:91.35%"></i><i class="tick wed t2" style="left:93.27%"></i><i class="tick wed t2" style="left:95.19%"></i><i class="tick wed t2" style="left:97.12%"></i><i class="tick wed t2" style="left:99.04%"></i></div>
+  </div>
+
+  <div class="row lane support">
+    <div class="label"><h3>Learning and support</h3><p>Anytime, all year.</p></div>
+    <div class="track"><div class="bar on"><span><b>Online learning portal (Skool)</b>24/7 access to every module and resource</span><span><b>Support</b>email and messenger, anytime you're stuck</span></div></div>
+  </div>
+
+</div>
+
+<div class="why">
+  <div class="wk"><div class="k">Weekly</div><p>A firm handle on cash flow, so you can make confident decisions fast.</p></div>
+  <div class="mo"><div class="k">Monthly</div><p>Know what's winning, what's not and where the profit is going.</p></div>
+  <div class="qu"><div class="k">Quarterly</div><p>Get strategic. Let your numbers set the plan for the quarter ahead, so you grow the business on purpose.</p></div>
+</div>
+
+</body>
+</html>

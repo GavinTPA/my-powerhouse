@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The Profit Analyst: Ongoing Support Options</title>
+<style>
+  @font-face { font-family: "Poppins"; font-weight: 400; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Poppins-Regular.ttf"); }
+  @font-face { font-family: "Poppins"; font-weight: 500; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Poppins-Medium.ttf"); }
+  @font-face { font-family: "Poppins"; font-weight: 600; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Poppins-SemiBold.ttf"); }
+  @font-face { font-family: "Poppins"; font-weight: 700; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Poppins-Bold.ttf"); }
+  @font-face { font-family: "Lato"; font-weight: 400; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Lato-Regular.ttf"); }
+  @font-face { font-family: "Lato"; font-weight: 700; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Lato-Bold.ttf"); }
+
+  :root {
+    --navy: #002B4E;
+    --blue: #02A3FF;
+    --green: #12C870;
+    --green-light: #E6F9EF;
+    --blue-light: #E5F5FF;
+    --navy-light: #E6EBF0;
+    --text: #111111;
+    --text-2: #4A5563;
+    --rule: #DDE3EA;
+  }
+
+  @page { size: A4 portrait; margin: 11mm 14mm 9mm 14mm; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Lato", sans-serif; font-size: 10pt; line-height: 1.35; color: var(--text); }
+
+  .kicker { font-family: "Poppins"; font-size: 8pt; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--green); }
+
+  /* Header */
+  .header { display: flex; align-items: center; justify-content: space-between; padding-bottom: 3mm; border-bottom: 2.2pt solid var(--navy); }
+  .header img { height: 13mm; }
+  .header .right { text-align: right; font-family: "Poppins"; font-size: 8.5pt; color: var(--text-2); }
+
+  /* Hero */
+  .hero { margin-top: 4mm; }
+  .hero h1 { font-family: "Poppins"; font-size: 22pt; font-weight: 700; color: var(--navy); line-height: 1.12; margin-top: 1.5mm; }
+  .hero h1 span { color: var(--green); }
+  .hero p { font-size: 10.5pt; color: var(--text-2); margin-top: 2.5mm; max-width: 160mm; }
+
+  /* Cards */
+  .cards { display: flex; gap: 4mm; margin-top: 6.5mm; align-items: stretch; }
+  .card { flex: 1; border: 1pt solid var(--rule); border-radius: 3mm; padding: 4.5mm 4.5mm 4mm; position: relative; }
+  .card.featured { border: 1.6pt solid var(--green); background: var(--green-light); }
+  .badge { position: absolute; top: -3mm; left: 4.5mm; background: var(--green); color: #fff; font-family: "Poppins"; font-size: 7pt; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.9mm 2.6mm; border-radius: 1.5mm; }
+  .card h2 { font-family: "Poppins"; font-size: 14pt; font-weight: 700; color: var(--navy); line-height: 1.1; }
+  .card .for { font-size: 9pt; color: var(--text-2); margin-top: 1.2mm; min-height: 13mm; }
+  .price { margin-top: 2mm; padding-top: 2.5mm; border-top: 0.6pt solid var(--rule); }
+  .card.featured .price { border-top-color: #BFEBD3; }
+  .price .amt { font-family: "Poppins"; font-size: 20pt; font-weight: 700; color: var(--navy); line-height: 1; }
+  .price .per { font-family: "Poppins"; font-size: 8.5pt; font-weight: 500; color: var(--text-2); }
+  .price .annual { font-size: 8.8pt; color: var(--text-2); margin-top: 1.8mm; }
+  .price .annual b { color: var(--green); font-weight: 700; }
+
+  /* Comparison */
+  .compare { margin-top: 5mm; }
+  .compare .kicker { margin-bottom: 2mm; }
+  table { width: 100%; border-collapse: collapse; }
+  th, td { padding: 1.55mm 2.5mm; border-bottom: 0.6pt solid var(--rule); }
+  th { font-family: "Poppins"; font-size: 8.8pt; font-weight: 600; color: var(--navy); text-align: center; border-bottom: 1.4pt solid var(--navy); }
+  th:first-child { text-align: left; }
+  td { font-size: 9.8pt; }
+  td.c { text-align: center; width: 24mm; }
+  td.c.feat, th.feat { background: var(--green-light); }
+  td small { display: block; font-size: 8.4pt; color: var(--text-2); margin-top: 0.3mm; }
+  .tick { display: inline-block; width: 5mm; height: 5mm; border-radius: 50%; background: var(--green); color: #fff; font-family: "Poppins"; font-weight: 700; font-size: 8pt; line-height: 5mm; text-align: center; }
+  .one { font-family: "Poppins"; font-size: 7pt; font-weight: 600; color: var(--blue); letter-spacing: 0.06em; }
+
+  .inc { margin-top: 1.4mm; }
+  .inc .it { display: inline-block; width: 49%; font-size: 8.6pt; color: var(--navy); padding-left: 3mm; position: relative; line-height: 1.45; }
+  .inc .it::before { content: ""; position: absolute; left: 0; top: 1.5mm; width: 1.5mm; height: 1.5mm; border-radius: 50%; background: var(--blue); }
+  .header .right .kicker { margin-bottom: 0.6mm; }
+  .header .right .corner { font-family: "Poppins"; font-size: 11pt; font-weight: 600; color: var(--navy); }
+  tr.grp td { font-family: "Poppins"; font-size: 8.4pt; font-weight: 600; color: var(--blue); letter-spacing: 0.04em; padding: 2mm 2.5mm 1.2mm; }
+  tr.tier td { border-top: 1.4pt solid var(--navy); }
+  .hero h1 { margin-top: 0; }
+  th.wi { text-align: left; font-family: "Poppins"; font-size: 8pt; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--green); }
+  /* Value band */
+  .value { margin-top: 5mm; background: var(--navy); color: #fff; border-radius: 3mm; padding: 3mm 6mm; display: flex; align-items: center; gap: 6mm; }
+  .value .big { font-family: "Poppins"; font-size: 22pt; font-weight: 700; color: var(--green); line-height: 1; flex: none; }
+  .value .big small { display: block; font-size: 8pt; font-weight: 500; color: #C9D4DF; letter-spacing: 0.1em; text-transform: uppercase; margin-top: 1.2mm; }
+  .value p { font-family: "Poppins"; font-size: 10pt; font-weight: 500; line-height: 1.35; }
+  .value p span { color: var(--green); }
+
+  /* Footer */
+  .foot { margin-top: 4mm; display: flex; justify-content: space-between; font-size: 8.4pt; color: var(--text-2); border-top: 0.6pt solid var(--rule); padding-top: 2.5mm; }
+  .foot b { color: var(--navy); }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <img src="../my-skills/pdf-forge/brands/the-profit-analyst/logo.svg" alt="The Profit Analyst">
+  <div class="right"><div class="kicker">After your 90 days</div><div class="corner">Ongoing Support Options</div></div>
+</div>
+
+<div class="hero">
+  <h1>Keep your profit and cash flow <span>moving in the right direction</span></h1>
+  <p>You've built your financial operating system. Now choose how you keep it running, and how much support you want while you use it to make better decisions every week.</p>
+</div>
+
+<div class="cards">
+  <div class="card">
+    <h2>Profit Tools</h2>
+    <div class="for">For owners who want their tools running, without ongoing coaching.</div>
+    <div class="price">
+      <div class="amt">$300</div>
+      <div class="per">per month + GST</div>
+      <div class="annual">or $3,000 + GST a year<br><b>2 months free</b></div>
+    </div>
+  </div>
+  <div class="card featured">
+    <div class="badge">Most popular</div>
+    <h2>Profit Coaching</h2>
+    <div class="for">For owners who want a coach beside them while they keep improving.</div>
+    <div class="price">
+      <div class="amt">$900</div>
+      <div class="per">per month + GST</div>
+      <div class="annual">or $9,000 + GST a year<br><b>2 months free</b></div>
+    </div>
+  </div>
+  <div class="card">
+    <h2>Profit Partner</h2>
+    <div class="for">For owners who want strategic time with Gavin every quarter. Only 10 places.</div>
+    <div class="price">
+      <div class="amt">$1,500</div>
+      <div class="per">per month + GST</div>
+      <div class="annual">or $15,000 + GST a year<br><b>2 months free</b></div>
+    </div>
+  </div>
+</div>
+
+<div class="compare">
+  <table>
+    <tr><th class="wi">What's included</th><th>Profit Tools</th><th class="feat">Profit Coaching</th><th>Profit Partner</th></tr>
+    <tr class="grp"><td>Profit Analyst software, done for you</td><td class="c"></td><td class="c feat"></td><td class="c"></td></tr>
+    <tr class=""><td>Your financial dashboard</td><td class="c"><span class="tick">✓</span></td><td class="c feat"><span class="tick">✓</span></td><td class="c"><span class="tick">✓</span></td></tr>
+    <tr class=""><td>Weekly Cash Flow Forecaster™</td><td class="c"><span class="tick">✓</span></td><td class="c feat"><span class="tick">✓</span></td><td class="c"><span class="tick">✓</span></td></tr>
+    <tr class=""><td>Monthly Clarity Report™</td><td class="c"><span class="tick">✓</span></td><td class="c feat"><span class="tick">✓</span></td><td class="c"><span class="tick">✓</span></td></tr>
+    <tr class=""><td>Profit Calculator™</td><td class="c"><span class="tick">✓</span></td><td class="c feat"><span class="tick">✓</span></td><td class="c"><span class="tick">✓</span></td></tr>
+    <tr class=""><td>Five Year Forecast™</td><td class="c"><span class="tick">✓</span></td><td class="c feat"><span class="tick">✓</span></td><td class="c"><span class="tick">✓</span></td></tr>
+    <tr class=""><td>Training library, all modules</td><td class="c"><span class="tick">✓</span></td><td class="c feat"><span class="tick">✓</span></td><td class="c"><span class="tick">✓</span></td></tr>
+    <tr class=""><td>Email support</td><td class="c"><span class="tick">✓</span></td><td class="c feat"><span class="tick">✓</span></td><td class="c"><span class="tick">✓</span></td></tr>
+    <tr class="tier"><td>Weekly coaching calls<small>2 group calls every week</small></td><td class="c"></td><td class="c feat"><span class="tick">✓</span></td><td class="c"><span class="tick">✓</span></td></tr>
+    <tr class=""><td>Monthly and quarterly workshops</td><td class="c"></td><td class="c feat"><span class="tick">✓</span></td><td class="c"><span class="tick">✓</span></td></tr>
+    <tr class=""><td>1:1 support call with a coach<small>30 minutes, every month</small></td><td class="c"></td><td class="c feat"><span class="tick">✓</span></td><td class="c"><span class="tick">✓</span></td></tr>
+    <tr class="tier"><td>1:1 Quarterly Strategic Session with Gavin<small>Only 10 places available</small></td><td class="c"></td><td class="c feat"></td><td class="c"><span class="tick">✓</span></td></tr>
+  </table>
+</div>
+
+<div class="value">
+  <div class="big">1%<small>of revenue</small></div>
+  <p>On a $1M business, finding just 1% more profit is $10,000. A year of Profit Coaching paid upfront is $9,000. <span>Focus on what matters and it pays for itself.</span></p>
+</div>
+
+<div class="foot">
+  <div>All prices in AUD. Change your option or cancel any time with 30 days' notice.</div>
+  <div><b>theprofitanalyst.com</b></div>
+</div>
+
+</body>
+</html>

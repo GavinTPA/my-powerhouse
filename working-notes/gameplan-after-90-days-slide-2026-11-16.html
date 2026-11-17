@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Gameplan: After 90 days slide</title>
+<style>
+  @font-face { font-family: "Poppins"; font-weight: 500; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Poppins-Medium.ttf"); }
+  @font-face { font-family: "Poppins"; font-weight: 600; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Poppins-SemiBold.ttf"); }
+  @font-face { font-family: "Poppins"; font-weight: 700; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Poppins-Bold.ttf"); }
+  @font-face { font-family: "Lato"; font-weight: 400; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Lato-Regular.ttf"); }
+  @font-face { font-family: "Lato"; font-weight: 700; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Lato-Bold.ttf"); }
+  :root { --navy:#002B4E; --blue:#02A3FF; --green:#12C870; --green-light:#E6F9EF; --blue-light:#E5F5FF; --text:#111111; --text-2:#4A5563; --rule:#DDE3EA; --bg:#F5F7F9; }
+  @page { size: 612pt 344.25pt; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 612pt; height: 344.25pt; background: var(--bg); }
+  body { font-family: "Lato", sans-serif; color: var(--text); padding: 40pt 41pt 0; }
+  .kicker { font-family: "Lato"; font-weight: 700; font-size: 7.6pt; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-2); }
+  h1 { font-family: "Poppins"; font-weight: 700; font-size: 21pt; line-height: 1.12; color: var(--navy); margin-top: 4pt; }
+  h1 span { color: var(--green); }
+
+  .row { display: flex; gap: 8pt; margin-top: 16pt; align-items: stretch; }
+  .card { flex: 1; background: #fff; border: 0.8pt solid var(--rule); border-radius: 6pt; padding: 11pt 12pt 10pt; position: relative; }
+  .card.featured { background: var(--green-light); border: 1.3pt solid var(--green); }
+  .badge { position: absolute; top: -6.5pt; left: 12pt; background: var(--green); color: #fff; font-family: "Poppins"; font-weight: 600; font-size: 5.6pt; letter-spacing: 0.12em; text-transform: uppercase; padding: 1.6pt 5pt; border-radius: 3pt; }
+  h2 { font-family: "Poppins"; font-weight: 700; font-size: 11pt; color: var(--navy); }
+  .for { font-size: 7.2pt; color: var(--text-2); margin-top: 2pt; line-height: 1.35; min-height: 19pt; }
+  .amt { font-family: "Poppins"; font-weight: 700; font-size: 18pt; line-height: 1.05; color: var(--navy); margin-top: 6pt; }
+  .per { font-family: "Poppins"; font-weight: 500; font-size: 6.8pt; color: var(--text-2); margin-top: 1pt; }
+  ul { list-style: none; margin-top: 7pt; padding-top: 6pt; border-top: 0.6pt solid var(--rule); }
+  .featured ul { border-top-color: #BFEBD3; }
+  li { position: relative; padding-left: 8pt; font-size: 7.3pt; line-height: 1.35; margin-bottom: 2.6pt; }
+  li::before { content: ""; position: absolute; left: 0; top: 3pt; width: 3.4pt; height: 3.4pt; border-radius: 50%; background: var(--green); }
+  li.plus { padding-left: 0; font-family: "Poppins"; font-weight: 600; font-size: 6.8pt; color: var(--blue); }
+  li.plus::before { display: none; }
+  li small { color: var(--text-2); }
+
+  .foot { margin-top: 11pt; font-size: 7.4pt; color: var(--text-2); }
+  .foot b { color: var(--navy); }
+</style>
+</head>
+<body>
+  <div class="kicker">After your 90 days · Ongoing support options</div>
+  <h1>Keep your profit and cash flow <span>moving.</span></h1>
+
+  <div class="row">
+    <div class="card">
+      <h2>Profit Tools</h2>
+      <div class="for">For owners who want their tools running, without ongoing coaching.</div>
+      <div class="amt">$300</div>
+      <div class="per">per month + GST</div>
+      <ul>
+        <li>Profit Analyst software, done for you</li>
+        <li>Dashboard and all four tools kept up to date</li>
+        <li>Training library, all modules</li>
+        <li>Email support</li>
+      </ul>
+    </div>
+    <div class="card featured">
+      <div class="badge">Most popular</div>
+      <h2>Profit Coaching</h2>
+      <div class="for">For owners who want a coach beside them while they keep improving.</div>
+      <div class="amt">$900</div>
+      <div class="per">per month + GST</div>
+      <ul>
+        <li class="plus">Everything in Profit Tools, plus</li>
+        <li>2 group coaching calls every week</li>
+        <li>Monthly and quarterly workshops</li>
+        <li>1:1 support call with a coach <small>30 min, monthly</small></li>
+      </ul>
+    </div>
+    <div class="card">
+      <h2>Profit Partner</h2>
+      <div class="for">For owners who want strategic time with Gavin every quarter.</div>
+      <div class="amt">$1,500</div>
+      <div class="per">per month + GST</div>
+      <ul>
+        <li class="plus">Everything in Profit Coaching, plus</li>
+        <li>1:1 Quarterly Strategic Session with Gavin</li>
+        <li>Only 10 places available</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="foot"><b>You continue on Profit Coaching from day 91.</b> Switch options or cancel any time with 30 days' notice. Pay annually and get 2 months free.</div>
+</body>
+</html>

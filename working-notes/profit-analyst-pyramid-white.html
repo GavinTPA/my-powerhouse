@@ -1,0 +1,138 @@
+<title>Profit Analyst Pyramid (White Text)</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Lato:wght@400;700&display=swap">
+<style>
+/* Layout: the pyramid alone. Solid brand-colour layers (fixed, like a printed graphic), fading headline bands to the right that follow the theme */
+:root {
+  --bg: #FFFFFF;
+  --navy: #002B4E; --navy-ink: #002B4E;
+  --blue: #02A3FF; --blue-ink: #005C91;
+  --green: #12C870; --green-ink: #0A6B3C;
+  --display: "Poppins", "Segoe UI", system-ui, sans-serif;
+  --body: "Lato", "Helvetica Neue", Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #0A131B; --navy: #4F86B8; --navy-ink: #CFE1F2; --blue-ink: #9AD8FF; --green-ink: #8EEFBE; color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --bg: #0A131B; --navy: #4F86B8; --navy-ink: #CFE1F2; --blue-ink: #9AD8FF; --green-ink: #8EEFBE; color-scheme: dark; }
+body { background: var(--bg); }
+.wrap { max-width: 1600px; margin: 0 auto; padding-block: 32px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+#pyramid { display: block; width: 100%; height: auto; }
+</style>
+
+<div class="wrap">
+  <svg id="pyramid" viewBox="10 10 1800 970" role="img" aria-labelledby="pyr-title">
+    <title id="pyr-title">The Profit Analyst pyramid: four visibility tools at the base, six decision questions in the middle, results at the top</title>
+  </svg>
+</div>
+
+<script>
+const ICONS = {
+  dollar: ["M12 2v20", "M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"],
+  chart: ["M3 3v16a2 2 0 0 0 2 2h16", "M7 9l3 4 3-2 3 4 3-9", "M16.5 6H19v2.5"],
+  report: ["M21.21 15.89A10 10 0 1 1 8 2.83", "M22 12A10 10 0 0 0 12 2v10z"],
+  calc: ["M6 2h12a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Z", "M8 6h8", "M16 14v4", "M16 10h.01", "M12 10h.01", "M8 10h.01", "M12 14h.01", "M8 14h.01", "M12 18h.01", "M8 18h.01"],
+  stairs: ["M3 3v16a2 2 0 0 0 2 2h16", "M7 17C12 17 16 14 19 6", "M16.6 7.2L19 6l.9 2.5"],
+  cash: ["M4 5h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z", "M12 7.5v9", "M14.3 9.3h-3.1a1.35 1.35 0 0 0 0 2.7h1.6a1.35 1.35 0 0 1 0 2.7H9.7", "M5.5 12h.01", "M18.5 12h.01"],
+  target: ["M22 12a10 10 0 1 1-20 0a10 10 0 1 1 20 0Z", "M18 12a6 6 0 1 1-12 0a6 6 0 1 1 12 0Z", "M14 12a2 2 0 1 1-4 0a2 2 0 1 1 4 0Z"],
+  scale: ["M16 16l3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z", "M2 16l3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z", "M7 21h10", "M12 3v18", "M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"]
+};
+const iconAttrs = 'fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"';
+const paths = n => ICONS[n].map(d => `<path d="${d}"/>`).join("");
+
+/* Base 1248, height 900, three equal layers of 292 */
+const CX = 654, APEX = 40, BASE = 940, HALF = 624, GAP = 6, R = 9, BAND_END = 1810, HEAD_X = 1350;
+const SLANT = Math.hypot(1, HALF / (BASE - APEX));
+const hw = y => HALF * (y - APEX) / (BASE - APEX);
+const LAYERS = {
+  green: { top: "#12C870", bot: "#0A9A55", ink: "#FFFFFF", icon: "#FFFFFF" },
+  blue:  { top: "#1AAEFF", bot: "#0280CC", ink: "#FFFFFF", icon: "#FFFFFF" },
+  navy:  { top: "#0B4573", bot: "#002B4E", ink: "#FFFFFF", icon: "#FFFFFF" }
+};
+const TIERS = [
+  { c: "green", y0: APEX, y1: 332, name: "Results",
+    bricks: [{ icon: "dollar", title: "Results", sub: "More profit, more cash" }] },
+  { c: "blue", y0: 344, y1: 636, name: "Decisions",
+    bricks: [{ icon: "cash", title: ["Cash flow"], qs: ["Next low point", "Cash to invest"] },
+             { icon: "target", title: ["Profitability"], qs: ["Current and target", "profit formula"] },
+             { icon: "scale", title: ["Capital"], qs: ["Where profit’s going", "Position and resources"] }] },
+  { c: "navy", y0: 648, y1: BASE, name: "Visibility",
+    bricks: [{ icon: "chart", title: ["Cash Flow", "Forecaster™"] }, { icon: "report", title: ["Clarity", "Report™"] },
+             { icon: "calc", title: ["Profit", "Calculator™"] }, { icon: "stairs", title: ["Five Year", "Forecast™"] }] }
+];
+const esc = s => s.replace(/&/g, "&amp;").replace(/™/g, '<tspan style="font-size:.5em" dy="-.8em">™</tspan>');
+const at = (y, i, n) => CX - hw(y) + 2 * hw(y) * i / n;
+const mid = (y, i, n) => (at(y, i, n) + at(y, i + 1, n)) / 2;
+
+/* Inset each brick by R, then stroke it 2R wide with round joins: same footprint, rounded corners */
+function brickPoly(t, i, n) {
+  const l = (i === 0 ? 0 : GAP) + R * SLANT, r = (i === n - 1 ? 0 : GAP) + R * SLANT;
+  const y0 = t.y0 + R, y1 = t.y1 - R;
+  const pts = [[at(y0, i, n) + l, y0], [at(y0, i + 1, n) - r, y0], [at(y1, i + 1, n) - r, y1], [at(y1, i, n) + l, y1]];
+  if (pts[0][0] > pts[1][0]) { const m = (pts[0][0] + pts[1][0]) / 2; pts[0][0] = pts[1][0] = m; }
+  return pts.map(p => p.map(v => v.toFixed(1)).join(",")).join(" ");
+}
+function icon(name, x, y, s, color, sw = 1.9) {
+  return `<g transform="translate(${(x - s / 2).toFixed(1)} ${(y - s / 2).toFixed(1)}) scale(${s / 24})" ${iconAttrs.replace('stroke-width="1.9"', `stroke-width="${sw}"`)} style="color:${color}">${paths(name)}</g>`;
+}
+function text(x, y, str, font, color) {
+  return `<text x="${x.toFixed(1)}" y="${y}" text-anchor="middle" dominant-baseline="central" style="font:${font};fill:${color}">${esc(str)}</text>`;
+}
+
+function render(wide) {
+  const svg = document.getElementById("pyramid");
+  let out = `<title id="pyr-title">${svg.querySelector("title").textContent}</title><defs>`;
+  out += `<filter id="lift" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="14" stdDeviation="14" flood-color="#002B4E" flood-opacity=".18"/></filter>`;
+  for (const t of TIERS) {
+    const L = LAYERS[t.c];
+    out += `<linearGradient id="g-${t.c}" x1="0" y1="${t.y0}" x2="0" y2="${t.y1}" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="${L.top}"/><stop offset="1" stop-color="${L.bot}"/></linearGradient>`;
+    out += `<linearGradient id="b-${t.c}" x1="0" y1="0" x2="1" y2="0"><stop offset="0" style="stop-color:var(--${t.c});stop-opacity:.24"/><stop offset="1" style="stop-color:var(--${t.c});stop-opacity:0"/></linearGradient>`;
+    out += `<linearGradient id="s-${t.c}" x1="0" y1="0" x2="1" y2="0"><stop offset="0" style="stop-color:var(--${t.c});stop-opacity:0"/><stop offset=".35" style="stop-color:var(--${t.c});stop-opacity:1"/><stop offset="1" style="stop-color:var(--${t.c});stop-opacity:.15"/></linearGradient>`;
+  }
+  out += `</defs>`;
+
+  if (wide) for (const t of TIERS) {
+    const e0 = CX + hw(t.y0) + 18, e1 = CX + hw(t.y1) + 18, m = t.c === "green" ? 226 : (t.y0 + t.y1) / 2;
+    out += `<polygon points="${e0.toFixed(1)},${t.y0} ${BAND_END},${t.y0} ${BAND_END},${t.y1} ${e1.toFixed(1)},${t.y1}" fill="url(#b-${t.c})"/>`;
+    out += `<line x1="${HEAD_X - 34}" y1="${m - 46}" x2="${HEAD_X - 34}" y2="${m + 46}" style="stroke:var(--${t.c})" stroke-width="4" stroke-linecap="round" opacity=".55"/>`;
+    out += `<text x="${HEAD_X}" y="${m - 6}" dominant-baseline="central" style="font:700 74px var(--display);fill:var(--${t.c}-ink)">${t.name}</text>`;
+    out += `<path d="M${HEAD_X + 30} ${m + 64} Q${HEAD_X + 190} ${m + 42} ${HEAD_X + 380} ${m + 50}" fill="none" stroke="url(#s-${t.c})" stroke-width="7" stroke-linecap="round"/>`;
+  }
+
+  out += `<g filter="url(#lift)">`;
+  for (const t of TIERS) {
+    const n = t.bricks.length;
+    t.bricks.forEach((b, i) => {
+      out += `<polygon points="${brickPoly(t, i, n)}" fill="url(#g-${t.c})" stroke="url(#g-${t.c})" stroke-width="${2 * R}" stroke-linejoin="round"/>`;
+    });
+  }
+  out += `</g>`;
+
+  for (const t of TIERS) {
+    const n = t.bricks.length, L = LAYERS[t.c];
+    t.bricks.forEach((b, i) => {
+      if (t.c === "green") {
+        out += icon(b.icon, CX, 152, 66, L.icon, 3.2) + text(CX, 226, b.title, "700 48px var(--display)", L.ink) + text(CX, 284, b.sub, "400 27px var(--body)", L.ink);
+      } else if (t.c === "blue") {
+        out += icon(b.icon, mid(414, i, n), 414, 66, L.icon);
+        b.title.forEach((line, k) => { const y = 536 - (b.title.length - 1 - k) * 37; out += text(mid(y, i, n), y, line, "700 33px var(--display);letter-spacing:-0.8px", L.ink); });
+        const lx = mid(558, i, n);
+        out += `<line x1="${(lx - 26).toFixed(1)}" y1="558" x2="${(lx + 26).toFixed(1)}" y2="558" stroke="#FFFFFF" stroke-opacity=".7" stroke-width="4" stroke-linecap="round"/>`;
+        b.qs.forEach((q, k) => { const y = 584 + k * 28; out += text(mid(y, i, n), y, q, "400 23px var(--body)", L.ink); });
+      } else {
+        out += icon(b.icon, mid(724, i, n), 724, 66, L.icon);
+        b.title.forEach((line, k) => { const y = 808 + k * 42; out += text(mid(y, i, n), y, line, "700 33px var(--display)", L.ink); });
+      }
+    });
+  }
+  svg.innerHTML = out;
+  svg.setAttribute("viewBox", wide ? "10 10 1800 970" : "10 10 1290 970");
+}
+
+let lastWide = null;
+const wrap = document.querySelector(".wrap");
+const update = () => { const wide = wrap.clientWidth >= 720; if (wide !== lastWide) { lastWide = wide; render(wide); } };
+update();
+new ResizeObserver(update).observe(wrap);
+</script>

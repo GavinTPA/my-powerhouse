@@ -1,0 +1,147 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>TPA Delivery Engine - Process Map (Draft)</title>
+<style>
+  @page { size: 210mm 463mm; margin: 0; }
+  html, body { margin: 0; padding: 0; background: #fff; }
+  svg { display: block; width: 210mm; height: 463mm; }
+</style>
+</head>
+<body>
+<svg viewBox="0 0 595 1312" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <style>
+    text { font-family: Helvetica, Arial, sans-serif; }
+    .h1 { font-size: 26px; font-weight: 700; fill: #002B4E; }
+    .sub { font-size: 10px; fill: #4A6178; }
+    .draft { font-size: 8.5px; font-weight: 700; fill: #9B1C1C; }
+    .kl { font-size: 8.5px; font-weight: 700; fill: #002B4E; }
+    .k { font-size: 8.5px; fill: #33475B; }
+    .t { font-size: 10px; font-weight: 700; fill: #002B4E; text-anchor: middle; dominant-baseline: central; }
+    .s { font-size: 7.5px; fill: #4A6178; text-anchor: middle; dominant-baseline: central; }
+    .tw { font-size: 10px; font-weight: 700; fill: #fff; text-anchor: middle; dominant-baseline: central; }
+    .sw { font-size: 7.5px; fill: #DCEBF7; text-anchor: middle; dominant-baseline: central; }
+    .tr { font-size: 10px; font-weight: 700; fill: #9B1C1C; text-anchor: middle; dominant-baseline: central; }
+    .sr { font-size: 7.5px; fill: #9B1C1C; text-anchor: middle; dominant-baseline: central; }
+    .lab { font-size: 7.5px; font-weight: 700; fill: #33475B; }
+    .lane { font-size: 9px; font-weight: 700; fill: #002B4E; text-anchor: middle; }
+    .foot { font-size: 7.5px; fill: #4A6178; }
+    .main { fill: #E8F5FF; stroke: #02A3FF; stroke-width: 0.9; }
+    .rec { fill: #E9F9F0; stroke: #12C870; stroke-width: 0.9; }
+    .navy { fill: #002B4E; }
+    .win { fill: #12C870; stroke: #0EA85D; stroke-width: 1.2; }
+    .red { fill: #FDECEC; stroke: #E5484D; stroke-width: 0.9; }
+    .ln { fill: none; stroke: #33475B; stroke-width: 1; }
+    .loop { fill: none; stroke: #12C870; stroke-width: 1; stroke-dasharray: 4 3; }
+    .box { fill: none; stroke: #8FA3B8; stroke-width: 0.9; stroke-dasharray: 5 3; }
+  </style>
+  <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 1L9 5L0 9z" fill="#33475B"/></marker>
+  <marker id="g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 1L9 5L0 9z" fill="#12C870"/></marker>
+</defs>
+
+<!-- Header -->
+<text class="h1" x="34" y="86">Delivery Engine</text>
+<text class="sub" x="34" y="104">Business process map · New client to monthly retainer · 90-Day Profit &amp; Cash Flow Accelerator</text>
+<text class="draft" x="34" y="117">FIRST DRAFT FOR TEAM REVIEW · November 2026</text>
+<image href="../my-skills/pdf-forge/brands/the-profit-analyst/logo.svg" x="497" y="44" width="64" height="61"/>
+<line x1="34" y1="128" x2="561" y2="128" stroke="#12C870" stroke-width="2"/>
+
+<!-- Key -->
+<rect x="34" y="142" width="527" height="76" rx="6" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="0.8"/>
+<text class="kl" x="46" y="164">Shapes</text>
+<rect x="96" y="157" width="24" height="12" rx="6" class="main"/><text class="k" x="125" y="166">Start / end</text>
+<rect x="180" y="157" width="20" height="12" rx="1.5" class="main"/><text class="k" x="205" y="166">Task / call</text>
+<polygon points="262,156 274,163 262,170 250,163" class="main"/><text class="k" x="279" y="166">Decision</text>
+<polygon points="324,157 344,157 340,169 320,169" class="main"/><text class="k" x="349" y="166">Data / input</text>
+<line x1="408" y1="163" x2="430" y2="163" class="ln" marker-end="url(#a)"/><text class="k" x="435" y="166">Flow</text>
+<rect x="470" y="156" width="20" height="14" rx="3" class="box"/><text class="k" x="495" y="166">Ongoing</text>
+
+<text class="kl" x="46" y="188">Colours</text>
+<rect x="96" y="181" width="12" height="12" rx="2" class="main"/><text class="k" x="113" y="190">Main path</text>
+<rect x="166" y="181" width="12" height="12" rx="2" class="rec"/><text class="k" x="183" y="190">Recovery / follow-up</text>
+<rect x="276" y="181" width="12" height="12" rx="2" class="navy"/><text class="k" x="293" y="190">Start / alumni nurture</text>
+<rect x="390" y="181" width="12" height="12" rx="2" class="win"/><text class="k" x="407" y="190">Retainer (the win)</text>
+<rect x="96" y="201" width="12" height="12" rx="2" class="red"/><text class="k" x="113" y="210">Refund / exit</text>
+<line x1="176" y1="207" x2="198" y2="207" class="loop" marker-end="url(#g)"/><text class="k" x="203" y="210">Loops back / rejoins</text>
+
+<!-- Start -->
+<rect x="200" y="262" width="180" height="40" rx="20" class="navy"/><text class="tw" x="290" y="276">New client signs up</text><text class="sw" x="290" y="290">From the Growth Engine</text>
+<line x1="290" y1="302" x2="290" y2="322" class="ln" marker-end="url(#a)"/>
+
+<!-- Welcome email -->
+<polygon points="215,324 380,324 365,367 200,367" class="main"/><text class="t" x="290" y="340">Welcome email</text><text class="s" x="290" y="354">Automatic on sign-up</text>
+<line x1="290" y1="367" x2="290" y2="389" class="ln" marker-end="url(#a)"/>
+
+<!-- Books onboarding -->
+<polygon points="290,391 380,421 290,451 200,421" class="main"/><text class="t" x="290" y="421">Books onboarding?</text>
+<line x1="200" y1="421" x2="162" y2="421" class="ln" marker-end="url(#a)"/><text class="lab" x="174" y="415">No</text>
+<rect x="30" y="399" width="130" height="43" rx="3" class="rec"/><text class="t" x="95" y="415">Chase to book</text><text class="s" x="95" y="429">Team follows up</text>
+<path d="M95 399 L95 345 L205 345" class="loop" marker-end="url(#g)"/>
+<line x1="290" y1="451" x2="290" y2="471" class="ln" marker-end="url(#a)"/><text class="lab" x="297" y="464">Yes</text>
+
+<!-- Onboarding call -->
+<rect x="200" y="473" width="180" height="43" rx="3" class="main"/><text class="t" x="290" y="489">Onboarding call</text><text class="s" x="290" y="503">Day 1, with the team</text>
+<line x1="380" y1="494" x2="403" y2="494" class="ln" marker-end="url(#a)"/>
+<line x1="290" y1="516" x2="290" y2="538" class="ln" marker-end="url(#a)"/>
+
+<!-- Software access -->
+<polygon points="215,540 380,540 365,583 200,583" class="main"/><text class="t" x="290" y="556">Software access</text><text class="s" x="290" y="570">Xero connected</text>
+<line x1="290" y1="583" x2="290" y2="605" class="ln" marker-end="url(#a)"/>
+
+<!-- Team builds tools -->
+<rect x="200" y="607" width="180" height="43" rx="3" class="main"/><text class="t" x="290" y="623">Team builds tools</text><text class="s" x="290" y="637">Forecaster + Clarity Report</text>
+<line x1="290" y1="650" x2="290" y2="672" class="ln" marker-end="url(#a)"/>
+
+<!-- Roadmap call -->
+<rect x="200" y="674" width="180" height="43" rx="3" class="main"/><text class="t" x="290" y="690">90-Day Roadmap call</text><text class="s" x="290" y="704">~Day 10, with Gav</text>
+<line x1="290" y1="717" x2="290" y2="739" class="ln" marker-end="url(#a)"/>
+
+<!-- Guarantee -->
+<polygon points="290,741 380,771 290,801 200,771" class="main"/><text class="t" x="290" y="771">Program affordable?</text>
+<line x1="200" y1="771" x2="162" y2="771" class="ln" marker-end="url(#a)"/><text class="lab" x="174" y="765">No</text>
+<rect x="30" y="749" width="130" height="43" rx="8" class="red"/><text class="tr" x="95" y="765">Guarantee refund</text><text class="sr" x="95" y="779">Refer to the right help</text>
+<line x1="290" y1="801" x2="290" y2="821" class="ln" marker-end="url(#a)"/><text class="lab" x="297" y="814">Yes</text>
+
+<!-- Cash flow forecast call -->
+<rect x="200" y="823" width="180" height="43" rx="3" class="main"/><text class="t" x="290" y="839">Cash flow forecast call</text><text class="s" x="290" y="853">With Gav</text>
+<line x1="290" y1="866" x2="290" y2="888" class="ln" marker-end="url(#a)"/>
+
+<!-- Engaged -->
+<polygon points="290,890 380,920 290,950 200,920" class="main"/><text class="t" x="290" y="920">Engaged + on track?</text>
+<line x1="200" y1="920" x2="162" y2="920" class="ln" marker-end="url(#a)"/><text class="lab" x="174" y="914">No</text>
+<rect x="30" y="898" width="130" height="43" rx="3" class="rec"/><text class="t" x="95" y="914">Re-engagement</text><text class="s" x="95" y="928">Check in, unblock</text>
+<path d="M95 941 L95 994 L198 994" class="loop" marker-end="url(#g)"/>
+<line x1="290" y1="950" x2="290" y2="970" class="ln" marker-end="url(#a)"/><text class="lab" x="297" y="963">Yes</text>
+
+<!-- Momentum calls -->
+<rect x="200" y="972" width="180" height="43" rx="3" class="main"/><text class="t" x="290" y="988">Momentum call 1</text><text class="s" x="290" y="1002">Midway, ~Day 45</text>
+<line x1="290" y1="1015" x2="290" y2="1037" class="ln" marker-end="url(#a)"/>
+<rect x="200" y="1039" width="180" height="43" rx="3" class="main"/><text class="t" x="290" y="1055">Momentum call 2</text><text class="s" x="290" y="1069">End, ~Day 90</text>
+<line x1="290" y1="1082" x2="290" y2="1104" class="ln" marker-end="url(#a)"/>
+
+<!-- Retainer decision -->
+<polygon points="290,1106 380,1136 290,1166 200,1136" class="main"/><text class="t" x="290" y="1136">Joins retainer?</text>
+<line x1="200" y1="1136" x2="162" y2="1136" class="ln" marker-end="url(#a)"/><text class="lab" x="174" y="1130">No</text>
+<polygon points="45,1114 160,1114 145,1157 30,1157" class="navy"/><text class="tw" x="95" y="1130">Alumni nurture</text><text class="sw" x="95" y="1144">Stay in touch</text>
+<line x1="290" y1="1166" x2="290" y2="1186" class="ln" marker-end="url(#a)"/><text class="lab" x="297" y="1179">Yes</text>
+
+<!-- End -->
+<rect x="200" y="1188" width="180" height="43" rx="21.5" class="win"/><text class="tw" x="290" y="1203">Monthly retainer</text><text class="sw" x="290" y="1217" style="fill:#F0FFF6">Tools + coaching continue</text>
+
+<!-- Ongoing streams -->
+<rect x="405" y="473" width="160" height="609" rx="10" class="box"/>
+<text class="lane" x="485" y="493">Running all 90 days</text>
+<rect x="417" y="510" width="136" height="43" rx="3" class="main"/><text class="t" x="485" y="526">Skool: 9 modules</text><text class="s" x="485" y="540">Self-paced learning</text>
+<rect x="417" y="620" width="136" height="43" rx="3" class="main"/><text class="t" x="485" y="636">Weekly coaching</text><text class="s" x="485" y="650">Group Q&amp;A calls</text>
+<rect x="417" y="730" width="136" height="43" rx="3" class="main"/><text class="t" x="485" y="746">Monthly coaching</text><text class="s" x="485" y="760">Group calls</text>
+<rect x="417" y="840" width="136" height="43" rx="3" class="main"/><text class="t" x="485" y="856">Monthly financials</text><text class="s" x="485" y="870">Clarity Report sent</text>
+<rect x="417" y="950" width="136" height="43" rx="3" class="main"/><text class="t" x="485" y="966">Tools in use</text><text class="s" x="485" y="980">Weekly forecast update</text>
+
+<!-- Footer -->
+<line x1="34" y1="1268" x2="561" y2="1268" stroke="#E2E8F0" stroke-width="0.8"/>
+<text class="foot" x="34" y="1286">The Profit Analyst · Value engine maps · Delivery engine starts where the growth engine hands off a new client.</text>
+</svg>
+</body>
+</html>

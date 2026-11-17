@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The Profit Formula</title>
+<style>
+  @font-face { font-family: "Poppins"; font-weight: 400; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Poppins-Regular.ttf"); }
+  @font-face { font-family: "Poppins"; font-weight: 500; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Poppins-Medium.ttf"); }
+  @font-face { font-family: "Poppins"; font-weight: 600; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Poppins-SemiBold.ttf"); }
+  @font-face { font-family: "Poppins"; font-weight: 700; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Poppins-Bold.ttf"); }
+  @font-face { font-family: "Lato"; font-weight: 400; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Lato-Regular.ttf"); }
+  @font-face { font-family: "Lato"; font-weight: 700; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Lato-Bold.ttf"); }
+  @font-face { font-family: "Lato"; font-style: italic; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Lato-Italic.ttf"); }
+
+  :root {
+    --navy: #002B4E;
+    --green: #10BB6F;
+    --green-dark: #0C8F55;
+    --green-light: #E4F8EE;
+    --blue: #0BA6DB;
+    --blue-dark: #0786B2;
+    --blue-light: #E2F4FB;
+    --red: #DC2626;
+    --red-light: #FDECEC;
+    --navy-light: #E6EBF0;
+    --text: #111111;
+    --text-2: #4A5563;
+    --rule: #DDE3EA;
+  }
+
+  @page { size: A4 portrait; margin: 10mm 12mm 10mm 12mm; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Lato", sans-serif; font-size: 9.2pt; line-height: 1.3; color: var(--text); }
+
+  .kicker { font-family: "Poppins"; font-size: 7.6pt; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--green); margin-bottom: 0.8mm; }
+  b { color: var(--navy); }
+
+  /* Header */
+  .header { display: flex; align-items: center; justify-content: space-between; padding-bottom: 1.8mm; border-bottom: 2.2pt solid var(--navy); }
+  .header h1 { font-family: "Poppins"; font-size: 24pt; font-weight: 700; color: var(--navy); line-height: 1.05; }
+  .header h1 sup { font-size: 9.5pt; vertical-align: top; position: relative; top: 1mm; }
+  .header .tag { font-family: "Poppins"; font-size: 9.6pt; font-weight: 500; color: var(--text-2); margin-top: 0.6mm; }
+  .header .tag b { color: var(--green); font-weight: 600; }
+  .header img { height: 14mm; }
+
+  /* What and why, full width */
+  .section { margin-top: 3mm; }
+  .section p { color: var(--text-2); }
+  .section p + p { margin-top: 1.2mm; }
+  .jobs { list-style: none; margin-top: 0.4mm; }
+  .jobs li { display: flex; gap: 2mm; margin-bottom: 1.2mm; color: var(--text-2); }
+  .jobs .n { flex: none; width: 5mm; height: 5mm; border-radius: 50%; background: var(--green); color: #fff; font-family: "Poppins"; font-weight: 700; font-size: 7.6pt; text-align: center; line-height: 5mm; margin-top: 0.2mm; }
+
+  /* Four principles with icons */
+  .principles { margin-top: 3mm; }
+  .rules { display: flex; gap: 3mm; margin-top: 1mm; }
+  .rule { flex: 1; display: flex; gap: 2.4mm; align-items: center; background: #FAFAFA; border: 0.6pt solid var(--rule); border-radius: 2mm; padding: 1.4mm 2mm; }
+  .rule img { flex: none; width: 14mm; height: 14mm; }
+  .rule h3 { font-family: "Poppins"; font-size: 9pt; font-weight: 700; color: var(--navy); line-height: 1.15; }
+  .rule p { font-size: 7.9pt; color: var(--text-2); line-height: 1.28; margin-top: 0.4mm; }
+
+  /* Formula: headings above, formula below */
+  .formula { margin-top: 3mm; background: #F3F6F9; border-radius: 2.5mm; padding: 2mm 3mm 2.4mm; }
+  .formula .split { display: flex; font-size: 7.8pt; font-family: "Poppins"; font-weight: 600; margin-bottom: 1.4mm; }
+  .formula .split div { text-align: center; padding-bottom: 0.6mm; }
+  .formula .split .inc { width: 25%; border-bottom: 1.6pt solid var(--blue); color: var(--blue-dark); }
+  .formula .split .gap1 { width: 3.5%; }
+  .formula .split .exp { width: 59%; border-bottom: 1.6pt solid var(--red); color: var(--red); }
+  .formula .split .gap2 { width: 2%; }
+  .formula .split .pro { width: 10.5%; border-bottom: 1.6pt solid var(--green); color: var(--green-dark); }
+  .formula .eq { display: flex; align-items: flex-start; justify-content: space-between; font-family: "Poppins"; }
+  .term { text-align: center; }
+  .term .name { font-weight: 700; font-size: 10.4pt; line-height: 1.1; }
+  .term .unit { font-family: "Lato"; font-size: 7.2pt; color: var(--text-2); margin-top: 0.4mm; }
+  .term .n { display: inline-block; width: 4.4mm; height: 4.4mm; border-radius: 50%; color: #fff; font-size: 6.8pt; font-weight: 700; line-height: 4.4mm; text-align: center; margin-bottom: 0.6mm; }
+  .op { font-weight: 600; font-size: 11pt; padding-top: 4.6mm; color: var(--text-2); }
+  .blue { color: var(--blue); }  .blue .n { background: var(--blue); }
+  .red { color: var(--red); }    .red .n { background: var(--red); }
+  .green { color: var(--green); }
+  .br { font-weight: 400; font-size: 15pt; padding-top: 3.4mm; line-height: 1; }
+
+  /* Steps table */
+  .howto { margin-top: 3mm; }
+  .howto h2 { font-family: "Poppins"; font-size: 12pt; font-weight: 700; color: var(--navy); }
+  .howto h2 span { font-weight: 500; color: var(--green-dark); font-size: 10pt; }
+  .howto .need { font-size: 8.6pt; color: var(--text-2); margin-top: 0.2mm; }
+  table { width: 100%; border-collapse: collapse; margin-top: 1.4mm; }
+  th { font-family: "Poppins"; font-size: 7.2pt; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #fff; background: var(--navy); text-align: left; padding: 1.2mm 1.8mm; }
+  td { padding: 1.1mm 1.8mm; vertical-align: top; border-bottom: 0.6pt solid var(--rule); font-size: 8.3pt; line-height: 1.28; color: var(--text-2); }
+  td.step { width: 6.5mm; font-family: "Poppins"; font-weight: 700; color: var(--navy); font-size: 9pt; }
+  td.num { width: 42mm; }
+  td.num .t { font-family: "Poppins"; font-weight: 700; font-size: 9pt; line-height: 1.15; }
+  td.num .u { display: inline-block; font-family: "Poppins"; font-size: 6.8pt; font-weight: 600; border-radius: 1mm; padding: 0 1mm; margin-top: 0.5mm; }
+  .u.d { background: var(--red-light); color: var(--red); }
+  .u.i { background: var(--blue-light); color: var(--blue-dark); }
+  .u.g { background: var(--green-light); color: var(--green-dark); }
+  td.what { width: 47mm; }
+  td.where { width: 38mm; }
+  tr.check td { background: var(--green-light); }
+  tr.inc td { background: #F4FAFD; }
+
+  .foot { margin-top: 3mm; padding-top: 1.4mm; border-top: 2.2pt solid var(--navy); text-align: right; font-family: "Poppins"; font-size: 7.8pt; color: var(--text-2); }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div>
+    <div class="kicker">The Profit Analyst Method™</div>
+    <h1>The Profit Formula<sup>™</sup></h1>
+    <div class="tag">Seven numbers that explain how your business makes profit. <b>And what to do next.</b></div>
+  </div>
+  <img src="../my-skills/pdf-forge/brands/the-profit-analyst/logo.svg" alt="The Profit Analyst">
+</div>
+
+<!-- What it is -->
+<div class="section">
+  <div class="kicker">What it is</div>
+  <p><b>Profit is an outcome, not something you do.</b> Like losing 10 kilos, you can't do it directly. You change the things in front of it and the result follows.</p>
+  <p>The formula goes one layer deeper. Income becomes <b>price × volume</b>. The 200 lines in your P&amp;L become <b>five buckets</b>, because people, stock and marketing are each managed differently. Seven numbers: the recipe your profit comes from.</p>
+</div>
+
+<!-- Why we do it -->
+<div class="section">
+  <div class="kicker">Why we do it</div>
+  <ul class="jobs">
+    <li><span class="n">1</span><span><b>Know your business.</b> Know your seven numbers off the top of your head and every monthly result shows you straight away where you're winning and where you're losing.</span></li>
+    <li><span class="n">2</span><span><b>Find your next right move.</b> Each number is a lever. Your time and money are limited, so put them where profit moves most. Hire, fire, buy the ads? Ask how it changes your formula.</span></li>
+  </ul>
+</div>
+
+<!-- Four principles -->
+<div class="principles">
+  <div class="kicker">Four key principles</div>
+  <div class="rules">
+    <div class="rule"><img src="assets/principle-simplify.png" alt=""><div><h3>Simplify</h3><p>Round to the thousand. $17,333 is 17.</p></div></div>
+    <div class="rule"><img src="assets/principle-eighty-percent.png" alt=""><div><h3>80% is good enough</h3><p>3-month average. Skip the outliers.</p></div></div>
+    <div class="rule"><img src="assets/principle-focus.png" alt=""><div><h3>Focus on what matters</h3><p>What you do with them counts most.</p></div></div>
+    <div class="rule"><img src="assets/principle-insights.png" alt=""><div><h3>Insights &amp; actions</h3><p>Fill in all seven first. Analyse after.</p></div></div>
+  </div>
+</div>
+
+<!-- The formula, headings above -->
+<div class="formula">
+  <div class="split">
+    <div class="inc">Income drivers</div><div class="gap1"></div>
+    <div class="exp">Expense drivers: your whole P&amp;L in five buckets</div><div class="gap2"></div>
+    <div class="pro">The outcome</div>
+  </div>
+  <div class="eq">
+    <div class="br blue">(</div>
+    <div class="term blue"><span class="n">1</span><div class="name">Price</div><div class="unit">$ per sale</div></div>
+    <div class="op">×</div>
+    <div class="term blue"><span class="n">2</span><div class="name">Volume</div><div class="unit">no. of sales</div></div>
+    <div class="br blue">)</div>
+    <div class="op">−</div>
+    <div class="br red">(</div>
+    <div class="term red"><span class="n">3</span><div class="name">Cost of<br>Sales</div><div class="unit">% of sales</div></div>
+    <div class="op">−</div>
+    <div class="term red"><span class="n">4</span><div class="name">Team</div><div class="unit">$ / month</div></div>
+    <div class="op">−</div>
+    <div class="term red"><span class="n">5</span><div class="name">Marketing<br>&amp; Growth</div><div class="unit">$ / month</div></div>
+    <div class="op">−</div>
+    <div class="term red"><span class="n">6</span><div class="name">Property</div><div class="unit">$ / month</div></div>
+    <div class="op">−</div>
+    <div class="term red"><span class="n">7</span><div class="name">Overheads</div><div class="unit">$ / month</div></div>
+    <div class="br red">)</div>
+    <div class="op">=</div>
+    <div class="term green"><div class="name" style="padding-top:5mm">Profit</div></div>
+  </div>
+</div>
+
+<!-- How to fill it in -->
+<div class="howto">
+  <h2>How to fill it in <span>(work backwards, easiest first)</span></h2>
+  <p class="need">You need: your Clarity Report (last 3 months of actuals) open.</p>
+  <table>
+    <tr><th></th><th>Number</th><th>What goes in it</th><th>Where to find it</th><th>Watch for</th></tr>
+    <tr>
+      <td class="step">1</td>
+      <td class="num"><div class="t red">7 · Overheads</div><span class="u d">$ / month</span></td>
+      <td class="what">Everything else: software, insurance, phone, fees, subscriptions.</td>
+      <td class="where">Overheads line. Add the last 3 months, divide by 3.</td>
+      <td>A huge or negative month? That's an accounting adjustment, not your business. Leave it out.</td>
+    </tr>
+    <tr>
+      <td class="step">2</td>
+      <td class="num"><div class="t red">6 · Property</div><span class="u d">$ / month</span></td>
+      <td class="what">Rent and premises. Zero if you work from home.</td>
+      <td class="where">Property line. Should match your lease.</td>
+      <td>A zero then a double month means rent was paid late. Write what you actually pay.</td>
+    </tr>
+    <tr>
+      <td class="step">3</td>
+      <td class="num"><div class="t red">5 · Marketing &amp; Growth</div><span class="u d">$ / month</span></td>
+      <td class="what">What you invest to grow: ads, brand, lead generation, growth hires.</td>
+      <td class="where">Marketing &amp; Growth line, 3-month average.</td>
+      <td>Zero or $500 is fine. Round $500 up to 1.</td>
+    </tr>
+    <tr>
+      <td class="step">4</td>
+      <td class="num"><div class="t red">4 · Team</div><span class="u d">$ / month</span></td>
+      <td class="what">Everything people: wages, super, workers comp, recruitment.</td>
+      <td class="where">Team line, 3-month average.</td>
+      <td>Weekly or fortnightly pay gives one "high" month a quarter. The average evens it out.</td>
+    </tr>
+    <tr>
+      <td class="step">5</td>
+      <td class="num"><div class="t red">3 · Cost of Sales</div><span class="u d">% of sales</span></td>
+      <td class="what">Direct costs that rise and fall with sales: stock, materials, consumables.</td>
+      <td class="where">P&amp;L ratios section: <b>COGS %</b>. Not the dollar line.</td>
+      <td>Enter as a %. At 30%, a $10k job uses about $3k of materials.</td>
+    </tr>
+    <tr class="inc">
+      <td class="step">6</td>
+      <td class="num"><div class="t blue">Total revenue</div><span class="u i">$ / month</span></td>
+      <td class="what">Your average monthly revenue for the last 3 months.</td>
+      <td class="where">Revenue line, 3-month average.</td>
+      <td>Don't put it in a box yet. Write it in the margin. You'll split it next.</td>
+    </tr>
+    <tr class="inc">
+      <td class="step">7</td>
+      <td class="num"><div class="t blue">1 · Price &amp; 2 · Volume</div><span class="u i">$ and count</span></td>
+      <td class="what">Estimate whichever one you can (average sale, or number of jobs, clients or hours). Revenue ÷ that number = the other.</td>
+      <td class="where">Your POS, invoices sent, jobs done, hours billed.</td>
+      <td>Prices all over the place? Pick a simple middle number. You'll still ask the same questions.</td>
+    </tr>
+    <tr class="check">
+      <td class="step">✓</td>
+      <td class="num"><div class="t green">Profit</div><span class="u g">check</span></td>
+      <td class="what">Run the formula. It should land close to your average operating profit.</td>
+      <td class="where">Operating profit line, 3-month average.</td>
+      <td>Way off? Recheck Cost of Sales % and Team first. A loss is fine. Same tool gets you out.</td>
+    </tr>
+  </table>
+</div>
+
+<div class="foot">theprofitanalyst.com</div>
+
+</body>
+</html>

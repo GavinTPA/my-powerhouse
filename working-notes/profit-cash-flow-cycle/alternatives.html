@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en-AU"><head><meta charset="utf-8">
+<title>Cycle Model Options</title>
+<style>
+@font-face{font-family:Poppins;font-weight:600;src:url("../../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Poppins-SemiBold.ttf")}
+@font-face{font-family:Poppins;font-weight:700;src:url("../../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Poppins-Bold.ttf")}
+@font-face{font-family:Lato;font-weight:400;src:url("../../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Lato-Regular.ttf")}
+@font-face{font-family:Lato;font-weight:700;src:url("../../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Lato-Bold.ttf")}
+@font-face{font-family:Lato;font-style:italic;font-weight:400;src:url("../../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Lato-Italic.ttf")}
+:root{--navy:#002B4E;--blue:#02A3FF;--green:#12C870;--text2:#4A5563}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#fff;font-family:Lato,sans-serif;color:var(--navy);width:1800px;padding:48px 56px}
+h1{font-family:Poppins;font-weight:700;font-size:34px}
+.sub{color:var(--text2);font-size:18px;margin:6px 0 28px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.card{border:1.5px solid #DDE3EA;border-radius:16px;padding:18px 20px 20px}
+.card .tag{font-family:Poppins;font-weight:600;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#0A9A55}
+.card h2{font-family:Poppins;font-weight:700;font-size:21px;margin:2px 0 8px}
+.card .art{height:440px;display:flex;align-items:center;justify-content:center}
+.card .art svg,.card .art img{max-width:100%;max-height:440px}
+.card p{font-size:15px;line-height:1.45;color:var(--text2);margin-top:8px}
+.card p b{color:var(--navy)}
+svg text{font-family:Lato}
+svg .h{font-family:Poppins;font-weight:700;fill:#002B4E;letter-spacing:.5px}
+svg .q{font-weight:700;fill:#002B4E}
+svg .c{font-family:Poppins;font-weight:600;fill:#4A6378}
+svg .l{font-style:italic;fill:#002B4E}
+</style></head><body>
+<h1>The Profit &amp; Cash Flow Cycle: six ways to draw it</h1>
+<div class="sub">Rough sketches to compare the idea, not finished artwork. Same three sets of numbers and six questions in each.</div>
+<div class="grid" id="grid"></div>
+<script>
+const NAVY="#002B4E",BLUE="#02A3FF",GREEN="#12C870";
+const TINT={[NAVY]:"#EDF2F7",[BLUE]:"#E8F6FF",[GREEN]:"#E7F9F0"};
+const Q={pl:["What is our current profit?","What is our target profit formula?"],
+  bs:["What is our financial position?","Where did our profit go?"],
+  cf:["When is our next cash low point, and are we safe?","What cash is available to fund growth?"]};
+const rad=d=>d*Math.PI/180;
+const pt=(cx,cy,r,a)=>[cx+r*Math.cos(rad(a)),cy+r*Math.sin(rad(a))];
+function txt(x,y,lines,size,cls,anchor="middle",lh=1.25){
+  return `<text x="${x}" y="${y}" font-size="${size}" class="${cls}" text-anchor="${anchor}">`+
+    lines.map((l,i)=>`<tspan x="${x}" dy="${i?size*lh:0}">${l}</tspan>`).join("")+`</text>`;}
+function wrap(s,n){const w=s.split(" ");const out=[];let cur="";for(const x of w){if((cur+" "+x).trim().length>n){out.push(cur.trim());cur=x}else cur+=" "+x}out.push(cur.trim());return out}
+const centre=(x,y,s=15)=>txt(x,y,["Make profit.","Turn it into cash.","Fund future growth."],s,"c");
+const head=(id,c)=>`<marker id="${id}" viewBox="0 0 12 12" refX="6" refY="6" markerWidth="14" markerHeight="14" orient="auto" markerUnits="userSpaceOnUse"><path d="M1,1 L11,6 L1,11 L3.5,6 Z" fill="${c}"/></marker>`;
+
+/* B. One ring */
+function ring(){
+  const cx=320,cy=245,r=105,sw=30;let s=`<svg viewBox="0 0 640 480">`;
+  const seg=[[NAVY,-150,-30],[BLUE,-30,90],[GREEN,90,210]];
+  for(const [c,a0,a1] of seg){
+    const p0=pt(cx,cy,r,a0+4),p1=pt(cx,cy,r,a1-9);
+    s+=`<path d="M${p0} A${r} ${r} 0 0 1 ${p1}" fill="none" stroke="${c}" stroke-width="${sw}"/>`;
+    const i=pt(cx,cy,r-25,a1-9),o=pt(cx,cy,r+25,a1-9),t=pt(cx,cy,r,a1-1);
+    s+=`<path d="M${i} L${o} L${t} Z" fill="${c}"/>`;
+  }
+  s+=centre(cx,cy-18,15);
+  s+=txt(cx,46,["P&amp;L"],17,"h")+txt(cx,70,Q.pl,13,"q");
+  s+=txt(470,290,["BALANCE SHEET"],15,"h","start")+txt(470,314,[...wrap(Q.bs[0],22),...wrap(Q.bs[1],22)],13,"q","start");
+  s+=txt(170,290,["CASH FLOW"],15,"h","end")+txt(170,314,[...wrap(Q.cf[0],22),...wrap(Q.cf[1],22)],13,"q","end");
+  return s+`</svg>`;
+}
+
+/* C. Three circles wrapped in a belt */
+function belt(){
+  const V=[[320,135],[460,345],[180,345]],C=[NAVY,BLUE,GREEN],K=["pl","bs","cf"],H=["P&amp;L","BALANCE SHEET","CASH FLOW"];
+  const r=96,R=r+24;let s=`<svg viewBox="0 0 640 480"><defs>${head("bh","#9FB3C4")}</defs>`;
+  const n=(a,b)=>{const dx=b[0]-a[0],dy=b[1]-a[1],L=Math.hypot(dx,dy);return[dy/L,-dx/L]};
+  const off=(p,v)=>[p[0]+v[0]*R,p[1]+v[1]*R];
+  let d="",mids=[];
+  for(let i=0;i<3;i++){const a=V[i],b=V[(i+1)%3],c=V[(i+2)%3],nn=n(a,b),nn2=n(b,c);
+    const s1=off(a,nn),e1=off(b,nn),s2=off(b,nn2);
+    d+=(i?` L`:`M`)+`${s1} L${e1} A${R} ${R} 0 0 1 ${s2}`;
+    mids.push([(s1[0]+e1[0])/2,(s1[1]+e1[1])/2,b[0]-a[0],b[1]-a[1]]);}
+  s+=`<path d="${d} Z" fill="none" stroke="#D3DFE9" stroke-width="22" stroke-linejoin="round"/>`;
+  for(const [x,y,dx,dy] of mids){const L=Math.hypot(dx,dy),ux=dx/L,uy=dy/L;
+    s+=`<path d="M${x-ux*30},${y-uy*30} L${x+ux*14},${y+uy*14}" stroke="#5E7A91" stroke-width="6" stroke-linecap="round" marker-end="url(#bh)"/>`;}
+  V.forEach(([x,y],i)=>{s+=`<circle cx="${x}" cy="${y}" r="${r}" fill="${TINT[C[i]]}" stroke="${C[i]}" stroke-width="6"/>`;
+    const lines=[...wrap(Q[K[i]][0],18),"",...wrap(Q[K[i]][1],18)];
+    const top=y-((lines.length)*14.5)/2;
+    s+=txt(x,top,[H[i]],i==1?13:14,"h")+txt(x,top+20,lines,11.5,"q");});
+  return s+`</svg>`;
+}
+
+/* D. Venn with a cycle around it */
+function venn(){
+  const cx=320,cy=250,o=62,r=118;const P=[[cx,cy-o],[cx+o*.87,cy+o*.5],[cx-o*.87,cy+o*.5]],C=[NAVY,BLUE,GREEN];
+  let s=`<svg viewBox="0 0 640 480"><defs>${head("vn",NAVY)}${head("vb",BLUE)}${head("vg",GREEN)}</defs>`;
+  P.forEach(([x,y],i)=>s+=`<circle cx="${x}" cy="${y}" r="${r}" fill="${C[i]}" fill-opacity=".09" stroke="${C[i]}" stroke-width="5"/>`);
+  s+=txt(cx,cy-110,["P&amp;L"],17,"h")+txt(cx+108,cy+80,["BALANCE","SHEET"],14,"h")+txt(cx-108,cy+80,["CASH","FLOW"],14,"h");
+  s+=txt(cx,cy-6,["Profit &amp;","cash flow","engine"],12,"c");
+  const R=222;[[NAVY,-60,10,"vn"],[BLUE,60,130,"vb"],[GREEN,180,250,"vg"]].forEach(([c,a0,a1,m])=>{
+    s+=`<path d="M${pt(cx,cy,R,a0)} A${R} ${R} 0 0 1 ${pt(cx,cy,R,a1)}" fill="none" stroke="${c}" stroke-width="6" stroke-linecap="round" marker-end="url(#${m})"/>`;});
+  s+=txt(cx,cy+178,["Questions sit outside the circles,","next to each arrow"],12,"l");
+  return s+`</svg>`;
+}
+
+/* E. Flow with a return loop */
+function flow(){
+  let s=`<svg viewBox="0 0 640 480"><defs>${head("fn",NAVY)}${head("fb",BLUE)}${head("fg",GREEN)}</defs>`;
+  const B=[[20,NAVY,"P&amp;L","Make profit","pl"],[230,BLUE,"BALANCE SHEET","See where it went","bs"],[440,GREEN,"CASH FLOW","Turn it into cash","cf"]];
+  B.forEach(([x,c,h,v,k])=>{s+=`<rect x="${x}" y="70" width="180" height="235" rx="16" fill="${TINT[c]}"/><rect x="${x}" y="70" width="180" height="8" rx="4" fill="${c}"/>`;
+    s+=txt(x+90,112,[h],14,"h")+txt(x+90,136,[v],15,"l");
+    s+=txt(x+90,176,[...wrap(Q[k][0],20),"",...wrap(Q[k][1],20)],12.5,"q");});
+  s+=`<path d="M202,190 L226,190" stroke="${NAVY}" stroke-width="5" marker-end="url(#fn)"/>`;
+  s+=`<path d="M412,190 L436,190" stroke="${BLUE}" stroke-width="5" marker-end="url(#fb)"/>`;
+  s+=`<path d="M530,312 L530,370 Q530,390 510,390 L130,390 Q110,390 110,370 L110,318" fill="none" stroke="${GREEN}" stroke-width="6" stroke-linejoin="round" marker-end="url(#fg)"/>`;
+  s+=txt(320,420,["Fund future growth"],16,"h")+txt(320,442,["How much cash can we invest to grow profit?"],13,"l");
+  return s+`</svg>`;
+}
+
+/* F. Growth spiral */
+function spiral(){
+  const cx=320,cy=255;let s=`<svg viewBox="0 0 640 480"><defs>${head("sg",GREEN)}</defs>`;
+  const C=[NAVY,BLUE,GREEN];const rr=a=>26+ (a+90)/360*62;
+  for(let k=0;k<9;k++){const a0=-90+k*120,a1=a0+116;let d="";
+    for(let a=a0;a<=a1;a+=3){const p=pt(cx,cy,rr(a),a);d+=(a==a0?"M":"L")+p.join(",")}
+    s+=`<path d="${d}" fill="none" stroke="${C[k%3]}" stroke-width="${6+k*1.6}" stroke-linecap="round" ${k==8?'marker-end="url(#sg)"':''}/>`;}
+  s+=txt(cx,cy+5,["Start"],12,"c");
+  s+=txt(cx,28,["P&amp;L"],16,"h")+txt(cx+150,cy+175,["BALANCE SHEET"],14,"h","start")+txt(cx-150,cy+175,["CASH FLOW"],14,"h","end");
+  s+=txt(cx+224,cy-60,["Each lap,","the business","gets bigger"],13,"l","start");
+  return s+`</svg>`;
+}
+
+const cards=[
+ ["Current","Three circles, three arrows",`<img src="cycle-embed.svg">`,"<b>Says:</b> three separate areas, each feeding the next. Clear and readable, all six questions fit inside. <b>Risk:</b> can read as three steps in order rather than one system."],
+ ["Option A","One ring",ring(),"<b>Says:</b> one continuous engine, with three parts of the same wheel. Strongest \"this is one system\" feel. <b>Trade-off:</b> questions move outside the ring, so it needs more width."],
+ ["Option B","Three circles on one belt",belt(),"<b>Says:</b> three distinct sets of numbers, driven by one loop running through all of them. Keeps today's layout, adds the engine feel. <b>Trade-off:</b> one more element to read."],
+ ["Option C","Venn with a cycle around it",venn(),"<b>Says:</b> the three overlap (your Venn) and they move in a loop. Ties to the model clients already know. <b>Trade-off:</b> busiest option; the six questions don't fit inside."],
+ ["Option D","Flow with a return loop",flow(),"<b>Says:</b> a story read left to right: make it, see where it went, turn it into cash, then feed it back. Easiest for a first-time reader and for carousels. <b>Trade-off:</b> feels more like a process than an engine."],
+ ["Option E","Growth spiral",spiral(),"<b>Says:</b> every lap of the cycle makes the business bigger. Best at \"dial the business up\". <b>Trade-off:</b> no room for the questions; works as a companion image, not the main model."],
+];
+document.getElementById("grid").innerHTML=cards.map(([t,h,art,p])=>`<div class="card"><div class="tag">${t}</div><h2>${h}</h2><div class="art">${art}</div><p>${p}</p></div>`).join("");
+</script>
+</body></html>

@@ -1,0 +1,474 @@
+/* ========================================
+   The Profit Analyst Brand Styles
+   Colors and fonts pulled from theprofitanalyst.com
+   ======================================== */
+
+/* --------------------------------------
+   Font Faces
+   -------------------------------------- */
+@font-face {
+    font-family: 'Poppins';
+    src: url('fonts/Poppins-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('fonts/Poppins-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('fonts/Poppins-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('fonts/Poppins-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url('fonts/Lato-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url('fonts/Lato-Italic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url('fonts/Lato-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* --------------------------------------
+   CSS Variables (Brand Tokens)
+   -------------------------------------- */
+:root {
+    --primary: #10BB6F;
+    --primary-light: #E4F8EE;
+    --primary-dark: #0C8F55;
+    --secondary: #0BA6DB;
+    --text: #111111;
+    --text-secondary: #5B5B5B;
+    --text-light: #8A8A8A;
+    --background: #FFFFFF;
+    --background-alt: #FAFAFA;
+    --success: #10BB6F;
+    --warning: #D97706;
+    --muted: #9CA3AF;
+
+    --heading-font: 'Poppins', 'Trebuchet MS', sans-serif;
+    --body-font: 'Lato', 'Calibri', sans-serif;
+    --code-font: 'Consolas', monospace;
+}
+
+/* --------------------------------------
+   Base Styles
+   -------------------------------------- */
+body {
+    font-family: var(--body-font);
+    font-size: 11pt;
+    line-height: 1.6;
+    color: var(--text);
+    background: var(--background);
+}
+
+/* --------------------------------------
+   Typography
+   -------------------------------------- */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--heading-font);
+    color: var(--text);
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    line-height: 1.25;
+}
+
+h1 {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 21px;
+    font-weight: 600;
+    color: var(--primary-dark);
+    border-bottom: 2px solid var(--primary-light);
+    padding-bottom: 0.3em;
+}
+
+h3 {
+    font-size: 17px;
+    font-weight: 600;
+}
+
+h4 {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+p {
+    margin: 0 0 1em 0;
+}
+
+a {
+    color: var(--secondary);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+strong {
+    font-weight: 700;
+}
+
+/* --------------------------------------
+   Cover Page
+   -------------------------------------- */
+.cover-page {
+    text-align: center;
+    padding-top: 26%;
+}
+
+.cover-page h1 {
+    font-size: 38px;
+    color: var(--text);
+    margin-bottom: 0.4em;
+    line-height: 1.15;
+}
+
+.cover-page .subtitle {
+    font-size: 16px;
+    color: var(--text-secondary);
+    margin-bottom: 2em;
+}
+
+.cover-page .date {
+    font-size: 13px;
+    color: var(--text-light);
+}
+
+.cover-page .logo {
+    margin-bottom: 2.5em;
+}
+
+/* --------------------------------------
+   Table of Contents
+   -------------------------------------- */
+.toc h2 {
+    text-align: center;
+    border-bottom: none;
+}
+
+.toc-entry.level-1 {
+    font-weight: 600;
+    font-family: var(--heading-font);
+}
+
+.toc-entry.level-2 {
+    padding-left: 1.5em;
+}
+
+.toc-entry.level-3 {
+    padding-left: 3em;
+    font-size: 10pt;
+}
+
+.toc-link {
+    color: var(--text);
+}
+
+.toc-link::after {
+    color: var(--text-secondary);
+}
+
+/* --------------------------------------
+   Executive Summary
+   -------------------------------------- */
+.executive-summary {
+    background: var(--primary-light);
+    padding: 2em;
+    border-radius: 8px;
+    margin: 2em 0;
+}
+
+.executive-summary h2 {
+    color: var(--primary-dark);
+    border-bottom: none;
+    margin-top: 0;
+}
+
+/* --------------------------------------
+   Tables (general)
+   -------------------------------------- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5em 0;
+    font-size: 10pt;
+}
+
+thead {
+    background: var(--primary);
+    color: white;
+}
+
+th {
+    font-family: var(--heading-font);
+    font-weight: 600;
+    text-align: left;
+    padding: 12px 16px;
+}
+
+td {
+    padding: 10px 16px;
+    border-bottom: 1px solid #E5E5E5;
+    vertical-align: top;
+}
+
+tbody tr:nth-child(even) {
+    background: var(--background-alt);
+}
+
+/* --------------------------------------
+   Two-column belief / point-of-view table
+   The core layout for this brand's comparison documents.
+   First column = the common advice, second column = our POV.
+   -------------------------------------- */
+table.comparison {
+    font-size: 10.5pt;
+    line-height: 1.5;
+    table-layout: fixed;
+}
+
+table.comparison thead {
+    background: var(--text);
+}
+
+table.comparison th {
+    font-size: 10pt;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+table.comparison th:first-child,
+table.comparison td:first-child {
+    width: 40%;
+    border-right: 3px solid var(--primary-light);
+}
+
+table.comparison th:last-child,
+table.comparison td:last-child {
+    width: 60%;
+}
+
+table.comparison td:first-child {
+    color: var(--text-secondary);
+    font-style: italic;
+    background: var(--background-alt);
+}
+
+table.comparison td:last-child {
+    color: var(--text);
+}
+
+table.comparison td:last-child strong {
+    color: var(--primary-dark);
+}
+
+table.comparison td ul {
+    margin: 0.4em 0 0;
+    padding-left: 1.1em;
+}
+
+table.comparison td li {
+    margin-bottom: 0.35em;
+}
+
+table.comparison tbody tr {
+    page-break-inside: avoid;
+}
+
+/* --------------------------------------
+   Verdict Boxes
+   -------------------------------------- */
+.verdict {
+    padding: 1.5em;
+    margin: 1.5em 0;
+    border-radius: 6px;
+    border-left: 5px solid;
+}
+
+.verdict-title {
+    font-family: var(--heading-font);
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.5em;
+}
+
+.verdict-act {
+    background: #ECFDF5;
+    border-color: var(--success);
+}
+
+.verdict-act .verdict-title {
+    color: var(--success);
+}
+
+.verdict-bookmark {
+    background: #FFFBEB;
+    border-color: var(--warning);
+}
+
+.verdict-bookmark .verdict-title {
+    color: var(--warning);
+}
+
+.verdict-ignore {
+    background: #F9FAFB;
+    border-color: var(--muted);
+}
+
+.verdict-ignore .verdict-title {
+    color: var(--muted);
+}
+
+/* --------------------------------------
+   Callouts and Info Boxes
+   -------------------------------------- */
+.callout {
+    padding: 1.5em;
+    margin: 1.5em 0;
+    background: var(--primary-light);
+    border-radius: 6px;
+    border-left: 4px solid var(--primary);
+}
+
+.callout-title {
+    font-family: var(--heading-font);
+    font-weight: 600;
+    color: var(--primary-dark);
+    margin-bottom: 0.5em;
+}
+
+blockquote {
+    border-left: 4px solid var(--primary);
+    margin: 1.5em 0;
+    padding: 0.5em 0 0.5em 1.5em;
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+/* --------------------------------------
+   Code
+   -------------------------------------- */
+code {
+    font-family: var(--code-font);
+    font-size: 9pt;
+    background: var(--background-alt);
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+}
+
+pre {
+    font-family: var(--code-font);
+    font-size: 9pt;
+    background: #111111;
+    color: #F5F5F4;
+    padding: 1.5em;
+    border-radius: 6px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    line-height: 1.5;
+}
+
+pre code {
+    background: none;
+    padding: 0;
+    color: inherit;
+}
+
+/* --------------------------------------
+   Lists
+   -------------------------------------- */
+ul, ol {
+    margin: 1em 0;
+    padding-left: 1.5em;
+}
+
+li {
+    margin-bottom: 0.5em;
+}
+
+.checklist {
+    list-style: none;
+    padding-left: 0;
+}
+
+.checklist li {
+    position: relative;
+    padding-left: 1.5em;
+}
+
+.checklist li::before {
+    content: "\2610";
+    position: absolute;
+    left: 0;
+}
+
+.checklist li.checked::before {
+    content: "\2611";
+    color: var(--success);
+}
+
+/* --------------------------------------
+   Sources Section
+   -------------------------------------- */
+.sources {
+    margin-top: 3em;
+    padding-top: 1em;
+    border-top: 2px solid var(--primary-light);
+}
+
+.sources h2 {
+    color: var(--text-secondary);
+}
+
+.sources ul {
+    font-size: 10pt;
+}
+
+.sources a {
+    word-break: break-all;
+}
+
+/* --------------------------------------
+   Footer
+   -------------------------------------- */
+.page-footer {
+    font-size: 9pt;
+    color: var(--text-secondary);
+    text-align: center;
+    margin-top: 3em;
+    padding-top: 1em;
+    border-top: 1px solid var(--text-light);
+}

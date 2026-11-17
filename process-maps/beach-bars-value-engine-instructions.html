@@ -1,0 +1,392 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Beach Bars - Value Engine Mapping Instructions</title>
+<style>
+  @page { size: A4; margin: 18mm 18mm 18mm 18mm; }
+  :root { --navy:#002B4E; --blue:#02A3FF; --green:#12C870; --ink:#1F2D3D; --muted:#4A6178; --line:#E2E8F0; }
+  html, body { margin:0; padding:0; background:#fff; }
+  body { font-family: Helvetica, Arial, sans-serif; color: var(--ink); font-size: 10.5pt; line-height: 1.5; }
+  h1 { color: var(--navy); font-size: 26pt; margin: 0 0 4pt; line-height: 1.1; }
+  h2 { color: var(--navy); font-size: 15pt; margin: 20pt 0 6pt; padding-bottom: 4pt; border-bottom: 2px solid var(--green); }
+  h3 { color: var(--navy); font-size: 11.5pt; margin: 14pt 0 4pt; }
+  p { margin: 0 0 7pt; }
+  ul, ol { margin: 0 0 8pt; padding-left: 18pt; }
+  li { margin-bottom: 3pt; }
+  .lede { font-size: 12pt; color: var(--muted); margin-bottom: 14pt; }
+  .meta { font-size: 9pt; color: var(--muted); margin-bottom: 16pt; }
+  .box { border: 1px solid var(--line); background: #F8FAFC; border-radius: 6pt; padding: 10pt 12pt; margin: 8pt 0 12pt; }
+  .ai { border-left: 4px solid var(--blue); background: #F2F9FF; border-radius: 0; padding: 10pt 12pt; margin: 8pt 0 12pt; }
+  .prompt { border: 1.5px solid var(--green); background: #F2FCF6; border-radius: 6pt; padding: 10pt 12pt; margin: 8pt 0 12pt; }
+  .tag { font-size: 8pt; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); margin-bottom: 4pt; }
+  table { width: 100%; border-collapse: collapse; margin: 6pt 0 12pt; font-size: 9.5pt; }
+  th { text-align: left; background: var(--navy); color: #fff; padding: 5pt 7pt; font-weight: 700; }
+  td { padding: 5pt 7pt; border-bottom: 1px solid var(--line); vertical-align: top; }
+  .sw { display:inline-block; width:10pt; height:10pt; border-radius:2pt; vertical-align:-1pt; margin-right:5pt; border:1px solid; }
+  pre { font-family: Menlo, Consolas, monospace; font-size: 7.6pt; line-height: 1.4; background: #0F1E2E; color: #E6EEF6; padding: 9pt 11pt; border-radius: 6pt; white-space: pre-wrap; margin: 6pt 0 12pt; }
+  .page { page-break-before: always; }
+  .diagram { text-align: center; margin: 6pt 0 8pt; }
+  .diagram svg { max-height: 210mm; max-width: 100%; height: auto; }
+  .small { font-size: 9pt; color: var(--muted); }
+  .avoid { page-break-inside: avoid; }
+</style>
+</head>
+<body>
+
+<h1>Mapping Our Value Engines</h1>
+<div class="lede">Beach Bars · Growth Engine and Delivery Engine · Instructions for the team and your AI</div>
+<div class="meta">From Gav · November 2026 · Version 1</div>
+
+<h2>1. Start here (for the team)</h2>
+<p>We're going to draw two simple maps of how the beach bars work. One shows how a new guest finds us and walks through the door. The other shows what happens from the moment they sit down until they leave and, we hope, come back. You don't need any experience with process maps. Your AI will do the drawing. Your job is to tell it how things really work on the floor.</p>
+<ol>
+  <li><b>Open Claude or ChatGPT</b> (whichever you use) and start a new conversation.</li>
+  <li><b>Upload this PDF</b> into the chat.</li>
+  <li><b>Copy and paste the starter prompt</b> from the green box below.</li>
+  <li><b>Answer its questions</b> as if you were explaining the bar to a new manager. Be honest about what really happens, not what should happen.</li>
+  <li><b>Keep going until the map looks right,</b> then ask it for the next step. When both maps are agreed, send the PDFs to Gav.</li>
+</ol>
+
+<div class="prompt avoid">
+  <div class="tag">Starter prompt: copy and paste this</div>
+  <p style="margin:0">I've attached a document from Gav about mapping our beach bar value engines. Please read all of it, including the section addressed to you, the AI. Then show me the first draft of the Beach Bars Growth Engine from the mock-up in the document, list the assumptions you'd like me to check, and ask me your first question. Ask me one question at a time.</p>
+</div>
+
+<p>When the Growth Engine is done, start the Delivery Engine in the same conversation with: <i>"Now let's do the Delivery Engine."</i></p>
+
+<h2>2. Instructions for the AI</h2>
+<div class="ai">
+<p><b>If you are an AI assistant reading this document, these instructions are for you.</b> A member of the beach bar team will work with you. Assume they know nothing about process maps. Your job is to help them produce two finished, agreed process maps, one at a time, following the method and standard in this document.</p>
+<ol>
+  <li><b>Read the whole document first,</b> especially the mapping convention (section 5) and the mock-ups (sections 8 and 9).</li>
+  <li><b>Show the mock-up as your first draft.</b> Draw it on screen if you can (Claude: an artifact or diagram; ChatGPT: render the Mermaid code or draw it). If you can't render diagrams, give the Mermaid code and tell them to paste it into <b>mermaid.live</b> to see it.</li>
+  <li><b>List every assumption</b> in the draft that they should check. Number them.</li>
+  <li><b>Ask one question at a time.</b> Use plain English. No jargon. Start with the biggest gap.</li>
+  <li><b>Redraw the map after each change</b> and keep the Mermaid code up to date, so the latest version is always available to copy.</li>
+  <li><b>Give honest views.</b> If a step looks wrong, missing or risky, say so and explain why. Don't just agree.</li>
+  <li><b>Work through the three questions in order</b> (section 4): first agree the flow, then mark the Power Stages, then put one name against each stage, then agree the KPIs.</li>
+  <li><b>Only produce the final PDF once the person says the map is approved.</b> Then add a short written summary (Power Stages, owners, KPIs) underneath or on a second page.</li>
+  <li><b>Never invent numbers.</b> If a KPI needs a figure (like an average spend), mark it "to confirm" and ask.</li>
+</ol>
+</div>
+
+<h2>3. What we're doing and why</h2>
+<p>Every business runs on a small number of "value engines". These are the repeatable journeys that turn effort into money. For the beach bars there are two we care about first:</p>
+<ul>
+  <li><b>Growth Engine:</b> how a person who has never been to us finds out about us and ends up as a guest in the venue.</li>
+  <li><b>Delivery Engine:</b> what happens from the moment a guest is in the venue until they pay, leave and (we hope) come back.</li>
+</ul>
+<p>The Growth Engine finishes where the Delivery Engine starts: <b>"Guest in the venue"</b>.</p>
+<p><b>Why bother?</b> When the whole journey is on one page, you can see where we lose guests and where we lose money. Then we can focus on the two or three stages that matter most, make one person responsible for each, and track one number that tells us if it's working. Insights and actions, not reporting and over-analysis. 80% is good enough to start.</p>
+<p>We've already done this for The Profit Analyst (Gav's other business). Section 7 shows that example so you can see what "finished" looks like.</p>
+
+<h2>4. The three questions</h2>
+<p>For each engine we answer these, in this order:</p>
+<table class="avoid">
+  <tr><th style="width:32%">Question</th><th>What it means</th></tr>
+  <tr><td><b>a. Which stages are truly critical?</b><br><span class="small">We call these Power Stages.</span></td><td>Pick 3 to 5 stages where a small improvement makes a big difference to guests or money. Mark them with a gold star on the map.</td></tr>
+  <tr><td><b>b. Who is accountable for each stage?</b></td><td>One name per stage. Not a team, not "everyone". Several people can do the work, but one person owns the result.</td></tr>
+  <tr><td><b>c. What tells us how each stage is performing?</b></td><td>The numbers (KPIs) for each stage. Star the single number to watch for each Power Stage and write it in a gold tag beside the star.</td></tr>
+</table>
+
+<h2 class="page">5. Mapping convention (use this every time)</h2>
+<p>Every map uses the same shapes and colours so anyone can read any map.</p>
+<h3>Shapes</h3>
+<table class="avoid">
+  <tr><th style="width:28%">Shape</th><th style="width:30%">Means</th><th>Example</th></tr>
+  <tr><td>Oval / rounded pill</td><td>Start or end</td><td>"Potential guest", "Guest in the venue"</td></tr>
+  <tr><td>Rectangle</td><td>A task or activity</td><td>"Greeted and seated", "Drinks served"</td></tr>
+  <tr><td>Diamond</td><td>A decision with Yes/No branches</td><td>"Table available?", "Shows up?"</td></tr>
+  <tr><td>Parallelogram (slanted box)</td><td>Data or an input</td><td>"Online booking form", "Social posts and reviews"</td></tr>
+  <tr><td>Arrow</td><td>The flow from one step to the next</td><td></td></tr>
+  <tr><td>Gold star</td><td>A Power Stage, inside the box it relates to</td><td></td></tr>
+</table>
+<h3>Colours</h3>
+<table class="avoid">
+  <tr><th style="width:38%">Colour</th><th>Used for</th></tr>
+  <tr><td><span class="sw" style="background:#E8F5FF;border-color:#02A3FF"></span>Light blue, blue outline (#02A3FF)</td><td>The main path</td></tr>
+  <tr><td><span class="sw" style="background:#E9F9F0;border-color:#12C870"></span>Light green, green outline (#12C870)</td><td>Recovery and follow-up steps (saving a guest we were about to lose)</td></tr>
+  <tr><td><span class="sw" style="background:#002B4E;border-color:#002B4E"></span>Navy (#002B4E)</td><td>The start, and the long-term nurture list</td></tr>
+  <tr><td><span class="sw" style="background:#12C870;border-color:#0EA85D"></span>Solid green</td><td>The win (the end point we want)</td></tr>
+  <tr><td><span class="sw" style="background:#F3F4F6;border-color:#C5CAD3"></span>Light grey</td><td>Early drop-offs, before we know who they are</td></tr>
+  <tr><td><span class="sw" style="background:#FDECEC;border-color:#E5484D"></span>Light red</td><td>Lost: left, cancelled, unhappy and gone</td></tr>
+  <tr><td><span class="sw" style="background:#FFF8DB;border-color:#F5B700"></span>Light gold</td><td>KPI tag beside a Power Stage</td></tr>
+  <tr><td>Dashed green line</td><td>Loops back to an earlier step</td></tr>
+</table>
+<h3>Layout rules</h3>
+<ul>
+  <li>The main path runs straight down the middle, top to bottom.</li>
+  <li>"No" branches that are lost or exit go to the right. Recovery steps go to the left.</li>
+  <li>Every decision diamond has labelled branches (Yes/No, or the actual options).</li>
+  <li>Once we know who someone is (a booking name, a phone number), a "No" should go to a nurture list, not a dead end.</li>
+  <li>Keep box titles short (2 to 4 words) with a one-line subtitle if needed.</li>
+  <li>Include a key at the top of every finished map explaining shapes and colours.</li>
+  <li>Map what really happens today, not the ideal. We fix things after we can see them.</li>
+</ul>
+
+<h2>6. How we work (the process)</h2>
+<ol>
+  <li><b>Talk it through.</b> Explain the journey out loud to your AI, as if training a new staff member.</li>
+  <li><b>AI drafts the map on screen</b> and lists every assumption it made.</li>
+  <li><b>Check the assumptions</b> one by one. Correct anything wrong. Add anything missing.</li>
+  <li><b>Agree the flow.</b> Read it top to bottom. Does every guest have a path? Does every "No" go somewhere?</li>
+  <li><b>Mark the Power Stages</b> (3 to 5 gold stars).</li>
+  <li><b>Put one name against each stage.</b></li>
+  <li><b>Agree the KPIs,</b> with one starred number per Power Stage.</li>
+  <li><b>Make the PDF</b> only when it's approved. Send it to Gav.</li>
+</ol>
+<div class="box avoid"><b>Done looks like:</b> a one-page PDF for each engine with the key at the top, the agreed flow, 3 to 5 gold stars, a KPI tag beside each star, and a short table of owners and KPIs. Plus the latest Mermaid code saved somewhere, so we can edit it later.</div>
+
+<h2 class="page">7. Worked example: The Profit Analyst Growth Engine</h2>
+<p>This is the finished map from Gav's coaching business, written out as text. Use it as the standard to aim for. It is a different business, so the steps won't match the bars, but the method is the same.</p>
+<h3>The flow</h3>
+<p class="small">Prospect sees an ad on Meta → clicks (No: scrolls past) → lands on a video page → watches (No: leaves) → books a call (No: doesn't book) → fills in a form → revenue fits? (No: nurture list) → picks a time (No: setter calls to find a time) → call booked → confirmation SMS and a setter pre-call → right fit? (No: cancelled, nurture list) → morning-of SMS → shows up? (No: no-show follow-up, loops back to booked) → sales call → outcome: Buys (new client), No (nurture list) or Maybe (follow-up meeting booked, with its own show-up check and outcome) → <b>New client, hand-off to delivery</b>.</p>
+<h3>Power Stages and KPIs</h3>
+<table class="avoid">
+  <tr><th style="width:30%">Power Stage</th><th style="width:30%">Starred KPI</th><th>Why it matters</th></tr>
+  <tr><td>Lands on video page</td><td>Cost per visit (plus volume)</td><td>Every click is paid for. Cheaper visits means more guests for the same spend.</td></tr>
+  <tr><td>Books a call?</td><td>Visit to booking rate</td><td>A small lift here makes every booked call cheaper.</td></tr>
+  <tr><td>Shows up?</td><td>Show rate</td><td>A no-show wastes the most expensive thing in the engine.</td></tr>
+  <tr><td>Sales call</td><td>Close rate, including follow-ups</td><td>Revenue lands here. A "Maybe" with no follow-up is a sale we let go.</td></tr>
+  <tr><td>New client (end)</td><td>Cost per new client</td><td>The scoreboard for the whole engine.</td></tr>
+</table>
+<p>Notice the four stage numbers multiply together: visits × booking rate × show rate × close rate = new clients. Lift each by 10% and you get about 46% more clients from the same spend. Look for the same multiplying chain in the bars: for example, guests through the door × average spend × return visits.</p>
+<p><b>Accountability</b> was one name per stage, for example "Show rate: Mikayla", even where several people make the calls.</p>
+
+<h2 class="page">8. Mock-up: Beach Bars Growth Engine (first draft)</h2>
+<p>This is a starting point Gav's AI drafted without any input from the team. Expect parts of it to be wrong. That's the point: it gives you something to react to.</p>
+<div class="diagram"><div class="mermaid">
+flowchart TD
+  A(["Potential guest"]):::navy
+  B[/"Socials, Google Maps, reviews, walk-past"/]:::main
+  C["Sees or hears about the bar"]:::main
+  D{"Interested?"}:::main
+  X1(["Keeps scrolling or walking"]):::drop
+  E{"Books or walks in?"}:::main
+  F[/"Online booking"/]:::main
+  G["Booking confirmed + reminder SMS"]:::main
+  H{"Shows up?"}:::main
+  R1["No-show follow-up, rebook"]:::rec
+  N1[/"Nurture list"/]:::navy
+  I{"Table available?"}:::main
+  R2["Waitlist, drink at the bar"]:::rec
+  J{"Waits?"}:::main
+  X2(["Leaves"]):::red
+  K["Greeted and seated"]:::main
+  Z(["Guest in the venue"]):::win
+  A --> B --> C --> D
+  D -- No --> X1
+  D -- Yes --> E
+  E -- Books --> F --> G --> H
+  H -- No --> R1
+  R1 -. Rebooks .-> G
+  R1 -- No reply --> N1
+  H -- Yes --> K
+  E -- Walks in --> I
+  I -- Yes --> K
+  I -- No --> R2 --> J
+  J -- No --> X2
+  J -- Yes --> K
+  K --> Z
+  classDef main fill:#E8F5FF,stroke:#02A3FF,color:#002B4E
+  classDef rec fill:#E9F9F0,stroke:#12C870,color:#002B4E
+  classDef navy fill:#002B4E,stroke:#002B4E,color:#FFFFFF
+  classDef win fill:#12C870,stroke:#0EA85D,color:#FFFFFF
+  classDef drop fill:#F3F4F6,stroke:#C5CAD3,color:#4B5563
+  classDef red fill:#FDECEC,stroke:#E5484D,color:#9B1C1C
+</div></div>
+
+<h3>Assumptions to check</h3>
+<ol>
+  <li>Guests find us through socials, Google Maps, reviews and walking past. What's missing? (Tourism sites, hotels, word of mouth, events?)</li>
+  <li>There are two ways in: book online, or walk in. Are phone bookings, group bookings or functions separate?</li>
+  <li>Bookings get a confirmation and a reminder SMS. Is that true at every venue?</li>
+  <li>No-shows get a follow-up. Does that happen today, or is it a gap?</li>
+  <li>Walk-ins with no table go to a waitlist or have a drink at the bar. What really happens on a busy Saturday?</li>
+  <li>The engine ends at "Guest in the venue", which is where the Delivery Engine starts.</li>
+  <li><b>Functions and events</b> (weddings, birthdays, corporate) probably need their own Growth Engine map. Decide whether to map them now or later.</li>
+</ol>
+
+<h3>Mermaid code to copy (paste into mermaid.live to view or edit)</h3>
+<pre>flowchart TD
+  A(["Potential guest"]):::navy
+  B[/"Socials, Google Maps, reviews, walk-past"/]:::main
+  C["Sees or hears about the bar"]:::main
+  D{"Interested?"}:::main
+  X1(["Keeps scrolling or walking"]):::drop
+  E{"Books or walks in?"}:::main
+  F[/"Online booking"/]:::main
+  G["Booking confirmed + reminder SMS"]:::main
+  H{"Shows up?"}:::main
+  R1["No-show follow-up, rebook"]:::rec
+  N1[/"Nurture list"/]:::navy
+  I{"Table available?"}:::main
+  R2["Waitlist, drink at the bar"]:::rec
+  J{"Waits?"}:::main
+  X2(["Leaves"]):::red
+  K["Greeted and seated"]:::main
+  Z(["Guest in the venue"]):::win
+  A --> B --> C --> D
+  D -- No --> X1
+  D -- Yes --> E
+  E -- Books --> F --> G --> H
+  H -- No --> R1
+  R1 -. Rebooks .-> G
+  R1 -- No reply --> N1
+  H -- Yes --> K
+  E -- Walks in --> I
+  I -- Yes --> K
+  I -- No --> R2 --> J
+  J -- No --> X2
+  J -- Yes --> K
+  K --> Z
+  classDef main fill:#E8F5FF,stroke:#02A3FF,color:#002B4E
+  classDef rec fill:#E9F9F0,stroke:#12C870,color:#002B4E
+  classDef navy fill:#002B4E,stroke:#002B4E,color:#FFFFFF
+  classDef win fill:#12C870,stroke:#0EA85D,color:#FFFFFF
+  classDef drop fill:#F3F4F6,stroke:#C5CAD3,color:#4B5563
+  classDef red fill:#FDECEC,stroke:#E5484D,color:#9B1C1C</pre>
+
+<h2 class="page">9. Mock-up: Beach Bars Delivery Engine (first draft)</h2>
+<p>This starts where the Growth Engine ends. Same deal: it's a guess, built to be corrected.</p>
+<div class="diagram"><div class="mermaid">
+flowchart TD
+  A(["Guest in the venue"]):::navy
+  B["Welcome, menus, water"]:::main
+  C["First drinks order"]:::main
+  D["Drinks served"]:::main
+  E["Food order taken"]:::main
+  F["Kitchen prepares"]:::main
+  G{"Food on time?"}:::main
+  R1["Manager check-in, fix it"]:::rec
+  H["Food served"]:::main
+  I["Table check-back"]:::main
+  J{"Extra round?"}:::main
+  K["Extra order"]:::main
+  L["Bill and payment"]:::main
+  M{"Happy guest?"}:::main
+  R2["Manager recovery"]:::rec
+  X1(["Leaves unhappy"]):::red
+  N[/"Review request, join the list"/]:::main
+  O{"Comes back?"}:::main
+  P[/"Nurture list: events, offers"/]:::navy
+  Z(["Regular guest"]):::win
+  A --> B --> C --> D --> E --> F --> G
+  G -- No --> R1
+  R1 -.-> H
+  G -- Yes --> H
+  H --> I --> J
+  J -- Yes --> K --> L
+  J -- No --> L
+  L --> M
+  M -- No --> R2
+  R2 -- Recovered --> N
+  R2 -- Not recovered --> X1
+  M -- Yes --> N
+  N --> O
+  O -- Not yet --> P
+  P -. Next visit .-> A
+  O -- Yes --> Z
+  classDef main fill:#E8F5FF,stroke:#02A3FF,color:#002B4E
+  classDef rec fill:#E9F9F0,stroke:#12C870,color:#002B4E
+  classDef navy fill:#002B4E,stroke:#002B4E,color:#FFFFFF
+  classDef win fill:#12C870,stroke:#0EA85D,color:#FFFFFF
+  classDef red fill:#FDECEC,stroke:#E5484D,color:#9B1C1C
+</div></div>
+
+<h3>Assumptions to check</h3>
+<ol>
+  <li>It's table service. If guests order at the bar or by QR code, the order steps change.</li>
+  <li>Drinks come before food. Is there a step for guests who only drink?</li>
+  <li>There's a check-back after food, and staff offer another round or dessert. Does that happen every time?</li>
+  <li>A manager steps in when food is late or a guest is unhappy. Who, and how do they know?</li>
+  <li>We ask for a review and capture details (email, phone, loyalty) at the end. How, if at all, today?</li>
+  <li>We have a list we use to bring people back (events, offers). Does it exist yet?</li>
+  <li>"Regular guest" is the win. Decide what counts as regular (for example, 3 visits in 6 months).</li>
+</ol>
+
+<h3>Mermaid code to copy</h3>
+<pre>flowchart TD
+  A(["Guest in the venue"]):::navy
+  B["Welcome, menus, water"]:::main
+  C["First drinks order"]:::main
+  D["Drinks served"]:::main
+  E["Food order taken"]:::main
+  F["Kitchen prepares"]:::main
+  G{"Food on time?"}:::main
+  R1["Manager check-in, fix it"]:::rec
+  H["Food served"]:::main
+  I["Table check-back"]:::main
+  J{"Extra round?"}:::main
+  K["Extra order"]:::main
+  L["Bill and payment"]:::main
+  M{"Happy guest?"}:::main
+  R2["Manager recovery"]:::rec
+  X1(["Leaves unhappy"]):::red
+  N[/"Review request, join the list"/]:::main
+  O{"Comes back?"}:::main
+  P[/"Nurture list: events, offers"/]:::navy
+  Z(["Regular guest"]):::win
+  A --> B --> C --> D --> E --> F --> G
+  G -- No --> R1
+  R1 -.-> H
+  G -- Yes --> H
+  H --> I --> J
+  J -- Yes --> K --> L
+  J -- No --> L
+  L --> M
+  M -- No --> R2
+  R2 -- Recovered --> N
+  R2 -- Not recovered --> X1
+  M -- Yes --> N
+  N --> O
+  O -- Not yet --> P
+  P -. Next visit .-> A
+  O -- Yes --> Z
+  classDef main fill:#E8F5FF,stroke:#02A3FF,color:#002B4E
+  classDef rec fill:#E9F9F0,stroke:#12C870,color:#002B4E
+  classDef navy fill:#002B4E,stroke:#002B4E,color:#FFFFFF
+  classDef win fill:#12C870,stroke:#0EA85D,color:#FFFFFF
+  classDef red fill:#FDECEC,stroke:#E5484D,color:#9B1C1C</pre>
+
+<h2 class="page">10. Power Stage ideas to test</h2>
+<p>Don't start here. Agree the flow first. When you get to question (a), these are ideas to react to, not answers. Pick the 3 to 5 that matter most for our venues.</p>
+<table>
+  <tr><th style="width:24%">Engine</th><th style="width:30%">Possible Power Stage</th><th>Possible KPI to star</th></tr>
+  <tr><td>Growth</td><td>Sees or hears about the bar</td><td>New guests per week; cost per new guest (if we pay for ads)</td></tr>
+  <tr><td>Growth</td><td>Shows up? (bookings)</td><td>Booking show rate</td></tr>
+  <tr><td>Growth</td><td>Table available? (walk-ins)</td><td>% of walk-ins we seat, or walk-aways on busy days</td></tr>
+  <tr><td>Delivery</td><td>First drinks order</td><td>Minutes from seated to first drink</td></tr>
+  <tr><td>Delivery</td><td>Extra round?</td><td>Average spend per head</td></tr>
+  <tr><td>Delivery</td><td>Food served</td><td>% of meals out within target time</td></tr>
+  <tr><td>Delivery</td><td>Review request</td><td>Google rating and reviews per week</td></tr>
+  <tr><td>Delivery</td><td>Comes back?</td><td>Return visit rate</td></tr>
+</table>
+<p>A useful check: guests through the door × average spend per head × visits per guest = revenue. The best Power Stages usually move one of those three numbers.</p>
+<p><b>Known gap to flag early:</b> if we can't currently measure a KPI (for example, return visits), write it down as a data gap. Don't drop the stage because it's hard to measure.</p>
+
+<h2>11. Making the final PDF</h2>
+<ul>
+  <li><b>Claude:</b> ask "Please turn the approved map into a branded one-page PDF with the key at the top, the Power Stage stars inside their boxes, and KPI tags beside them."</li>
+  <li><b>ChatGPT:</b> ask the same. If it can't make a PDF, paste the Mermaid code into <b>mermaid.live</b>, export as PNG or SVG, and drop it into a document.</li>
+  <li>Name files clearly, for example <i>"Beach Bars Growth Engine - Process Map.pdf"</i>.</li>
+  <li>Save the final Mermaid code with the PDF so we can edit the map later without starting again.</li>
+</ul>
+
+<h2>12. Questions to bring to Gav</h2>
+<ul>
+  <li>Should functions and events have their own Growth Engine?</li>
+  <li>Should each venue have its own map, or one map for all venues with notes where they differ?</li>
+  <li>Who should own each Power Stage? (Suggest names; Gav confirms.)</li>
+</ul>
+<p class="small" style="margin-top:18pt">Focus on what matters. 80% is good enough. Make it real, then make it better.</p>
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js"></script>
+<script>
+  mermaid.initialize({ startOnLoad: true, theme: 'base', securityLevel: 'loose',
+    themeVariables: { fontFamily: 'Helvetica, Arial, sans-serif', fontSize: '15px', lineColor: '#33475B', primaryTextColor: '#002B4E' },
+    flowchart: { htmlLabels: true, curve: 'basis', nodeSpacing: 30, rankSpacing: 34 } });
+</script>
+</body>
+</html>

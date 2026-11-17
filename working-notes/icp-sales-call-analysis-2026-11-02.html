@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The Profit Analyst: Who Buys and Who Stalls</title>
+<style>
+  @font-face { font-family: "Poppins"; font-weight: 400; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Poppins-Regular.ttf"); }
+  @font-face { font-family: "Poppins"; font-weight: 500; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Poppins-Medium.ttf"); }
+  @font-face { font-family: "Poppins"; font-weight: 600; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Poppins-SemiBold.ttf"); }
+  @font-face { font-family: "Poppins"; font-weight: 700; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Poppins-Bold.ttf"); }
+  @font-face { font-family: "Lato"; font-weight: 400; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Lato-Regular.ttf"); }
+  @font-face { font-family: "Lato"; font-weight: 700; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Lato-Bold.ttf"); }
+  @font-face { font-family: "Lato"; font-style: italic; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Lato-Italic.ttf"); }
+
+  :root {
+    --navy: #002B4E; --blue: #02A3FF; --green: #12C870; --red: #DC2626;
+    --navy-light: #E6EBF0; --blue-light: #E5F5FF; --green-light: #E3F9EE; --red-light: #FDECEC;
+    --text: #111111; --text-2: #4A5563; --rule: #DDE3EA;
+  }
+  @page { size: A4 portrait; margin: 11mm 13mm 12mm 13mm;
+    @bottom-left { content: "The Profit Analyst  |  Sales call ICP analysis, Oct 2026  |  Internal"; font-family: "Lato"; font-size: 7pt; color: #8A94A3; }
+    @bottom-right { content: "Page " counter(page) " of 3"; font-family: "Lato"; font-size: 7pt; color: #8A94A3; } }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Lato", sans-serif; font-size: 9.5pt; line-height: 1.36; color: var(--text); }
+  .page { page-break-after: always; }
+  .page:last-child { page-break-after: auto; }
+
+  .header { display: flex; align-items: center; justify-content: space-between; padding-bottom: 2mm; border-bottom: 2.2pt solid var(--navy); margin-bottom: 3mm; }
+  .header h1 { font-family: "Poppins"; font-size: 20pt; font-weight: 700; color: var(--navy); line-height: 1.05; }
+  .header .tag { font-family: "Poppins"; font-size: 9pt; font-weight: 500; color: var(--text-2); margin-top: 1mm; }
+  .header img { flex: none; height: 12mm; width: 19mm; }
+  .phead { display: flex; align-items: baseline; justify-content: space-between; border-bottom: 1.4pt solid var(--navy); padding-bottom: 1.4mm; margin-bottom: 3mm; }
+  .phead h2 { font-family: "Poppins"; font-size: 15pt; font-weight: 700; color: var(--navy); }
+  .phead img { flex: none; height: 9mm; width: 14mm; }
+
+  .kicker { font-family: "Poppins"; font-size: 7.4pt; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--blue); margin-bottom: 1mm; }
+  h3 { font-family: "Poppins"; font-size: 10.5pt; font-weight: 600; color: var(--navy); margin: 3mm 0 1.2mm; }
+  p { color: var(--text-2); margin-bottom: 1.4mm; }
+  b, strong { color: var(--text); }
+  .q { font-style: italic; color: var(--navy); }
+
+  .intro { background: var(--navy-light); border-radius: 2mm; padding: 2.6mm 3.2mm; margin-bottom: 3mm; }
+  .intro p { margin: 0; color: var(--text); }
+
+  .cols { display: flex; gap: 4mm; }
+  .col { flex: 1; }
+  .card { border-radius: 2mm; padding: 2.6mm 3.2mm; }
+  .card.buy { background: var(--green-light); border-left: 2.2pt solid var(--green); }
+  .card.stall { background: var(--red-light); border-left: 2.2pt solid var(--red); }
+  .card h4 { font-family: "Poppins"; font-size: 9.6pt; font-weight: 700; margin-bottom: 1.2mm; }
+  .card.buy h4 { color: #0B8A4D; } .card.stall h4 { color: var(--red); }
+  ul.dots { list-style: none; }
+  ul.dots li { position: relative; padding-left: 3.4mm; margin-bottom: 0.9mm; color: var(--text-2); }
+  ul.dots li::before { content: ""; position: absolute; left: 0; top: 1.5mm; width: 1.5mm; height: 1.5mm; border-radius: 50%; background: var(--blue); }
+  .card.buy ul.dots li::before { background: var(--green); }
+  .card.stall ul.dots li::before { background: var(--red); }
+
+  ol.num { list-style: none; counter-reset: n; }
+  ol.num li { counter-increment: n; position: relative; padding-left: 7mm; margin-bottom: 2mm; color: var(--text-2); }
+  ol.num li::before { content: counter(n); position: absolute; left: 0; top: 0; width: 5mm; height: 5mm; border-radius: 50%; background: var(--navy); color: #fff; font-family: "Poppins"; font-weight: 600; font-size: 7.6pt; text-align: center; line-height: 5mm; }
+  ol.num li b { font-family: "Poppins"; font-weight: 600; color: var(--navy); }
+
+  table { width: 100%; border-collapse: collapse; font-size: 8.4pt; margin-top: 1mm; }
+  th { font-family: "Poppins"; font-weight: 600; font-size: 7.4pt; color: #fff; background: var(--navy); text-align: left; padding: 1.3mm 1.6mm; }
+  td { padding: 1.2mm 1.6mm; border-bottom: 0.6pt solid var(--rule); vertical-align: top; color: var(--text-2); }
+  td:first-child { font-weight: 700; color: var(--text); white-space: nowrap; }
+  tr.yes td:first-child { color: #0B8A4D; }
+  tr:nth-child(even) td { background: #F7F9FB; }
+
+  .topic { display: flex; gap: 2.4mm; padding: 1.9mm 0; border-bottom: 0.6pt solid var(--rule); }
+  .topic .n { flex: none; width: 5mm; font-family: "Poppins"; font-weight: 700; color: var(--blue); font-size: 10pt; }
+  .topic .t { font-family: "Poppins"; font-weight: 600; color: var(--navy); font-size: 9.3pt; }
+  .topic .d { font-size: 8.6pt; color: var(--text-2); }
+  .msg { background: var(--blue-light); border-radius: 2mm; padding: 2.4mm 3.2mm; margin-bottom: 2.4mm; }
+  .msg p { margin-bottom: 0.8mm; color: var(--text); }
+  .note { font-size: 7.6pt; color: #6B7684; margin-top: 2mm; }
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 -->
+<div class="page">
+  <div class="header">
+    <div>
+      <h1>Profit Gameplan Calls:<br>Who Buys and Who Stalls</h1>
+      <div class="tag">What 13 sales calls in October 2026 tell us about our ideal client</div>
+    </div>
+    <img src="../my-skills/pdf-forge/brands/the-profit-analyst/logo.svg" alt="The Profit Analyst">
+  </div>
+
+  <div class="intro">
+    <p><b>What we looked at.</b> Every 45-Min Profit Gameplan call from 8 to 26 October 2026: <b>4 who bought on the call</b> (Adam, Suzie, Rachel, Xavier) and <b>8 who did not</b> (Alex, Raj, Ashita, Michael, Brad, Clayton, Phillip, Kaveh). Seven of the eight landed in "not now, maybe January". One said no and hired a local hands-on CFO. The offer was the same every time: the 90-day program at $8,800 paid in full or $880 a week.</p>
+  </div>
+
+  <div class="kicker">The short answer</div>
+  <div class="cols">
+    <div class="col card buy">
+      <h4>Buys on the call</h4>
+      <ul class="dots">
+        <li>One owner carries the money alone and makes the call</li>
+        <li>Profit is thin or gone, even with healthy revenue</li>
+        <li>Live tax pain: ATO debt or a BAS bill that empties the account</li>
+        <li>People-heavy service business, wages the biggest cost</li>
+        <li>Only help is an accountant who looks backwards</li>
+        <li>Wants to understand the numbers, not hand them off</li>
+        <li>Has hit "enough is enough"</li>
+      </ul>
+    </div>
+    <div class="col card stall">
+      <h4>Stalls at "maybe January"</h4>
+      <ul class="dots">
+        <li>A partner or co-owner shares the decision and is not on the call</li>
+        <li>Profitable and fairly comfortable</li>
+        <li>Already has a forecast, CFO, coach or franchise support</li>
+        <li>Wants someone to do it for them</li>
+        <li>Bigger, multi-site or multi-entity, mid-expansion</li>
+        <li>Came mainly to pay less tax</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>Who our buyers are</h3>
+  <ol class="num">
+    <li><b>They carry the money alone.</b> Partners, siblings and managers defer to them, so they can say yes on the call. <span class="q">"I'm the one that steers the ship."</span> <span class="q">"Quite lonely."</span></li>
+    <li><b>The tax bill is the wound.</b> Three of four had ATO debt ($400k, $200k, and a payment plan after a $35k bill). The fourth watched the BAS drain the account. It was the most emotional moment of every call.</li>
+    <li><b>Revenue is fine, profit has gone missing.</b> All four sat near break-even. Two used to make good money and watched it slide. <span class="q">"How am I profitable, but I have no money in the bank?"</span></li>
+    <li><b>They have outgrown their accountant, but do not want to fire them.</b> <span class="q">"The accountant will keep you out of prison. The bookkeeper will keep everything clean. You need someone to move to the next step."</span></li>
+    <li><b>People-heavy businesses.</b> Wages drive the cash rollercoaster. Two raised the same pattern unprompted: four-week months make money, five-pay-week months lose it.</li>
+    <li><b>Self-taught operators, great at their trade.</b> <span class="q">"I'm not a numbers person."</span> <span class="q">"I never got any management schooling."</span></li>
+    <li><b>A life pressure point pushed them over the line.</b> A parent's stroke, a family health crisis, being the sole income earner, a business that "swallowed me whole". Two said "enough is enough" almost word for word.</li>
+    <li><b>They have a specific thing to build and no map to it.</b> New trucks and a GM, a saleable business, supported-living homes, a commercial shed.</li>
+    <li><b>Price was never the objection, cash timing was.</b> All four chose $880 a week. The cash flow guarantee closed the last gap.</li>
+    <li><b>They arrived warm.</b> All four had a setter call first. The sales call confirmed fit; it did not have to create the need.</li>
+  </ol>
+  <p class="note">Revenue ranged from $600k to $6M across buyers, so two sit outside our $1M to $5M band. The pain profile predicted the close better than revenue did.</p>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page">
+  <div class="phead"><h2>Buyers vs non-buyers: what is different</h2></div>
+
+  <table>
+    <tr><th>Prospect</th><th>Business</th><th>Revenue / profit</th><th>Who decides</th><th>Outcome</th></tr>
+    <tr class="yes"><td>Adam</td><td>3rd-gen freight, 45 staff</td><td>~$6M / break-even, $400k ATO debt</td><td>Him alone</td><td>Bought, weekly</td></tr>
+    <tr class="yes"><td>Suzie</td><td>Wellness and allied health clinic</td><td>~$1.8M / ~$0 (was $170k)</td><td>Her (partner defers)</td><td>Bought, weekly</td></tr>
+    <tr class="yes"><td>Rachel</td><td>NDIS support provider, 20 staff</td><td>~$1.2M / 5%, $200k ATO debt</td><td>Her alone</td><td>Bought, weekly</td></tr>
+    <tr class="yes"><td>Xavier</td><td>Boutique AV installer</td><td>~$600k / break-even, ATO plan</td><td>Him alone</td><td>Bought, weekly</td></tr>
+    <tr><td>Brad</td><td>Electrical and AV group, 30 staff</td><td>~$8M / losses, ATO plans</td><td>With business partner (absent)</td><td>"Good to go", pending partner</td></tr>
+    <tr><td>Kaveh</td><td>Bakery, 2 sites</td><td>~$1.5M / 10-15%</td><td>Defers to wife</td><td>Pending, wants instalments</td></tr>
+    <tr><td>Phillip</td><td>Fish and chips, 3 outlets</td><td>~$3.4M / ~10%</td><td>Partner is sole director (absent)</td><td>"Sold", partner to decide</td></tr>
+    <tr><td>Clayton</td><td>Plumbing franchise</td><td>~$3.5M / ~$180k</td><td>Him alone</td><td>Upfront cost, January</td></tr>
+    <tr><td>Michael</td><td>Short-stay accommodation, 3 sites</td><td>~$2M / ~20%</td><td>Checking with wife</td><td>"Keen", then January</td></tr>
+    <tr><td>Alex</td><td>Hospitality group, sites 4-6 coming</td><td>~$2.5M / ~10%</td><td>Him alone</td><td>Never heard the price</td></tr>
+    <tr><td>Raj</td><td>Caravan park</td><td>$1M+ / ~60%</td><td>Joint with partner</td><td>Came to cut tax, January</td></tr>
+    <tr><td>Ashita</td><td>Optometry practice, 2 owners</td><td>~$1.2M / unknown</td><td>Joint owners</td><td>No, hired a local CFO</td></tr>
+  </table>
+
+  <h3>Seven differences</h3>
+  <ol class="num">
+    <li><b>One decision maker. The strongest signal.</b> All four buyers decided alone. Six of eight non-buyers shared the decision, and five ended on "I'll talk to them". The partner was rarely on the call.</li>
+    <li><b>Buyers were hurting now; non-buyers were mostly fine.</b> Buyers sat near break-even with live ATO pain. Non-buyers were mostly profitable (10% to 60%) and came from curiosity, exit planning or a goals list. The one non-buyer with live ATO pain, Brad, is the one saying <span class="q">"we need this"</span>.</li>
+    <li><b>Buyers had nothing else; non-buyers had a substitute.</b> An AI cash forecast, Fathom and franchise managers, turnaround advisers, buying-group coaching, their own accounting training, $60k of past coaches. With the slot filled, our program feels optional.</li>
+    <li><b>Buyers wanted to learn it; non-buyers wanted it done, or already did it.</b> <span class="q">"Is there mentoring in there... or is it just figures?"</span> <span class="q">"Do you know roughly what a face-to-face CFO would cost?"</span> Our "don't stay reliant on an expert" line wins learners and pushes away delegators.</li>
+    <li><b>Non-buyers were bigger, more complex and mid-expansion.</b> New sites, a rebrand, an accountant switch, a new investor. Four of eight were in hospitality or accommodation; none of the buyers were.</li>
+    <li><b>Timing was the excuse, not the cause.</b> Buyers had terrible timing too and bought anyway. <span class="q">"At the time it happens, it's never the right time."</span></li>
+    <li><b>Price was never the objection; payment shape was.</b> One balked only at <span class="q">"that initial 90-day chunk"</span>, another wanted to pay in full over two or three invoices, and one never heard the real price.</li>
+  </ol>
+  <p class="note">Small sample: 12 prospects, 13 calls. Treat these as strong signals, not proven rules. Most gaps between the groups are wide.</p>
+</div>
+
+<!-- PAGE 3 -->
+<div class="page">
+  <div class="phead"><h2>What we do about it</h2></div>
+
+  <div class="cols">
+    <div class="col">
+      <div class="kicker">Fix in the sales process</div>
+      <ul class="dots">
+        <li><b>Get both decision makers on the call.</b> When the setter hears a partner shares money decisions, book both.</li>
+        <li><b>Price earlier.</b> It landed 50 to 70 minutes in, and one prospect never heard it.</li>
+        <li><b>Shorter walkthroughs.</b> Long demos got "Yeah" in reply. Calls ran to 95 minutes.</li>
+        <li><b>Book the next step before hanging up.</b> Most calls ended with a link in chat and nothing in the calendar.</li>
+        <li><b>Screen out tax-cutting enquiries</b> at the setter stage.</li>
+      </ul>
+    </div>
+    <div class="col">
+      <div class="kicker">Live pipeline</div>
+      <ul class="dots">
+        <li><b>Brad</b> looks most like a buyer. The block is his business partner. Get him on a call.</li>
+        <li><b>Kaveh</b> asked to pay in full over two or three invoices. Saying yes may be all it takes.</li>
+        <li><b>Phillip</b> is "sold", but his partner is sole director. She needs her own call, not just the recording.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>Our message to the right owner</h3>
+  <div class="msg">
+    <p><b>Who it's for:</b> you carry the money in your head, the accountant only tells you what already happened, and the tax bill keeps landing as a surprise.</p>
+    <p><b>Why us:</b> a business owner who was an accountant, not an accountant giving advice. We build the tools, then teach you to read them, so you make the calls yourself.</p>
+    <p><b>The outcome:</b> you see the next low point coming, you know your next right move, and you stop carrying it alone.</p>
+  </div>
+
+  <h3>Ten content topics for YouTube, Instagram and email</h3>
+  <div class="topic"><div class="n">1</div><div><div class="t">Profit on paper, nothing in the bank? Here's where it went</div><div class="d">Profit vs cash timing, loans and tax. Hook: "My accountant says I made a profit. So where is it?"</div></div></div>
+  <div class="topic"><div class="n">2</div><div><div class="t">Cash flow: see your next BAS coming 8 weeks before it lands</div><div class="d">Show a real forecast and the next low point, and the decisions to make before it.</div></div></div>
+  <div class="topic"><div class="n">3</div><div><div class="t">Profit disappears every 5-pay-week month. Here's why</div><div class="d">Weekly payroll makes one month in three look like a loss. Look at the quarter. Ideal Reel.</div></div></div>
+  <div class="topic"><div class="n">4</div><div><div class="t">Cash flow with an ATO debt: pay it down and keep the doors open</div><div class="d">More profit plus visibility is the only way out. Also filters out tax-cutting enquiries.</div></div></div>
+  <div class="topic"><div class="n">5</div><div><div class="t">Profit needs a coach. Your accountant is the referee</div><div class="d">Scorekeeper, referee, coach. Keep your accountant; they do a different job.</div></div></div>
+  <div class="topic"><div class="n">6</div><div><div class="t">Profit at break-even: what 1% is really worth in your business</div><div class="d">1% of $6M is $60k a year. The maths that made the price feel small on every buyer call.</div></div></div>
+  <div class="topic"><div class="n">7</div><div><div class="t">Cash flow fixes that backfire: why cutting staff hours costs you more</div><div class="d">The owner ends up on the front desk seven days a week. Your hour is worth $500 to $900.</div></div></div>
+  <div class="topic"><div class="n">8</div><div><div class="t">Cash flow stress you can't share with your team</div><div class="d">Speaks straight to the owner who decides alone, our strongest buying signal. Best as email.</div></div></div>
+  <div class="topic"><div class="n">9</div><div><div class="t">Profit in 7 numbers: what nobody showed you when you started</div><div class="d">The Profit Formula. Makes learning feel possible, drawing learners over delegators.</div></div></div>
+  <div class="topic"><div class="n">10</div><div><div class="t">Profit went backwards while the business grew. Here's what changed</div><div class="d">Wages and team costs crept up without a decision. How to find the leak.</div></div></div>
+
+  <p class="note"><b>Steer away from:</b> pure tax-saving content, hospitality food-cost and expansion angles, and "we do it all for you". Keep the done-for-you tools as the support act and owner independence as the headline.</p>
+</div>
+
+</body>
+</html>

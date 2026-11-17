@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The Profit Analyst: Profit and Cash Flow Coaching</title>
+<style>
+  @font-face { font-family: "Poppins"; font-weight: 400; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Poppins-Regular.ttf"); }
+  @font-face { font-family: "Poppins"; font-weight: 500; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Poppins-Medium.ttf"); }
+  @font-face { font-family: "Poppins"; font-weight: 600; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Poppins-SemiBold.ttf"); }
+  @font-face { font-family: "Poppins"; font-weight: 700; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Poppins-Bold.ttf"); }
+  @font-face { font-family: "Lato"; font-weight: 400; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Lato-Regular.ttf"); }
+  @font-face { font-family: "Lato"; font-weight: 700; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Lato-Bold.ttf"); }
+  @font-face { font-family: "Lato"; font-style: italic; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Lato-Italic.ttf"); }
+
+    :root {
+    --navy: #002B4E; --green: #10BB6F; --green-dark: #0C8F55; --green-light: #E4F8EE;
+    --blue: #0BA6DB; --blue-dark: #0786B2; --blue-light: #E2F4FB; --navy-light: #E6EBF0;
+    --text: #111111; --text-2: #4A5563; --rule: #DDE3EA;
+  }
+  @page { size: A4 portrait; margin: 10mm 12mm 10mm 12mm; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Lato", sans-serif; font-size: 9.2pt; line-height: 1.3; color: var(--text); }
+  .kicker { font-family: "Poppins"; font-size: 7.4pt; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent-dark); }
+  .header { display: flex; align-items: center; justify-content: space-between; gap: 5mm; padding-bottom: 2.4mm; border-bottom: 2.2pt solid var(--navy); }
+  .header h1 { font-family: "Poppins"; font-size: 22pt; font-weight: 700; color: var(--navy); line-height: 1.08; margin-top: 0.8mm; }
+  .header h1 em { font-style: normal; color: var(--green); }
+  .header .sub { font-family: "Poppins"; font-size: 9.4pt; font-weight: 500; color: var(--text-2); margin-top: 1.4mm; line-height: 1.3; }
+  .header .marks { flex: none; display: flex; align-items: center; gap: 3mm; }
+  .header .marks img { height: 11mm; }
+  .header .marks svg { width: 16mm; height: 15mm; }
+  .hero { margin-top: 4.4mm; background: var(--navy); border-radius: 2.5mm; padding: 4mm 4.8mm; color: #fff; }
+  .hero h2 { font-family: "Poppins"; font-size: 13.4pt; font-weight: 700; line-height: 1.2; }
+  .hero h2 span { color: var(--green); }
+  .hero p { font-size: 9.9pt; color: #DCE4EC; margin-top: 1mm; }
+  .row { display: flex; gap: 4.5mm; margin-top: 7.8mm; padding-bottom: 7.8mm; border-bottom: 0.6pt solid var(--rule); }
+  .row.last { border-bottom: none; padding-bottom: 0; }
+  .icon { flex: none; width: 17mm; height: 17mm; border-radius: 50%; background: var(--accent-light); display: flex; align-items: center; justify-content: center; }
+  .icon svg { width: 9.5mm; height: 9.5mm; }
+  .row .body { flex: 1; }
+  .title { display: flex; align-items: center; gap: 2mm; }
+  .title h3 { font-family: "Poppins"; font-size: 13.6pt; font-weight: 700; color: var(--navy); line-height: 1.1; }
+  .when { margin-left: auto; flex: none; font-family: "Poppins"; font-size: 7.4pt; font-weight: 600; color: var(--accent-dark); background: var(--accent-light); border-radius: 1.2mm; padding: 0.5mm 2mm; }
+  .q { font-style: italic; color: var(--accent-dark); font-size: 10.4pt; margin: 0.8mm 0 1mm; }
+  .does { color: var(--text-2); font-size: 9.9pt; }
+  .get { margin-top: 1.4mm; font-size: 9.9pt; color: var(--navy); }
+  .get b { font-family: "Poppins"; font-weight: 600; color: var(--green-dark); }
+  ul.dots { list-style: none; margin-top: 1mm; }
+  ul.dots li { position: relative; padding-left: 3.6mm; font-size: 9.9pt; color: var(--text-2); margin-bottom: 0.5mm; }
+  ul.dots li::before { content: ""; position: absolute; left: 0; top: 1.5mm; width: 1.5mm; height: 1.5mm; border-radius: 50%; background: var(--accent); }
+  ul.dots li b { color: var(--navy); }
+  .foot { margin-top: 7.8mm; background: var(--green-light); border-left: 1.4mm solid var(--green); border-radius: 2mm; padding: 3mm 4.4mm; display: flex; justify-content: space-between; align-items: center; gap: 5mm; }
+  .foot h4 { font-family: "Poppins"; font-size: 11.4pt; font-weight: 700; color: var(--navy); line-height: 1.2; }
+  .foot p { font-size: 8.4pt; color: var(--text-2); text-align: right; }
+  .foot p b { color: var(--navy); }
+  :root { --accent: #10BB6F; --accent-dark: #0C8F55; --accent-light: #E4F8EE; }
+  .path { display: flex; align-items: stretch; gap: 0; margin-top: 2mm; }
+  .stage { flex: 1; background: var(--green-light); border-radius: 1.6mm; padding: 2.2mm 2.4mm; position: relative; }
+  .stage + .arrow { }
+  .arrow { flex: none; width: 4mm; display: flex; align-items: center; justify-content: center; color: var(--green); font-family: "Poppins"; font-weight: 700; font-size: 12pt; }
+  .stage b { display: block; font-family: "Poppins"; font-size: 9.4pt; color: var(--navy); line-height: 1.15; }
+  .stage span { display: block; font-size: 8.5pt; color: var(--text-2); line-height: 1.25; margin-top: 0.5mm; }
+  .stage .num { font-family: "Poppins"; font-size: 6.8pt; font-weight: 700; color: var(--green-dark); letter-spacing: 0.1em; }
+  .cando { margin-top: 7.8mm; border: 1pt solid var(--navy); border-radius: 2.5mm; overflow: hidden; }
+  .cando .top { background: var(--navy); color: #fff; padding: 2.2mm 4.4mm; font-family: "Poppins"; font-weight: 700; font-size: 12pt; letter-spacing: 0.03em; }
+  .cando .top span { color: var(--green); }
+  .cando ul { list-style: none; display: flex; flex-wrap: wrap; padding: 3mm 4.4mm 1.4mm; }
+  .cando li { width: 50%; position: relative; padding-left: 7.8mm; padding-right: 2mm; margin-bottom: 1.8mm; font-size: 10pt; }
+  .cando li::before { content: "✓"; position: absolute; left: 0; top: -0.3mm; width: 3.8mm; height: 3.8mm; border-radius: 50%; background: var(--green); color: #fff; font-size: 7pt; font-weight: 700; text-align: center; line-height: 3.8mm; }
+</style>
+</head>
+<body>
+<div class="page">
+<div class="header">
+  <div>
+    <div class="kicker">Financial Confidence · Coaching + Education</div>
+    <h1>Your <em>Profit</em> &amp; <em>Cash Flow</em> Coaching</h1>
+    <div class="sub">Learn the method, get personal help with your own numbers, and never be far from expert support when a big decision lands.</div>
+  </div>
+  <div class="marks"><svg viewBox="0 0 60 56" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="30" cy="18" r="16" fill="#002B4E" fill-opacity="0.08" stroke="#9AA7B5" stroke-width="0.8"/>
+      <circle cx="21" cy="34" r="16" fill="#0BA6DB" fill-opacity="0.08" stroke="#9AA7B5" stroke-width="0.8"/>
+      <circle cx="39" cy="34" r="16" fill="#10BB6F" fill-opacity="0.85" stroke="#10BB6F" stroke-width="0.8"/>
+    </svg><img src="../my-skills/pdf-forge/brands/the-profit-analyst/logo.svg" alt="The Profit Analyst"></div>
+</div>
+
+<div class="hero">
+  <div class="kicker" style="color:#9FE3C2">Where tools become decisions</div>
+  <h2>Tools show you the numbers. Coaching shows you <span>what to do next.</span></h2>
+  <p>You don't need to become an accountant. You need to understand what you're looking at, know the right questions to ask and make decisions with confidence.</p>
+</div>
+
+<div class="row">
+  <div class="icon"><svg viewBox="0 0 24 24"><path d="M5 4h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z" fill="none" stroke="#0C8F55" stroke-width="2"/><path d="M10 9l5 3-5 3z" fill="#0C8F55"/></svg></div>
+  <div class="body">
+    <div class="title"><h3>The Learning Library</h3><span class="when">On demand · anytime</span></div>
+    <p class="q">"I want to understand this properly, at my own pace."</p>
+    <p class="does">A step-by-step video course on our School platform. It takes you from the basics right through to running your numbers on repeat, with a walkthrough of every tool. Every coaching call is recorded and saved here too.</p>
+    <div class="path">
+      <div class="stage"><div class="num">01</div><b>The Basics</b><span>P&amp;L, balance sheet and cash in plain English</span></div>
+      <div class="arrow">›</div>
+      <div class="stage"><div class="num">02</div><b>Profit</b><span>The profit formula and seven levers</span></div>
+      <div class="arrow">›</div>
+      <div class="stage"><div class="num">03</div><b>Cash Flow</b><span>Forecasting and your next low point</span></div>
+      <div class="arrow">›</div>
+      <div class="stage"><div class="num">04</div><b>Forecasting</b><span>Planning one to five years ahead</span></div>
+      <div class="arrow">›</div>
+      <div class="stage"><div class="num">05</div><b>Systemise</b><span>Running your numbers on repeat</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" fill="none" stroke="#0C8F55" stroke-width="2"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7" fill="none" stroke="#0C8F55" stroke-width="2" stroke-linecap="round"/></svg></div>
+  <div class="body">
+    <div class="title"><h3>1:1 Implementation Calls</h3><span class="when">During your 90 days</span></div>
+    <p class="q">"Help me with my business and my numbers."</p>
+    <p class="does">Personal calls through the 90-day implementation. We work on your real numbers, walk you through your tools and answer the questions that are specific to your business.</p>
+    <p class="get"><b>You get:</b> the method applied to your business, not a generic example.</p>
+  </div>
+</div>
+
+<div class="row last">
+  <div class="icon"><svg viewBox="0 0 24 24"><circle cx="8" cy="9" r="3" fill="none" stroke="#0C8F55" stroke-width="2"/><circle cx="16.5" cy="9" r="3" fill="none" stroke="#0C8F55" stroke-width="2"/><path d="M2.5 20c0-3.3 2.5-5.3 5.5-5.3s5.5 2 5.5 5.3M11 20c0-3.3 2.5-5.3 5.5-5.3s5 2 5 5.3" fill="none" stroke="#0C8F55" stroke-width="2" stroke-linecap="round"/></svg></div>
+  <div class="body">
+    <div class="title"><h3>Group Coaching Calls</h3><span class="when">Weekly · ongoing</span></div>
+    <p class="q">"I've got a decision to make. What do the numbers say?"</p>
+    <p class="does">Live group calls with Gavin to bring your questions, learn something new each week and stay accountable. Learn from other owners facing the same decisions you are.</p>
+    <p class="get"><b>You get:</b> expertise and decision-making support that's never far away.</p>
+  </div>
+</div>
+
+<div class="cando">
+  <div class="top">WHAT YOU'LL BE ABLE TO DO <span>FOR YOURSELF</span></div>
+  <ul>
+    <li>Read your P&amp;L and balance sheet with confidence</li>
+    <li>Know exactly what drives your profit</li>
+    <li>See your next cash low point and plan for it</li>
+    <li>Know the right questions to ask</li>
+    <li>Spot opportunities and risks early</li>
+    <li>Make big decisions without second-guessing</li>
+  </ul>
+</div>
+
+<div class="foot">
+  <h4>I understand what I'm looking at<br>and know what to do with it.</h4>
+  <p>Part of your <b>Financial Operating System</b>:<br>Visibility + Confidence + Rhythm = <b>Profit &amp; Cash Flow Mastery</b></p>
+</div>
+</div>
+</body>
+</html>

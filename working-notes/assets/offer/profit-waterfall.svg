@@ -1,0 +1,42 @@
+<svg viewBox="0 0 900 380" xmlns="http://www.w3.org/2000/svg" font-family="Poppins">
+<rect x="0" y="0" width="900" height="380" rx="14" fill="#F7F9FB"/>
+<line x1="14" y1="300" x2="886" y2="300" stroke="#C3CCD6" stroke-width="2"/>
+<rect x="20.0" y="207.6" width="72" height="92.4" rx="4" fill="#002B4E"/>
+<line x1="92.0" y1="207.6" x2="118.5" y2="207.6" stroke="#9AA5B1" stroke-width="1.5" stroke-dasharray="4 4"/>
+<text x="56.0" y="260.8" font-size="19" font-weight="700" fill="#fff" text-anchor="middle">$480K</text>
+<text x="56.0" y="324" font-size="14.5" font-weight="600" fill="#002B4E" text-anchor="middle">Baseline</text>
+<text x="56.0" y="343" font-size="14.5" font-weight="600" fill="#002B4E" text-anchor="middle">profit</text>
+<rect x="118.5" y="166.9" width="72" height="40.6" rx="4" fill="#12C870"/>
+<line x1="190.5" y1="166.9" x2="217.0" y2="166.9" stroke="#9AA5B1" stroke-width="1.5" stroke-dasharray="4 4"/>
+<text x="154.5" y="156.9" font-size="17" font-weight="700" fill="#0A9A55" text-anchor="middle">+$211K</text>
+<text x="154.5" y="324" font-size="14.5" font-weight="600" fill="#002B4E" text-anchor="middle">Price</text>
+<rect x="217.0" y="49.1" width="72" height="117.9" rx="4" fill="#12C870"/>
+<line x1="289.0" y1="49.1" x2="315.5" y2="49.1" stroke="#9AA5B1" stroke-width="1.5" stroke-dasharray="4 4"/>
+<text x="253.0" y="39.1" font-size="17" font-weight="700" fill="#0A9A55" text-anchor="middle">+$612K</text>
+<text x="253.0" y="324" font-size="14.5" font-weight="600" fill="#002B4E" text-anchor="middle">Volume</text>
+<rect x="315.5" y="49.1" width="72" height="52.6" rx="4" fill="#DC2626"/>
+<line x1="387.5" y1="101.6" x2="414.0" y2="101.6" stroke="#9AA5B1" stroke-width="1.5" stroke-dasharray="4 4"/>
+<text x="351.5" y="123.6" font-size="17" font-weight="700" fill="#DC2626" text-anchor="middle">($273K)</text>
+<text x="351.5" y="324" font-size="14.5" font-weight="600" fill="#002B4E" text-anchor="middle">Cost of</text>
+<text x="351.5" y="343" font-size="14.5" font-weight="600" fill="#002B4E" text-anchor="middle">Sales</text>
+<rect x="414.0" y="101.6" width="72" height="19.5" rx="4" fill="#DC2626"/>
+<line x1="486.0" y1="121.1" x2="512.5" y2="121.1" stroke="#9AA5B1" stroke-width="1.5" stroke-dasharray="4 4"/>
+<text x="450.0" y="143.1" font-size="17" font-weight="700" fill="#DC2626" text-anchor="middle">($101K)</text>
+<text x="450.0" y="324" font-size="14.5" font-weight="600" fill="#002B4E" text-anchor="middle">Team</text>
+<rect x="512.5" y="121.1" width="72" height="11.4" rx="4" fill="#DC2626"/>
+<line x1="584.5" y1="132.4" x2="611.0" y2="132.4" stroke="#9AA5B1" stroke-width="1.5" stroke-dasharray="4 4"/>
+<text x="548.5" y="154.4" font-size="17" font-weight="700" fill="#DC2626" text-anchor="middle">($59K)</text>
+<text x="548.5" y="324" font-size="14.5" font-weight="600" fill="#002B4E" text-anchor="middle">Marketing</text>
+<rect x="611.0" y="132.4" width="72" height="3.0" rx="4" fill="#C3CCD6"/>
+<line x1="683.0" y1="132.4" x2="709.5" y2="132.4" stroke="#9AA5B1" stroke-width="1.5" stroke-dasharray="4 4"/>
+<text x="647.0" y="122.4" font-size="16" font-weight="600" fill="#8A94A3" text-anchor="middle">$0</text>
+<text x="647.0" y="324" font-size="14.5" font-weight="600" fill="#002B4E" text-anchor="middle">Overheads</text>
+<rect x="709.5" y="132.4" width="72" height="3.0" rx="4" fill="#C3CCD6"/>
+<line x1="781.5" y1="132.4" x2="808.0" y2="132.4" stroke="#9AA5B1" stroke-width="1.5" stroke-dasharray="4 4"/>
+<text x="745.5" y="122.4" font-size="16" font-weight="600" fill="#8A94A3" text-anchor="middle">$0</text>
+<text x="745.5" y="324" font-size="14.5" font-weight="600" fill="#002B4E" text-anchor="middle">Property</text>
+<rect x="808.0" y="132.4" width="72" height="167.6" rx="4" fill="#02A3FF"/>
+<text x="844.0" y="223.2" font-size="19" font-weight="700" fill="#fff" text-anchor="middle">$870K</text>
+<text x="844.0" y="324" font-size="14.5" font-weight="600" fill="#002B4E" text-anchor="middle">New</text>
+<text x="844.0" y="343" font-size="14.5" font-weight="600" fill="#002B4E" text-anchor="middle">profit</text>
+</svg>
