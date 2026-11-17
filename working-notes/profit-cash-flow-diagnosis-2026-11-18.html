@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Profit &amp; Cash Flow Diagnosis</title>
+<style>
+@font-face { font-family: Poppins; font-weight: 500; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Poppins-Medium.ttf"); }
+@font-face { font-family: Poppins; font-weight: 600; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Poppins-SemiBold.ttf"); }
+@font-face { font-family: Poppins; font-weight: 700; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Poppins-Bold.ttf"); }
+@font-face { font-family: Lato; font-weight: 400; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Lato-Regular.ttf"); }
+@font-face { font-family: Lato; font-weight: 700; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Lato-Bold.ttf"); }
+@font-face { font-family: Lato; font-weight: 400; font-style: italic; src: url("../my-skills/pdf-forge/brands/the-profit-analyst/fonts/Lato-Italic.ttf"); }
+:root {
+  --navy:#002B4E; --blue:#02A3FF; --green:#12C870; --red:#DC2626; --orange:#F2922B;
+  --navy-light:#EDF2F7; --blue-light:#EAF7FF; --green-light:#E8F9F0; --red-light:#FDEDED; --orange-light:#FEF3E6;
+  --text-2:#4A6378; --rule:#D5DDE6;
+}
+@page { size: A4 landscape; margin: 7mm 10mm 5mm 10mm; }
+* { box-sizing:border-box; margin:0; padding:0; }
+body { font-family: Lato, sans-serif; font-size: 8.4pt; color: var(--navy); }
+.page { }
+
+/* header */
+.header { display:flex; justify-content:space-between; align-items:flex-end; padding-bottom:2mm; border-bottom:1.6pt solid var(--navy); }
+.kicker { font-family:Poppins; font-weight:600; font-size:7.4pt; letter-spacing:.18em; text-transform:uppercase; color:var(--blue); }
+h1 { font-family:Poppins; font-weight:700; font-size:19pt; line-height:1.05; }
+.lede { font-size:8.6pt; color:var(--text-2); margin-top:.6mm; }
+.who { display:flex; gap:3mm; align-items:center; font-family:Poppins; font-weight:600; font-size:7.8pt; margin-bottom:1mm; }
+.who input { width:40mm; }
+.who input.d { width:26mm; }
+.header img { height:12.5mm; margin-left:5mm; }
+.hr { display:flex; align-items:flex-end; }
+
+/* inputs: fillable on screen, writable on paper */
+input { appearance:auto; display:block; width:100%; height:6.4mm; border:0.7pt solid var(--rule); border-radius:1.1mm; background:#fff; font-family:Lato; font-size:8.5pt; color:var(--navy); padding:0 1.4mm; }
+input[type=checkbox] { width:3.4mm; height:3.4mm; display:inline-block; vertical-align:middle; padding:0; border-radius:.6mm; }
+.fw { position:relative; }
+.fw b { position:absolute; left:1.3mm; top:1.35mm; font-family:Poppins; font-weight:600; font-size:7.6pt; z-index:2; }
+.fw input { padding-left:4mm; }
+.rev input { border-color:#9FD8FF; background:var(--blue-light); } .rev b { color:var(--blue); }
+.cost input { border-color:#F3B3B3; background:var(--red-light); } .cost b { color:var(--red); }
+.prof input { border-color:#9BE5BE; background:var(--green-light); } .prof b { color:var(--green); }
+
+/* section shells */
+.sec { border-radius:2.6mm; border:0.9pt solid; padding:2.4mm 3mm 2.6mm; background:#fff; }
+.sec.pl { border-color:var(--navy); border-top:2.6pt solid var(--navy); }
+.sec.bs { border-color:var(--blue); border-top:2.6pt solid var(--blue); }
+.sec.cf { border-color:var(--green); border-top:2.6pt solid var(--green); }
+.st { display:flex; justify-content:space-between; align-items:baseline; margin-bottom:1.4mm; }
+h2 { font-family:Poppins; font-weight:700; font-size:11pt; letter-spacing:.06em; text-transform:uppercase; }
+h2 span { font-family:Lato; font-weight:400; text-transform:none; letter-spacing:0; font-size:8.6pt; color:var(--text-2); margin-left:1.4mm; }
+.qs { display:flex; gap:4mm; flex:none; padding-right:1mm; }
+.sec.pl { position:relative; }
+.pl .st .qs { position:absolute; right:7mm; top:2.9mm; }
+.q { white-space:nowrap; display:flex; align-items:center; gap:1.4mm; font-family:Poppins; font-weight:600; font-size:7.8pt; }
+.n { width:4.6mm; height:4.6mm; border-radius:50%; color:#fff; font-family:Poppins; font-weight:700; font-size:7pt; text-align:center; line-height:4.7mm; flex:none; }
+.pl .n { background:var(--navy); } .bs .n { background:var(--blue); } .cf .n { background:var(--green); }
+.hint { font-size:7pt; color:var(--text-2); font-style:italic; }
+
+/* profit formula */
+table.pf { width:100%; border-collapse:separate; border-spacing:1mm .9mm; table-layout:fixed; }
+table.pf col.lab { width:23mm; } table.pf col.op { width:3mm; }
+table.pf th { font-family:Poppins; font-weight:600; font-size:7.6pt; text-align:left; padding:0 0 .4mm .6mm; border-bottom:1.4pt solid; white-space:nowrap; }
+table.pf th.rev { color:var(--blue); border-color:var(--blue); }
+table.pf th.cost { color:var(--red); border-color:var(--red); }
+table.pf th.prof { color:var(--green); border-color:var(--green); }
+table.pf th.blank { border:none; }
+table.pf td.rl { white-space:nowrap; font-family:Poppins; font-weight:700; font-size:7.8pt; vertical-align:middle; }
+table.pf td.rl small { display:block; font-family:Lato; font-weight:400; font-size:6.6pt; color:var(--text-2); }
+table.pf td.op { font-family:Poppins; font-weight:600; font-size:9pt; text-align:center; vertical-align:middle; color:var(--text-2); }
+table.pf tr.chg td.rl { color:var(--navy); }
+table.pf tr.chg input { background:#fff; border-style:dashed; border-color:#9AAFC2; }
+table.pf tr.chg td.op { color:#B9C6D3; }
+.focus { display:flex; gap:3mm; margin-top:1.4mm; align-items:center; }
+.focus .lbl { font-family:Poppins; font-weight:600; font-size:8pt; white-space:nowrap; }
+.focus .fw { flex:1; }
+
+/* middle row */
+.mid { display:flex; gap:3.6mm; margin-top:2mm; }
+.mid .bs { flex:1.06; display:flex; flex-direction:column; }
+.mid .cf { flex:1; display:flex; flex-direction:column; }
+
+/* balance sheet */
+.period { display:flex; align-items:center; gap:2.4mm; font-size:7.8pt; margin-bottom:1.2mm; }
+.period label { white-space:nowrap; display:flex; align-items:center; gap:1mm; font-family:Poppins; font-weight:500; }
+table.bal { width:100%; border-collapse:separate; border-spacing:1.2mm .8mm; table-layout:fixed; margin:0 -1.2mm; width:calc(100% + 2.4mm); }
+table.bal col.l { width:38mm; } table.bal col.ar { width:4mm; }
+table.bal thead th { font-family:Poppins; font-weight:700; font-size:7.6pt; text-align:left; padding-left:.6mm; border-bottom:1.4pt solid var(--blue); }
+table.bal thead th.mv { color:var(--green); border-color:var(--green); }
+table.bal thead th.b { border:none; }
+table.bal tbody th { text-align:left; vertical-align:middle; padding:.5mm 0 .5mm 2mm; border-left:2.4mm solid; border-radius:.8mm; font-family:Poppins; font-weight:600; font-size:7.6pt; line-height:1.05; }
+table.bal tbody th small { display:block; font-family:Lato; font-weight:400; font-size:6.4pt; color:var(--text-2); }
+tr.lta th { border-color:var(--blue); background:var(--blue-light); }
+tr.cc th { border-color:var(--green); background:var(--green-light); }
+tr.ln th { border-color:var(--red); background:var(--red-light); }
+tr.ol th { border-color:var(--orange); background:var(--orange-light); }
+tr.na th { border-color:var(--navy); background:var(--navy-light); }
+tr.na td input { border:1pt solid var(--navy); }
+tr.na th, tr.na td { padding-top:1.2mm; }
+td.ar { font-family:Poppins; color:#9AAFC2; font-size:9pt; text-align:center; vertical-align:middle; }
+table.bal input.mv { background:var(--green-light); border-color:#9BE5BE; }
+.check { display:flex; gap:2mm; align-items:center; margin-top:1.2mm; font-family:Poppins; font-weight:600; font-size:7.6pt; }
+.check .fw { width:30mm; }
+.lines-q { margin-top:1.6mm; }
+.lines-q .lbl { font-family:Poppins; font-weight:600; font-size:7.8pt; margin-bottom:.8mm; }
+.lines-q input { height:6mm; margin-bottom:1mm; }
+
+/* cash flow */
+.cfwrap { display:flex; gap:3mm; flex:1; }
+.chart { flex:1.25; display:flex; flex-direction:column; }
+.grid { height:37mm; flex:none; position:relative; border-left:1pt solid var(--navy); border-bottom:1pt solid var(--navy); margin-left:5mm;
+  background-image:
+    repeating-linear-gradient(to right, transparent 0, transparent calc(100%/13 - .5pt), #E3E9EF calc(100%/13 - .5pt), #E3E9EF calc(100%/13)),
+    repeating-linear-gradient(to bottom, transparent 0, transparent 5.5mm, #EEF2F6 5.5mm, #EEF2F6 5.8mm); }
+.grid .zero { position:absolute; left:0; right:0; bottom:22%; border-top:1pt dashed var(--red); }
+.grid .zero span { position:absolute; left:-5.2mm; top:-2mm; font-family:Poppins; font-weight:600; font-size:6.6pt; color:var(--red); }
+.grid .ylab { position:absolute; left:-5mm; top:0; font-family:Poppins; font-weight:600; font-size:6.6pt; color:var(--text-2); }
+.wk { display:flex; margin-left:5mm; }
+.wk span { flex:1; text-align:center; font-family:Poppins; font-weight:500; font-size:6.4pt; color:var(--text-2); padding-top:.6mm; }
+.chartcap { font-size:6.8pt; color:var(--text-2); font-style:italic; margin:.6mm 0 0 5mm; }
+.kpis { flex:1; display:flex; flex-direction:column; gap:1.2mm; }
+.kpi { border:0.8pt solid #9BE5BE; background:var(--green-light); border-radius:1.6mm; padding:1mm 1.8mm 1.2mm; }
+.kpi .kl { font-family:Poppins; font-weight:600; font-size:7.4pt; }
+.kpi .kl small { font-family:Lato; font-weight:400; font-size:6.5pt; color:var(--text-2); margin-left:.8mm; }
+.kpi input { height:5.8mm; margin-top:.5mm; background:#fff; border-color:#9BE5BE; }
+.kpi.low { border-color:#F3B3B3; background:var(--red-light); }
+.kpi.low input { border-color:#F3B3B3; }
+.kpi .two { display:flex; gap:1.4mm; }
+.kpi .two .fw:first-child { flex:1.5; } .kpi .two .fw:last-child { flex:1; }
+.safe { display:flex; align-items:center; gap:2.4mm; margin-top:1.4mm; font-family:Poppins; font-weight:600; font-size:7.8pt; }
+.safe label { display:flex; align-items:center; gap:1mm; font-weight:500; }
+.free { display:flex; gap:2mm; align-items:center; margin-top:1.2mm; font-family:Poppins; font-weight:600; font-size:7.8pt; }
+.free .fw { flex:1; }
+
+/* join the dots */
+.dots { margin-top:2mm; border-radius:2.6mm; background:var(--navy-light); padding:2.2mm 3mm 2.4mm; }
+.dots .st { margin-bottom:1.2mm; }
+.dots h2 { font-size:10pt; }
+.arrows { display:flex; gap:3mm; }
+.arrow { flex:1; }
+.arrow .al { font-family:Lato; font-style:italic; font-weight:400; font-size:8.4pt; margin-bottom:.8mm; display:flex; align-items:center; gap:1.4mm; }
+.arrow .al i { font-style:normal; font-family:Poppins; font-weight:700; font-size:9pt; }
+.a1 i { color:var(--navy); } .a2 i { color:var(--blue); } .a3 i { color:var(--green); }
+.arrow input { height:6mm; }
+.move { flex:1.15; }
+.move .al { font-family:Poppins; font-weight:700; font-style:normal; color:var(--navy); }
+.move input { border:1.2pt solid var(--green); }
+.foot { display:flex; justify-content:space-between; font-size:6.6pt; color:var(--text-2); margin-top:1mm; }
+</style></head>
+<body><div class="page">
+
+<div class="header">
+  <div>
+    <div class="kicker">The Profit &amp; Cash Flow Cycle · Worksheet</div>
+    <h1>Your Profit &amp; Cash Flow Diagnosis</h1>
+    <div class="lede">Three sets of numbers. Six questions. One next right move. 80% is good enough, so use rounded numbers.</div>
+  </div>
+  <div class="hr">
+    <div>
+      <div class="who">Business <input name="business" type="text"></div>
+      <div class="who" style="justify-content:flex-end">Date <input class="d" name="date" type="text"></div>
+    </div>
+    <img src="../my-skills/pdf-forge/brands/the-profit-analyst/logo.svg" alt="The Profit Analyst">
+  </div>
+</div>
+
+<!-- PROFITABILITY -->
+<div class="sec pl" style="margin-top:2.2mm">
+  <div class="st">
+    <h2>Profitability <span>(P&amp;L) · Your Profit Formula, now vs. target</span></h2>
+    <div class="qs">
+      <div class="q"><span class="n">1</span>What is our current profit?</div>
+      <div class="q"><span class="n">2</span>What is our target profit formula?</div>
+    </div>
+  </div>
+  <table class="pf">
+    <colgroup><col class="lab"><col class="op"><col><col class="op"><col><col class="op"><col class="op"><col><col class="op"><col><col class="op"><col><col class="op"><col><col class="op"><col><col class="op"><col class="op"><col></colgroup>
+    <tr>
+      <th class="blank"></th><th class="blank"></th><th class="rev">Price</th><th class="blank"></th><th class="rev">Volume</th><th class="blank"></th><th class="blank"></th>
+      <th class="cost">Cost of Sales</th><th class="blank"></th><th class="cost">Team</th><th class="blank"></th><th class="cost">Mkt &amp; Growth</th><th class="blank"></th><th class="cost">Property</th><th class="blank"></th><th class="cost">Overheads</th><th class="blank"></th><th class="blank"></th><th class="prof">Profit</th>
+    </tr>
+    <tr>
+      <td class="rl">NOW<small>Last 12 months</small></td><td class="op">(</td>
+      <td class="fw rev"><b>$</b><input name="now_price" type="text"></td><td class="op">×</td>
+      <td class="fw rev"><input name="now_volume" type="text"></td><td class="op">)</td><td class="op">−</td>
+      <td class="fw cost"><b>$</b><input name="now_cos" type="text"></td><td class="op">−</td>
+      <td class="fw cost"><b>$</b><input name="now_team" type="text"></td><td class="op">−</td>
+      <td class="fw cost"><b>$</b><input name="now_mkt" type="text"></td><td class="op">−</td>
+      <td class="fw cost"><b>$</b><input name="now_property" type="text"></td><td class="op">−</td>
+      <td class="fw cost"><b>$</b><input name="now_overheads" type="text"></td><td class="op"></td><td class="op">=</td>
+      <td class="fw prof"><b>$</b><input name="now_profit" type="text"></td>
+    </tr>
+    <tr>
+      <td class="rl">TARGET<small>Next 12 months</small></td><td class="op">(</td>
+      <td class="fw rev"><b>$</b><input name="tgt_price" type="text"></td><td class="op">×</td>
+      <td class="fw rev"><input name="tgt_volume" type="text"></td><td class="op">)</td><td class="op">−</td>
+      <td class="fw cost"><b>$</b><input name="tgt_cos" type="text"></td><td class="op">−</td>
+      <td class="fw cost"><b>$</b><input name="tgt_team" type="text"></td><td class="op">−</td>
+      <td class="fw cost"><b>$</b><input name="tgt_mkt" type="text"></td><td class="op">−</td>
+      <td class="fw cost"><b>$</b><input name="tgt_property" type="text"></td><td class="op">−</td>
+      <td class="fw cost"><b>$</b><input name="tgt_overheads" type="text"></td><td class="op"></td><td class="op">=</td>
+      <td class="fw prof"><b>$</b><input name="tgt_profit" type="text"></td>
+    </tr>
+    <tr class="chg">
+      <td class="rl">WHAT CHANGES<small>Target less now</small></td><td class="op"></td>
+      <td><input name="chg_price" type="text"></td><td class="op"></td>
+      <td><input name="chg_volume" type="text"></td><td class="op"></td><td class="op"></td>
+      <td><input name="chg_cos" type="text"></td><td class="op"></td>
+      <td><input name="chg_team" type="text"></td><td class="op"></td>
+      <td><input name="chg_mkt" type="text"></td><td class="op"></td>
+      <td><input name="chg_property" type="text"></td><td class="op"></td>
+      <td><input name="chg_overheads" type="text"></td><td class="op"></td><td class="op"></td>
+      <td><input name="chg_profit" type="text"></td>
+    </tr>
+  </table>
+  <div class="focus">
+    <div class="lbl">The 1 or 2 numbers that close the gap:</div>
+    <div class="fw"><input name="pl_focus" type="text"></div>
+  </div>
+</div>
+
+<div class="mid">
+
+  <!-- CAPITAL -->
+  <div class="sec bs">
+    <div class="st">
+      <h2>Capital <span>(Balance Sheet) · What we own and owe</span></h2>
+    </div>
+    <div class="qs" style="margin-bottom:1.2mm">
+      <div class="q"><span class="n">3</span>What is our financial position?</div>
+      <div class="q"><span class="n">4</span>Where did our profit go?</div>
+    </div>
+    <div class="period">Compare: <label><input type="checkbox" name="p_12m"> 12 months ago</label><label><input type="checkbox" name="p_1m"> 1 month ago</label> to now</div>
+    <table class="bal">
+      <colgroup><col class="l"><col><col class="ar"><col><col class="ar"><col></colgroup>
+      <thead><tr><th class="b"></th><th>Then</th><th class="b"></th><th class="mv">Movement</th><th class="b"></th><th>Now</th></tr></thead>
+      <tbody>
+        <tr class="lta"><th>Long-term assets<small>Equipment, vehicles, property</small></th><td><input name="then_lta" type="text"></td><td class="ar">→</td><td><input class="mv" name="mv_lta" type="text"></td><td class="ar">→</td><td><input name="now_lta" type="text"></td></tr>
+        <tr class="cc"><th>Cash cycle<small>Cash + owed to us + stock, less bills owed</small></th><td><input name="then_cc" type="text"></td><td class="ar">→</td><td><input class="mv" name="mv_cc" type="text"></td><td class="ar">→</td><td><input name="now_cc" type="text"></td></tr>
+        <tr class="ln"><th>Loans<small>Bank, finance, ATO plans</small></th><td><input name="then_loans" type="text"></td><td class="ar">→</td><td><input class="mv" name="mv_loans" type="text"></td><td class="ar">→</td><td><input name="now_loans" type="text"></td></tr>
+        <tr class="ol"><th>Owner loans<small>Money in or out by owners</small></th><td><input name="then_ol" type="text"></td><td class="ar">→</td><td><input class="mv" name="mv_ol" type="text"></td><td class="ar">→</td><td><input name="now_ol" type="text"></td></tr>
+        <tr class="na"><th>Net assets<small>What we own less what we owe</small></th><td><input name="then_na" type="text"></td><td class="ar">→</td><td><input class="mv" name="mv_na" type="text"></td><td class="ar">→</td><td><input name="now_na" type="text"></td></tr>
+      </tbody>
+    </table>
+    <div class="check">Profit for this period <div class="fw prof"><b>$</b><input name="period_profit" type="text"></div><span class="hint" style="font-family:Lato;font-weight:400">Should roughly match the net assets movement</span></div>
+    <div class="lines-q">
+      <div class="lbl">Our profit mostly went into:</div>
+      <input name="profit_went" type="text">
+    </div>
+  </div>
+
+  <!-- CASH FLOW -->
+  <div class="sec cf">
+    <div class="st">
+      <h2>Cash Flow <span>· The next 13 weeks</span></h2>
+    </div>
+    <div class="qs" style="margin-bottom:1.6mm">
+      <div class="q"><span class="n">5</span>When is our next cash low point, and are we safe?</div>
+    </div>
+    <div class="cfwrap">
+      <div class="chart">
+        <div class="grid"><span class="ylab">$</span><div class="zero"><span>$0</span></div></div>
+        <div class="wk"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span></div>
+        <div class="chartcap">Sketch your bank balance week by week. Circle the low point.</div>
+      </div>
+      <div class="kpis">
+        <div class="kpi"><div class="kl">Starting cash<small>Bank today</small></div><div class="fw prof"><b>$</b><input name="cf_start" type="text"></div></div>
+        <div class="kpi"><div class="kl">Cash at week 13<small>End balance</small></div><div class="fw prof"><b>$</b><input name="cf_end" type="text"></div></div>
+        <div class="kpi"><div class="kl">Average balance<small>Across 13 weeks</small></div><div class="fw prof"><b>$</b><input name="cf_avg" type="text"></div></div>
+        <div class="kpi low"><div class="kl">Low point<small>Amount and week</small></div>
+          <div class="two"><div class="fw cost"><b>$</b><input name="cf_low" type="text"></div><div class="fw cost"><b>W</b><input name="cf_low_week" type="text"></div></div></div>
+      </div>
+    </div>
+    <div class="safe">Are we safe at the low point? <label><input type="checkbox" name="safe_yes"> Yes</label><label><input type="checkbox" name="safe_no"> No</label><label><input type="checkbox" name="safe_tight"> Tight</label></div>
+    <div class="free"><span class="n" style="background:var(--green)">6</span>What cash is available to fund growth? <div class="fw prof"><b>$</b><input name="cf_free" type="text"></div></div>
+  </div>
+</div>
+
+<!-- JOIN THE DOTS -->
+<div class="dots">
+  <div class="st"><h2>Join the dots <span>· Make profit. Turn it into cash. Fund future growth.</span></h2></div>
+  <div class="arrows">
+    <div class="arrow a2"><div class="al"><i>→</i>How do we turn more profit into cash?</div><input name="dot2" type="text"></div>
+    <div class="arrow a3"><div class="al"><i>→</i>How much cash can we invest to grow profit?</div><input name="dot3" type="text"></div>
+    <div class="arrow move"><div class="al">My next right move this week:</div><input name="next_move" type="text"></div>
+  </div>
+</div>
+
+<div class="foot"><span>The Profit Analyst Method™ · Insights and actions, not reporting and over-analysis.</span><span>theprofitanalyst.com</span></div>
+
+</div></body></html>
